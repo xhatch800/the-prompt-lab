@@ -318,6 +318,40 @@
       return { noun1, noun1Pool, noun2, noun2Pool };
     }
 
+    // ── Prompt rendering ─────────────────────────────────────────
+    const LOCK_SVG = '<svg class="lock-icon" width="16" height="18" viewBox="0 0 16 18" fill="none"><rect x="1" y="8" width="14" height="10" rx="2" stroke="#b85c38" stroke-width="2"/><path d="M4 8V6a4 4 0 0 1 8 0v2" stroke="#b85c38" stroke-width="2" stroke-linecap="round"/></svg>';
+
+    function renderPrompt(container, mode) {
+      container.innerHTML = '';
+      const slots = mode === 'surreal'
+        ? ['adjective', 'noun', 'verb', 'environment']
+        : ['noun1', 'noun2'];
+      const sep = mode === 'surreal' ? ' · ' : ' + ';
+
+      slots.forEach((slot, i) => {
+        const span = document.createElement('span');
+        span.className = 'prompt-slot' + (lockedSlots[slot] ? ' locked' : '');
+        span.innerHTML = (lockedSlots[slot] ? LOCK_SVG : '') + currentPrompt[slot];
+        span.addEventListener('click', () => toggleLock(slot, container, mode));
+        container.appendChild(span);
+        if (i < slots.length - 1) {
+          const s = document.createElement('span');
+          s.className = 'prompt-sep';
+          s.textContent = sep;
+          container.appendChild(s);
+        }
+      });
+    }
+
+    function toggleLock(slot, container, mode) {
+      if (lockedSlots[slot]) {
+        delete lockedSlots[slot];
+      } else {
+        lockedSlots[slot] = true;
+      }
+      renderPrompt(container, mode);
+    }
+
     // ── State ────────────────────────────────────────────────────
     let imagineMode = null;    // 'surreal' | 'mutations'
     let mutationType = null;   // 'organic-organic' | 'organic-synthetic' | 'synthetic-synthetic' | 'random'
