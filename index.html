@@ -843,8 +843,8 @@
     document.getElementById('btn-just-draw').addEventListener('click', () => {
       const finalValue = generateJustDraw();
       const el = document.getElementById('just-draw-prompt');
-      el.textContent = finalValue;
       showScreen('screen-just-draw');
+      el.textContent = finalValue;
       animateJustDraw(el, finalValue);
     });
 
