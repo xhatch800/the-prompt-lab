@@ -108,9 +108,6 @@
     .back-btn {
       font-family: 'Caveat', cursive;
       font-size: 2rem;
-      position: absolute;
-      top: 1.5rem;
-      left: 1.5rem;
       background: none;
       border: none;
       cursor: pointer;
@@ -121,6 +118,35 @@
 
     .back-btn:hover {
       opacity: 0.6;
+    }
+
+    .back-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      z-index: 10;
+    }
+
+    .screen-label {
+      font-family: sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #b85c38;
+      pointer-events: none;
+    }
+
+    .lock-hint {
+      font-family: sans-serif;
+      font-size: 0.72rem;
+      color: #bbb;
+      text-align: center;
+      margin-top: 12px;
+      pointer-events: none;
     }
 
     .regen-btn {
@@ -222,7 +248,8 @@
       .prompt-text { font-size: 2rem; }
       .mode-btn { font-size: 1.5rem; padding: 0.5rem 1.2rem; }
       .mode-buttons { gap: 0.6rem; }
-      .back-btn { position: fixed; font-size: 1.4rem; top: 1rem; left: 1rem; }
+      .back-row { position: fixed; top: 1rem; left: 1rem; }
+      .back-btn { font-size: 1.4rem; }
       .regen-btn { font-size: 1.2rem; bottom: 1rem; }
     }
   </style>
@@ -642,7 +669,10 @@
 
   <!-- Screen: Strange Combinations Type Picker -->
   <div id="screen-mutations-type" class="screen">
-    <button class="back-btn" data-target="screen-home">←</button>
+    <div class="back-row">
+      <button class="back-btn" data-target="screen-home">←</button>
+      <span class="screen-label">Strange Combinations</span>
+    </div>
     <h2>Strange Combinations</h2>
     <div class="mode-buttons">
       <button id="btn-type-organic-organic" class="mode-btn">Organic + Organic</button>
@@ -654,16 +684,23 @@
 
   <!-- Screen: Just Draw Prompt -->
   <div id="screen-just-draw" class="screen">
-    <button class="back-btn" data-target="screen-home">←</button>
+    <div class="back-row">
+      <button class="back-btn" data-target="screen-home">←</button>
+      <span class="screen-label">Sparks</span>
+    </div>
     <p id="just-draw-prompt" class="prompt-text"></p>
     <button id="btn-regen-just-draw" class="regen-btn">↺ new prompt</button>
   </div>
 
   <!-- Screen: Imagination Prompt -->
   <div id="screen-imagine-prompt" class="screen">
-    <button id="btn-back-imagine" class="back-btn">←</button>
+    <div class="back-row">
+      <button id="btn-back-imagine" class="back-btn">←</button>
+      <span id="imagine-screen-label" class="screen-label"></span>
+    </div>
     <div id="imagine-prompt" class="prompt-text"></div>
     <button id="btn-regen-imagine" class="regen-btn">↺ new prompt</button>
+    <p class="lock-hint">tap a word to lock it</p>
   </div>
 
   <script>
@@ -851,6 +888,7 @@
       imagineMode = 'surreal';
       promptBackTarget = 'screen-home';
       currentPrompt = generateSurrealNarrative(null, {});
+      document.getElementById('imagine-screen-label').textContent = 'Surreal Narratives';
       showScreen('screen-imagine-prompt');
       const container = document.getElementById('imagine-prompt');
       renderPrompt(container, 'surreal');
@@ -867,6 +905,7 @@
         mutationType = type;  // 'random' stays 'random' — each regen re-rolls the concrete type
         promptBackTarget = 'screen-mutations-type';
         currentPrompt = generateMutation(type, null, {});
+        document.getElementById('imagine-screen-label').textContent = 'Strange Combinations';
         showScreen('screen-imagine-prompt');
         const container = document.getElementById('imagine-prompt');
         renderPrompt(container, 'mutations');
