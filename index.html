@@ -865,7 +865,7 @@
       document.getElementById(`btn-type-${type}`).addEventListener('click', () => {
         imagineMode = 'mutations';
         mutationType = type;  // 'random' stays 'random' — each regen re-rolls the concrete type
-        promptBackTarget = 'screen-home';
+        promptBackTarget = 'screen-mutations-type';
         currentPrompt = generateMutation(type, null, {});
         showScreen('screen-imagine-prompt');
         const container = document.getElementById('imagine-prompt');
