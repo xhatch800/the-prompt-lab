@@ -38,7 +38,7 @@
 
     .screen.active {
       opacity: 1;
-      pointer-events: all;
+      pointer-events: auto;
     }
 
     /* ── Typography ── */
@@ -200,9 +200,12 @@
   <script>
     // ── Data store ──────────────────────────────────────────────
     const store = {};
+    document.getElementById('btn-just-draw').disabled = true;
+    document.getElementById('btn-imagine').disabled = true;
 
     // ── Utilities ───────────────────────────────────────────────
     function pick(arr) {
+      if (!arr || arr.length === 0) return '';
       return arr[Math.floor(Math.random() * arr.length)];
     }
 
@@ -270,6 +273,7 @@
     });
 
     document.getElementById('btn-regen-imagine').addEventListener('click', () => {
+      if (!imagineMode) return;
       document.getElementById('imagine-prompt').textContent =
         imagineMode === 'surreal' ? generateSurrealNarrative() : generateMutation();
     });
@@ -302,6 +306,8 @@
         store.nounsSynthetic = nounsSynthetic;
         store.verbs = verbs;
         store.environments = environments;
+        document.getElementById('btn-just-draw').disabled = false;
+        document.getElementById('btn-imagine').disabled = false;
       } catch {
         document.getElementById('error-banner').classList.remove('hidden');
         document.getElementById('btn-just-draw').disabled = true;
