@@ -1,0 +1,12 @@
+[
+  "clock", "compass", "lantern", "bellows", "gear",
+  "telescope", "typewriter", "gramophone", "sextant", "abacus",
+  "bell jar", "key", "lock", "pulley", "valve",
+  "piston", "antenna", "prism", "pendulum", "periscope",
+  "funnel", "spring", "lever", "dial", "barometer",
+  "searchlight", "turbine", "wrench", "gauge", "motor",
+  "winch", "lathe", "coil", "siren", "relay",
+  "conduit", "rivet", "sprocket", "dynamo", "capacitor",
+  "switch", "fuse", "ratchet", "brake", "resistor",
+  "gyroscope", "thermostat", "pump", "belljar", "transistor"
+]
