@@ -905,8 +905,7 @@
         mutationType = type;  // 'random' stays 'random' — each regen re-rolls the concrete type
         promptBackTarget = 'screen-mutations-type';
         currentPrompt = generateMutation(type, null, {});
-        const labelText = type === 'random' ? 'Strange Combinations' : `Strange Combinations · ${type.replace('-', ' + ')}`;
-        document.getElementById('imagine-screen-label').textContent = labelText;
+        document.getElementById('imagine-screen-label').textContent = 'Strange Combinations';
         showScreen('screen-imagine-prompt');
         const container = document.getElementById('imagine-prompt');
         renderPrompt(container, 'mutations');
