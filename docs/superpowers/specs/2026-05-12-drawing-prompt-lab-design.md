@@ -1,15 +1,15 @@
 ---
-name: The Prompt Lab Design Spec
-description: Full design spec for The Prompt Lab drawing inspiration web app
+name: Drawing Prompt Lab Design Spec
+description: Full design spec for Drawing Prompt Lab drawing inspiration web app
 type: project
 date: 2026-05-12
 ---
 
-# The Prompt Lab — Design Spec
+# Drawing Prompt Lab — Design Spec
 
 ## Overview
 
-The Prompt Lab is a static single-page web app that gives artists on-demand drawing prompts. Two modes: grounded observation ("Just draw!") and imaginative combination ("Can you imagine..."). Hosted on GitHub Pages, built with vanilla JS/CSS, no dependencies.
+Drawing Prompt Lab is a static single-page web app that gives artists on-demand drawing prompts. Two modes: grounded observation ("Just draw!") and imaginative combination ("Can you imagine..."). Hosted on GitHub Pages, built with vanilla JS/CSS, no dependencies.
 
 ## Screen Flow
 
