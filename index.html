@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bifocal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Caveat', cursive;
+      background: #fdf8f0;
+      color: #2c2c2c;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    /* ── Screens ── */
+    .screen {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .screen.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* ── Typography ── */
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .prompt-text {
+      font-size: 2rem;
+      text-align: center;
+      line-height: 1.5;
+      max-width: 640px;
+      padding: 0 1rem;
+    }
+
+    /* ── Buttons ── */
+    .mode-btn {
+      font-family: 'Caveat', cursive;
+      font-size: 1.8rem;
+      color: #2c2c2c;
+      background: #fdf8f0;
+      border: 2px solid #2c2c2c;
+      border-radius: 12px;
+      padding: 0.9rem 2.2rem;
+      cursor: pointer;
+      box-shadow: 3px 3px 0 #2c2c2c;
+      transition: box-shadow 0.1s ease, transform 0.1s ease;
+      width: 100%;
+      max-width: 340px;
+    }
+
+    .mode-btn:hover {
+      box-shadow: 1px 1px 0 #2c2c2c;
+      transform: translate(2px, 2px);
+    }
+
+    .mode-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+      box-shadow: 3px 3px 0 #2c2c2c;
+      transform: none;
+    }
+
+    .mode-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .back-btn {
+      font-family: 'Caveat', cursive;
+      font-size: 1.6rem;
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #2c2c2c;
+      padding: 0.25rem 0.5rem;
+      line-height: 1;
+    }
+
+    .back-btn:hover {
+      opacity: 0.6;
+    }
+
+    .regen-btn {
+      font-family: 'Caveat', cursive;
+      font-size: 1.4rem;
+      position: absolute;
+      bottom: 2rem;
+      color: #b85c38;
+      background: none;
+      border: 2px solid #b85c38;
+      border-radius: 8px;
+      padding: 0.5rem 1.8rem;
+      cursor: pointer;
+      box-shadow: 2px 2px 0 #b85c38;
+      transition: box-shadow 0.1s ease, transform 0.1s ease;
+    }
+
+    .regen-btn:hover {
+      box-shadow: 1px 1px 0 #b85c38;
+      transform: translate(1px, 1px);
+    }
+
+    /* ── Error banner ── */
+    .error-banner {
+      color: #b85c38;
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* ── Mobile adjustments ── */
+    @media (max-width: 480px) {
+      h1 { font-size: 2.4rem; }
+      h2 { font-size: 1.6rem; }
+      .prompt-text { font-size: 1.8rem; }
+      .mode-btn { font-size: 1.5rem; padding: 0.8rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen: Home -->
+  <div id="screen-home" class="screen active">
+    <h1>Bifocal</h1>
+    <p id="error-banner" class="error-banner hidden">
+      Couldn't load prompt data — try refreshing.
+    </p>
+    <div class="mode-buttons">
+      <button id="btn-just-draw" class="mode-btn">Just draw!</button>
+      <button id="btn-imagine" class="mode-btn">Can you imagine...</button>
+    </div>
+  </div>
+
+  <!-- Screen: Imagination Mode Picker -->
+  <div id="screen-mode-picker" class="screen">
+    <button class="back-btn" data-target="screen-home">←</button>
+    <h2>Can you imagine...</h2>
+    <div class="mode-buttons">
+      <button id="btn-surreal" class="mode-btn">Surreal Narrative</button>
+      <button id="btn-mutations" class="mode-btn">Mutations</button>
+    </div>
+  </div>
+
+  <!-- Screen: Mutations Type Picker -->
+  <div id="screen-mutations-type" class="screen">
+    <button class="back-btn" data-target="screen-mode-picker">←</button>
+    <h2>Mutations</h2>
+    <div class="mode-buttons">
+      <button id="btn-type-organic-organic" class="mode-btn">Organic + Organic</button>
+      <button id="btn-type-organic-synthetic" class="mode-btn">Organic + Synthetic</button>
+      <button id="btn-type-synthetic-synthetic" class="mode-btn">Synthetic + Synthetic</button>
+      <button id="btn-type-random" class="mode-btn">Random</button>
+    </div>
+  </div>
+
+  <!-- Screen: Just Draw Prompt -->
+  <div id="screen-just-draw" class="screen">
+    <button class="back-btn" data-target="screen-home">←</button>
+    <p id="just-draw-prompt" class="prompt-text"></p>
+    <button id="btn-regen-just-draw" class="regen-btn">↺ new prompt</button>
+  </div>
+
+  <!-- Screen: Imagination Prompt -->
+  <div id="screen-imagine-prompt" class="screen">
+    <button id="btn-back-imagine" class="back-btn">←</button>
+    <p id="imagine-prompt" class="prompt-text"></p>
+    <button id="btn-regen-imagine" class="regen-btn">↺ new prompt</button>
+  </div>
+
+  <script>
+    // ── Data store ──────────────────────────────────────────────
+    const store = {};
+    document.getElementById('btn-just-draw').disabled = true;
+    document.getElementById('btn-imagine').disabled = true;
+
+    // ── Utilities ───────────────────────────────────────────────
+    function pick(arr) {
+      if (!arr || arr.length === 0) return '';
+      return arr[Math.floor(Math.random() * arr.length)];
+    }
+
+    // ── Screen management ────────────────────────────────────────
+    function showScreen(id) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    // ── Prompt generators ────────────────────────────────────────
+    function generateJustDraw() {
+      return pick(store.justDraw);
+    }
+
+    function generateSurrealNarrative() {
+      const noun = Math.random() < 0.5
+        ? pick(store.nounsOrganic)
+        : pick(store.nounsSynthetic);
+      return `${pick(store.adjectives)} ${noun} ${pick(store.verbs)} ${pick(store.environments)}`;
+    }
+
+    function generateMutation(type) {
+      const types = ['organic-organic', 'organic-synthetic', 'synthetic-synthetic'];
+      const t = type === 'random' ? types[Math.floor(Math.random() * types.length)] : type;
+      let n1, n2;
+      if (t === 'organic-organic') {
+        n1 = pick(store.nounsOrganic);
+        n2 = pick(store.nounsOrganic);
+      } else if (t === 'organic-synthetic') {
+        n1 = pick(store.nounsOrganic);
+        n2 = pick(store.nounsSynthetic);
+      } else {
+        n1 = pick(store.nounsSynthetic);
+        n2 = pick(store.nounsSynthetic);
+      }
+      return `${n1} + ${n2}`;
+    }
+
+    // ── State ────────────────────────────────────────────────────
+    let imagineMode = null;    // 'surreal' | 'mutations'
+    let mutationType = null;   // 'organic-organic' | 'organic-synthetic' | 'synthetic-synthetic' | 'random'
+    let promptBackTarget = null;
+
+    // ── Event wiring ─────────────────────────────────────────────
+    document.getElementById('btn-just-draw').addEventListener('click', () => {
+      document.getElementById('just-draw-prompt').textContent = generateJustDraw();
+      showScreen('screen-just-draw');
+    });
+
+    document.getElementById('btn-regen-just-draw').addEventListener('click', () => {
+      document.getElementById('just-draw-prompt').textContent = generateJustDraw();
+    });
+
+    document.getElementById('btn-imagine').addEventListener('click', () => {
+      showScreen('screen-mode-picker');
+    });
+
+    document.getElementById('btn-surreal').addEventListener('click', () => {
+      imagineMode = 'surreal';
+      promptBackTarget = 'screen-mode-picker';
+      document.getElementById('imagine-prompt').textContent = generateSurrealNarrative();
+      showScreen('screen-imagine-prompt');
+    });
+
+    document.getElementById('btn-mutations').addEventListener('click', () => {
+      showScreen('screen-mutations-type');
+    });
+
+    ['organic-organic', 'organic-synthetic', 'synthetic-synthetic', 'random'].forEach(type => {
+      document.getElementById(`btn-type-${type}`).addEventListener('click', () => {
+        imagineMode = 'mutations';
+        mutationType = type;  // 'random' stays 'random' — each regen re-rolls the concrete type
+        promptBackTarget = 'screen-mutations-type';
+        document.getElementById('imagine-prompt').textContent = generateMutation(type);
+        showScreen('screen-imagine-prompt');
+      });
+    });
+
+    document.getElementById('btn-regen-imagine').addEventListener('click', () => {
+      if (!imagineMode) return;
+      document.getElementById('imagine-prompt').textContent =
+        imagineMode === 'surreal' ? generateSurrealNarrative() : generateMutation(mutationType);
+    });
+
+    document.querySelectorAll('.back-btn[data-target]').forEach(btn => {
+      btn.addEventListener('click', () => showScreen(btn.dataset.target));
+    });
+
+    document.getElementById('btn-back-imagine').addEventListener('click', () => {
+      showScreen(promptBackTarget ?? 'screen-mode-picker');
+    });
+
+    // ── Data loading ─────────────────────────────────────────────
+    async function init() {
+      try {
+        const [justDraw, adjectives, nounsOrganic, nounsSynthetic, verbs, environments] =
+          await Promise.all([
+            fetch('data/just_draw.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
+            fetch('data/adjectives.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
+            fetch('data/nouns_organic.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
+            fetch('data/nouns_synthetic.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
+            fetch('data/verbs.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
+            fetch('data/environments.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
+          ]);
+
+        if ([justDraw, adjectives, nounsOrganic, nounsSynthetic, verbs, environments]
+            .some(d => !Array.isArray(d) || d.length === 0)) {
+          throw new Error('Empty data');
+        }
+
+        store.justDraw = justDraw;
+        store.adjectives = adjectives;
+        store.nounsOrganic = nounsOrganic;
+        store.nounsSynthetic = nounsSynthetic;
+        store.verbs = verbs;
+        store.environments = environments;
+        document.getElementById('btn-just-draw').disabled = false;
+        document.getElementById('btn-imagine').disabled = false;
+      } catch {
+        document.getElementById('error-banner').classList.remove('hidden');
+        document.getElementById('btn-just-draw').disabled = true;
+        document.getElementById('btn-imagine').disabled = true;
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>
