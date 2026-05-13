@@ -187,6 +187,11 @@
       background: rgba(184, 92, 56, 0.12);
     }
 
+    .prompt-slot.animating {
+      pointer-events: none;
+      cursor: default;
+    }
+
     .prompt-sep {
       pointer-events: none;
       line-height: 1.5;
@@ -629,25 +634,16 @@
       Couldn't load prompt data — try refreshing.
     </p>
     <div class="mode-buttons">
-      <button id="btn-just-draw" class="mode-btn">Just draw!</button>
-      <button id="btn-imagine" class="mode-btn">Can you imagine...</button>
+      <button id="btn-just-draw" class="mode-btn">Sparks</button>
+      <button id="btn-surreal" class="mode-btn">Surreal Narratives</button>
+      <button id="btn-mutations" class="mode-btn">Strange Combinations</button>
     </div>
   </div>
 
-  <!-- Screen: Imagination Mode Picker -->
-  <div id="screen-mode-picker" class="screen">
-    <button class="back-btn" data-target="screen-home">←</button>
-    <h2>Can you imagine...</h2>
-    <div class="mode-buttons">
-      <button id="btn-surreal" class="mode-btn">Surreal Narrative</button>
-      <button id="btn-mutations" class="mode-btn">Mutations</button>
-    </div>
-  </div>
-
-  <!-- Screen: Mutations Type Picker -->
+  <!-- Screen: Strange Combinations Type Picker -->
   <div id="screen-mutations-type" class="screen">
-    <button class="back-btn" data-target="screen-mode-picker">←</button>
-    <h2>Mutations</h2>
+    <button class="back-btn" data-target="screen-home">←</button>
+    <h2>Strange Combinations</h2>
     <div class="mode-buttons">
       <button id="btn-type-organic-organic" class="mode-btn">Organic + Organic</button>
       <button id="btn-type-organic-synthetic" class="mode-btn">Organic + Synthetic</button>
@@ -674,7 +670,8 @@
     // ── Data store ──────────────────────────────────────────────
     const store = {};
     document.getElementById('btn-just-draw').disabled = true;
-    document.getElementById('btn-imagine').disabled = true;
+    document.getElementById('btn-surreal').disabled = true;
+    document.getElementById('btn-mutations').disabled = true;
 
     // ── Utilities ───────────────────────────────────────────────
     function pick(arr) {
@@ -746,6 +743,7 @@
       slots.forEach((slot, i) => {
         const span = document.createElement('span');
         span.className = 'prompt-slot' + (lockedSlots[slot] ? ' locked' : '');
+        span.dataset.slot = slot;
         span.innerHTML = (lockedSlots[slot] ? LOCK_SVG : '') + currentPrompt[slot];
         span.addEventListener('click', () => toggleLock(slot, container, mode));
         container.appendChild(span);
@@ -756,6 +754,65 @@
           container.appendChild(s);
         }
       });
+    }
+
+    function animateSlot(el, pool, finalValue, durationMs) {
+      if (el.classList.contains('locked')) return;
+      // Guard against double-invocation: cancel any in-flight animation on this element
+      const gen = (el.__animGen = (el.__animGen || 0) + 1);
+      el.classList.add('animating');
+      let elapsed = 0;
+      let intervalTime = 55;
+
+      function tick() {
+        if (el.__animGen !== gen) return; // stale — a newer animation has taken over
+        el.textContent = pick(pool);
+        elapsed += intervalTime;
+        if (elapsed > durationMs * 0.55) {
+          intervalTime = Math.min(intervalTime * 1.22, 320);
+        }
+        if (elapsed >= durationMs) {
+          el.textContent = finalValue;
+          el.classList.remove('animating');
+          el.style.transition = 'transform 0.13s cubic-bezier(0.34,1.56,0.64,1)';
+          el.style.transform = 'scale(1.18)';
+          setTimeout(() => {
+            if (el.__animGen !== gen) return; // still guard — another anim may have started
+            el.style.transform = 'scale(1)';
+            setTimeout(() => {
+              if (el.__animGen === gen) {
+                el.style.transition = '';
+                el.style.transform = '';
+              }
+            }, 130);
+          }, 130);
+          return;
+        }
+        setTimeout(tick, intervalTime);
+      }
+      tick();
+    }
+
+    function animateUnlockedSlots(container) {
+      if (!currentPrompt) return;
+      const pools = {
+        adjective:   store.adjectives,
+        noun:        Math.random() < 0.5 ? store.nounsOrganic : store.nounsSynthetic,
+        verb:        store.verbs,
+        environment: store.environments,
+        noun1: currentPrompt.noun1Pool === 'organic' ? store.nounsOrganic : store.nounsSynthetic,
+        noun2: currentPrompt.noun2Pool === 'organic' ? store.nounsOrganic : store.nounsSynthetic,
+      };
+
+      container.querySelectorAll('.prompt-slot:not(.locked)').forEach(span => {
+        const slot = span.dataset.slot;
+        if (!pools[slot]) { console.warn('animateUnlockedSlots: unknown slot', slot); return; }
+        animateSlot(span, pools[slot], currentPrompt[slot], 1200);
+      });
+    }
+
+    function animateJustDraw(el, finalValue) {
+      animateSlot(el, store.justDraw, finalValue, 1200);
     }
 
     function toggleLock(slot, container, mode) {
@@ -776,24 +833,28 @@
 
     // ── Event wiring ─────────────────────────────────────────────
     document.getElementById('btn-just-draw').addEventListener('click', () => {
-      document.getElementById('just-draw-prompt').textContent = generateJustDraw();
+      const finalValue = generateJustDraw();
+      const el = document.getElementById('just-draw-prompt');
       showScreen('screen-just-draw');
+      el.textContent = finalValue;
+      animateJustDraw(el, finalValue);
     });
 
     document.getElementById('btn-regen-just-draw').addEventListener('click', () => {
-      document.getElementById('just-draw-prompt').textContent = generateJustDraw();
-    });
-
-    document.getElementById('btn-imagine').addEventListener('click', () => {
-      showScreen('screen-mode-picker');
+      const finalValue = generateJustDraw();
+      const el = document.getElementById('just-draw-prompt');
+      el.textContent = finalValue;
+      animateJustDraw(el, finalValue);
     });
 
     document.getElementById('btn-surreal').addEventListener('click', () => {
       imagineMode = 'surreal';
-      promptBackTarget = 'screen-mode-picker';
+      promptBackTarget = 'screen-home';
       currentPrompt = generateSurrealNarrative(null, {});
       showScreen('screen-imagine-prompt');
-      renderPrompt(document.getElementById('imagine-prompt'), 'surreal');
+      const container = document.getElementById('imagine-prompt');
+      renderPrompt(container, 'surreal');
+      animateUnlockedSlots(container);
     });
 
     document.getElementById('btn-mutations').addEventListener('click', () => {
@@ -807,7 +868,9 @@
         promptBackTarget = 'screen-mutations-type';
         currentPrompt = generateMutation(type, null, {});
         showScreen('screen-imagine-prompt');
-        renderPrompt(document.getElementById('imagine-prompt'), 'mutations');
+        const container = document.getElementById('imagine-prompt');
+        renderPrompt(container, 'mutations');
+        animateUnlockedSlots(container);
       });
     });
 
@@ -820,6 +883,7 @@
         currentPrompt = generateMutation(mutationType, currentPrompt, lockedSlots);
       }
       renderPrompt(container, imagineMode);
+      animateUnlockedSlots(container);
     });
 
     document.querySelectorAll('.back-btn[data-target]').forEach(btn => {
@@ -827,7 +891,7 @@
     });
 
     document.getElementById('btn-back-imagine').addEventListener('click', () => {
-      showScreen(promptBackTarget ?? 'screen-mode-picker');
+      showScreen(promptBackTarget ?? 'screen-home');
     });
 
     // ── Data loading ─────────────────────────────────────────────
@@ -855,11 +919,13 @@
         store.verbs = verbs;
         store.environments = environments;
         document.getElementById('btn-just-draw').disabled = false;
-        document.getElementById('btn-imagine').disabled = false;
+        document.getElementById('btn-surreal').disabled = false;
+        document.getElementById('btn-mutations').disabled = false;
       } catch {
         document.getElementById('error-banner').classList.remove('hidden');
         document.getElementById('btn-just-draw').disabled = true;
-        document.getElementById('btn-imagine').disabled = true;
+        document.getElementById('btn-surreal').disabled = true;
+        document.getElementById('btn-mutations').disabled = true;
       }
     }
 
