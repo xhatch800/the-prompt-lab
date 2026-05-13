@@ -155,6 +155,46 @@
       opacity: 0;
     }
 
+    /* History navigation widget */
+    .history-nav {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+      width: 100%;
+    }
+    .history-nav.visible { display: flex; }
+
+    .hist-arrow {
+      font-family: 'Caveat', cursive;
+      font-size: 1.8rem;
+      color: #b85c38;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0 4px;
+      line-height: 1;
+    }
+    .hist-arrow:disabled { color: #ddd; cursor: default; }
+
+    .hist-dots { display: flex; gap: 5px; align-items: center; }
+    .hist-dot { width: 6px; height: 6px; border-radius: 50%; background: #ddd; }
+    .hist-dot.filled { background: #c9b9a8; }
+    .hist-dot.active { background: #b85c38; }
+
+    /* History slide animation */
+    @keyframes slideInFromLeft {
+      from { transform: translateX(-50px); opacity: 0; }
+      to   { transform: translateX(0);     opacity: 1; }
+    }
+    @keyframes slideInFromRight {
+      from { transform: translateX(50px);  opacity: 0; }
+      to   { transform: translateX(0);     opacity: 1; }
+    }
+    .slide-from-left  { animation: slideInFromLeft  0.22s ease forwards; }
+    .slide-from-right { animation: slideInFromRight 0.22s ease forwards; }
+
     .regen-btn {
       font-family: 'Caveat', cursive;
       font-size: 1.8rem;
