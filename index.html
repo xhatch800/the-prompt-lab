@@ -150,6 +150,41 @@
       display: none;
     }
 
+    /* ── Prompt slots (locking) ── */
+    .prompt-text {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .prompt-slot {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      border-radius: 8px;
+      padding: 0.25rem 0.5rem;
+      border: 2px solid transparent;
+      transition: background 0.1s ease, border-color 0.1s ease;
+    }
+
+    .prompt-slot.locked {
+      border-color: #b85c38;
+      background: rgba(184, 92, 56, 0.12);
+      padding: 0.25rem 0.8rem;
+    }
+
+    .prompt-sep {
+      pointer-events: none;
+      line-height: 1.5;
+    }
+
+    .lock-icon {
+      flex-shrink: 0;
+    }
+
     /* ── Mobile adjustments ── */
     @media (max-width: 480px) {
       h1 { font-size: 3.2rem; }
