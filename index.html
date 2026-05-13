@@ -293,21 +293,29 @@
       return { adjective, noun, verb, environment };
     }
 
-    function generateMutation(type) {
-      const types = ['organic-organic', 'organic-synthetic', 'synthetic-synthetic'];
-      const t = type === 'random' ? types[Math.floor(Math.random() * types.length)] : type;
-      let n1, n2;
-      if (t === 'organic-organic') {
-        n1 = pick(store.nounsOrganic);
-        n2 = pick(store.nounsOrganic);
-      } else if (t === 'organic-synthetic') {
-        n1 = pick(store.nounsOrganic);
-        n2 = pick(store.nounsSynthetic);
-      } else {
-        n1 = pick(store.nounsSynthetic);
-        n2 = pick(store.nounsSynthetic);
+    function generateMutation(type, current, locked) {
+      const prev = current || {};
+
+      // Determine the target pool for each slot
+      let pool1, pool2;
+      if (type === 'random') {
+        // In random mode, each unlocked slot draws from a freshly random pool
+        pool1 = Math.random() < 0.5 ? 'organic' : 'synthetic';
+        pool2 = Math.random() < 0.5 ? 'organic' : 'synthetic';
+      } else if (type === 'organic-organic') {
+        pool1 = 'organic';  pool2 = 'organic';
+      } else if (type === 'organic-synthetic') {
+        pool1 = 'organic';  pool2 = 'synthetic';
+      } else { // synthetic-synthetic
+        pool1 = 'synthetic'; pool2 = 'synthetic';
       }
-      return `${n1} + ${n2}`;
+
+      const noun1Pool = locked.noun1 ? prev.noun1Pool : pool1;
+      const noun2Pool = locked.noun2 ? prev.noun2Pool : pool2;
+      const noun1 = locked.noun1 ? prev.noun1 : pick(noun1Pool === 'organic' ? store.nounsOrganic : store.nounsSynthetic);
+      const noun2 = locked.noun2 ? prev.noun2 : pick(noun2Pool === 'organic' ? store.nounsOrganic : store.nounsSynthetic);
+
+      return { noun1, noun1Pool, noun2, noun2Pool };
     }
 
     // ── State ────────────────────────────────────────────────────
