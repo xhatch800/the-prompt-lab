@@ -58,10 +58,14 @@
 
     .prompt-text {
       font-size: 3.5rem;
-      text-align: center;
       line-height: 1.5;
       max-width: 640px;
       padding: 0 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.25rem;
     }
 
     /* ── Buttons ── */
@@ -151,13 +155,6 @@
     }
 
     /* ── Prompt slots (locking) ── */
-    .prompt-text {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 0.25rem;
-    }
 
     .prompt-slot {
       display: inline-flex;
@@ -173,7 +170,6 @@
     .prompt-slot.locked {
       border-color: #b85c38;
       background: rgba(184, 92, 56, 0.12);
-      padding: 0.25rem 0.8rem;
     }
 
     .prompt-sep {
