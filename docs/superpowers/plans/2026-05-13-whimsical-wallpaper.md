@@ -1,28 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Drawing Prompt Lab</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+# Whimsical Wallpaper Implementation Plan
 
-    body {
-      font-family: 'Caveat', cursive;
-      background: #fdf8f0;
-      color: #2c2c2c;
-      min-height: 100vh;
-      overflow: hidden;
-    }
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-    /* ── Screens ── */
+> **⚠️ No commits until the user explicitly approves.** Skip all `git commit` steps. Make changes, verify them, then stop and wait.
+
+**Goal:** Add a fixed illustrated wallpaper of scattered whimsical doodles (pencils, gears, clocks, unicorn, dragon, etc.) behind all app screens, with opacity 0.22 by default and 0.12 on the prompt screen.
+
+**Architecture:** A single `<div id="wallpaper-layer">` with an inline SVG (viewBox 420×900, `preserveAspectRatio="xMidYMid slice"`) sits as the first child of `<body>`, `position: fixed; inset: 0; z-index: 0; pointer-events: none`. All `.screen` divs get `z-index: 1`. `showScreen()` toggles a `.dimmed` CSS class on the wallpaper layer when navigating to `screen-imagine-prompt`. All changes are in `index.html`.
+
+**Tech Stack:** Vanilla HTML/CSS/JS, inline SVG, no dependencies, no build step.
+
+---
+
+## File Map
+
+| File | Action |
+|---|---|
+| `index.html` | Modify — CSS additions, one new HTML element, one JS line |
+
+---
+
+### Task 1: Add CSS rules
+
+**Files:**
+- Modify: `index.html` (CSS `<style>` block, lines ~26-208)
+
+- [ ] **Step 1: Add `z-index: 1` to the existing `.screen` rule**
+
+Find:
+```css
+    .screen {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+```
+
+Replace with:
+```css
     .screen {
       position: fixed;
       inset: 0;
@@ -36,125 +58,19 @@
       transition: opacity 0.2s ease;
       z-index: 1;
     }
+```
 
-    .screen.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
+- [ ] **Step 2: Add wallpaper CSS after the `.hidden` rule**
 
-    /* ── Typography ── */
-    h1 {
-      font-size: 4rem;
-      font-weight: 700;
-      margin-bottom: 2.5rem;
-      text-align: center;
-    }
-
-    h2 {
-      font-size: 2.7rem;
-      font-weight: 700;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-
-    .prompt-text {
-      font-size: 3.5rem;
-      line-height: 1.5;
-      max-width: 640px;
-      padding: 0 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 0.25rem;
-    }
-
-    /* ── Buttons ── */
-    .mode-btn {
-      font-family: 'Caveat', cursive;
-      font-size: 2.4rem;
-      color: #2c2c2c;
-      background: #fdf8f0;
-      border: 2px solid #2c2c2c;
-      border-radius: 12px;
-      padding: 0.9rem 2.2rem;
-      cursor: pointer;
-      box-shadow: 3px 3px 0 #2c2c2c;
-      transition: box-shadow 0.1s ease, transform 0.1s ease;
-      width: 100%;
-      max-width: 340px;
-    }
-
-    .mode-btn:hover {
-      box-shadow: 1px 1px 0 #2c2c2c;
-      transform: translate(2px, 2px);
-    }
-
-    .mode-btn:disabled {
-      opacity: 0.35;
-      cursor: not-allowed;
-      box-shadow: 3px 3px 0 #2c2c2c;
-      transform: none;
-    }
-
-    .mode-buttons {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      width: 100%;
-    }
-
-    .back-btn {
-      font-family: 'Caveat', cursive;
-      font-size: 2rem;
-      position: absolute;
-      top: 1.5rem;
-      left: 1.5rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: #2c2c2c;
-      padding: 0.25rem 0.5rem;
-      line-height: 1;
-    }
-
-    .back-btn:hover {
-      opacity: 0.6;
-    }
-
-    .regen-btn {
-      font-family: 'Caveat', cursive;
-      font-size: 1.8rem;
-      position: absolute;
-      bottom: 2rem;
-      color: #b85c38;
-      background: none;
-      border: 2px solid #b85c38;
-      border-radius: 8px;
-      padding: 0.5rem 1.8rem;
-      cursor: pointer;
-      box-shadow: 2px 2px 0 #b85c38;
-      transition: box-shadow 0.1s ease, transform 0.1s ease;
-    }
-
-    .regen-btn:hover {
-      box-shadow: 1px 1px 0 #b85c38;
-      transform: translate(1px, 1px);
-    }
-
-    /* ── Error banner ── */
-    .error-banner {
-      color: #b85c38;
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-
+Find:
+```css
     .hidden {
       display: none;
     }
+```
 
+Insert immediately after:
+```css
     /* ── Wallpaper ── */
     #wallpaper-layer {
       position: fixed;
@@ -166,62 +82,60 @@
     }
 
     #wallpaper-layer.dimmed {
-      opacity: 0.05;
+      opacity: 0.12;
     }
+```
 
-    /* ── Prompt slots (locking) ── */
+- [ ] **Step 3: Verify with static check**
 
-    .prompt-slot {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      cursor: pointer;
-      border-radius: 8px;
-      padding: 0.25rem 0.5rem;
-      border: 2px solid transparent;
-      transition: background 0.1s ease, border-color 0.1s ease;
-    }
+```bash
+python3 -c "
+css = open('index.html').read()
+checks = [
+  ('z-index: 1', 'z-index on .screen'),
+  ('#wallpaper-layer', 'wallpaper layer rule'),
+  ('opacity: 0.22', 'default opacity'),
+  ('#wallpaper-layer.dimmed', 'dimmed modifier'),
+  ('opacity: 0.12', 'dimmed opacity'),
+  ('transition: opacity 0.3s ease', 'opacity transition'),
+]
+for snippet, label in checks:
+    assert snippet in css, f'MISSING: {label}'
+    print(f'OK: {label}')
+print('All checks passed')
+"
+```
 
-    .prompt-slot.locked {
-      border-color: #b85c38;
-      background: rgba(184, 92, 56, 0.12);
-    }
+Expected:
+```
+OK: z-index on .screen
+OK: wallpaper layer rule
+OK: default opacity
+OK: dimmed modifier
+OK: dimmed opacity
+OK: opacity transition
+All checks passed
+```
 
-    .prompt-sep {
-      pointer-events: none;
-      line-height: 1.5;
-    }
+---
 
-    .lock-icon {
-      flex-shrink: 0;
-    }
+### Task 2: Insert the wallpaper HTML element with inline SVG
 
-    /* ── Mobile adjustments ── */
-    @media (max-width: 480px) {
-      h1 { font-size: 3.2rem; }
-      h2 { font-size: 2.2rem; }
-      .prompt-text { font-size: 2.8rem; }
-      .mode-btn { font-size: 2rem; padding: 0.8rem 1.5rem; }
-    }
+**Files:**
+- Modify: `index.html` (HTML `<body>`, before first `.screen` div)
 
-    /* ── Landscape on short screens ── */
-    @media (orientation: landscape) and (max-height: 500px) {
-      .screen {
-        justify-content: flex-start;
-        overflow-y: auto;
-        padding: 0.8rem 2rem;
-        padding-top: 3.5rem;
-      }
-      h1 { font-size: 2.2rem; margin-bottom: 0.8rem; }
-      h2 { font-size: 1.8rem; margin-bottom: 0.8rem; }
-      .prompt-text { font-size: 2rem; }
-      .mode-btn { font-size: 1.5rem; padding: 0.5rem 1.2rem; }
-      .mode-buttons { gap: 0.6rem; }
-      .back-btn { position: fixed; font-size: 1.4rem; top: 1rem; left: 1rem; }
-      .regen-btn { font-size: 1.2rem; bottom: 1rem; }
-    }
-  </style>
-</head>
+- [ ] **Step 1: Insert `#wallpaper-layer` as first child of `<body>`**
+
+Find:
+```html
+<body>
+
+  <!-- Screen: Home -->
+  <div id="screen-home" class="screen active">
+```
+
+Replace with:
+```html
 <body>
 
   <!-- Wallpaper -->
@@ -509,246 +423,132 @@
 
   <!-- Screen: Home -->
   <div id="screen-home" class="screen active">
-    <h1>Drawing Prompt Lab</h1>
-    <p id="error-banner" class="error-banner hidden">
-      Couldn't load prompt data — try refreshing.
-    </p>
-    <div class="mode-buttons">
-      <button id="btn-just-draw" class="mode-btn">Just draw!</button>
-      <button id="btn-imagine" class="mode-btn">Can you imagine...</button>
-    </div>
-  </div>
+```
 
-  <!-- Screen: Imagination Mode Picker -->
-  <div id="screen-mode-picker" class="screen">
-    <button class="back-btn" data-target="screen-home">←</button>
-    <h2>Can you imagine...</h2>
-    <div class="mode-buttons">
-      <button id="btn-surreal" class="mode-btn">Surreal Narrative</button>
-      <button id="btn-mutations" class="mode-btn">Mutations</button>
-    </div>
-  </div>
+- [ ] **Step 2: Verify structure with static check**
 
-  <!-- Screen: Mutations Type Picker -->
-  <div id="screen-mutations-type" class="screen">
-    <button class="back-btn" data-target="screen-mode-picker">←</button>
-    <h2>Mutations</h2>
-    <div class="mode-buttons">
-      <button id="btn-type-organic-organic" class="mode-btn">Organic + Organic</button>
-      <button id="btn-type-organic-synthetic" class="mode-btn">Organic + Synthetic</button>
-      <button id="btn-type-synthetic-synthetic" class="mode-btn">Synthetic + Synthetic</button>
-      <button id="btn-type-random" class="mode-btn">Random</button>
-    </div>
-  </div>
+```bash
+python3 -c "
+html = open('index.html').read()
+checks = [
+  ('id=\"wallpaper-layer\"', 'wallpaper div present'),
+  ('preserveAspectRatio=\"xMidYMid slice\"', 'SVG responsive scaling'),
+  ('viewBox=\"0 0 420 900\"', 'SVG viewBox'),
+  ('id=\"screen-home\" class=\"screen active\"', 'home screen still present'),
+]
+for snippet, label in checks:
+    assert snippet in html, f'MISSING: {label}'
+    print(f'OK: {label}')
 
-  <!-- Screen: Just Draw Prompt -->
-  <div id="screen-just-draw" class="screen">
-    <button class="back-btn" data-target="screen-home">←</button>
-    <p id="just-draw-prompt" class="prompt-text"></p>
-    <button id="btn-regen-just-draw" class="regen-btn">↺ new prompt</button>
-  </div>
+# Check wallpaper-layer comes before screen-home
+wl = html.index('id=\"wallpaper-layer\"')
+sh = html.index('id=\"screen-home\"')
+assert wl < sh, 'FAIL: wallpaper-layer must come before screen-home'
+print('OK: wallpaper-layer before screen-home')
+print('All checks passed')
+"
+```
 
-  <!-- Screen: Imagination Prompt -->
-  <div id="screen-imagine-prompt" class="screen">
-    <button id="btn-back-imagine" class="back-btn">←</button>
-    <div id="imagine-prompt" class="prompt-text"></div>
-    <button id="btn-regen-imagine" class="regen-btn">↺ new prompt</button>
-  </div>
+Expected:
+```
+OK: wallpaper div present
+OK: SVG responsive scaling
+OK: SVG viewBox
+OK: home screen still present
+OK: wallpaper-layer before screen-home
+All checks passed
+```
 
-  <script>
-    // ── Data store ──────────────────────────────────────────────
-    const store = {};
-    document.getElementById('btn-just-draw').disabled = true;
-    document.getElementById('btn-imagine').disabled = true;
+---
 
-    // ── Utilities ───────────────────────────────────────────────
-    function pick(arr) {
-      if (!arr || arr.length === 0) return '';
-      return arr[Math.floor(Math.random() * arr.length)];
-    }
+### Task 3: Update `showScreen()` to dim wallpaper on prompt screen
 
-    // ── Screen management ────────────────────────────────────────
+**Files:**
+- Modify: `index.html` (JS `showScreen` function, around line 273)
+
+- [ ] **Step 1: Add `classList.toggle('dimmed', ...)` to `showScreen`**
+
+Find:
+```js
     function showScreen(id) {
       document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
       document.getElementById(id).classList.add('active');
-      document.getElementById('wallpaper-layer')
-        .classList.toggle('dimmed', id === 'screen-imagine-prompt' || id === 'screen-just-draw');
       if (id !== 'screen-just-draw' && id !== 'screen-imagine-prompt') {
         currentPrompt = null;
         lockedSlots = {};
       }
     }
+```
 
-    // ── Prompt generators ────────────────────────────────────────
-    function generateJustDraw() {
-      return pick(store.justDraw);
-    }
-
-    function generateSurrealNarrative(current, locked) {
-      const prev = current || {};
-      const adjective  = locked.adjective   ? prev.adjective   : pick(store.adjectives);
-      const noun       = locked.noun        ? prev.noun        : (Math.random() < 0.5 ? pick(store.nounsOrganic) : pick(store.nounsSynthetic));
-      const verb       = locked.verb        ? prev.verb        : pick(store.verbs);
-      const environment = locked.environment ? prev.environment : pick(store.environments);
-      return { adjective, noun, verb, environment };
-    }
-
-    function generateMutation(type, current, locked) {
-      const prev = current || {};
-
-      // Determine the target pool for each slot
-      let pool1, pool2;
-      if (type === 'random') {
-        // In random mode, each unlocked slot draws from a freshly random pool
-        pool1 = Math.random() < 0.5 ? 'organic' : 'synthetic';
-        pool2 = Math.random() < 0.5 ? 'organic' : 'synthetic';
-      } else if (type === 'organic-organic') {
-        pool1 = 'organic';  pool2 = 'organic';
-      } else if (type === 'organic-synthetic') {
-        pool1 = 'organic';  pool2 = 'synthetic';
-      } else { // synthetic-synthetic
-        pool1 = 'synthetic'; pool2 = 'synthetic';
-      }
-
-      const noun1Pool = locked.noun1 ? prev.noun1Pool : pool1;
-      const noun2Pool = locked.noun2 ? prev.noun2Pool : pool2;
-      const noun1 = locked.noun1 ? prev.noun1 : pick(noun1Pool === 'organic' ? store.nounsOrganic : store.nounsSynthetic);
-      const noun2 = locked.noun2 ? prev.noun2 : pick(noun2Pool === 'organic' ? store.nounsOrganic : store.nounsSynthetic);
-
-      return { noun1, noun1Pool, noun2, noun2Pool };
-    }
-
-    // ── Prompt rendering ─────────────────────────────────────────
-    const LOCK_SVG = '<svg class="lock-icon" width="16" height="18" viewBox="0 0 16 18" fill="none"><rect x="1" y="8" width="14" height="10" rx="2" stroke="#b85c38" stroke-width="2"/><path d="M4 8V6a4 4 0 0 1 8 0v2" stroke="#b85c38" stroke-width="2" stroke-linecap="round"/></svg>';
-
-    function renderPrompt(container, mode) {
-      container.innerHTML = '';
-      const slots = mode === 'surreal'
-        ? ['adjective', 'noun', 'verb', 'environment']
-        : ['noun1', 'noun2'];
-      const sep = mode === 'surreal' ? ' · ' : ' + ';
-
-      slots.forEach((slot, i) => {
-        const span = document.createElement('span');
-        span.className = 'prompt-slot' + (lockedSlots[slot] ? ' locked' : '');
-        span.innerHTML = (lockedSlots[slot] ? LOCK_SVG : '') + currentPrompt[slot];
-        span.addEventListener('click', () => toggleLock(slot, container, mode));
-        container.appendChild(span);
-        if (i < slots.length - 1) {
-          const s = document.createElement('span');
-          s.className = 'prompt-sep';
-          s.textContent = sep;
-          container.appendChild(s);
-        }
-      });
-    }
-
-    function toggleLock(slot, container, mode) {
-      if (lockedSlots[slot]) {
-        delete lockedSlots[slot];
-      } else {
-        lockedSlots[slot] = true;
-      }
-      renderPrompt(container, mode);
-    }
-
-    // ── State ────────────────────────────────────────────────────
-    let imagineMode = null;    // 'surreal' | 'mutations'
-    let mutationType = null;   // 'organic-organic' | 'organic-synthetic' | 'synthetic-synthetic' | 'random'
-    let promptBackTarget = null;
-    let currentPrompt = null;  // { adjective, noun, verb, environment } | { noun1, noun1Pool, noun2, noun2Pool }
-    let lockedSlots = {};      // e.g. { verb: true } — reset on back navigation
-
-    // ── Event wiring ─────────────────────────────────────────────
-    document.getElementById('btn-just-draw').addEventListener('click', () => {
-      document.getElementById('just-draw-prompt').textContent = generateJustDraw();
-      showScreen('screen-just-draw');
-    });
-
-    document.getElementById('btn-regen-just-draw').addEventListener('click', () => {
-      document.getElementById('just-draw-prompt').textContent = generateJustDraw();
-    });
-
-    document.getElementById('btn-imagine').addEventListener('click', () => {
-      showScreen('screen-mode-picker');
-    });
-
-    document.getElementById('btn-surreal').addEventListener('click', () => {
-      imagineMode = 'surreal';
-      promptBackTarget = 'screen-mode-picker';
-      currentPrompt = generateSurrealNarrative(null, {});
-      showScreen('screen-imagine-prompt');
-      renderPrompt(document.getElementById('imagine-prompt'), 'surreal');
-    });
-
-    document.getElementById('btn-mutations').addEventListener('click', () => {
-      showScreen('screen-mutations-type');
-    });
-
-    ['organic-organic', 'organic-synthetic', 'synthetic-synthetic', 'random'].forEach(type => {
-      document.getElementById(`btn-type-${type}`).addEventListener('click', () => {
-        imagineMode = 'mutations';
-        mutationType = type;  // 'random' stays 'random' — each regen re-rolls the concrete type
-        promptBackTarget = 'screen-mutations-type';
-        currentPrompt = generateMutation(type, null, {});
-        showScreen('screen-imagine-prompt');
-        renderPrompt(document.getElementById('imagine-prompt'), 'mutations');
-      });
-    });
-
-    document.getElementById('btn-regen-imagine').addEventListener('click', () => {
-      if (!imagineMode) return;
-      const container = document.getElementById('imagine-prompt');
-      if (imagineMode === 'surreal') {
-        currentPrompt = generateSurrealNarrative(currentPrompt, lockedSlots);
-      } else {
-        currentPrompt = generateMutation(mutationType, currentPrompt, lockedSlots);
-      }
-      renderPrompt(container, imagineMode);
-    });
-
-    document.querySelectorAll('.back-btn[data-target]').forEach(btn => {
-      btn.addEventListener('click', () => showScreen(btn.dataset.target));
-    });
-
-    document.getElementById('btn-back-imagine').addEventListener('click', () => {
-      showScreen(promptBackTarget ?? 'screen-mode-picker');
-    });
-
-    // ── Data loading ─────────────────────────────────────────────
-    async function init() {
-      try {
-        const [justDraw, adjectives, nounsOrganic, nounsSynthetic, verbs, environments] =
-          await Promise.all([
-            fetch('data/just_draw.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
-            fetch('data/adjectives.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
-            fetch('data/nouns_organic.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
-            fetch('data/nouns_synthetic.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
-            fetch('data/verbs.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
-            fetch('data/environments.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
-          ]);
-
-        if ([justDraw, adjectives, nounsOrganic, nounsSynthetic, verbs, environments]
-            .some(d => !Array.isArray(d) || d.length === 0)) {
-          throw new Error('Empty data');
-        }
-
-        store.justDraw = justDraw;
-        store.adjectives = adjectives;
-        store.nounsOrganic = nounsOrganic;
-        store.nounsSynthetic = nounsSynthetic;
-        store.verbs = verbs;
-        store.environments = environments;
-        document.getElementById('btn-just-draw').disabled = false;
-        document.getElementById('btn-imagine').disabled = false;
-      } catch {
-        document.getElementById('error-banner').classList.remove('hidden');
-        document.getElementById('btn-just-draw').disabled = true;
-        document.getElementById('btn-imagine').disabled = true;
+Replace with:
+```js
+    function showScreen(id) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      document.getElementById('wallpaper-layer')
+        .classList.toggle('dimmed', id === 'screen-imagine-prompt');
+      if (id !== 'screen-just-draw' && id !== 'screen-imagine-prompt') {
+        currentPrompt = null;
+        lockedSlots = {};
       }
     }
+```
 
-    init();
-  </script>
-</body>
-</html>
+- [ ] **Step 2: Verify with static check**
+
+```bash
+python3 -c "
+js = open('index.html').read()
+checks = [
+  ('classList.toggle(\'dimmed\', id === \'screen-imagine-prompt\')', 'dimmed toggle'),
+  ('document.getElementById(\'wallpaper-layer\')', 'wallpaper-layer reference'),
+]
+for snippet, label in checks:
+    assert snippet in js, f'MISSING: {label}'
+    print(f'OK: {label}')
+print('All checks passed')
+"
+```
+
+Expected:
+```
+OK: dimmed toggle
+OK: wallpaper-layer reference
+All checks passed
+```
+
+---
+
+### Task 4: Manual browser verification
+
+**Files:** none (browser testing only)
+
+- [ ] **Step 1: Start local server**
+
+```bash
+python3 -m http.server 8080
+```
+
+Open `http://localhost:8080`.
+
+- [ ] **Step 2: Verify wallpaper is visible on home screen**
+
+The home screen should show the doodle objects scattered behind the "Drawing Prompt Lab" title and two buttons. Objects should be clearly visible but not overpower the text.
+
+Check: wallpaper fills the full viewport edge-to-edge with no white gaps. Resize the browser window to a tall narrow shape (mobile portrait) and a wide short shape (landscape) — wallpaper should cover the full background in both.
+
+- [ ] **Step 3: Verify opacity on all screens**
+
+Navigate through every screen — Home, Mode Picker, Mutations Type, Just Draw, Imagination Prompt. On every screen **except** Imagination Prompt, the wallpaper should look the same (22% opacity). On the Imagination Prompt screen the wallpaper should visibly dim (12%). The transition between dimmed and full should animate smoothly (0.3s).
+
+- [ ] **Step 4: Verify prompt words are legible at dimmed opacity**
+
+On the Imagination Prompt screen, generate a Surreal Narrative prompt. The four word slots should be clearly readable with the dimmed wallpaper behind them. Lock one or two slots — the accent border and padlock icon should be crisp and unobstructed.
+
+- [ ] **Step 5: Verify Just Draw screen is unaffected**
+
+Go to Just Draw — the prompt text should render as plain text as before. No slot spans, no lock icons. Wallpaper at full 22% opacity (not dimmed — Just Draw uses `id === 'screen-just-draw'`, not `screen-imagine-prompt`).
+
+- [ ] **Step 6: Verify landscape / mobile**
+
+Use browser DevTools to set viewport to 375×667 (iPhone portrait) and 667×375 (landscape). In both orientations the wallpaper should fill the full background with no gaps. Objects will be partially cropped at edges — that's expected behaviour of `xMidYMid slice`.
