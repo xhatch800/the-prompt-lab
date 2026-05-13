@@ -147,6 +147,12 @@
       text-align: center;
       margin-top: 12px;
       pointer-events: none;
+      opacity: 1;
+      transition: opacity 0.3s;
+    }
+
+    .lock-hint.animating {
+      opacity: 0;
     }
 
     .regen-btn {
@@ -700,7 +706,7 @@
     </div>
     <div id="imagine-prompt" class="prompt-text"></div>
     <button id="btn-regen-imagine" class="regen-btn">↺ new prompt</button>
-    <p class="lock-hint">tap a word to lock it</p>
+    <p id="lock-hint-imagine" class="lock-hint">tap a word to lock it</p>
   </div>
 
   <script>
@@ -892,7 +898,10 @@
       showScreen('screen-imagine-prompt');
       const container = document.getElementById('imagine-prompt');
       renderPrompt(container, 'surreal');
+      const hint = document.getElementById('lock-hint-imagine');
+      hint.classList.add('animating');
       animateUnlockedSlots(container);
+      setTimeout(() => hint.classList.remove('animating'), 1200);
     });
 
     document.getElementById('btn-mutations').addEventListener('click', () => {
@@ -909,7 +918,10 @@
         showScreen('screen-imagine-prompt');
         const container = document.getElementById('imagine-prompt');
         renderPrompt(container, 'mutations');
+        const hint = document.getElementById('lock-hint-imagine');
+        hint.classList.add('animating');
         animateUnlockedSlots(container);
+        setTimeout(() => hint.classList.remove('animating'), 1200);
       });
     });
 
@@ -922,7 +934,10 @@
         currentPrompt = generateMutation(mutationType, currentPrompt, lockedSlots);
       }
       renderPrompt(container, imagineMode);
+      const hint = document.getElementById('lock-hint-imagine');
+      hint.classList.add('animating');
       animateUnlockedSlots(container);
+      setTimeout(() => hint.classList.remove('animating'), 1200);
     });
 
     document.querySelectorAll('.back-btn[data-target]').forEach(btn => {
