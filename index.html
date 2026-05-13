@@ -273,6 +273,10 @@
     function showScreen(id) {
       document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
       document.getElementById(id).classList.add('active');
+      if (id !== 'screen-just-draw' && id !== 'screen-imagine-prompt') {
+        currentPrompt = null;
+        lockedSlots = {};
+      }
     }
 
     // ── Prompt generators ────────────────────────────────────────
@@ -308,6 +312,8 @@
     let imagineMode = null;    // 'surreal' | 'mutations'
     let mutationType = null;   // 'organic-organic' | 'organic-synthetic' | 'synthetic-synthetic' | 'random'
     let promptBackTarget = null;
+    let currentPrompt = null;  // { adjective, noun, verb, environment } | { noun1, noun1Pool, noun2, noun2Pool }
+    let lockedSlots = {};      // e.g. { verb: true } — reset on back navigation
 
     // ── Event wiring ─────────────────────────────────────────────
     document.getElementById('btn-just-draw').addEventListener('click', () => {
