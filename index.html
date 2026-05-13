@@ -866,7 +866,7 @@
       showScreen('screen-imagine-prompt');
       const container = document.getElementById('imagine-prompt');
       renderPrompt(container, 'surreal');
-      animateUnlockedSlots(container, 'surreal');
+      animateUnlockedSlots(container);
     });
 
     document.getElementById('btn-mutations').addEventListener('click', () => {
@@ -882,7 +882,7 @@
         showScreen('screen-imagine-prompt');
         const container = document.getElementById('imagine-prompt');
         renderPrompt(container, 'mutations');
-        animateUnlockedSlots(container, 'mutations');
+        animateUnlockedSlots(container);
       });
     });
 
@@ -895,7 +895,7 @@
         currentPrompt = generateMutation(mutationType, currentPrompt, lockedSlots);
       }
       renderPrompt(container, imagineMode);
-      animateUnlockedSlots(container, imagineMode);
+      animateUnlockedSlots(container);
     });
 
     document.querySelectorAll('.back-btn[data-target]').forEach(btn => {
