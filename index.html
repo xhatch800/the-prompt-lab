@@ -801,10 +801,11 @@
       tick();
     }
 
-    function animateUnlockedSlots(container, mode) {
+    function animateUnlockedSlots(container) {
+      if (!currentPrompt) return;
       const pools = {
         adjective:   store.adjectives,
-        noun:        [...store.nounsOrganic, ...store.nounsSynthetic],
+        noun:        Math.random() < 0.5 ? store.nounsOrganic : store.nounsSynthetic,
         verb:        store.verbs,
         environment: store.environments,
         noun1: currentPrompt.noun1Pool === 'organic' ? store.nounsOrganic : store.nounsSynthetic,
@@ -813,6 +814,7 @@
 
       container.querySelectorAll('.prompt-slot:not(.locked)').forEach(span => {
         const slot = span.dataset.slot;
+        if (!pools[slot]) { console.warn('animateUnlockedSlots: unknown slot', slot); return; }
         animateSlot(span, pools[slot], currentPrompt[slot], 1200);
       });
     }
