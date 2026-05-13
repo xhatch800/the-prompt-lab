@@ -162,7 +162,7 @@
       justify-content: center;
       gap: 8px;
       position: absolute;
-      bottom: 5.5rem;
+      bottom: 8rem;
       left: 0;
       right: 0;
     }
@@ -1110,6 +1110,25 @@
     document.getElementById('hist-next-just-draw').addEventListener('click', () => {
       navigateHistory(1, 'just-draw-prompt', 'sparks');
     });
+
+    // ── Swipe gestures for history ────────────────────────────────
+    const SWIPE_THRESHOLD = 40;
+
+    function addSwipe(elementId, containerId, getMode) {
+      let startX = null;
+      const el = document.getElementById(elementId);
+      el.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      el.addEventListener('touchend', e => {
+        if (startX === null) return;
+        const delta = e.changedTouches[0].clientX - startX;
+        startX = null;
+        if (Math.abs(delta) < SWIPE_THRESHOLD) return;
+        navigateHistory(delta < 0 ? 1 : -1, containerId, getMode());
+      });
+    }
+
+    addSwipe('imagine-prompt', 'imagine-prompt', () => imagineMode);
+    addSwipe('just-draw-prompt', 'just-draw-prompt', () => 'sparks');
 
     // ── Data loading ─────────────────────────────────────────────
     async function init() {
