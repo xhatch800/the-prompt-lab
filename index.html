@@ -197,6 +197,19 @@
     .slide-from-left  { animation: slideInFromLeft  0.22s ease forwards; }
     .slide-from-right { animation: slideInFromRight 0.22s ease forwards; }
 
+    @keyframes bounceRight {
+      0%, 100% { transform: translateX(0); }
+      35%  { transform: translateX(14px); }
+      65%  { transform: translateX(-5px); }
+    }
+    @keyframes bounceLeft {
+      0%, 100% { transform: translateX(0); }
+      35%  { transform: translateX(-14px); }
+      65%  { transform: translateX(5px); }
+    }
+    .bounce-left  { animation: bounceLeft  0.38s ease; }
+    .bounce-right { animation: bounceRight 0.38s ease; }
+
     .regen-btn {
       font-family: 'Caveat', cursive;
       font-size: 1.8rem;
@@ -985,7 +998,17 @@
 
     function navigateHistory(direction, promptContainerId, mode) {
       const newIndex = historyIndex + direction;
-      if (newIndex < 0 || newIndex >= promptHistory.length) return;
+      if (newIndex < 0 || newIndex >= promptHistory.length) {
+        if (promptHistory.length > 1) {
+          const el = document.getElementById(promptContainerId);
+          const cls = direction === -1 ? 'bounce-right' : 'bounce-left';
+          el.classList.remove('bounce-left', 'bounce-right');
+          void el.offsetWidth;
+          el.classList.add(cls);
+          setTimeout(() => el.classList.remove(cls), 380);
+        }
+        return;
+      }
       historyIndex = newIndex;
 
       const container = document.getElementById(promptContainerId);
