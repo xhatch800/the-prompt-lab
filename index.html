@@ -765,11 +765,15 @@
     }
 
     function animateSlot(el, pool, finalValue, durationMs) {
+      if (el.classList.contains('locked')) return;
+      // Guard against double-invocation: cancel any in-flight animation on this element
+      const gen = (el.__animGen = (el.__animGen || 0) + 1);
       el.classList.add('animating');
       let elapsed = 0;
       let intervalTime = 55;
 
       function tick() {
+        if (el.__animGen !== gen) return; // stale — a newer animation has taken over
         el.textContent = pick(pool);
         elapsed += intervalTime;
         if (elapsed > durationMs * 0.55) {
@@ -780,7 +784,16 @@
           el.classList.remove('animating');
           el.style.transition = 'transform 0.13s cubic-bezier(0.34,1.56,0.64,1)';
           el.style.transform = 'scale(1.18)';
-          setTimeout(() => { el.style.transform = 'scale(1)'; }, 130);
+          setTimeout(() => {
+            if (el.__animGen !== gen) return; // still guard — another anim may have started
+            el.style.transform = 'scale(1)';
+            setTimeout(() => {
+              if (el.__animGen === gen) {
+                el.style.transition = '';
+                el.style.transform = '';
+              }
+            }, 130);
+          }, 130);
           return;
         }
         setTimeout(tick, intervalTime);
