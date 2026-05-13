@@ -239,7 +239,7 @@ python3 -m http.server 8080
 
 Open `http://localhost:8080` and verify:
 
-1. **Home screen** — "The Prompt Lab" title feels large and bold. Mode buttons are thumb-friendly and clearly readable.
+1. **Home screen** — "Drawing Prompt Lab" title feels large and bold. Mode buttons are thumb-friendly and clearly readable.
 2. **Just Draw prompt** — The prompt text dominates the screen. It is clearly bigger than any heading or button.
 3. **Surreal Narrative prompt** — Same as above; the four-word prompt fills the centre of the screen with presence.
 4. **Mutations prompt** — `word + word` is large and easy to read at a glance.

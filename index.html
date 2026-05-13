@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Prompt Lab</title>
+  <title>Drawing Prompt Lab</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
@@ -58,10 +58,14 @@
 
     .prompt-text {
       font-size: 3.5rem;
-      text-align: center;
       line-height: 1.5;
       max-width: 640px;
       padding: 0 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.25rem;
     }
 
     /* ── Buttons ── */
@@ -150,6 +154,33 @@
       display: none;
     }
 
+    /* ── Prompt slots (locking) ── */
+
+    .prompt-slot {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      border-radius: 8px;
+      padding: 0.25rem 0.5rem;
+      border: 2px solid transparent;
+      transition: background 0.1s ease, border-color 0.1s ease;
+    }
+
+    .prompt-slot.locked {
+      border-color: #b85c38;
+      background: rgba(184, 92, 56, 0.12);
+    }
+
+    .prompt-sep {
+      pointer-events: none;
+      line-height: 1.5;
+    }
+
+    .lock-icon {
+      flex-shrink: 0;
+    }
+
     /* ── Mobile adjustments ── */
     @media (max-width: 480px) {
       h1 { font-size: 3.2rem; }
@@ -180,7 +211,7 @@
 
   <!-- Screen: Home -->
   <div id="screen-home" class="screen active">
-    <h1>The Prompt Lab</h1>
+    <h1>Drawing Prompt Lab</h1>
     <p id="error-banner" class="error-banner hidden">
       Couldn't load prompt data — try refreshing.
     </p>
@@ -222,7 +253,7 @@
   <!-- Screen: Imagination Prompt -->
   <div id="screen-imagine-prompt" class="screen">
     <button id="btn-back-imagine" class="back-btn">←</button>
-    <p id="imagine-prompt" class="prompt-text"></p>
+    <div id="imagine-prompt" class="prompt-text"></div>
     <button id="btn-regen-imagine" class="regen-btn">↺ new prompt</button>
   </div>
 
@@ -242,6 +273,10 @@
     function showScreen(id) {
       document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
       document.getElementById(id).classList.add('active');
+      if (id !== 'screen-just-draw' && id !== 'screen-imagine-prompt') {
+        currentPrompt = null;
+        lockedSlots = {};
+      }
     }
 
     // ── Prompt generators ────────────────────────────────────────
@@ -249,34 +284,80 @@
       return pick(store.justDraw);
     }
 
-    function generateSurrealNarrative() {
-      const noun = Math.random() < 0.5
-        ? pick(store.nounsOrganic)
-        : pick(store.nounsSynthetic);
-      return `${pick(store.adjectives)} ${noun} ${pick(store.verbs)} ${pick(store.environments)}`;
+    function generateSurrealNarrative(current, locked) {
+      const prev = current || {};
+      const adjective  = locked.adjective   ? prev.adjective   : pick(store.adjectives);
+      const noun       = locked.noun        ? prev.noun        : (Math.random() < 0.5 ? pick(store.nounsOrganic) : pick(store.nounsSynthetic));
+      const verb       = locked.verb        ? prev.verb        : pick(store.verbs);
+      const environment = locked.environment ? prev.environment : pick(store.environments);
+      return { adjective, noun, verb, environment };
     }
 
-    function generateMutation(type) {
-      const types = ['organic-organic', 'organic-synthetic', 'synthetic-synthetic'];
-      const t = type === 'random' ? types[Math.floor(Math.random() * types.length)] : type;
-      let n1, n2;
-      if (t === 'organic-organic') {
-        n1 = pick(store.nounsOrganic);
-        n2 = pick(store.nounsOrganic);
-      } else if (t === 'organic-synthetic') {
-        n1 = pick(store.nounsOrganic);
-        n2 = pick(store.nounsSynthetic);
-      } else {
-        n1 = pick(store.nounsSynthetic);
-        n2 = pick(store.nounsSynthetic);
+    function generateMutation(type, current, locked) {
+      const prev = current || {};
+
+      // Determine the target pool for each slot
+      let pool1, pool2;
+      if (type === 'random') {
+        // In random mode, each unlocked slot draws from a freshly random pool
+        pool1 = Math.random() < 0.5 ? 'organic' : 'synthetic';
+        pool2 = Math.random() < 0.5 ? 'organic' : 'synthetic';
+      } else if (type === 'organic-organic') {
+        pool1 = 'organic';  pool2 = 'organic';
+      } else if (type === 'organic-synthetic') {
+        pool1 = 'organic';  pool2 = 'synthetic';
+      } else { // synthetic-synthetic
+        pool1 = 'synthetic'; pool2 = 'synthetic';
       }
-      return `${n1} + ${n2}`;
+
+      const noun1Pool = locked.noun1 ? prev.noun1Pool : pool1;
+      const noun2Pool = locked.noun2 ? prev.noun2Pool : pool2;
+      const noun1 = locked.noun1 ? prev.noun1 : pick(noun1Pool === 'organic' ? store.nounsOrganic : store.nounsSynthetic);
+      const noun2 = locked.noun2 ? prev.noun2 : pick(noun2Pool === 'organic' ? store.nounsOrganic : store.nounsSynthetic);
+
+      return { noun1, noun1Pool, noun2, noun2Pool };
+    }
+
+    // ── Prompt rendering ─────────────────────────────────────────
+    const LOCK_SVG = '<svg class="lock-icon" width="16" height="18" viewBox="0 0 16 18" fill="none"><rect x="1" y="8" width="14" height="10" rx="2" stroke="#b85c38" stroke-width="2"/><path d="M4 8V6a4 4 0 0 1 8 0v2" stroke="#b85c38" stroke-width="2" stroke-linecap="round"/></svg>';
+
+    function renderPrompt(container, mode) {
+      container.innerHTML = '';
+      const slots = mode === 'surreal'
+        ? ['adjective', 'noun', 'verb', 'environment']
+        : ['noun1', 'noun2'];
+      const sep = mode === 'surreal' ? ' · ' : ' + ';
+
+      slots.forEach((slot, i) => {
+        const span = document.createElement('span');
+        span.className = 'prompt-slot' + (lockedSlots[slot] ? ' locked' : '');
+        span.innerHTML = (lockedSlots[slot] ? LOCK_SVG : '') + currentPrompt[slot];
+        span.addEventListener('click', () => toggleLock(slot, container, mode));
+        container.appendChild(span);
+        if (i < slots.length - 1) {
+          const s = document.createElement('span');
+          s.className = 'prompt-sep';
+          s.textContent = sep;
+          container.appendChild(s);
+        }
+      });
+    }
+
+    function toggleLock(slot, container, mode) {
+      if (lockedSlots[slot]) {
+        delete lockedSlots[slot];
+      } else {
+        lockedSlots[slot] = true;
+      }
+      renderPrompt(container, mode);
     }
 
     // ── State ────────────────────────────────────────────────────
     let imagineMode = null;    // 'surreal' | 'mutations'
     let mutationType = null;   // 'organic-organic' | 'organic-synthetic' | 'synthetic-synthetic' | 'random'
     let promptBackTarget = null;
+    let currentPrompt = null;  // { adjective, noun, verb, environment } | { noun1, noun1Pool, noun2, noun2Pool }
+    let lockedSlots = {};      // e.g. { verb: true } — reset on back navigation
 
     // ── Event wiring ─────────────────────────────────────────────
     document.getElementById('btn-just-draw').addEventListener('click', () => {
@@ -295,8 +376,9 @@
     document.getElementById('btn-surreal').addEventListener('click', () => {
       imagineMode = 'surreal';
       promptBackTarget = 'screen-mode-picker';
-      document.getElementById('imagine-prompt').textContent = generateSurrealNarrative();
+      currentPrompt = generateSurrealNarrative(null, {});
       showScreen('screen-imagine-prompt');
+      renderPrompt(document.getElementById('imagine-prompt'), 'surreal');
     });
 
     document.getElementById('btn-mutations').addEventListener('click', () => {
@@ -308,15 +390,21 @@
         imagineMode = 'mutations';
         mutationType = type;  // 'random' stays 'random' — each regen re-rolls the concrete type
         promptBackTarget = 'screen-mutations-type';
-        document.getElementById('imagine-prompt').textContent = generateMutation(type);
+        currentPrompt = generateMutation(type, null, {});
         showScreen('screen-imagine-prompt');
+        renderPrompt(document.getElementById('imagine-prompt'), 'mutations');
       });
     });
 
     document.getElementById('btn-regen-imagine').addEventListener('click', () => {
       if (!imagineMode) return;
-      document.getElementById('imagine-prompt').textContent =
-        imagineMode === 'surreal' ? generateSurrealNarrative() : generateMutation(mutationType);
+      const container = document.getElementById('imagine-prompt');
+      if (imagineMode === 'surreal') {
+        currentPrompt = generateSurrealNarrative(currentPrompt, lockedSlots);
+      } else {
+        currentPrompt = generateMutation(mutationType, currentPrompt, lockedSlots);
+      }
+      renderPrompt(container, imagineMode);
     });
 
     document.querySelectorAll('.back-btn[data-target]').forEach(btn => {

@@ -1,6 +1,6 @@
 # Project Overview
 
-- **Name:** The Prompt Lab
+- **Name:** Drawing Prompt Lab
 - **Goal:** Provide on-demand drawing inspiration offering different modes (observation or imagination)
 - **Audience:**  Artists who seek to improve their drawing skills.
 - **Platform:** Web-based, optimized for both mobile browsers.
@@ -12,7 +12,7 @@
 	* "Just draw!"
 	* "Can you imagine..."
 * When the user picks "Just draw!" mode:
-	* The app picks one of the prompts from  [[prompt-lab-requirements.md]]
+	* The app picks one of the prompts from  [[drawing-prompt-lab-requirements.md]]
 	* Its straight up don't think too much, and just draw whatever the prompt says.
 * When the user picks "Can you imagine..." mode:
 	* Two options can be selected
