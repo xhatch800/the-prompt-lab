@@ -781,6 +781,7 @@
       if (id !== 'screen-just-draw' && id !== 'screen-imagine-prompt') {
         currentPrompt = null;
         lockedSlots = {};
+        clearHistory();
       }
     }
 
@@ -1009,11 +1010,14 @@
 
     // ── Event wiring ─────────────────────────────────────────────
     document.getElementById('btn-just-draw').addEventListener('click', () => {
+      clearHistory();
       const finalValue = generateJustDraw();
       const el = document.getElementById('just-draw-prompt');
       showScreen('screen-just-draw');
       el.textContent = finalValue;
       animateJustDraw(el, finalValue);
+      pushToHistory(finalValue);
+      renderHistoryWidget('history-nav-just-draw', 'hist-dots-just-draw', 'hist-prev-just-draw', 'hist-next-just-draw');
     });
 
     document.getElementById('btn-regen-just-draw').addEventListener('click', () => {
@@ -1021,9 +1025,12 @@
       const el = document.getElementById('just-draw-prompt');
       el.textContent = finalValue;
       animateJustDraw(el, finalValue);
+      pushToHistory(finalValue);
+      renderHistoryWidget('history-nav-just-draw', 'hist-dots-just-draw', 'hist-prev-just-draw', 'hist-next-just-draw');
     });
 
     document.getElementById('btn-surreal').addEventListener('click', () => {
+      clearHistory();
       imagineMode = 'surreal';
       promptBackTarget = 'screen-home';
       currentPrompt = generateSurrealNarrative(null, {});
@@ -1035,6 +1042,8 @@
       hint.classList.add('animating');
       animateUnlockedSlots(container);
       setTimeout(() => hint.classList.remove('animating'), 1200);
+      pushToHistory(currentPrompt);
+      renderHistoryWidget('history-nav-imagine', 'hist-dots-imagine', 'hist-prev-imagine', 'hist-next-imagine');
     });
 
     document.getElementById('btn-mutations').addEventListener('click', () => {
@@ -1043,6 +1052,7 @@
 
     ['organic-organic', 'organic-synthetic', 'synthetic-synthetic', 'random'].forEach(type => {
       document.getElementById(`btn-type-${type}`).addEventListener('click', () => {
+        clearHistory();
         imagineMode = 'mutations';
         mutationType = type;  // 'random' stays 'random' — each regen re-rolls the concrete type
         promptBackTarget = 'screen-mutations-type';
@@ -1055,6 +1065,8 @@
         hint.classList.add('animating');
         animateUnlockedSlots(container);
         setTimeout(() => hint.classList.remove('animating'), 1200);
+        pushToHistory(currentPrompt);
+        renderHistoryWidget('history-nav-imagine', 'hist-dots-imagine', 'hist-prev-imagine', 'hist-next-imagine');
       });
     });
 
@@ -1071,6 +1083,8 @@
       hint.classList.add('animating');
       animateUnlockedSlots(container);
       setTimeout(() => hint.classList.remove('animating'), 1200);
+      pushToHistory(currentPrompt);
+      renderHistoryWidget('history-nav-imagine', 'hist-dots-imagine', 'hist-prev-imagine', 'hist-next-imagine');
     });
 
     document.querySelectorAll('.back-btn[data-target]').forEach(btn => {
@@ -1079,6 +1093,19 @@
 
     document.getElementById('btn-back-imagine').addEventListener('click', () => {
       showScreen(promptBackTarget ?? 'screen-home');
+    });
+
+    document.getElementById('hist-prev-imagine').addEventListener('click', () => {
+      navigateHistory(-1, 'imagine-prompt', imagineMode);
+    });
+    document.getElementById('hist-next-imagine').addEventListener('click', () => {
+      navigateHistory(1, 'imagine-prompt', imagineMode);
+    });
+    document.getElementById('hist-prev-just-draw').addEventListener('click', () => {
+      navigateHistory(-1, 'just-draw-prompt', 'sparks');
+    });
+    document.getElementById('hist-next-just-draw').addEventListener('click', () => {
+      navigateHistory(1, 'just-draw-prompt', 'sparks');
     });
 
     // ── Data loading ─────────────────────────────────────────────
