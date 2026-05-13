@@ -155,6 +155,48 @@
       opacity: 0;
     }
 
+    /* History navigation widget */
+    .history-nav {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      position: absolute;
+      bottom: 5.5rem;
+      left: 0;
+      right: 0;
+    }
+    .history-nav.visible { display: flex; }
+
+    .hist-arrow {
+      font-family: 'Caveat', cursive;
+      font-size: 1.8rem;
+      color: #b85c38;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0 4px;
+      line-height: 1;
+    }
+    .hist-arrow:disabled { color: #ddd; cursor: default; }
+
+    .hist-dots { display: flex; gap: 5px; align-items: center; }
+    .hist-dot { width: 6px; height: 6px; border-radius: 50%; background: #ddd; }
+    .hist-dot.filled { background: #c9b9a8; }
+    .hist-dot.active { background: #b85c38; }
+
+    /* History slide animation */
+    @keyframes slideInFromLeft {
+      from { transform: translateX(-50px); opacity: 0; }
+      to   { transform: translateX(0);     opacity: 1; }
+    }
+    @keyframes slideInFromRight {
+      from { transform: translateX(50px);  opacity: 0; }
+      to   { transform: translateX(0);     opacity: 1; }
+    }
+    .slide-from-left  { animation: slideInFromLeft  0.22s ease forwards; }
+    .slide-from-right { animation: slideInFromRight 0.22s ease forwards; }
+
     .regen-btn {
       font-family: 'Caveat', cursive;
       font-size: 1.8rem;
@@ -257,6 +299,7 @@
       .back-row { position: fixed; top: 1rem; left: 1rem; }
       .back-btn { font-size: 1.4rem; }
       .regen-btn { font-size: 1.2rem; bottom: 1rem; }
+      .history-nav { bottom: 4rem; }
     }
   </style>
 </head>
@@ -696,6 +739,11 @@
     </div>
     <p id="just-draw-prompt" class="prompt-text"></p>
     <button id="btn-regen-just-draw" class="regen-btn">↺ new prompt</button>
+    <div class="history-nav" id="history-nav-just-draw">
+      <button class="hist-arrow" id="hist-prev-just-draw">‹</button>
+      <div class="hist-dots" id="hist-dots-just-draw"></div>
+      <button class="hist-arrow" id="hist-next-just-draw">›</button>
+    </div>
   </div>
 
   <!-- Screen: Imagination Prompt -->
@@ -705,8 +753,13 @@
       <span id="imagine-screen-label" class="screen-label"></span>
     </div>
     <div id="imagine-prompt" class="prompt-text"></div>
-    <button id="btn-regen-imagine" class="regen-btn">↺ new prompt</button>
     <p id="lock-hint-imagine" class="lock-hint">tap a word to lock it</p>
+    <button id="btn-regen-imagine" class="regen-btn">↺ new prompt</button>
+    <div class="history-nav" id="history-nav-imagine">
+      <button class="hist-arrow" id="hist-prev-imagine">‹</button>
+      <div class="hist-dots" id="hist-dots-imagine"></div>
+      <button class="hist-arrow" id="hist-next-imagine">›</button>
+    </div>
   </div>
 
   <script>
@@ -731,6 +784,7 @@
       if (id !== 'screen-just-draw' && id !== 'screen-imagine-prompt') {
         currentPrompt = null;
         lockedSlots = {};
+        clearHistory();
       }
     }
 
@@ -874,13 +928,99 @@
     let currentPrompt = null;  // { adjective, noun, verb, environment } | { noun1, noun1Pool, noun2, noun2Pool }
     let lockedSlots = {};      // e.g. { verb: true } — reset on back navigation
 
+    const HISTORY_MAX = 20;
+    let promptHistory = [];    // string[] for Sparks; prompt object[] for Surreal/Mutations
+    let historyIndex = -1;     // -1 = empty; 0 = oldest; length-1 = newest
+
+    // ── History helpers ──────────────────────────────────────────
+    function clearHistory() {
+      promptHistory = [];
+      historyIndex = -1;
+      document.getElementById('history-nav-imagine').classList.remove('visible');
+      document.getElementById('history-nav-just-draw').classList.remove('visible');
+    }
+
+    function pushToHistory(prompt) {
+      // Truncate any forward entries if mid-history (regen while browsing back)
+      if (historyIndex < promptHistory.length - 1) {
+        promptHistory = promptHistory.slice(0, historyIndex + 1);
+      }
+      promptHistory.push(prompt);
+      if (promptHistory.length > HISTORY_MAX) {
+        promptHistory.shift();
+      }
+      historyIndex = promptHistory.length - 1;
+    }
+
+    function renderHistoryWidget(navId, dotsId, prevId, nextId) {
+      const nav = document.getElementById(navId);
+      const dotsContainer = document.getElementById(dotsId);
+      const prevBtn = document.getElementById(prevId);
+      const nextBtn = document.getElementById(nextId);
+
+      if (promptHistory.length <= 1) {
+        nav.classList.remove('visible');
+        return;
+      }
+
+      nav.classList.add('visible');
+
+      // Sliding window of up to 7 dots centred on historyIndex
+      const total = promptHistory.length;
+      const maxDots = Math.min(total, 7);
+      const windowStart = Math.max(0, Math.min(historyIndex - 3, total - 7));
+
+      dotsContainer.innerHTML = '';
+      for (let i = windowStart; i < windowStart + maxDots; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'hist-dot';
+        if (i < historyIndex) dot.classList.add('filled');
+        if (i === historyIndex) dot.classList.add('active');
+        dotsContainer.appendChild(dot);
+      }
+
+      prevBtn.disabled = historyIndex === 0;
+      nextBtn.disabled = historyIndex === promptHistory.length - 1;
+    }
+
+    function navigateHistory(direction, promptContainerId, mode) {
+      const newIndex = historyIndex + direction;
+      if (newIndex < 0 || newIndex >= promptHistory.length) return;
+      historyIndex = newIndex;
+
+      const container = document.getElementById(promptContainerId);
+
+      if (mode === 'sparks') {
+        container.textContent = promptHistory[historyIndex];
+      } else {
+        currentPrompt = promptHistory[historyIndex];
+        renderPrompt(container, mode);
+      }
+
+      // Slide animation: going back (‹) = slide from left; going forward (›) = slide from right
+      container.classList.remove('slide-from-left', 'slide-from-right');
+      void container.offsetWidth; // force reflow so animation re-triggers
+      container.classList.add(direction === -1 ? 'slide-from-left' : 'slide-from-right');
+
+      const suffix = promptContainerId === 'imagine-prompt' ? 'imagine' : 'just-draw';
+      renderHistoryWidget(
+        `history-nav-${suffix}`,
+        `hist-dots-${suffix}`,
+        `hist-prev-${suffix}`,
+        `hist-next-${suffix}`
+      );
+    }
+
     // ── Event wiring ─────────────────────────────────────────────
     document.getElementById('btn-just-draw').addEventListener('click', () => {
+      clearHistory();
       const finalValue = generateJustDraw();
       const el = document.getElementById('just-draw-prompt');
       showScreen('screen-just-draw');
       el.textContent = finalValue;
       animateJustDraw(el, finalValue);
+      pushToHistory(finalValue);
+      renderHistoryWidget('history-nav-just-draw', 'hist-dots-just-draw', 'hist-prev-just-draw', 'hist-next-just-draw');
     });
 
     document.getElementById('btn-regen-just-draw').addEventListener('click', () => {
@@ -888,9 +1028,12 @@
       const el = document.getElementById('just-draw-prompt');
       el.textContent = finalValue;
       animateJustDraw(el, finalValue);
+      pushToHistory(finalValue);
+      renderHistoryWidget('history-nav-just-draw', 'hist-dots-just-draw', 'hist-prev-just-draw', 'hist-next-just-draw');
     });
 
     document.getElementById('btn-surreal').addEventListener('click', () => {
+      clearHistory();
       imagineMode = 'surreal';
       promptBackTarget = 'screen-home';
       currentPrompt = generateSurrealNarrative(null, {});
@@ -902,6 +1045,8 @@
       hint.classList.add('animating');
       animateUnlockedSlots(container);
       setTimeout(() => hint.classList.remove('animating'), 1200);
+      pushToHistory(currentPrompt);
+      renderHistoryWidget('history-nav-imagine', 'hist-dots-imagine', 'hist-prev-imagine', 'hist-next-imagine');
     });
 
     document.getElementById('btn-mutations').addEventListener('click', () => {
@@ -910,6 +1055,7 @@
 
     ['organic-organic', 'organic-synthetic', 'synthetic-synthetic', 'random'].forEach(type => {
       document.getElementById(`btn-type-${type}`).addEventListener('click', () => {
+        clearHistory();
         imagineMode = 'mutations';
         mutationType = type;  // 'random' stays 'random' — each regen re-rolls the concrete type
         promptBackTarget = 'screen-mutations-type';
@@ -922,6 +1068,8 @@
         hint.classList.add('animating');
         animateUnlockedSlots(container);
         setTimeout(() => hint.classList.remove('animating'), 1200);
+        pushToHistory(currentPrompt);
+        renderHistoryWidget('history-nav-imagine', 'hist-dots-imagine', 'hist-prev-imagine', 'hist-next-imagine');
       });
     });
 
@@ -938,6 +1086,8 @@
       hint.classList.add('animating');
       animateUnlockedSlots(container);
       setTimeout(() => hint.classList.remove('animating'), 1200);
+      pushToHistory(currentPrompt);
+      renderHistoryWidget('history-nav-imagine', 'hist-dots-imagine', 'hist-prev-imagine', 'hist-next-imagine');
     });
 
     document.querySelectorAll('.back-btn[data-target]').forEach(btn => {
@@ -946,6 +1096,19 @@
 
     document.getElementById('btn-back-imagine').addEventListener('click', () => {
       showScreen(promptBackTarget ?? 'screen-home');
+    });
+
+    document.getElementById('hist-prev-imagine').addEventListener('click', () => {
+      navigateHistory(-1, 'imagine-prompt', imagineMode);
+    });
+    document.getElementById('hist-next-imagine').addEventListener('click', () => {
+      navigateHistory(1, 'imagine-prompt', imagineMode);
+    });
+    document.getElementById('hist-prev-just-draw').addEventListener('click', () => {
+      navigateHistory(-1, 'just-draw-prompt', 'sparks');
+    });
+    document.getElementById('hist-next-just-draw').addEventListener('click', () => {
+      navigateHistory(1, 'just-draw-prompt', 'sparks');
     });
 
     // ── Data loading ─────────────────────────────────────────────
