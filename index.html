@@ -980,7 +980,9 @@
     }
 
     function navigateHistory(direction, promptContainerId, mode) {
-      historyIndex += direction;
+      const newIndex = historyIndex + direction;
+      if (newIndex < 0 || newIndex >= promptHistory.length) return;
+      historyIndex = newIndex;
 
       const container = document.getElementById(promptContainerId);
 
