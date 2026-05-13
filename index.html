@@ -284,11 +284,13 @@
       return pick(store.justDraw);
     }
 
-    function generateSurrealNarrative() {
-      const noun = Math.random() < 0.5
-        ? pick(store.nounsOrganic)
-        : pick(store.nounsSynthetic);
-      return `${pick(store.adjectives)} ${noun} ${pick(store.verbs)} ${pick(store.environments)}`;
+    function generateSurrealNarrative(current, locked) {
+      const prev = current || {};
+      const adjective  = locked.adjective   ? prev.adjective   : pick(store.adjectives);
+      const noun       = locked.noun        ? prev.noun        : (Math.random() < 0.5 ? pick(store.nounsOrganic) : pick(store.nounsSynthetic));
+      const verb       = locked.verb        ? prev.verb        : pick(store.verbs);
+      const environment = locked.environment ? prev.environment : pick(store.environments);
+      return { adjective, noun, verb, environment };
     }
 
     function generateMutation(type) {
