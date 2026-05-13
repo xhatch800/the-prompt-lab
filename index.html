@@ -241,7 +241,7 @@
 
     function generateMutation(type) {
       const types = ['organic-organic', 'organic-synthetic', 'synthetic-synthetic'];
-      const t = type === 'random' ? types[Math.floor(Math.random() * 3)] : type;
+      const t = type === 'random' ? types[Math.floor(Math.random() * types.length)] : type;
       let n1, n2;
       if (t === 'organic-organic') {
         n1 = pick(store.nounsOrganic);
@@ -289,7 +289,7 @@
     ['organic-organic', 'organic-synthetic', 'synthetic-synthetic', 'random'].forEach(type => {
       document.getElementById(`btn-type-${type}`).addEventListener('click', () => {
         imagineMode = 'mutations';
-        mutationType = type;
+        mutationType = type;  // 'random' stays 'random' — each regen re-rolls the concrete type
         promptBackTarget = 'screen-mutations-type';
         document.getElementById('imagine-prompt').textContent = generateMutation(type);
         showScreen('screen-imagine-prompt');
@@ -307,7 +307,7 @@
     });
 
     document.getElementById('btn-back-imagine').addEventListener('click', () => {
-      showScreen(promptBackTarget);
+      showScreen(promptBackTarget ?? 'screen-mode-picker');
     });
 
     // ── Data loading ─────────────────────────────────────────────
