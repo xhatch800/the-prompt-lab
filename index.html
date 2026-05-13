@@ -841,12 +841,18 @@
 
     // ── Event wiring ─────────────────────────────────────────────
     document.getElementById('btn-just-draw').addEventListener('click', () => {
-      document.getElementById('just-draw-prompt').textContent = generateJustDraw();
+      const finalValue = generateJustDraw();
+      const el = document.getElementById('just-draw-prompt');
+      el.textContent = finalValue;
       showScreen('screen-just-draw');
+      animateJustDraw(el, finalValue);
     });
 
     document.getElementById('btn-regen-just-draw').addEventListener('click', () => {
-      document.getElementById('just-draw-prompt').textContent = generateJustDraw();
+      const finalValue = generateJustDraw();
+      const el = document.getElementById('just-draw-prompt');
+      el.textContent = finalValue;
+      animateJustDraw(el, finalValue);
     });
 
     document.getElementById('btn-imagine').addEventListener('click', () => {
@@ -858,7 +864,9 @@
       promptBackTarget = 'screen-mode-picker';
       currentPrompt = generateSurrealNarrative(null, {});
       showScreen('screen-imagine-prompt');
-      renderPrompt(document.getElementById('imagine-prompt'), 'surreal');
+      const container = document.getElementById('imagine-prompt');
+      renderPrompt(container, 'surreal');
+      animateUnlockedSlots(container, 'surreal');
     });
 
     document.getElementById('btn-mutations').addEventListener('click', () => {
@@ -872,7 +880,9 @@
         promptBackTarget = 'screen-mutations-type';
         currentPrompt = generateMutation(type, null, {});
         showScreen('screen-imagine-prompt');
-        renderPrompt(document.getElementById('imagine-prompt'), 'mutations');
+        const container = document.getElementById('imagine-prompt');
+        renderPrompt(container, 'mutations');
+        animateUnlockedSlots(container, 'mutations');
       });
     });
 
@@ -885,6 +895,7 @@
         currentPrompt = generateMutation(mutationType, currentPrompt, lockedSlots);
       }
       renderPrompt(container, imagineMode);
+      animateUnlockedSlots(container, imagineMode);
     });
 
     document.querySelectorAll('.back-btn[data-target]').forEach(btn => {
