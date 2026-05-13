@@ -634,25 +634,16 @@
       Couldn't load prompt data — try refreshing.
     </p>
     <div class="mode-buttons">
-      <button id="btn-just-draw" class="mode-btn">Just draw!</button>
-      <button id="btn-imagine" class="mode-btn">Can you imagine...</button>
+      <button id="btn-just-draw" class="mode-btn">Sparks</button>
+      <button id="btn-surreal" class="mode-btn">Surreal Narratives</button>
+      <button id="btn-mutations" class="mode-btn">Strange Combinations</button>
     </div>
   </div>
 
-  <!-- Screen: Imagination Mode Picker -->
-  <div id="screen-mode-picker" class="screen">
-    <button class="back-btn" data-target="screen-home">←</button>
-    <h2>Can you imagine...</h2>
-    <div class="mode-buttons">
-      <button id="btn-surreal" class="mode-btn">Surreal Narrative</button>
-      <button id="btn-mutations" class="mode-btn">Mutations</button>
-    </div>
-  </div>
-
-  <!-- Screen: Mutations Type Picker -->
+  <!-- Screen: Strange Combinations Type Picker -->
   <div id="screen-mutations-type" class="screen">
-    <button class="back-btn" data-target="screen-mode-picker">←</button>
-    <h2>Mutations</h2>
+    <button class="back-btn" data-target="screen-home">←</button>
+    <h2>Strange Combinations</h2>
     <div class="mode-buttons">
       <button id="btn-type-organic-organic" class="mode-btn">Organic + Organic</button>
       <button id="btn-type-organic-synthetic" class="mode-btn">Organic + Synthetic</button>
@@ -679,7 +670,8 @@
     // ── Data store ──────────────────────────────────────────────
     const store = {};
     document.getElementById('btn-just-draw').disabled = true;
-    document.getElementById('btn-imagine').disabled = true;
+    document.getElementById('btn-surreal').disabled = true;
+    document.getElementById('btn-mutations').disabled = true;
 
     // ── Utilities ───────────────────────────────────────────────
     function pick(arr) {
@@ -855,13 +847,9 @@
       animateJustDraw(el, finalValue);
     });
 
-    document.getElementById('btn-imagine').addEventListener('click', () => {
-      showScreen('screen-mode-picker');
-    });
-
     document.getElementById('btn-surreal').addEventListener('click', () => {
       imagineMode = 'surreal';
-      promptBackTarget = 'screen-mode-picker';
+      promptBackTarget = 'screen-home';
       currentPrompt = generateSurrealNarrative(null, {});
       showScreen('screen-imagine-prompt');
       const container = document.getElementById('imagine-prompt');
@@ -877,7 +865,7 @@
       document.getElementById(`btn-type-${type}`).addEventListener('click', () => {
         imagineMode = 'mutations';
         mutationType = type;  // 'random' stays 'random' — each regen re-rolls the concrete type
-        promptBackTarget = 'screen-mutations-type';
+        promptBackTarget = 'screen-home';
         currentPrompt = generateMutation(type, null, {});
         showScreen('screen-imagine-prompt');
         const container = document.getElementById('imagine-prompt');
@@ -903,7 +891,7 @@
     });
 
     document.getElementById('btn-back-imagine').addEventListener('click', () => {
-      showScreen(promptBackTarget ?? 'screen-mode-picker');
+      showScreen(promptBackTarget ?? 'screen-home');
     });
 
     // ── Data loading ─────────────────────────────────────────────
@@ -931,11 +919,13 @@
         store.verbs = verbs;
         store.environments = environments;
         document.getElementById('btn-just-draw').disabled = false;
-        document.getElementById('btn-imagine').disabled = false;
+        document.getElementById('btn-surreal').disabled = false;
+        document.getElementById('btn-mutations').disabled = false;
       } catch {
         document.getElementById('error-banner').classList.remove('hidden');
         document.getElementById('btn-just-draw').disabled = true;
-        document.getElementById('btn-imagine').disabled = true;
+        document.getElementById('btn-surreal').disabled = true;
+        document.getElementById('btn-mutations').disabled = true;
       }
     }
 
