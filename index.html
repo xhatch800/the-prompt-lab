@@ -801,6 +801,26 @@
       tick();
     }
 
+    function animateUnlockedSlots(container, mode) {
+      const pools = {
+        adjective:   store.adjectives,
+        noun:        [...store.nounsOrganic, ...store.nounsSynthetic],
+        verb:        store.verbs,
+        environment: store.environments,
+        noun1: currentPrompt.noun1Pool === 'organic' ? store.nounsOrganic : store.nounsSynthetic,
+        noun2: currentPrompt.noun2Pool === 'organic' ? store.nounsOrganic : store.nounsSynthetic,
+      };
+
+      container.querySelectorAll('.prompt-slot:not(.locked)').forEach(span => {
+        const slot = span.dataset.slot;
+        animateSlot(span, pools[slot], currentPrompt[slot], 1200);
+      });
+    }
+
+    function animateJustDraw(el, finalValue) {
+      animateSlot(el, store.justDraw, finalValue, 1200);
+    }
+
     function toggleLock(slot, container, mode) {
       if (lockedSlots[slot]) {
         delete lockedSlots[slot];
