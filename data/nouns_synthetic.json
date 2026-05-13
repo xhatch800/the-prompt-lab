@@ -5,8 +5,16 @@
   "piston", "antenna", "prism", "pendulum", "periscope",
   "funnel", "spring", "lever", "dial", "barometer",
   "searchlight", "turbine", "wrench", "gauge", "motor",
-  "winch", "lathe", "coil", "siren", "relay",
-  "conduit", "rivet", "sprocket", "dynamo", "capacitor",
-  "switch", "fuse", "ratchet", "brake", "resistor",
-  "gyroscope", "thermostat", "pump", "belljar", "transistor"
+  "winch", "lathe", "coil", "siren", "ratchet",
+  "sprocket", "dynamo", "capacitor", "switch", "gyroscope",
+  "thermostat", "pump", "transistor", "orrery", "astrolabe",
+  "zoetrope", "caliper", "retort", "alembic", "armillary sphere",
+  "stereoscope", "chronometer", "heliograph", "galvanometer", "anemometer",
+  "theodolite", "phantoscope", "harmonograph", "speaking tube", "trepan",
+  "spirograph", "escapement", "cam", "wheatstone bridge", "jacquard loom",
+  "difference engine", "leyden jar", "tesla coil", "magic lantern", "resonator",
+  "tuning fork", "bellcrank", "gimbal", "pantograph", "cathode tube",
+  "coherer", "treadle", "fly wheel", "diaphragm", "mandrel",
+  "binnacle", "catadioptric lens", "dewar flask", "micrometer", "slide rule",
+  "planimeter", "milling head", "governor", "rivet", "belljar"
 ]
