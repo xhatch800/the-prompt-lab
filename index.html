@@ -157,6 +157,23 @@
       .prompt-text { font-size: 2.8rem; }
       .mode-btn { font-size: 2rem; padding: 0.8rem 1.5rem; }
     }
+
+    /* ── Landscape on short screens ── */
+    @media (orientation: landscape) and (max-height: 500px) {
+      .screen {
+        justify-content: flex-start;
+        overflow-y: auto;
+        padding: 0.8rem 2rem;
+        padding-top: 3.5rem;
+      }
+      h1 { font-size: 2.2rem; margin-bottom: 0.8rem; }
+      h2 { font-size: 1.8rem; margin-bottom: 0.8rem; }
+      .prompt-text { font-size: 2rem; }
+      .mode-btn { font-size: 1.5rem; padding: 0.5rem 1.2rem; }
+      .mode-buttons { gap: 0.6rem; }
+      .back-btn { font-size: 1.4rem; top: 1rem; left: 1rem; }
+      .regen-btn { font-size: 1.2rem; bottom: 1rem; }
+    }
   </style>
 </head>
 <body>
