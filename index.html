@@ -751,6 +751,7 @@
       slots.forEach((slot, i) => {
         const span = document.createElement('span');
         span.className = 'prompt-slot' + (lockedSlots[slot] ? ' locked' : '');
+        span.dataset.slot = slot;
         span.innerHTML = (lockedSlots[slot] ? LOCK_SVG : '') + currentPrompt[slot];
         span.addEventListener('click', () => toggleLock(slot, container, mode));
         container.appendChild(span);
@@ -761,6 +762,30 @@
           container.appendChild(s);
         }
       });
+    }
+
+    function animateSlot(el, pool, finalValue, durationMs) {
+      el.classList.add('animating');
+      let elapsed = 0;
+      let intervalTime = 55;
+
+      function tick() {
+        el.textContent = pick(pool);
+        elapsed += intervalTime;
+        if (elapsed > durationMs * 0.55) {
+          intervalTime = Math.min(intervalTime * 1.22, 320);
+        }
+        if (elapsed >= durationMs) {
+          el.textContent = finalValue;
+          el.classList.remove('animating');
+          el.style.transition = 'transform 0.13s cubic-bezier(0.34,1.56,0.64,1)';
+          el.style.transform = 'scale(1.18)';
+          setTimeout(() => { el.style.transform = 'scale(1)'; }, 130);
+          return;
+        }
+        setTimeout(tick, intervalTime);
+      }
+      tick();
     }
 
     function toggleLock(slot, container, mode) {
