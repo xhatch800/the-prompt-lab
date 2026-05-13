@@ -253,7 +253,7 @@
   <!-- Screen: Imagination Prompt -->
   <div id="screen-imagine-prompt" class="screen">
     <button id="btn-back-imagine" class="back-btn">←</button>
-    <p id="imagine-prompt" class="prompt-text"></p>
+    <div id="imagine-prompt" class="prompt-text"></div>
     <button id="btn-regen-imagine" class="regen-btn">↺ new prompt</button>
   </div>
 
@@ -376,8 +376,9 @@
     document.getElementById('btn-surreal').addEventListener('click', () => {
       imagineMode = 'surreal';
       promptBackTarget = 'screen-mode-picker';
-      document.getElementById('imagine-prompt').textContent = generateSurrealNarrative();
+      currentPrompt = generateSurrealNarrative(null, {});
       showScreen('screen-imagine-prompt');
+      renderPrompt(document.getElementById('imagine-prompt'), 'surreal');
     });
 
     document.getElementById('btn-mutations').addEventListener('click', () => {
@@ -389,15 +390,21 @@
         imagineMode = 'mutations';
         mutationType = type;  // 'random' stays 'random' — each regen re-rolls the concrete type
         promptBackTarget = 'screen-mutations-type';
-        document.getElementById('imagine-prompt').textContent = generateMutation(type);
+        currentPrompt = generateMutation(type, null, {});
         showScreen('screen-imagine-prompt');
+        renderPrompt(document.getElementById('imagine-prompt'), 'mutations');
       });
     });
 
     document.getElementById('btn-regen-imagine').addEventListener('click', () => {
       if (!imagineMode) return;
-      document.getElementById('imagine-prompt').textContent =
-        imagineMode === 'surreal' ? generateSurrealNarrative() : generateMutation(mutationType);
+      const container = document.getElementById('imagine-prompt');
+      if (imagineMode === 'surreal') {
+        currentPrompt = generateSurrealNarrative(currentPrompt, lockedSlots);
+      } else {
+        currentPrompt = generateMutation(mutationType, currentPrompt, lockedSlots);
+      }
+      renderPrompt(container, imagineMode);
     });
 
     document.querySelectorAll('.back-btn[data-target]').forEach(btn => {
