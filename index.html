@@ -653,6 +653,22 @@
   cursor: not-allowed;
   transform: none;
 }
+/* Match count badge */
+.cc-match-badge {
+  font-family: sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  border: 1.5px solid #b85c38;
+  color: #b85c38;
+  border-radius: 8px;
+  padding: 1px 7px;
+  white-space: nowrap;
+}
+.cc-match-badge.cc-match-zero {
+  background: #c0392b;
+  border-color: #c0392b;
+  color: white;
+}
   </style>
 </head>
 <body>
@@ -1450,6 +1466,28 @@
     header.appendChild(removeBtn);
   }
 
+  // Match count badge (tagged slots only, when ≥1 tag selected)
+  if (slot.type !== 'adjective' && slot.tags && slot.tags.length > 0) {
+    let pool;
+    if (slot.type === 'noun') {
+      const full = slot.pool === 'organic'   ? store.nounsOrganicFull
+                 : slot.pool === 'synthetic' ? store.nounsSyntheticFull
+                 : [...store.nounsOrganicFull, ...store.nounsSyntheticFull];
+      pool = filterByTags(full, slot.tags, slot.tagMode);
+    } else if (slot.type === 'verb') {
+      pool = filterByTags(store.verbsFull, slot.tags, slot.tagMode);
+    } else if (slot.type === 'environment') {
+      pool = filterByTags(store.environmentsFull, slot.tags, slot.tagMode);
+    }
+    if (pool !== undefined) {
+      const count = pool.length;
+      const badge = document.createElement('span');
+      badge.className = 'cc-match-badge' + (count === 0 ? ' cc-match-zero' : '');
+      badge.textContent = count === 0 ? '0 matches' : `${count} matches`;
+      header.appendChild(badge);
+    }
+  }
+
   // Toggle-off button (surreal mode only; not on noun slots — nouns are removed, not toggled)
   if (!isStrange && slot.type !== 'noun') {
     const tog = document.createElement('button');
@@ -1666,7 +1704,22 @@ function renderCauldronConfig() {
   }
 
   // Update generate button disabled state
-  document.getElementById('cc-generate').disabled = activeSlots.length === 0;
+  const hasZeroMatch = activeSlots.some(slot => {
+    if (slot.type === 'adjective' || !slot.tags || slot.tags.length === 0) return false;
+    let pool;
+    if (slot.type === 'noun') {
+      const full = slot.pool === 'organic'   ? store.nounsOrganicFull
+                 : slot.pool === 'synthetic' ? store.nounsSyntheticFull
+                 : [...store.nounsOrganicFull, ...store.nounsSyntheticFull];
+      pool = filterByTags(full, slot.tags, slot.tagMode);
+    } else if (slot.type === 'verb') {
+      pool = filterByTags(store.verbsFull, slot.tags, slot.tagMode);
+    } else if (slot.type === 'environment') {
+      pool = filterByTags(store.environmentsFull, slot.tags, slot.tagMode);
+    }
+    return pool !== undefined && pool.length === 0;
+  });
+  document.getElementById('cc-generate').disabled = activeSlots.length === 0 || hasZeroMatch;
 }
 
     function toggleLock(slot, container, mode) {
