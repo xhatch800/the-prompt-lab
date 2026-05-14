@@ -1,0 +1,823 @@
+[
+  {
+    "name": "underwater",
+    "tags": [
+      "wet"
+    ]
+  },
+  {
+    "name": "on the seafloor",
+    "tags": [
+      "wet"
+    ]
+  },
+  {
+    "name": "in a coral reef",
+    "tags": [
+      "wet",
+      "tranquil"
+    ]
+  },
+  {
+    "name": "in a kelp forest",
+    "tags": [
+      "wet"
+    ]
+  },
+  {
+    "name": "in a tidal pool",
+    "tags": [
+      "wet",
+      "tranquil"
+    ]
+  },
+  {
+    "name": "in a marsh",
+    "tags": [
+      "wet"
+    ]
+  },
+  {
+    "name": "in a rainforest",
+    "tags": [
+      "wet",
+      "tranquil"
+    ]
+  },
+  {
+    "name": "at the edge of a waterfall",
+    "tags": [
+      "wet"
+    ]
+  },
+  {
+    "name": "in a swamp",
+    "tags": [
+      "wet"
+    ]
+  },
+  {
+    "name": "beneath a frozen lake",
+    "tags": [
+      "wet",
+      "frozen"
+    ]
+  },
+  {
+    "name": "in a hot spring",
+    "tags": [
+      "wet"
+    ]
+  },
+  {
+    "name": "in a desert",
+    "tags": [
+      "dry"
+    ]
+  },
+  {
+    "name": "in a salt flat",
+    "tags": [
+      "dry"
+    ]
+  },
+  {
+    "name": "in a canyon",
+    "tags": [
+      "dry"
+    ]
+  },
+  {
+    "name": "in a sandstorm",
+    "tags": [
+      "dry"
+    ]
+  },
+  {
+    "name": "in a volcanic crater",
+    "tags": [
+      "dry"
+    ]
+  },
+  {
+    "name": "in a tar pit",
+    "tags": [
+      "dry"
+    ]
+  },
+  {
+    "name": "in a lava field",
+    "tags": [
+      "dry"
+    ]
+  },
+  {
+    "name": "in a bone yard",
+    "tags": [
+      "dry"
+    ]
+  },
+  {
+    "name": "in a petrified forest",
+    "tags": [
+      "dry"
+    ]
+  },
+  {
+    "name": "on a glacier",
+    "tags": [
+      "frozen"
+    ]
+  },
+  {
+    "name": "in an ice cave",
+    "tags": [
+      "frozen",
+      "underground"
+    ]
+  },
+  {
+    "name": "on a frozen tundra",
+    "tags": [
+      "frozen"
+    ]
+  },
+  {
+    "name": "in a blizzard",
+    "tags": [
+      "frozen"
+    ]
+  },
+  {
+    "name": "on a frozen ocean",
+    "tags": [
+      "frozen"
+    ]
+  },
+  {
+    "name": "inside a glacier",
+    "tags": [
+      "frozen"
+    ]
+  },
+  {
+    "name": "in a cave",
+    "tags": [
+      "underground"
+    ]
+  },
+  {
+    "name": "in a mine shaft",
+    "tags": [
+      "underground",
+      "built"
+    ]
+  },
+  {
+    "name": "in a subway tunnel",
+    "tags": [
+      "underground",
+      "built"
+    ]
+  },
+  {
+    "name": "at the bottom of a well",
+    "tags": [
+      "underground",
+      "built"
+    ]
+  },
+  {
+    "name": "in a catacomb",
+    "tags": [
+      "underground",
+      "built"
+    ]
+  },
+  {
+    "name": "in a bunker",
+    "tags": [
+      "underground",
+      "built"
+    ]
+  },
+  {
+    "name": "inside a geode",
+    "tags": [
+      "underground"
+    ]
+  },
+  {
+    "name": "above the clouds",
+    "tags": [
+      "aerial",
+      "tranquil"
+    ]
+  },
+  {
+    "name": "on a rooftop",
+    "tags": [
+      "aerial",
+      "built"
+    ]
+  },
+  {
+    "name": "at high altitude",
+    "tags": [
+      "aerial"
+    ]
+  },
+  {
+    "name": "in the stratosphere",
+    "tags": [
+      "aerial",
+      "cosmic"
+    ]
+  },
+  {
+    "name": "inside a storm cloud",
+    "tags": [
+      "aerial"
+    ]
+  },
+  {
+    "name": "on a mountain peak",
+    "tags": [
+      "aerial"
+    ]
+  },
+  {
+    "name": "in zero gravity",
+    "tags": [
+      "cosmic"
+    ]
+  },
+  {
+    "name": "on the surface of the moon",
+    "tags": [
+      "cosmic",
+      "dry"
+    ]
+  },
+  {
+    "name": "in deep space",
+    "tags": [
+      "cosmic"
+    ]
+  },
+  {
+    "name": "inside a nebula",
+    "tags": [
+      "cosmic",
+      "tranquil"
+    ]
+  },
+  {
+    "name": "on an asteroid",
+    "tags": [
+      "cosmic",
+      "dry"
+    ]
+  },
+  {
+    "name": "in a black hole",
+    "tags": [
+      "cosmic"
+    ]
+  },
+  {
+    "name": "inside a comet",
+    "tags": [
+      "cosmic"
+    ]
+  },
+  {
+    "name": "in a library",
+    "tags": [
+      "built",
+      "tranquil"
+    ]
+  },
+  {
+    "name": "in a cathedral",
+    "tags": [
+      "built",
+      "tranquil"
+    ]
+  },
+  {
+    "name": "inside a clock tower",
+    "tags": [
+      "built"
+    ]
+  },
+  {
+    "name": "in a greenhouse",
+    "tags": [
+      "built",
+      "tranquil",
+      "wet"
+    ]
+  },
+  {
+    "name": "in an abandoned greenhouse",
+    "tags": [
+      "built"
+    ]
+  },
+  {
+    "name": "in a museum",
+    "tags": [
+      "built",
+      "tranquil"
+    ]
+  },
+  {
+    "name": "in a lighthouse",
+    "tags": [
+      "built",
+      "tranquil"
+    ]
+  },
+  {
+    "name": "in an observatory",
+    "tags": [
+      "built",
+      "tranquil"
+    ]
+  },
+  {
+    "name": "in a forest",
+    "tags": [
+      "tranquil"
+    ]
+  },
+  {
+    "name": "in a meadow",
+    "tags": [
+      "tranquil"
+    ]
+  },
+  {
+    "name": "in a fog bank",
+    "tags": []
+  },
+  {
+    "name": "in a thunderstorm",
+    "tags": []
+  },
+  {
+    "name": "in a jungle",
+    "tags": [
+      "wet"
+    ]
+  },
+  {
+    "name": "on a volcanic island",
+    "tags": []
+  },
+  {
+    "name": "in a dead forest",
+    "tags": []
+  },
+  {
+    "name": "on a cliff overlooking the sea",
+    "tags": [
+      "aerial"
+    ]
+  },
+  {
+    "name": "in a flooded city",
+    "tags": [
+      "built",
+      "wet"
+    ]
+  },
+  {
+    "name": "in an abandoned hospital",
+    "tags": [
+      "built"
+    ]
+  },
+  {
+    "name": "in a burning building",
+    "tags": [
+      "built"
+    ]
+  },
+  {
+    "name": "on a shipwreck",
+    "tags": [
+      "built",
+      "wet"
+    ]
+  },
+  {
+    "name": "in a frozen city",
+    "tags": [
+      "built",
+      "frozen"
+    ]
+  },
+  {
+    "name": "on a red sand dune",
+    "tags": [
+      "dry"
+    ]
+  },
+  {
+    "name": "in a ghost town",
+    "tags": [
+      "dry",
+      "built"
+    ]
+  },
+  {
+    "name": "in a dried riverbed",
+    "tags": [
+      "dry"
+    ]
+  },
+  {
+    "name": "in a dungeon",
+    "tags": [
+      "underground",
+      "built"
+    ]
+  },
+  {
+    "name": "in a crypt",
+    "tags": [
+      "underground",
+      "built"
+    ]
+  },
+  {
+    "name": "in a tomb",
+    "tags": [
+      "underground",
+      "built"
+    ]
+  },
+  {
+    "name": "in an underground lake",
+    "tags": [
+      "underground",
+      "wet"
+    ]
+  },
+  {
+    "name": "in a frozen forest",
+    "tags": [
+      "frozen"
+    ]
+  },
+  {
+    "name": "in an avalanche",
+    "tags": [
+      "frozen"
+    ]
+  },
+  {
+    "name": "on pack ice",
+    "tags": [
+      "frozen"
+    ]
+  },
+  {
+    "name": "in an ice labyrinth",
+    "tags": [
+      "frozen"
+    ]
+  },
+  {
+    "name": "in a frozen waterfall",
+    "tags": [
+      "frozen"
+    ]
+  },
+  {
+    "name": "in a tornado",
+    "tags": [
+      "aerial"
+    ]
+  },
+  {
+    "name": "on a skyscraper ledge",
+    "tags": [
+      "aerial",
+      "built"
+    ]
+  },
+  {
+    "name": "on a crumbling bridge",
+    "tags": [
+      "aerial",
+      "built"
+    ]
+  },
+  {
+    "name": "on a dying star",
+    "tags": [
+      "cosmic"
+    ]
+  },
+  {
+    "name": "on a frozen moon",
+    "tags": [
+      "cosmic",
+      "frozen"
+    ]
+  },
+  {
+    "name": "on a ringed planet",
+    "tags": [
+      "cosmic",
+      "tranquil"
+    ]
+  },
+  {
+    "name": "on an alien shore",
+    "tags": [
+      "cosmic"
+    ]
+  },
+  {
+    "name": "inside a space station",
+    "tags": [
+      "cosmic",
+      "built"
+    ]
+  },
+  {
+    "name": "in a still pond",
+    "tags": [
+      "tranquil",
+      "wet"
+    ]
+  },
+  {
+    "name": "on a calm lake",
+    "tags": [
+      "tranquil",
+      "wet"
+    ]
+  },
+  {
+    "name": "in a crystal cave",
+    "tags": [
+      "underground"
+    ]
+  },
+  {
+    "name": "in an alien jungle",
+    "tags": [
+      "cosmic",
+      "wet"
+    ]
+  },
+  {
+    "name": "inside a derelict spacecraft",
+    "tags": [
+      "cosmic",
+      "built"
+    ]
+  },
+  {
+    "name": "on a planet of ice",
+    "tags": [
+      "cosmic",
+      "frozen"
+    ]
+  },
+  {
+    "name": "on a floating island",
+    "tags": [
+      "aerial"
+    ]
+  },
+  {
+    "name": "on a sea cliff",
+    "tags": [
+      "aerial",
+      "wet"
+    ]
+  },
+  {
+    "name": "inside a pulsar",
+    "tags": [
+      "cosmic"
+    ]
+  },
+  {
+    "name": "in a japanese garden",
+    "tags": [
+      "tranquil",
+      "built"
+    ]
+  },
+  {
+    "name": "in a quiet harbor",
+    "tags": [
+      "tranquil",
+      "wet"
+    ]
+  },
+  {
+    "name": "in a clearing",
+    "tags": [
+      "tranquil"
+    ]
+  },
+  {
+    "name": "on a mesa",
+    "tags": [
+      "dry"
+    ]
+  },
+  {
+    "name": "in a cinder field",
+    "tags": [
+      "dry"
+    ]
+  },
+  {
+    "name": "in ancient ruins",
+    "tags": [
+      "dry",
+      "built"
+    ]
+  },
+  {
+    "name": "on a crevasse edge",
+    "tags": [
+      "frozen"
+    ]
+  },
+  {
+    "name": "in a permafrost field",
+    "tags": [
+      "frozen"
+    ]
+  },
+  {
+    "name": "in an ice palace",
+    "tags": [
+      "frozen",
+      "built"
+    ]
+  },
+  {
+    "name": "on a frozen battlefield",
+    "tags": [
+      "frozen",
+      "built"
+    ]
+  },
+  {
+    "name": "in a mushroom cavern",
+    "tags": [
+      "underground"
+    ]
+  },
+  {
+    "name": "in a subterranean river",
+    "tags": [
+      "underground",
+      "wet"
+    ]
+  },
+  {
+    "name": "in a buried temple",
+    "tags": [
+      "underground",
+      "built"
+    ]
+  },
+  {
+    "name": "in an ancient cistern",
+    "tags": [
+      "underground",
+      "built",
+      "wet"
+    ]
+  },
+  {
+    "name": "in a salt mine",
+    "tags": [
+      "underground",
+      "built",
+      "dry"
+    ]
+  },
+  {
+    "name": "in a lightning storm",
+    "tags": [
+      "aerial"
+    ]
+  },
+  {
+    "name": "above a burning city",
+    "tags": [
+      "aerial",
+      "built"
+    ]
+  },
+  {
+    "name": "on a wind turbine",
+    "tags": [
+      "aerial",
+      "built"
+    ]
+  },
+  {
+    "name": "on a canyon rim",
+    "tags": [
+      "aerial"
+    ]
+  },
+  {
+    "name": "in a hot air balloon",
+    "tags": [
+      "aerial",
+      "built"
+    ]
+  },
+  {
+    "name": "on a fire lookout tower",
+    "tags": [
+      "aerial",
+      "built"
+    ]
+  },
+  {
+    "name": "in a botanical garden",
+    "tags": [
+      "tranquil",
+      "built"
+    ]
+  },
+  {
+    "name": "in a frozen swamp",
+    "tags": [
+      "frozen",
+      "wet"
+    ]
+  },
+  {
+    "name": "in a dust bowl",
+    "tags": [
+      "dry"
+    ]
+  },
+  {
+    "name": "on cracked earth",
+    "tags": [
+      "dry"
+    ]
+  },
+  {
+    "name": "in a collapsed mine",
+    "tags": [
+      "underground",
+      "built"
+    ]
+  },
+  {
+    "name": "in a subterranean lake",
+    "tags": [
+      "underground",
+      "wet"
+    ]
+  },
+  {
+    "name": "above a volcano",
+    "tags": [
+      "aerial"
+    ]
+  },
+  {
+    "name": "on a gas giant",
+    "tags": [
+      "cosmic"
+    ]
+  },
+  {
+    "name": "in a meteor storm",
+    "tags": [
+      "cosmic"
+    ]
+  },
+  {
+    "name": "on a tidally locked planet",
+    "tags": [
+      "cosmic"
+    ]
+  },
+  {
+    "name": "on a cliff ledge",
+    "tags": [
+      "aerial"
+    ]
+  }
+]

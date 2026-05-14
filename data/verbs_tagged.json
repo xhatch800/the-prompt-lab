@@ -1,0 +1,694 @@
+[
+  {
+    "name": "melting",
+    "tags": [
+      "transformative"
+    ]
+  },
+  {
+    "name": "floating",
+    "tags": [
+      "motion",
+      "stillness"
+    ]
+  },
+  {
+    "name": "collapsing",
+    "tags": [
+      "destructive",
+      "motion"
+    ]
+  },
+  {
+    "name": "blooming",
+    "tags": [
+      "growth",
+      "transformative"
+    ]
+  },
+  {
+    "name": "dissolving",
+    "tags": [
+      "transformative",
+      "destructive"
+    ]
+  },
+  {
+    "name": "burning",
+    "tags": [
+      "destructive",
+      "transformative"
+    ]
+  },
+  {
+    "name": "freezing",
+    "tags": [
+      "transformative",
+      "containing",
+      "stillness"
+    ]
+  },
+  {
+    "name": "falling",
+    "tags": [
+      "motion",
+      "destructive"
+    ]
+  },
+  {
+    "name": "rising",
+    "tags": [
+      "motion",
+      "growth"
+    ]
+  },
+  {
+    "name": "sinking",
+    "tags": [
+      "motion",
+      "destructive"
+    ]
+  },
+  {
+    "name": "exploding",
+    "tags": [
+      "destructive"
+    ]
+  },
+  {
+    "name": "cracking",
+    "tags": [
+      "destructive"
+    ]
+  },
+  {
+    "name": "growing",
+    "tags": [
+      "growth",
+      "transformative"
+    ]
+  },
+  {
+    "name": "shrinking",
+    "tags": [
+      "transformative"
+    ]
+  },
+  {
+    "name": "spinning",
+    "tags": [
+      "motion"
+    ]
+  },
+  {
+    "name": "twisting",
+    "tags": [
+      "motion",
+      "transformative",
+      "growth"
+    ]
+  },
+  {
+    "name": "stretching",
+    "tags": [
+      "transformative",
+      "motion",
+      "growth"
+    ]
+  },
+  {
+    "name": "folding",
+    "tags": [
+      "containing",
+      "transformative"
+    ]
+  },
+  {
+    "name": "breaking",
+    "tags": [
+      "destructive"
+    ]
+  },
+  {
+    "name": "bleeding",
+    "tags": [
+      "destructive"
+    ]
+  },
+  {
+    "name": "dripping",
+    "tags": [
+      "motion",
+      "stillness"
+    ]
+  },
+  {
+    "name": "flowing",
+    "tags": [
+      "motion"
+    ]
+  },
+  {
+    "name": "pouring",
+    "tags": [
+      "motion",
+      "destructive",
+      "growth"
+    ]
+  },
+  {
+    "name": "spilling",
+    "tags": [
+      "destructive",
+      "motion"
+    ]
+  },
+  {
+    "name": "spreading",
+    "tags": [
+      "growth",
+      "motion"
+    ]
+  },
+  {
+    "name": "crawling",
+    "tags": [
+      "motion",
+      "stillness"
+    ]
+  },
+  {
+    "name": "climbing",
+    "tags": [
+      "motion",
+      "growth"
+    ]
+  },
+  {
+    "name": "piercing",
+    "tags": [
+      "destructive"
+    ]
+  },
+  {
+    "name": "grabbing",
+    "tags": [
+      "containing",
+      "destructive"
+    ]
+  },
+  {
+    "name": "pulling",
+    "tags": [
+      "motion",
+      "destructive"
+    ]
+  },
+  {
+    "name": "pushing",
+    "tags": [
+      "motion",
+      "destructive"
+    ]
+  },
+  {
+    "name": "dragging",
+    "tags": [
+      "motion",
+      "destructive"
+    ]
+  },
+  {
+    "name": "lifting",
+    "tags": [
+      "motion"
+    ]
+  },
+  {
+    "name": "dropping",
+    "tags": [
+      "motion",
+      "destructive"
+    ]
+  },
+  {
+    "name": "throwing",
+    "tags": [
+      "motion",
+      "destructive"
+    ]
+  },
+  {
+    "name": "impaling",
+    "tags": [
+      "destructive"
+    ]
+  },
+  {
+    "name": "running",
+    "tags": [
+      "motion"
+    ]
+  },
+  {
+    "name": "jumping",
+    "tags": [
+      "motion"
+    ]
+  },
+  {
+    "name": "rolling",
+    "tags": [
+      "motion"
+    ]
+  },
+  {
+    "name": "sliding",
+    "tags": [
+      "motion"
+    ]
+  },
+  {
+    "name": "swinging",
+    "tags": [
+      "motion"
+    ]
+  },
+  {
+    "name": "hanging",
+    "tags": [
+      "stillness",
+      "containing"
+    ]
+  },
+  {
+    "name": "trembling",
+    "tags": [
+      "stillness",
+      "motion"
+    ]
+  },
+  {
+    "name": "tilting",
+    "tags": [
+      "motion",
+      "stillness"
+    ]
+  },
+  {
+    "name": "bending",
+    "tags": [
+      "transformative",
+      "motion"
+    ]
+  },
+  {
+    "name": "wrapping",
+    "tags": [
+      "containing"
+    ]
+  },
+  {
+    "name": "tangling",
+    "tags": [
+      "containing",
+      "destructive"
+    ]
+  },
+  {
+    "name": "coiling",
+    "tags": [
+      "containing",
+      "motion"
+    ]
+  },
+  {
+    "name": "unraveling",
+    "tags": [
+      "destructive",
+      "transformative",
+      "containing"
+    ]
+  },
+  {
+    "name": "peeling",
+    "tags": [
+      "destructive",
+      "transformative"
+    ]
+  },
+  {
+    "name": "tearing",
+    "tags": [
+      "destructive"
+    ]
+  },
+  {
+    "name": "cutting",
+    "tags": [
+      "destructive"
+    ]
+  },
+  {
+    "name": "stabbing",
+    "tags": [
+      "destructive"
+    ]
+  },
+  {
+    "name": "crushing",
+    "tags": [
+      "destructive",
+      "containing"
+    ]
+  },
+  {
+    "name": "squeezing",
+    "tags": [
+      "containing",
+      "destructive"
+    ]
+  },
+  {
+    "name": "smothering",
+    "tags": [
+      "containing",
+      "destructive"
+    ]
+  },
+  {
+    "name": "grinding",
+    "tags": [
+      "destructive"
+    ]
+  },
+  {
+    "name": "scraping",
+    "tags": [
+      "destructive"
+    ]
+  },
+  {
+    "name": "scratching",
+    "tags": [
+      "destructive"
+    ]
+  },
+  {
+    "name": "carving",
+    "tags": [
+      "destructive",
+      "transformative"
+    ]
+  },
+  {
+    "name": "digging",
+    "tags": [
+      "motion",
+      "destructive"
+    ]
+  },
+  {
+    "name": "burying",
+    "tags": [
+      "containing",
+      "motion"
+    ]
+  },
+  {
+    "name": "erupting",
+    "tags": [
+      "destructive",
+      "motion"
+    ]
+  },
+  {
+    "name": "overflowing",
+    "tags": [
+      "destructive",
+      "motion",
+      "growth"
+    ]
+  },
+  {
+    "name": "flooding",
+    "tags": [
+      "destructive",
+      "motion",
+      "growth"
+    ]
+  },
+  {
+    "name": "scorching",
+    "tags": [
+      "destructive",
+      "transformative",
+      "growth"
+    ]
+  },
+  {
+    "name": "crumbling",
+    "tags": [
+      "destructive",
+      "transformative"
+    ]
+  },
+  {
+    "name": "rusting",
+    "tags": [
+      "transformative",
+      "stillness"
+    ]
+  },
+  {
+    "name": "decaying",
+    "tags": [
+      "transformative",
+      "destructive",
+      "stillness"
+    ]
+  },
+  {
+    "name": "sprouting",
+    "tags": [
+      "growth",
+      "transformative"
+    ]
+  },
+  {
+    "name": "branching",
+    "tags": [
+      "growth"
+    ]
+  },
+  {
+    "name": "flowering",
+    "tags": [
+      "growth",
+      "transformative"
+    ]
+  },
+  {
+    "name": "wilting",
+    "tags": [
+      "destructive",
+      "transformative",
+      "stillness"
+    ]
+  },
+  {
+    "name": "drifting",
+    "tags": [
+      "motion",
+      "stillness"
+    ]
+  },
+  {
+    "name": "swirling",
+    "tags": [
+      "motion"
+    ]
+  },
+  {
+    "name": "flickering",
+    "tags": [
+      "motion",
+      "stillness"
+    ]
+  },
+  {
+    "name": "glowing",
+    "tags": [
+      "stillness",
+      "transformative"
+    ]
+  },
+  {
+    "name": "vanishing",
+    "tags": [
+      "transformative",
+      "stillness"
+    ]
+  },
+  {
+    "name": "eclipsing",
+    "tags": [
+      "transformative",
+      "destructive",
+      "stillness"
+    ]
+  },
+  {
+    "name": "multiplying",
+    "tags": [
+      "growth",
+      "transformative"
+    ]
+  },
+  {
+    "name": "shattering",
+    "tags": [
+      "destructive"
+    ]
+  },
+  {
+    "name": "scattering",
+    "tags": [
+      "destructive",
+      "motion"
+    ]
+  },
+  {
+    "name": "gathering",
+    "tags": [
+      "containing",
+      "growth"
+    ]
+  },
+  {
+    "name": "cascading",
+    "tags": [
+      "motion",
+      "growth"
+    ]
+  },
+  {
+    "name": "filling",
+    "tags": [
+      "containing",
+      "growth"
+    ]
+  },
+  {
+    "name": "emptying",
+    "tags": [
+      "destructive",
+      "transformative"
+    ]
+  },
+  {
+    "name": "opening",
+    "tags": [
+      "transformative",
+      "motion"
+    ]
+  },
+  {
+    "name": "seeping",
+    "tags": [
+      "motion",
+      "destructive",
+      "containing"
+    ]
+  },
+  {
+    "name": "entombing",
+    "tags": [
+      "containing",
+      "destructive"
+    ]
+  },
+  {
+    "name": "leaking",
+    "tags": [
+      "motion",
+      "destructive"
+    ]
+  },
+  {
+    "name": "draining",
+    "tags": [
+      "motion",
+      "destructive",
+      "containing"
+    ]
+  },
+  {
+    "name": "swallowing",
+    "tags": [
+      "containing",
+      "destructive",
+      "stillness"
+    ]
+  },
+  {
+    "name": "expanding",
+    "tags": [
+      "growth",
+      "motion",
+      "containing"
+    ]
+  },
+  {
+    "name": "shriveling",
+    "tags": [
+      "transformative",
+      "destructive",
+      "stillness"
+    ]
+  },
+  {
+    "name": "pulsing",
+    "tags": [
+      "motion",
+      "stillness"
+    ]
+  },
+  {
+    "name": "reverberating",
+    "tags": [
+      "stillness",
+      "motion"
+    ]
+  },
+  {
+    "name": "fossilizing",
+    "tags": [
+      "transformative",
+      "stillness"
+    ]
+  },
+  {
+    "name": "looming",
+    "tags": [
+      "stillness",
+      "destructive"
+    ]
+  },
+  {
+    "name": "surging",
+    "tags": [
+      "motion",
+      "destructive",
+      "growth"
+    ]
+  },
+  {
+    "name": "consuming",
+    "tags": [
+      "destructive",
+      "containing",
+      "transformative"
+    ]
+  }
+]
