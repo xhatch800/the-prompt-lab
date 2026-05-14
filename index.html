@@ -1152,7 +1152,7 @@
       document.getElementById(id).classList.add('active');
       document.getElementById('wallpaper-layer')
         .classList.toggle('dimmed', id === 'screen-imagine-prompt' || id === 'screen-just-draw');
-      if (id !== 'screen-just-draw' && id !== 'screen-imagine-prompt') {
+      if (id !== 'screen-just-draw' && id !== 'screen-imagine-prompt' && id !== 'screen-cauldron-config') {
         currentPrompt = null;
         lockedSlots = {};
         clearHistory();
@@ -1822,6 +1822,49 @@ function renderCauldronConfig() {
       showScreen('screen-mutations-type');
     });
 
+    document.getElementById('btn-cauldron').addEventListener('click', () => {
+      clearHistory();
+      lockedSlots = {};
+      initCauldronConfig('surreal');
+      renderCauldronConfig();
+      showScreen('screen-cauldron-config');
+    });
+
+    document.getElementById('btn-cauldron-back').addEventListener('click', () => {
+      cauldronConfig = null;
+      openTagPickerSlotId = null;
+      showScreen('screen-home');
+    });
+
+    document.getElementById('cc-preset-surreal').addEventListener('click', () => {
+      initCauldronConfig('surreal');
+      renderCauldronConfig();
+    });
+
+    document.getElementById('cc-preset-strange').addEventListener('click', () => {
+      initCauldronConfig('strange');
+      renderCauldronConfig();
+    });
+
+    document.getElementById('cc-generate').addEventListener('click', () => {
+      if (!cauldronConfig) return;
+      clearHistory();
+      lockedSlots = {};
+      imagineMode = 'cauldron';
+      promptBackTarget = 'screen-cauldron-config';
+      currentPrompt = generateCauldron(cauldronConfig, null, {});
+      document.getElementById('imagine-screen-label').textContent = 'Surreal Cauldron';
+      showScreen('screen-imagine-prompt');
+      const container = document.getElementById('imagine-prompt');
+      renderPrompt(container, 'cauldron');
+      const hint = document.getElementById('lock-hint-imagine');
+      hint.classList.add('animating');
+      animateUnlockedSlots(container);
+      setTimeout(() => hint.classList.remove('animating'), 1200);
+      pushToHistory(currentPrompt);
+      renderHistoryWidget('history-nav-imagine', 'hist-dots-imagine', 'hist-prev-imagine', 'hist-next-imagine');
+    });
+
     ['organic-organic', 'organic-synthetic', 'synthetic-synthetic', 'random'].forEach(type => {
       document.getElementById(`btn-type-${type}`).addEventListener('click', () => {
         clearHistory();
@@ -1847,6 +1890,8 @@ function renderCauldronConfig() {
       const container = document.getElementById('imagine-prompt');
       if (imagineMode === 'surreal') {
         currentPrompt = generateSurrealNarrative(currentPrompt, lockedSlots);
+      } else if (imagineMode === 'cauldron') {
+        currentPrompt = generateCauldron(cauldronConfig, currentPrompt, lockedSlots);
       } else {
         currentPrompt = generateMutation(mutationType, currentPrompt, lockedSlots);
       }
@@ -1937,11 +1982,13 @@ function renderCauldronConfig() {
         document.getElementById('btn-just-draw').disabled = false;
         document.getElementById('btn-surreal').disabled = false;
         document.getElementById('btn-mutations').disabled = false;
+        document.getElementById('btn-cauldron').disabled = false;
       } catch {
         document.getElementById('error-banner').classList.remove('hidden');
         document.getElementById('btn-just-draw').disabled = true;
         document.getElementById('btn-surreal').disabled = true;
         document.getElementById('btn-mutations').disabled = true;
+        document.getElementById('btn-cauldron').disabled = true;
       }
     }
 
