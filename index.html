@@ -1116,8 +1116,8 @@
     </p>
     <div class="mode-buttons">
       <button id="btn-just-draw" class="mode-btn">Everyday Life</button>
-      <button id="btn-surreal" class="mode-btn">Surreal Narratives</button>
-      <button id="btn-mutations" class="mode-btn">Strange Combinations</button>
+<!--      <button id="btn-surreal" class="mode-btn">Surreal Narratives</button>-->
+<!--      <button id="btn-mutations" class="mode-btn">Strange Combinations</button>-->
       <button id="btn-cauldron" class="mode-btn" disabled>✦ Surreal Cauldron</button>
     </div>
   </div>
@@ -1191,8 +1191,8 @@
     // ── Data store ──────────────────────────────────────────────
     const store = {};
     document.getElementById('btn-just-draw').disabled = true;
-    document.getElementById('btn-surreal').disabled = true;
-    document.getElementById('btn-mutations').disabled = true;
+    // document.getElementById('btn-surreal').disabled = true;
+    // document.getElementById('btn-mutations').disabled = true;
 
     // ── Utilities ───────────────────────────────────────────────
     function pick(arr) {
@@ -1902,6 +1902,7 @@ function renderCauldronConfig() {
       renderHistoryWidget('history-nav-just-draw', 'hist-dots-just-draw', 'hist-prev-just-draw', 'hist-next-just-draw');
     });
 
+    /**
     document.getElementById('btn-surreal').addEventListener('click', () => {
       clearHistory();
       imagineMode = 'surreal';
@@ -1922,6 +1923,8 @@ function renderCauldronConfig() {
     document.getElementById('btn-mutations').addEventListener('click', () => {
       showScreen('screen-mutations-type');
     });
+
+    **/
 
     document.getElementById('btn-cauldron').addEventListener('click', () => {
       clearHistory();
@@ -2081,14 +2084,14 @@ function renderCauldronConfig() {
         store.verbsTags           = [...new Set(verbsRaw.flatMap(i => i.tags))].sort();
         store.environmentsTags    = [...new Set(environmentsRaw.flatMap(i => i.tags))].sort();
         document.getElementById('btn-just-draw').disabled = false;
-        document.getElementById('btn-surreal').disabled = false;
-        document.getElementById('btn-mutations').disabled = false;
+        // document.getElementById('btn-surreal').disabled = false;
+        // document.getElementById('btn-mutations').disabled = false;
         document.getElementById('btn-cauldron').disabled = false;
       } catch {
         document.getElementById('error-banner').classList.remove('hidden');
         document.getElementById('btn-just-draw').disabled = true;
-        document.getElementById('btn-surreal').disabled = true;
-        document.getElementById('btn-mutations').disabled = true;
+        // document.getElementById('btn-surreal').disabled = true;
+        //document.getElementById('btn-mutations').disabled = true;
         document.getElementById('btn-cauldron').disabled = true;
       }
     }
