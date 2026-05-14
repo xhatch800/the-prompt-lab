@@ -835,7 +835,14 @@
       const noun1Pool = locked.noun1 ? prev.noun1Pool : pool1;
       const noun2Pool = locked.noun2 ? prev.noun2Pool : pool2;
       const noun1 = locked.noun1 ? prev.noun1 : pick(noun1Pool === 'organic' ? store.nounsOrganic : store.nounsSynthetic);
-      const noun2 = locked.noun2 ? prev.noun2 : pick(noun2Pool === 'organic' ? store.nounsOrganic : store.nounsSynthetic);
+      let noun2 = locked.noun2 ? prev.noun2 : pick(noun2Pool === 'organic' ? store.nounsOrganic : store.nounsSynthetic);
+
+      // Avoid duplicate when both nouns draw from the same pool
+      if (!locked.noun2 && noun1Pool === noun2Pool && noun2 === noun1) {
+        const pool = noun2Pool === 'organic' ? store.nounsOrganic : store.nounsSynthetic;
+        const candidates = pool.filter(w => w !== noun1);
+        if (candidates.length > 0) noun2 = pick(candidates);
+      }
 
       return { noun1, noun1Pool, noun2, noun2Pool };
     }
