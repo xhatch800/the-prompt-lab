@@ -97,6 +97,13 @@
       transform: none;
     }
 
+    .home-logo {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin-bottom: 8px;
+    }
+
     .mode-buttons {
       display: flex;
       flex-direction: column;
@@ -313,6 +320,7 @@
       .back-btn { font-size: 1.4rem; }
       .regen-btn { font-size: 1.2rem; bottom: 1rem; }
       .history-nav { bottom: 4rem; }
+      .home-logo { width: 72px; height: 72px; }
     }
   </style>
 </head>
@@ -718,6 +726,7 @@
 
   <!-- Screen: Home -->
   <div id="screen-home" class="screen active">
+    <img src="assets/drawing-prompt-lab-logo.png" alt="Drawing Prompt Lab logo" class="home-logo">
     <h1>Drawing Prompt Lab</h1>
     <p id="error-banner" class="error-banner hidden">
       Couldn't load prompt data — try refreshing.
