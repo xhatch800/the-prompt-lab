@@ -1163,27 +1163,38 @@
     // ── Data loading ─────────────────────────────────────────────
     async function init() {
       try {
-        const [justDraw, adjectives, nounsOrganic, nounsSynthetic, verbs, environments] =
+        const [justDraw, adjectives, nounsOrganicRaw, nounsSyntheticRaw, verbsRaw, environmentsRaw] =
           await Promise.all([
             fetch('data/just_draw.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
             fetch('data/adjectives.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
-            fetch('data/nouns_organic_tagged.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }).then(d => d.map(item => item.name)),
-            fetch('data/nouns_synthetic_tagged.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }).then(d => d.map(item => item.name)),
-            fetch('data/verbs_tagged.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }).then(d => d.map(item => item.name)),
-            fetch('data/environments_tagged.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }).then(d => d.map(item => item.name)),
+            fetch('data/nouns_organic_tagged.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
+            fetch('data/nouns_synthetic_tagged.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
+            fetch('data/verbs_tagged.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
+            fetch('data/environments_tagged.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
           ]);
 
-        if ([justDraw, adjectives, nounsOrganic, nounsSynthetic, verbs, environments]
+        if ([justDraw, adjectives, nounsOrganicRaw, nounsSyntheticRaw, verbsRaw, environmentsRaw]
             .some(d => !Array.isArray(d) || d.length === 0)) {
           throw new Error('Empty data');
         }
 
-        store.justDraw = justDraw;
-        store.adjectives = adjectives;
-        store.nounsOrganic = nounsOrganic;
-        store.nounsSynthetic = nounsSynthetic;
-        store.verbs = verbs;
-        store.environments = environments;
+        store.justDraw            = justDraw;
+        store.adjectives          = adjectives;
+        // Name-only arrays — used by existing generation functions unchanged
+        store.nounsOrganic        = nounsOrganicRaw.map(i => i.name);
+        store.nounsSynthetic      = nounsSyntheticRaw.map(i => i.name);
+        store.verbs               = verbsRaw.map(i => i.name);
+        store.environments        = environmentsRaw.map(i => i.name);
+        // Full tagged objects — used by cauldron for tag filtering
+        store.nounsOrganicFull    = nounsOrganicRaw;
+        store.nounsSyntheticFull  = nounsSyntheticRaw;
+        store.verbsFull           = verbsRaw;
+        store.environmentsFull    = environmentsRaw;
+        // Unique sorted tags extracted per pool — used by tag picker UI
+        store.nounsOrganicTags    = [...new Set(nounsOrganicRaw.flatMap(i => i.tags))].sort();
+        store.nounsSyntheticTags  = [...new Set(nounsSyntheticRaw.flatMap(i => i.tags))].sort();
+        store.verbsTags           = [...new Set(verbsRaw.flatMap(i => i.tags))].sort();
+        store.environmentsTags    = [...new Set(environmentsRaw.flatMap(i => i.tags))].sort();
         document.getElementById('btn-just-draw').disabled = false;
         document.getElementById('btn-surreal').disabled = false;
         document.getElementById('btn-mutations').disabled = false;
