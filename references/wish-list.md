@@ -1,6 +1,6 @@
 # Enhancement Wish List
 
-## IDEA-001:  Regeneration History - OPEN
+## IDEA-001:  Regeneration History - DONE
 
 Make the app remember up to 20 regenerations that the user can serially go back or forward to.
 
@@ -26,26 +26,20 @@ When they are at a sub-screen, show an indication of where they are OR where the
 When they are at a prompt screen, show an indication that they can tap on words to lock or unlock them.
 
 
-## IDEA-003 - Category Mode - OPEN
+## IDEA-003 - Surreal Cauldron (OPEN)
 
-Add the ability for user to compose prompts by selecting categories.    
+Using tags in data files for greater control of generation process.
 
-This only applicable for "Can you imagine..." mode.
+Currently - data files are tagged except for adjectives which will remain untagged.
 
-We can possibly add tags for each component in our data files.
+Give user the ability to control the generated prompt by choosing the components and tags (if they want to)    
 
-Example:  
-- nouns_organic:
-  - seahorse - tagged: aquatic
-  - mantis shrimp - tagged: aquatic, crustacean
-  - kangaroo - tagged: mammal
-  - spider - tagged: bug, arachnid
-- nouns_synthetic:
-  - clock: tagged: metallic, device
-  - bellcrank: tagged: metallic
-  - antenna: tagged: metallic
+User can decide to compose the prompt different components (Adjective, Noun, Verb, Environment).
 
-(etc)
+They can have multiple Nouns to come up with strange combinations.
+
+When they choose a component and if they are tagged, offer a way to narrow down to tags.
+
 
 
 
