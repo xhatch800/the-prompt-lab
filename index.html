@@ -1610,7 +1610,8 @@ function renderCauldronConfig() {
     addNounBtn.className = 'cc-add-noun';
     addNounBtn.textContent = '+ add another Noun';
     addNounBtn.addEventListener('click', () => {
-      const nextNum = cauldronConfig.slots.filter(s => s.type === 'noun').length + 1;
+      const usedNums = cauldronConfig.slots.filter(s => s.id.startsWith('noun_')).map(s => parseInt(s.id.split('_')[1], 10));
+      const nextNum = (usedNums.length ? Math.max(...usedNums) : 0) + 1;
       // Insert new noun after last existing noun in slots array
       const lastNounIdx = cauldronConfig.slots.reduce((acc, s, i) => s.type === 'noun' ? i : acc, -1);
       const newSlot = { id: `noun_${nextNum}`, type: 'noun', enabled: true, pool: 'either', tags: [], tagMode: 'any' };
