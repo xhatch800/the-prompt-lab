@@ -1290,6 +1290,86 @@
       animateSlot(el, store.justDraw, finalValue, 1200);
     }
 
+    // ── Cauldron helpers ─────────────────────────────────────────
+    function filterByTags(pool, tags, tagMode) {
+      if (!tags || tags.length === 0) return pool;
+      return tagMode === 'all'
+        ? pool.filter(item => tags.every(t => item.tags.includes(t)))
+        : pool.filter(item => tags.some(t => item.tags.includes(t)));
+    }
+
+    function getAvailableTags(slot) {
+      if (slot.type === 'noun') {
+        if (slot.pool === 'organic') return store.nounsOrganicTags;
+        if (slot.pool === 'synthetic') return store.nounsSyntheticTags;
+        return [...new Set([...store.nounsOrganicTags, ...store.nounsSyntheticTags])].sort();
+      }
+      if (slot.type === 'verb') return store.verbsTags;
+      if (slot.type === 'environment') return store.environmentsTags;
+      return [];
+    }
+
+    function initCauldronConfig(preset) {
+      openTagPickerSlotId = null;
+      if (preset === 'strange') {
+        cauldronConfig = {
+          preset: 'strange',
+          slots: [
+            { id: 'noun_1', type: 'noun', enabled: true, pool: 'either', tags: [], tagMode: 'any' },
+            { id: 'noun_2', type: 'noun', enabled: true, pool: 'either', tags: [], tagMode: 'any' },
+          ]
+        };
+      } else {
+        cauldronConfig = {
+          preset: 'surreal',
+          slots: [
+            { id: 'adjective',   type: 'adjective',   enabled: true },
+            { id: 'noun_1',      type: 'noun',         enabled: true,  pool: 'either', tags: [], tagMode: 'any' },
+            { id: 'verb',        type: 'verb',         enabled: true,  tags: [], tagMode: 'any' },
+            { id: 'environment', type: 'environment',  enabled: true,  tags: [], tagMode: 'any' },
+          ]
+        };
+      }
+    }
+
+    function generateCauldron(config, current, locked) {
+      const prev = current || {};
+      const result = {};
+      const activeSlots = config.slots.filter(s => s.enabled);
+      const usedNames = {}; // tracks used noun names per pool key to prevent duplicates
+
+      for (const slot of activeSlots) {
+        if (locked[slot.id]) { result[slot.id] = prev[slot.id]; continue; }
+
+        if (slot.type === 'adjective') {
+          result[slot.id] = pick(store.adjectives);
+
+        } else if (slot.type === 'noun') {
+          const fullPool = slot.pool === 'organic'   ? store.nounsOrganicFull
+                         : slot.pool === 'synthetic' ? store.nounsSyntheticFull
+                         : [...store.nounsOrganicFull, ...store.nounsSyntheticFull];
+          const filtered = filterByTags(fullPool, slot.tags ?? [], slot.tagMode);
+          const candidates = filtered.length ? filtered : fullPool;
+          // Duplicate prevention: exclude names already used from the same pool key
+          const poolKey = slot.pool;
+          if (!usedNames[poolKey]) usedNames[poolKey] = new Set();
+          const deduped = candidates.filter(n => !usedNames[poolKey].has(n.name));
+          const chosen = pick(deduped.length ? deduped : candidates);
+          result[slot.id] = chosen.name;
+          usedNames[poolKey].add(chosen.name);
+
+        } else if (slot.type === 'verb') {
+          const filtered = filterByTags(store.verbsFull, slot.tags ?? [], slot.tagMode);
+          result[slot.id] = pick(filtered.length ? filtered : store.verbsFull).name;
+
+        } else if (slot.type === 'environment') {
+          const filtered = filterByTags(store.environmentsFull, slot.tags ?? [], slot.tagMode);
+          result[slot.id] = pick(filtered.length ? filtered : store.environmentsFull).name;
+        }
+      }
+      return result;
+    }
+
     function toggleLock(slot, container, mode) {
       if (lockedSlots[slot]) {
         delete lockedSlots[slot];
@@ -1300,6 +1380,9 @@
     }
 
     // ── State ────────────────────────────────────────────────────
+    // ── Cauldron state ───────────────────────────────────────────
+    let cauldronConfig = null;       // { preset, slots } — set by initCauldronConfig()
+    let openTagPickerSlotId = null;  // id of the slot whose inline tag picker is open
     let imagineMode = null;    // 'surreal' | 'mutations'
     let mutationType = null;   // 'organic-organic' | 'organic-synthetic' | 'synthetic-synthetic' | 'random'
     let promptBackTarget = null;
