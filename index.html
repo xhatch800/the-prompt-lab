@@ -314,6 +314,345 @@
       .regen-btn { font-size: 1.2rem; bottom: 1rem; }
       .history-nav { bottom: 4rem; }
     }
+
+/* ── Surreal Cauldron config screen ── */
+#screen-cauldron-config {
+  justify-content: flex-start;
+  overflow-y: auto;
+  padding: 4.5rem 1.5rem 2rem;
+  align-items: stretch;
+}
+
+.cc-body {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.cc-section-title {
+  font-family: sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 8px;
+  margin-top: 4px;
+}
+
+.cc-components-title {
+  font-family: sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #b85c38;
+  margin-bottom: 8px;
+  margin-top: 16px;
+}
+
+/* Preset strip */
+.cc-preset-strip {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.cc-preset-chip {
+  font-family: sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border: 2px solid #b85c38;
+  border-radius: 20px;
+  padding: 4px 14px;
+  background: #fdf8f0;
+  color: #b85c38;
+  cursor: pointer;
+  transition: background 0.1s, color 0.1s;
+}
+.cc-preset-chip.active {
+  background: #b85c38;
+  color: white;
+}
+
+/* Slot row */
+.cc-slot {
+  background: #fff;
+  border: 1.5px solid #b85c38;
+  border-radius: 10px;
+  padding: 8px 12px;
+  margin-bottom: 7px;
+}
+
+.cc-slot-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.cc-slot-name {
+  flex: 1;
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2c2c2c;
+}
+
+.cc-remove {
+  font-family: sans-serif;
+  font-size: 0.65rem;
+  color: #b85c38;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.cc-toggle-on {
+  width: 36px;
+  height: 20px;
+  background: #b85c38;
+  border: none;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.cc-toggle-on::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+}
+
+.cc-untagged-note {
+  font-family: sans-serif;
+  font-size: 0.65rem;
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Pool selector */
+.cc-pool-toggle {
+  display: inline-flex;
+  border: 1.5px solid #b85c38;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.cc-pool-btn {
+  font-family: sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 3px 11px;
+  background: none;
+  border: none;
+  color: #b85c38;
+  cursor: pointer;
+}
+.cc-pool-btn.active {
+  background: #b85c38;
+  color: white;
+}
+
+/* Tags area */
+.cc-tags-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.cc-any-all {
+  display: inline-flex;
+  border: 1.5px solid #b85c38;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.cc-any-all-btn {
+  font-family: sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  background: none;
+  border: none;
+  color: #b85c38;
+  cursor: pointer;
+}
+.cc-any-all-btn.active {
+  background: #b85c38;
+  color: white;
+}
+
+.cc-tag-chip {
+  font-family: sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: #fdf0e8;
+  border: 1.5px solid #b85c38;
+  color: #b85c38;
+  border-radius: 16px;
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+.cc-tag-add {
+  font-family: sans-serif;
+  font-size: 0.7rem;
+  background: none;
+  border: 1.5px dashed #ccc;
+  color: #aaa;
+  border-radius: 16px;
+  padding: 2px 8px;
+  cursor: pointer;
+}
+.cc-tag-add.open {
+  border-style: solid;
+  border-color: #b85c38;
+  color: #b85c38;
+}
+
+/* Tag picker panel */
+.cc-tag-picker {
+  border-top: 1.5px solid #f0e8dc;
+  background: #fdf8f0;
+  margin: 8px -12px -8px;
+  padding: 10px 12px 8px;
+  border-radius: 0 0 8px 8px;
+}
+
+.cc-tag-picker-label {
+  font-family: sans-serif;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.cc-tag-picker-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+.cc-avail-tag {
+  font-family: sans-serif;
+  font-size: 0.7rem;
+  background: #fff;
+  border: 1.5px solid #d4c8ba;
+  color: #666;
+  border-radius: 16px;
+  padding: 3px 10px;
+  cursor: pointer;
+}
+.cc-avail-tag.selected {
+  background: #fdf0e8;
+  border-color: #b85c38;
+  color: #b85c38;
+}
+
+.cc-tag-done {
+  font-family: sans-serif;
+  font-size: 0.7rem;
+  color: #b85c38;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  display: block;
+  text-align: right;
+}
+
+/* Add noun / add component */
+.cc-add-noun {
+  font-family: sans-serif;
+  font-size: 0.78rem;
+  color: #b85c38;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  margin-bottom: 6px;
+  display: inline-block;
+}
+
+.cc-add-comp {
+  margin-bottom: 6px;
+}
+
+.cc-add-comp-label {
+  font-family: sans-serif;
+  font-size: 0.78rem;
+  color: #b85c38;
+  text-decoration: underline;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 7px;
+}
+
+.cc-add-comp-chips {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.cc-add-comp-chip {
+  font-family: sans-serif;
+  font-size: 0.75rem;
+  background: #fff;
+  border: 1.5px solid #d4c8ba;
+  color: #666;
+  border-radius: 16px;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+.cc-add-comp-chip:hover {
+  border-color: #b85c38;
+  color: #b85c38;
+}
+
+/* Generate button */
+.cc-generate-btn {
+  font-family: 'Caveat', cursive;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: #b85c38;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 1.8rem;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 14px;
+  box-shadow: 2px 2px 0 rgba(184,92,56,0.3);
+  transition: box-shadow 0.1s ease, transform 0.1s ease;
+}
+.cc-generate-btn:hover {
+  box-shadow: 1px 1px 0 rgba(184,92,56,0.3);
+  transform: translate(1px, 1px);
+}
+.cc-generate-btn:disabled {
+  background: #d4c8ba;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
   </style>
 </head>
 <body>
