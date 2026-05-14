@@ -1210,6 +1210,28 @@
 
     function renderPrompt(container, mode) {
       container.innerHTML = '';
+
+      // ── Cauldron mode: slots driven by cauldronConfig ──
+      if (mode === 'cauldron') {
+        const activeSlots = cauldronConfig.slots.filter(s => s.enabled);
+        activeSlots.forEach((slot, i) => {
+          const span = document.createElement('span');
+          span.className = 'prompt-slot' + (lockedSlots[slot.id] ? ' locked' : '');
+          span.dataset.slot = slot.id;
+          span.innerHTML = (lockedSlots[slot.id] ? LOCK_SVG : '') + currentPrompt[slot.id];
+          span.addEventListener('click', () => toggleLock(slot.id, container, mode));
+          container.appendChild(span);
+          if (i < activeSlots.length - 1) {
+            const s = document.createElement('span');
+            s.className = 'prompt-sep';
+            s.textContent = ' · ';
+            container.appendChild(s);
+          }
+        });
+        return;
+      }
+
+      // ── Surreal / Mutations mode (existing) ──
       const slots = mode === 'surreal'
         ? ['adjective', 'noun', 'verb', 'environment']
         : ['noun1', 'noun2'];
@@ -1270,6 +1292,35 @@
 
     function animateUnlockedSlots(container) {
       if (!currentPrompt) return;
+
+      // ── Cauldron mode ──
+      if (imagineMode === 'cauldron' && cauldronConfig) {
+        container.querySelectorAll('.prompt-slot:not(.locked)').forEach(span => {
+          const slotId = span.dataset.slot;
+          const slotDef = cauldronConfig.slots.find(s => s.id === slotId);
+          if (!slotDef) return;
+          let pool;
+          if (slotDef.type === 'adjective') {
+            pool = store.adjectives;
+          } else if (slotDef.type === 'noun') {
+            const full = slotDef.pool === 'organic'   ? store.nounsOrganicFull
+                       : slotDef.pool === 'synthetic' ? store.nounsSyntheticFull
+                       : [...store.nounsOrganicFull, ...store.nounsSyntheticFull];
+            const filtered = filterByTags(full, slotDef.tags ?? [], slotDef.tagMode);
+            pool = (filtered.length ? filtered : full).map(n => n.name);
+          } else if (slotDef.type === 'verb') {
+            const filtered = filterByTags(store.verbsFull, slotDef.tags ?? [], slotDef.tagMode);
+            pool = (filtered.length ? filtered : store.verbsFull).map(n => n.name);
+          } else if (slotDef.type === 'environment') {
+            const filtered = filterByTags(store.environmentsFull, slotDef.tags ?? [], slotDef.tagMode);
+            pool = (filtered.length ? filtered : store.environmentsFull).map(n => n.name);
+          }
+          if (pool && pool.length > 0) animateSlot(span, pool, currentPrompt[slotId], 1200);
+        });
+        return;
+      }
+
+      // ── Existing surreal / mutations mode ──
       const pools = {
         adjective:   store.adjectives,
         noun:        Math.random() < 0.5 ? store.nounsOrganic : store.nounsSynthetic,
