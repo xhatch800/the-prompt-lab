@@ -315,6 +315,38 @@
       .history-nav { bottom: 4rem; }
     }
 
+/* ── Everyday Life attribution ── */
+#screen-just-draw .regen-btn {
+  bottom: 3.2rem; /* nudged up to make room for attribution */
+}
+
+#screen-just-draw .history-nav {
+  bottom: 7.2rem;
+}
+
+#screen-just-draw .prompt-text {
+  max-height: calc(100vh - 14rem); /* prevent long prompts reaching fixed footer */
+  overflow: hidden;
+}
+
+.just-draw-attribution {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 0.58rem;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.02em;
+  pointer-events: auto;
+}
+
+.just-draw-attribution a {
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: underline;
+}
+
 /* ── Surreal Cauldron config screen ── */
 #screen-cauldron-config {
   justify-content: flex-start;
@@ -1113,6 +1145,7 @@
       <div class="hist-dots" id="hist-dots-just-draw"></div>
       <button class="hist-arrow" id="hist-next-just-draw">›</button>
     </div>
+    <p class="just-draw-attribution">Prompt list by <a href="https://dannygregorysblog.com/community/edm-challenges/" target="_blank" rel="noopener">Danny Gregory</a></p>
   </div>
 
   <!-- Screen: Surreal Cauldron Config -->
