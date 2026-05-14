@@ -1160,10 +1160,10 @@
           await Promise.all([
             fetch('data/just_draw.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
             fetch('data/adjectives.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
-            fetch('data/nouns_organic.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
-            fetch('data/nouns_synthetic.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
-            fetch('data/verbs.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
-            fetch('data/environments.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
+            fetch('data/nouns_organic_tagged.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }).then(d => d.map(item => item.name)),
+            fetch('data/nouns_synthetic_tagged.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }).then(d => d.map(item => item.name)),
+            fetch('data/verbs_tagged.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }).then(d => d.map(item => item.name)),
+            fetch('data/environments_tagged.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }).then(d => d.map(item => item.name)),
           ]);
 
         if ([justDraw, adjectives, nounsOrganic, nounsSynthetic, verbs, environments]
