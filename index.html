@@ -1370,6 +1370,253 @@
       return result;
     }
 
+    function buildSlotRow(slot, isStrange) {
+  const div = document.createElement('div');
+  div.className = 'cc-slot';
+
+  // ── Header ──
+  const header = document.createElement('div');
+  header.className = 'cc-slot-header';
+
+  const nameEl = document.createElement('span');
+  nameEl.className = 'cc-slot-name';
+  const nounNum = slot.id.startsWith('noun_') ? parseInt(slot.id.split('_')[1], 10) : null;
+  nameEl.textContent = slot.type === 'noun'
+    ? (nounNum === 1 ? 'Noun' : `Noun ${nounNum}`)
+    : slot.type.charAt(0).toUpperCase() + slot.type.slice(1);
+  header.appendChild(nameEl);
+
+  // Remove link (extra nouns only — noun_2 and beyond)
+  if (slot.type === 'noun' && slot.id !== 'noun_1') {
+    const removeBtn = document.createElement('button');
+    removeBtn.className = 'cc-remove';
+    removeBtn.textContent = 'remove';
+    removeBtn.addEventListener('click', () => {
+      cauldronConfig.slots = cauldronConfig.slots.filter(s => s.id !== slot.id);
+      if (openTagPickerSlotId === slot.id) openTagPickerSlotId = null;
+      renderCauldronConfig();
+    });
+    header.appendChild(removeBtn);
+  }
+
+  // Toggle-off button (surreal mode only; not on noun slots — nouns are removed, not toggled)
+  if (!isStrange && slot.type !== 'noun') {
+    const tog = document.createElement('button');
+    tog.className = 'cc-toggle-on';
+    tog.setAttribute('aria-label', `Disable ${slot.type}`);
+    tog.addEventListener('click', () => {
+      slot.enabled = false;
+      if (openTagPickerSlotId === slot.id) openTagPickerSlotId = null;
+      renderCauldronConfig();
+    });
+    header.appendChild(tog);
+  }
+
+  div.appendChild(header);
+
+  // ── Adjective: untagged note ──
+  if (slot.type === 'adjective') {
+    const note = document.createElement('span');
+    note.className = 'cc-untagged-note';
+    note.textContent = 'untagged — fully random';
+    div.appendChild(note);
+    return div;
+  }
+
+  // ── Pool toggle (nouns only) ──
+  if (slot.type === 'noun') {
+    const poolDiv = document.createElement('div');
+    poolDiv.className = 'cc-pool-toggle';
+    ['organic', 'either', 'synthetic'].forEach(p => {
+      const btn = document.createElement('button');
+      btn.className = 'cc-pool-btn' + (slot.pool === p ? ' active' : '');
+      btn.textContent = p.charAt(0).toUpperCase() + p.slice(1);
+      btn.addEventListener('click', () => {
+        slot.pool = p;
+        slot.tags = []; // clear tags when pool changes — tags may no longer be valid
+        slot.tagMode = 'any';
+        openTagPickerSlotId = null;
+        renderCauldronConfig();
+      });
+      poolDiv.appendChild(btn);
+    });
+    div.appendChild(poolDiv);
+  }
+
+  // ── Tags area ──
+  const tagsArea = document.createElement('div');
+  tagsArea.className = 'cc-tags-area';
+
+  // ANY/ALL toggle (only when ≥1 tag selected)
+  if (slot.tags.length > 0) {
+    const anyAll = document.createElement('div');
+    anyAll.className = 'cc-any-all';
+    ['any', 'all'].forEach(m => {
+      const btn = document.createElement('button');
+      btn.className = 'cc-any-all-btn' + (slot.tagMode === m ? ' active' : '');
+      btn.textContent = m.toUpperCase();
+      btn.addEventListener('click', () => {
+        slot.tagMode = m;
+        renderCauldronConfig();
+      });
+      anyAll.appendChild(btn);
+    });
+    tagsArea.appendChild(anyAll);
+  }
+
+  // Selected tag chips (each tappable to remove)
+  slot.tags.forEach(tag => {
+    const chip = document.createElement('span');
+    chip.className = 'cc-tag-chip';
+    chip.textContent = tag + ' ×';
+    chip.addEventListener('click', () => {
+      slot.tags = slot.tags.filter(t => t !== tag);
+      if (slot.tags.length === 0) slot.tagMode = 'any';
+      renderCauldronConfig();
+    });
+    tagsArea.appendChild(chip);
+  });
+
+  // + tag button
+  const addTagBtn = document.createElement('button');
+  const pickerOpen = openTagPickerSlotId === slot.id;
+  addTagBtn.className = 'cc-tag-add' + (pickerOpen ? ' open' : '');
+  addTagBtn.textContent = pickerOpen ? '+ tag ▴' : '+ tag ▾';
+  addTagBtn.addEventListener('click', () => {
+    openTagPickerSlotId = pickerOpen ? null : slot.id;
+    renderCauldronConfig();
+  });
+  tagsArea.appendChild(addTagBtn);
+
+  div.appendChild(tagsArea);
+
+  // ── Inline tag picker panel ──
+  if (pickerOpen) {
+    const picker = document.createElement('div');
+    picker.className = 'cc-tag-picker';
+
+    const label = document.createElement('div');
+    label.className = 'cc-tag-picker-label';
+    label.textContent = 'Available tags — alphabetical';
+    picker.appendChild(label);
+
+    const chipsDiv = document.createElement('div');
+    chipsDiv.className = 'cc-tag-picker-chips';
+    const available = getAvailableTags(slot);
+    available.forEach(tag => {
+      const chip = document.createElement('button');
+      const isSelected = slot.tags.includes(tag);
+      chip.className = 'cc-avail-tag' + (isSelected ? ' selected' : '');
+      chip.textContent = isSelected ? tag + ' ✓' : tag;
+      chip.addEventListener('click', () => {
+        if (isSelected) {
+          slot.tags = slot.tags.filter(t => t !== tag);
+          if (slot.tags.length === 0) slot.tagMode = 'any';
+        } else {
+          slot.tags.push(tag);
+        }
+        renderCauldronConfig();
+      });
+      chipsDiv.appendChild(chip);
+    });
+    picker.appendChild(chipsDiv);
+
+    const doneBtn = document.createElement('button');
+    doneBtn.className = 'cc-tag-done';
+    doneBtn.textContent = 'done';
+    doneBtn.addEventListener('click', () => {
+      openTagPickerSlotId = null;
+      renderCauldronConfig();
+    });
+    picker.appendChild(doneBtn);
+
+    div.appendChild(picker);
+  }
+
+  return div;
+}
+
+function renderCauldronConfig() {
+  const isStrange = cauldronConfig.preset === 'strange';
+
+  // Update preset chips
+  document.getElementById('cc-preset-surreal').classList.toggle('active', !isStrange);
+  document.getElementById('cc-preset-strange').classList.toggle('active', isStrange);
+
+  // Render active slots
+  const slotsContainer = document.getElementById('cc-slots');
+  slotsContainer.innerHTML = '';
+
+  const activeSlots = cauldronConfig.slots.filter(s => s.enabled);
+  activeSlots.forEach(slot => {
+    slotsContainer.appendChild(buildSlotRow(slot, isStrange));
+  });
+
+  // + add another Noun (max 4)
+  const nounCount = cauldronConfig.slots.filter(s => s.type === 'noun' && s.enabled).length;
+  if (nounCount < 4) {
+    const addNounBtn = document.createElement('button');
+    addNounBtn.className = 'cc-add-noun';
+    addNounBtn.textContent = '+ add another Noun';
+    addNounBtn.addEventListener('click', () => {
+      const nextNum = cauldronConfig.slots.filter(s => s.type === 'noun').length + 1;
+      // Insert new noun after last existing noun in slots array
+      const lastNounIdx = cauldronConfig.slots.reduce((acc, s, i) => s.type === 'noun' ? i : acc, -1);
+      const newSlot = { id: `noun_${nextNum}`, type: 'noun', enabled: true, pool: 'either', tags: [], tagMode: 'any' };
+      cauldronConfig.slots.splice(lastNounIdx + 1, 0, newSlot);
+      renderCauldronConfig();
+    });
+    slotsContainer.appendChild(addNounBtn);
+  }
+
+  // + add component (surreal mode only — shows inactive component types)
+  if (!isStrange) {
+    const inactiveTypes = ['adjective', 'verb', 'environment'].filter(type =>
+      !cauldronConfig.slots.find(s => s.type === type && s.enabled)
+    );
+    if (inactiveTypes.length > 0) {
+      const addCompDiv = document.createElement('div');
+      addCompDiv.className = 'cc-add-comp';
+
+      const addCompLabel = document.createElement('span');
+      addCompLabel.className = 'cc-add-comp-label';
+      addCompLabel.textContent = '+ add component';
+      addCompDiv.appendChild(addCompLabel);
+
+      const chipsDiv = document.createElement('div');
+      chipsDiv.className = 'cc-add-comp-chips';
+      inactiveTypes.forEach(type => {
+        const chip = document.createElement('button');
+        chip.className = 'cc-add-comp-chip';
+        chip.textContent = type.charAt(0).toUpperCase() + type.slice(1);
+        chip.addEventListener('click', () => {
+          // Re-enable the slot if it exists, otherwise add it
+          const existing = cauldronConfig.slots.find(s => s.type === type);
+          if (existing) {
+            existing.enabled = true;
+          } else {
+            // Insert in canonical order: adjective first, then nouns, then verb, then environment
+            const order = ['adjective', 'noun', 'verb', 'environment'];
+            const newSlot = type === 'adjective'
+              ? { id: type, type, enabled: true }
+              : { id: type, type, enabled: true, tags: [], tagMode: 'any' };
+            const insertBefore = cauldronConfig.slots.findIndex(s => order.indexOf(s.type) > order.indexOf(type));
+            if (insertBefore === -1) cauldronConfig.slots.push(newSlot);
+            else cauldronConfig.slots.splice(insertBefore, 0, newSlot);
+          }
+          renderCauldronConfig();
+        });
+        chipsDiv.appendChild(chip);
+      });
+      addCompDiv.appendChild(chipsDiv);
+      slotsContainer.appendChild(addCompDiv);
+    }
+  }
+
+  // Update generate button disabled state
+  document.getElementById('cc-generate').disabled = activeSlots.length === 0;
+}
+
     function toggleLock(slot, container, mode) {
       if (lockedSlots[slot]) {
         delete lockedSlots[slot];
