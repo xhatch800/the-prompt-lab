@@ -1406,7 +1406,16 @@
       const usedNames = {}; // tracks used noun names per pool key to prevent duplicates
 
       for (const slot of activeSlots) {
-        if (locked[slot.id]) { result[slot.id] = prev[slot.id]; continue; }
+        if (locked[slot.id]) {
+          result[slot.id] = prev[slot.id];
+          // Track locked noun names so subsequent noun slots don't pick the same word
+          if (slot.type === 'noun' && prev[slot.id]) {
+            const poolKey = slot.pool;
+            if (!usedNames[poolKey]) usedNames[poolKey] = new Set();
+            usedNames[poolKey].add(prev[slot.id]);
+          }
+          continue;
+        }
 
         if (slot.type === 'adjective') {
           result[slot.id] = pick(store.adjectives);
