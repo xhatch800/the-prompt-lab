@@ -1829,6 +1829,8 @@ function renderCauldronConfig() {
     const HISTORY_MAX = 20;
     let promptHistory = [];    // string[] for Sparks; prompt object[] for Surreal/Mutations
     let historyIndex = -1;     // -1 = empty; 0 = oldest; length-1 = newest
+    let justDrawDeck = [];     // shuffle deck for Everyday Life — reset on entry from Home
+    let cauldronDecks = {};    // { [slotId]: string[] } — reset on every Generate tap
 
     // ── History helpers ──────────────────────────────────────────
     function clearHistory() {
