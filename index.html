@@ -67,6 +67,7 @@
       justify-content: center;
       align-items: center;
       gap: 0.25rem;
+      text-align: center;
     }
 
     /* ── Buttons ── */
@@ -119,6 +120,23 @@
     .back-btn:hover {
       opacity: 0.6;
     }
+
+    .copy-btn {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      z-index: 10;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #b85c38;
+      font-size: 1.3rem;
+      line-height: 1;
+      padding: 4px;
+      transition: color 0.15s ease;
+    }
+    .copy-btn:hover { opacity: 0.7; }
+    .copy-btn.copied { color: #b85c38; }
 
     .back-row {
       display: flex;
@@ -1143,6 +1161,7 @@
       <button class="back-btn" data-target="screen-home">←</button>
       <span class="screen-label">Everyday Life</span>
     </div>
+    <button class="copy-btn" id="copy-just-draw" title="Copy prompt">⧉</button>
     <p id="just-draw-prompt" class="prompt-text"></p>
     <button id="btn-regen-just-draw" class="regen-btn">↺ new prompt</button>
     <div class="history-nav" id="history-nav-just-draw">
@@ -1177,6 +1196,7 @@
       <button id="btn-back-imagine" class="back-btn">←</button>
       <span id="imagine-screen-label" class="screen-label"></span>
     </div>
+    <button class="copy-btn" id="copy-imagine" title="Copy prompt">⧉</button>
     <div id="imagine-prompt" class="prompt-text"></div>
     <p id="lock-hint-imagine" class="lock-hint">tap a word to lock it</p>
     <button id="btn-regen-imagine" class="regen-btn">↺ new prompt</button>
@@ -1801,10 +1821,6 @@ function renderCauldronConfig() {
     }
 
     function pushToHistory(prompt) {
-      // Truncate any forward entries if mid-history (regen while browsing back)
-      if (historyIndex < promptHistory.length - 1) {
-        promptHistory = promptHistory.slice(0, historyIndex + 1);
-      }
       promptHistory.push(prompt);
       if (promptHistory.length > HISTORY_MAX) {
         promptHistory.shift();
@@ -2011,6 +2027,45 @@ function renderCauldronConfig() {
     document.querySelectorAll('.back-btn[data-target]').forEach(btn => {
       btn.addEventListener('click', () => showScreen(btn.dataset.target));
     });
+
+    function setupCopyBtn(btnId, getTextFn) {
+      const btn = document.getElementById(btnId);
+      btn.addEventListener('click', async () => {
+        const text = getTextFn();
+        if (!text) return;
+        let success = false;
+        try {
+          await navigator.clipboard.writeText(text);
+          success = true;
+        } catch (e) {
+          // Fallback for file:// or non-secure contexts
+          try {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.cssText = 'position:fixed;top:-999px;left:-999px';
+            document.body.appendChild(ta);
+            ta.select();
+            success = document.execCommand('copy');
+            document.body.removeChild(ta);
+          } catch (e2) { /* nothing we can do */ }
+        }
+        if (success) {
+          btn.textContent = '✓';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.textContent = '⧉';
+            btn.classList.remove('copied');
+          }, 1500);
+        }
+      });
+    }
+
+    setupCopyBtn('copy-just-draw', () =>
+      document.getElementById('just-draw-prompt').textContent.trim()
+    );
+    setupCopyBtn('copy-imagine', () =>
+      document.getElementById('imagine-prompt').textContent.trim()
+    );
 
     document.getElementById('btn-back-imagine').addEventListener('click', () => {
       showScreen(promptBackTarget ?? 'screen-home');
