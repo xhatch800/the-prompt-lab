@@ -1,6 +1,6 @@
 # Drawing Prompt Lab
 
-A mobile-first web app that generates drawing prompts. Two modes: a curated everyday list and a custom prompt builder.
+A mobile-first web app that generates drawing prompts. Two modes: curated everyday prompts and a custom prompt builder.
 
 ## Running the app
 
@@ -20,49 +20,50 @@ Then open `http://localhost:8080` in your browser.
 
 Prompts drawn from Danny Gregory's Everyday Drawing Challenges list.
 
-- Tap **↺ new prompt** to get the next prompt
-- Use **‹ ›** to browse your prompt history — previous prompts stay intact
-- Tap **⧉** (top-right) to copy the current prompt to your clipboard
-- Attribution links back to [Danny Gregory's site](https://dannygregorysblog.com/community/edm-challenges/)
+- Tap **↺ new prompt** to get a new prompt
+- Use **‹ ›** to browse prompt history — navigating back and regenning never erases earlier prompts
+- Tap **⧉** (top-right) to copy the current prompt to clipboard
 
 ### Surreal Cauldron
 
-Build your own prompt by combining components with optional tag filters.
-
-**Components**
-
-| Component | Description |
-|-----------|-------------|
-| Adjective | Randomly drawn from the full adjective list (untagged) |
-| Noun | An organic or synthetic object — filter by tag to narrow the pool |
-| Verb | An action or state — filter by tag |
-| Environment | A setting — filter by tag |
-
-You can add multiple Noun components to create stranger combinations.
-
-**Tag filtering**
-
-Each tagged component shows a **+ tag** button. Tap it to open the tag picker and select one or more tags. Toggle **ANY / ALL** to control whether prompts must match any selected tag (union) or all of them (intersection).
-
-- A match count badge appears when tags are active — green outline if matches exist, red filled if zero matches
-- The **Generate** button is disabled if any component has zero matches
-
-**Locking words**
-
-After generating a prompt, tap any word to lock it in place. Locked words are highlighted in orange. Tap **↺ new prompt** and only the unlocked words regenerate — useful for keeping a good noun while cycling through environments.
+Build a custom prompt by assembling components. Tap **✦ Surreal Cauldron** from the home screen to open the config.
 
 **Presets**
 
-Two starting configurations are available at the top of the config screen:
+Choose a starting configuration at the top of the config screen:
 
 - **Surreal Narrative** — Adjective + Noun + Verb + Environment
 - **Strange Combinations** — Noun + Noun
 
----
+You can add, remove, enable, or disable individual components after selecting a preset.
 
-## History
+**Components**
 
-Both modes keep a history of generated prompts. Use **‹ ›** to navigate. Tapping **↺ new prompt** always appends to the end of history — browsing back and regenning does not erase prompts you've already seen.
+| Component | Pool | Taggable |
+|-----------|------|----------|
+| Adjective | Full adjective list | No — always fully random |
+| Noun | Organic, Synthetic, or Either | Yes |
+| Verb | Full verb list | Yes |
+| Environment | Full environment list | Yes |
+
+You can add multiple Noun components to create unusual pairings.
+
+**Tag filtering**
+
+Tap **+ tag** on any taggable component to filter its pool by topic. Toggle **ANY / ALL** to match prompts that include any selected tag (union) or all of them (intersection).
+
+- A badge shows the number of matching prompts when tags are active
+- The badge turns red if a component has zero matches
+- **Generate** is disabled until all components have at least one match
+
+**Generating and locking**
+
+Tap **Generate ↓** to produce a prompt. On the prompt screen:
+
+- Tap any **word** to lock it — locked words are highlighted and stay fixed on the next regen
+- Tap **↺ new prompt** to regenerate only the unlocked words
+- Use **‹ ›** to browse prompt history
+- Tap **⧉** (top-right) to copy the prompt to clipboard
 
 ---
 
@@ -73,10 +74,10 @@ Prompt data lives in `data/`:
 | File | Contents |
 |------|----------|
 | `just_draw.json` | Everyday Life prompt list |
-| `adjectives.json` | Adjective pool |
+| `adjectives.json` | Adjective pool (plain string array) |
 | `nouns_organic_tagged.json` | Organic nouns with tags |
 | `nouns_synthetic_tagged.json` | Synthetic nouns with tags |
 | `verbs_tagged.json` | Verbs with tags |
 | `environments_tagged.json` | Environments with tags |
 
-Each tagged file contains objects with a `name` field and a `tags` array. Adjectives are a plain array of strings.
+Tagged files contain objects with a `name` string and a `tags` string array.
