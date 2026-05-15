@@ -248,6 +248,12 @@
       transform: translate(2px, 2px);
     }
 
+    .regen-btn:disabled {
+      opacity: 0.35;
+      cursor: default;
+      box-shadow: none;
+    }
+
     /* ── Error banner ── */
     .error-banner {
       color: #b85c38;
@@ -1320,6 +1326,14 @@
             container.appendChild(s);
           }
         });
+
+        // Sync regen button disabled state with lock state
+        const regenBtn = document.getElementById('btn-regen-imagine');
+        if (regenBtn) {
+          const allLocked = activeSlots.length > 0 &&
+            activeSlots.every(s => lockedSlots[s.id]);
+          regenBtn.disabled = allLocked;
+        }
         return;
       }
 
