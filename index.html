@@ -1494,7 +1494,8 @@
         }
 
         if (slot.type === 'adjective') {
-          result[slot.id] = pick(store.adjectives);
+          if (!cauldronDecks[slot.id]) cauldronDecks[slot.id] = [];
+          result[slot.id] = drawFromDeck(cauldronDecks[slot.id], store.adjectives);
 
         } else if (slot.type === 'noun') {
           const fullPool = slot.pool === 'organic'   ? store.nounsOrganicFull
@@ -1506,17 +1507,23 @@
           const poolKey = slot.pool;
           if (!usedNames[poolKey]) usedNames[poolKey] = new Set();
           const deduped = candidates.filter(n => !usedNames[poolKey].has(n.name));
-          const chosen = pick(deduped.length ? deduped : candidates);
-          result[slot.id] = chosen.name;
-          usedNames[poolKey].add(chosen.name);
+          const drawPool = (deduped.length ? deduped : candidates).map(n => n.name);
+          if (!cauldronDecks[slot.id]) cauldronDecks[slot.id] = [];
+          const chosen = drawFromDeck(cauldronDecks[slot.id], drawPool);
+          result[slot.id] = chosen;
+          usedNames[poolKey].add(chosen);
 
         } else if (slot.type === 'verb') {
           const filtered = filterByTags(store.verbsFull, slot.tags ?? [], slot.tagMode);
-          result[slot.id] = pick(filtered.length ? filtered : store.verbsFull).name;
+          const verbPool = (filtered.length ? filtered : store.verbsFull).map(i => i.name);
+          if (!cauldronDecks[slot.id]) cauldronDecks[slot.id] = [];
+          result[slot.id] = drawFromDeck(cauldronDecks[slot.id], verbPool);
 
         } else if (slot.type === 'environment') {
           const filtered = filterByTags(store.environmentsFull, slot.tags ?? [], slot.tagMode);
-          result[slot.id] = pick(filtered.length ? filtered : store.environmentsFull).name;
+          const envPool = (filtered.length ? filtered : store.environmentsFull).map(i => i.name);
+          if (!cauldronDecks[slot.id]) cauldronDecks[slot.id] = [];
+          result[slot.id] = drawFromDeck(cauldronDecks[slot.id], envPool);
         }
       }
       return result;
@@ -1991,6 +1998,7 @@ function renderCauldronConfig() {
       if (!cauldronConfig) return;
       clearHistory();
       lockedSlots = {};
+      cauldronDecks = {};
       imagineMode = 'cauldron';
       promptBackTarget = 'screen-cauldron-config';
       currentPrompt = generateCauldron(cauldronConfig, null, {});
