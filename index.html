@@ -1496,7 +1496,7 @@
       const usedNames = {}; // tracks used noun names per pool key to prevent duplicates
 
       for (const slot of activeSlots) {
-        if (locked[slot.id]) {
+        if (locked[slot.id] && prev[slot.id] != null) {
           result[slot.id] = prev[slot.id];
           // Track locked noun names so subsequent noun slots don't pick the same word
           if (slot.type === 'noun' && prev[slot.id]) {
@@ -2010,12 +2010,10 @@ function renderCauldronConfig() {
 
     document.getElementById('cc-generate').addEventListener('click', () => {
       if (!cauldronConfig) return;
-      clearHistory();
-      lockedSlots = {};
       cauldronDecks = {};
       imagineMode = 'cauldron';
       promptBackTarget = 'screen-cauldron-config';
-      currentPrompt = generateCauldron(cauldronConfig, null, {});
+      currentPrompt = generateCauldron(cauldronConfig, currentPrompt, lockedSlots);
       document.getElementById('imagine-screen-label').textContent = 'Surreal Cauldron';
       showScreen('screen-imagine-prompt');
       const container = document.getElementById('imagine-prompt');
