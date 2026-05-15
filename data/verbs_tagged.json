@@ -22,7 +22,6 @@
   {
     "name": "blooming",
     "tags": [
-      "growth",
       "transformative"
     ]
   },
@@ -58,8 +57,7 @@
   {
     "name": "rising",
     "tags": [
-      "motion",
-      "growth"
+      "motion"
     ]
   },
   {
@@ -82,13 +80,6 @@
     ]
   },
   {
-    "name": "growing",
-    "tags": [
-      "growth",
-      "transformative"
-    ]
-  },
-  {
     "name": "shrinking",
     "tags": [
       "transformative"
@@ -104,16 +95,14 @@
     "name": "twisting",
     "tags": [
       "motion",
-      "transformative",
-      "growth"
+      "transformative"
     ]
   },
   {
     "name": "stretching",
     "tags": [
       "transformative",
-      "motion",
-      "growth"
+      "motion"
     ]
   },
   {
@@ -152,8 +141,7 @@
     "name": "pouring",
     "tags": [
       "motion",
-      "destructive",
-      "growth"
+      "destructive"
     ]
   },
   {
@@ -166,7 +154,6 @@
   {
     "name": "spreading",
     "tags": [
-      "growth",
       "motion"
     ]
   },
@@ -180,8 +167,7 @@
   {
     "name": "climbing",
     "tags": [
-      "motion",
-      "growth"
+      "motion"
     ]
   },
   {
@@ -426,24 +412,21 @@
     "name": "overflowing",
     "tags": [
       "destructive",
-      "motion",
-      "growth"
+      "motion"
     ]
   },
   {
     "name": "flooding",
     "tags": [
       "destructive",
-      "motion",
-      "growth"
+      "motion"
     ]
   },
   {
     "name": "scorching",
     "tags": [
       "destructive",
-      "transformative",
-      "growth"
+      "transformative"
     ]
   },
   {
@@ -471,20 +454,12 @@
   {
     "name": "sprouting",
     "tags": [
-      "growth",
       "transformative"
     ]
   },
   {
     "name": "branching",
     "tags": [
-      "growth"
-    ]
-  },
-  {
-    "name": "flowering",
-    "tags": [
-      "growth",
       "transformative"
     ]
   },
@@ -541,7 +516,6 @@
   {
     "name": "multiplying",
     "tags": [
-      "growth",
       "transformative"
     ]
   },
@@ -561,22 +535,19 @@
   {
     "name": "gathering",
     "tags": [
-      "containing",
-      "growth"
+      "containing"
     ]
   },
   {
     "name": "cascading",
     "tags": [
-      "motion",
-      "growth"
+      "motion"
     ]
   },
   {
     "name": "filling",
     "tags": [
-      "containing",
-      "growth"
+      "containing"
     ]
   },
   {
@@ -634,7 +605,6 @@
   {
     "name": "expanding",
     "tags": [
-      "growth",
       "motion",
       "containing"
     ]
@@ -679,8 +649,7 @@
     "name": "surging",
     "tags": [
       "motion",
-      "destructive",
-      "growth"
+      "destructive"
     ]
   },
   {
