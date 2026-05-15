@@ -190,21 +190,23 @@ Each entry carries tags drawn from up to four axes. Tags from different axes may
 
 | Axis | Tags |
 |------|------|
-| **Identity** | `animal`, `anatomy` |
-| **Type** (sub-category of identity) | `mammal`, `bird`, `reptile`, `amphibian`, `bug`, `arachnid`, `aquatic`, `plant`, `fungus`, `microscopic` |
+| **Identity** | `animal`, `anatomy`, `human`, `monster` |
+| **Type** (sub-category of identity) | `mammal`, `bird`, `reptile`, `fish`, `bug`, `aquatic`, `plant`, `fungus`, `microscopic` |
 | **Character** | `predator`, `domestic`, `mythic`, `weird` |
-| **Size** | `tiny`, `small`, `medium`, `large`, `enormous` |
 
-Every entry must have at least one identity or type tag, and exactly one size tag.
+Every entry must have at least one identity or type tag.
 
 ### Identity rules
 
 - All whole creatures get `animal`. Sub-type tags (`mammal`, `bird`, etc.) narrow that identity but do not replace it.
-- `anatomy` entries represent body parts. They use only `anatomy` + size + character. No relational tags.
+- `anatomy` entries represent body parts. They use only `anatomy` + character. No relational tags.
+- `human` entries are visually striking human archetypes. They use only `human` + character.
+- `monster` entries are mythic or fantastical beings. All monsters get `mythic`. Type tags (`aquatic`, `reptile`, `bird`, `mammal`) may be added where they genuinely apply to the creature's form.
 
 ### Type rules
 
 - **`mammal`, `bird`, `reptile`** — biological sub-types of animal. `reptile` is used in the colloquial sense — it covers both biological reptiles and amphibians, since most people group frogs, salamanders, snakes, and lizards together naturally.
+- **`fish`** — aquatic vertebrates with fins and gills. All fish also get `aquatic`. Excludes aquatic mammals, birds, and reptiles.
 - **`bug`** — anything insect-like in the everyday sense: hard-bodied, small, creepy-crawly. Includes true insects, arachnids, centipedes, millipedes. Excludes soft-bodied creatures (snail, slug, worm) which are just `animal`.
 - **`arachnid`** — sub-type of `bug` for spiders and scorpions.
 - **`aquatic`** — for sea-dwelling creatures with no other type tag (shark, octopus, jellyfish). Also added alongside `mammal` or `reptile` for aquatic variants (whale, turtle).
@@ -226,9 +228,8 @@ Each entry carries tags drawn from three axes.
 |------|------|
 | **Category** (functional identity) | `clothing`, `container`, `decoration`, `electronic`, `figure`, `furniture`, `instrument`, `kitchen`, `literary`, `structure`, `tool`, `toy`, `trinket`, `vehicle`, `weapon` |
 | **Character** (aesthetic or mood quality) | `mundane`, `ornate`, `worn`, `ancient`, `fragile`, `mechanical`, `luminous`, `grotesque`, `uncanny`, `weird`, `fantasy`, `mythic`, `dangerous`, `sharp`, `soft`, `scifi` |
-| **Size** | `tiny`, `small`, `medium`, `large`, `enormous` |
 
-Every entry must have at least one category tag and exactly one size tag. Character tags are optional additional descriptors — assign only when they genuinely apply.
+Every entry must have at least one category tag. Character tags are optional additional descriptors — assign only when they genuinely apply.
 
 ### Category definitions
 
