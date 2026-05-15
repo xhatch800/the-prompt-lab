@@ -271,6 +271,33 @@ Character tags layer additional qualities onto a categorized item. The IS test s
 
 ---
 
+## Environment tagging rules
+
+Tags in `environments_tagged.json` follow the same guiding principle:
+
+> **Every tag must complete the sentence "this place IS ___" on its own.** Tags describe the dominant quality of the environment — not what happens there, or what it contains.
+
+### The one axis
+
+Unlike nouns, environments use a single set of descriptive tags. Each entry must have at least one tag; multiple tags are allowed when more than one quality genuinely applies.
+
+| Tag | Definition |
+|-----|------------|
+| `aerial` | The environment IS elevated — in the air, on a high ledge, above the ground |
+| `built` | The environment IS man-made or constructed — a room, a ruin, a structure |
+| `cosmic` | The environment IS outer space or an alien world |
+| `dry` | The environment IS arid, parched, or volcanic — desert, lava, cracked earth |
+| `frozen` | The environment IS frozen — ice, snow, permafrost, blizzard |
+| `tranquil` | The environment IS calm and still — a garden, a library, a quiet body of water |
+| `underground` | The environment IS below ground — a cave, a tunnel, a catacomb |
+| `wet` | The environment IS defined by water — rain, swamp, ocean, flood |
+
+### Combination rules
+
+Tags from this set may be combined freely when both genuinely apply — a frozen underground lake is both `frozen` and `underground`. Avoid tagging `tranquil` alongside environments that are inherently turbulent (storms, eruptions, battles).
+
+---
+
 ## Architecture
 
 - Single `index.html` — all HTML, embedded CSS, embedded JS
