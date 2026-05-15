@@ -1991,5 +1991,371 @@
       "small",
       "weird"
     ]
+  },
+  {
+    "name": "acrobat",
+    "tags": [
+      "human",
+      "medium",
+      "weird"
+    ]
+  },
+  {
+    "name": "alchemist",
+    "tags": [
+      "human",
+      "medium",
+      "mythic"
+    ]
+  },
+  {
+    "name": "astronaut",
+    "tags": [
+      "human",
+      "medium",
+      "weird"
+    ]
+  },
+  {
+    "name": "beekeeper",
+    "tags": [
+      "human",
+      "medium"
+    ]
+  },
+  {
+    "name": "berserker",
+    "tags": [
+      "human",
+      "medium",
+      "mythic",
+      "weird"
+    ]
+  },
+  {
+    "name": "blacksmith",
+    "tags": [
+      "human",
+      "medium"
+    ]
+  },
+  {
+    "name": "centurion",
+    "tags": [
+      "human",
+      "medium",
+      "mythic"
+    ]
+  },
+  {
+    "name": "chimney sweep",
+    "tags": [
+      "human",
+      "medium"
+    ]
+  },
+  {
+    "name": "clown",
+    "tags": [
+      "human",
+      "medium",
+      "weird"
+    ]
+  },
+  {
+    "name": "conquistador",
+    "tags": [
+      "human",
+      "medium",
+      "mythic"
+    ]
+  },
+  {
+    "name": "deep sea diver",
+    "tags": [
+      "human",
+      "medium",
+      "weird"
+    ]
+  },
+  {
+    "name": "druid",
+    "tags": [
+      "human",
+      "medium",
+      "mythic"
+    ]
+  },
+  {
+    "name": "executioner",
+    "tags": [
+      "human",
+      "medium",
+      "mythic",
+      "weird"
+    ]
+  },
+  {
+    "name": "falconer",
+    "tags": [
+      "human",
+      "medium"
+    ]
+  },
+  {
+    "name": "ferryman",
+    "tags": [
+      "human",
+      "medium",
+      "mythic"
+    ]
+  },
+  {
+    "name": "fire eater",
+    "tags": [
+      "human",
+      "medium",
+      "weird"
+    ]
+  },
+  {
+    "name": "geisha",
+    "tags": [
+      "human",
+      "medium"
+    ]
+  },
+  {
+    "name": "gladiator",
+    "tags": [
+      "human",
+      "medium",
+      "mythic"
+    ]
+  },
+  {
+    "name": "gravedigger",
+    "tags": [
+      "human",
+      "medium"
+    ]
+  },
+  {
+    "name": "harlequin",
+    "tags": [
+      "human",
+      "medium",
+      "weird"
+    ]
+  },
+  {
+    "name": "hermit",
+    "tags": [
+      "human",
+      "medium"
+    ]
+  },
+  {
+    "name": "highwayman",
+    "tags": [
+      "human",
+      "medium",
+      "mythic"
+    ]
+  },
+  {
+    "name": "jester",
+    "tags": [
+      "human",
+      "medium",
+      "mythic",
+      "weird"
+    ]
+  },
+  {
+    "name": "kabuki actor",
+    "tags": [
+      "human",
+      "medium",
+      "weird"
+    ]
+  },
+  {
+    "name": "knight",
+    "tags": [
+      "human",
+      "medium",
+      "mythic"
+    ]
+  },
+  {
+    "name": "lighthouse keeper",
+    "tags": [
+      "human",
+      "medium"
+    ]
+  },
+  {
+    "name": "magician",
+    "tags": [
+      "human",
+      "medium"
+    ]
+  },
+  {
+    "name": "matador",
+    "tags": [
+      "human",
+      "medium"
+    ]
+  },
+  {
+    "name": "mime",
+    "tags": [
+      "human",
+      "medium",
+      "weird"
+    ]
+  },
+  {
+    "name": "monk",
+    "tags": [
+      "human",
+      "medium"
+    ]
+  },
+  {
+    "name": "musketeer",
+    "tags": [
+      "human",
+      "medium",
+      "mythic"
+    ]
+  },
+  {
+    "name": "ninja",
+    "tags": [
+      "human",
+      "medium",
+      "mythic"
+    ]
+  },
+  {
+    "name": "oracle",
+    "tags": [
+      "human",
+      "medium",
+      "mythic"
+    ]
+  },
+  {
+    "name": "pharaoh",
+    "tags": [
+      "human",
+      "medium",
+      "mythic"
+    ]
+  },
+  {
+    "name": "pilgrim",
+    "tags": [
+      "human",
+      "medium"
+    ]
+  },
+  {
+    "name": "pirate",
+    "tags": [
+      "human",
+      "medium",
+      "mythic"
+    ]
+  },
+  {
+    "name": "plague doctor",
+    "tags": [
+      "human",
+      "medium",
+      "mythic",
+      "weird"
+    ]
+  },
+  {
+    "name": "ringmaster",
+    "tags": [
+      "human",
+      "medium",
+      "weird"
+    ]
+  },
+  {
+    "name": "samurai",
+    "tags": [
+      "human",
+      "medium",
+      "mythic"
+    ]
+  },
+  {
+    "name": "shaman",
+    "tags": [
+      "human",
+      "medium",
+      "mythic"
+    ]
+  },
+  {
+    "name": "strongman",
+    "tags": [
+      "human",
+      "large",
+      "weird"
+    ]
+  },
+  {
+    "name": "sumo wrestler",
+    "tags": [
+      "human",
+      "large"
+    ]
+  },
+  {
+    "name": "tinker",
+    "tags": [
+      "human",
+      "medium"
+    ]
+  },
+  {
+    "name": "tightrope walker",
+    "tags": [
+      "human",
+      "medium",
+      "weird"
+    ]
+  },
+  {
+    "name": "viking",
+    "tags": [
+      "human",
+      "medium",
+      "mythic"
+    ]
+  },
+  {
+    "name": "witch",
+    "tags": [
+      "human",
+      "medium",
+      "mythic"
+    ]
+  },
+  {
+    "name": "wizard",
+    "tags": [
+      "human",
+      "medium",
+      "mythic"
+    ]
   }
 ]
