@@ -41,7 +41,7 @@ They can have multiple Nouns to come up with strange combinations.
 When they choose a component and if they are tagged, offer a way to narrow down to tags.
 
 
-## IDEA-004 - Retain locks and history when going back to cauldron config
+## DONE - IDEA-004 - Retain locks and history when going back to cauldron config
 
 When user locks words and goes back to reconfigure cauldron, it's most likely the user is thinking of another config but have reserved words they liked by locking.
 
@@ -65,14 +65,14 @@ History should also retained.
 We destroy history and locks when they navigate back to the screens before  the config.    So get rid of locks when entering the cauldron screen from main menu and going back to main menu.
 
 
-## IDEA-005 - Reduce repeated generations
+## DONE - IDEA-005 - Reduce repeated generations
 
 Prevent words from appearing in regens until all options for pool are exhausted.
 
 Ensure we don't regen on locked words to preserve words.
 
 
-## IDEA-006 - If all words are locked - disable regen
+## DONE - IDEA-006 - If all words are locked - disable regen
 
 Right now - regen is enabled and it keeps regenerating.
 
