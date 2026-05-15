@@ -1220,6 +1220,24 @@
       return arr[Math.floor(Math.random() * arr.length)];
     }
 
+    function shuffle(arr) {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    function drawFromDeck(deck, pool) {
+      if (!pool || pool.length === 0) return '';
+      if (deck.length === 0) {
+        const reshuffled = shuffle(pool);
+        deck.push(...reshuffled);
+      }
+      return deck.pop();
+    }
+
     // ── Screen management ────────────────────────────────────────
     function showScreen(id) {
       document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -1235,7 +1253,7 @@
 
     // ── Prompt generators ────────────────────────────────────────
     function generateJustDraw() {
-      return pick(store.justDraw);
+      return drawFromDeck(justDrawDeck, store.justDraw);
     }
 
     function generateSurrealNarrative(current, locked) {
@@ -1476,7 +1494,8 @@
         }
 
         if (slot.type === 'adjective') {
-          result[slot.id] = pick(store.adjectives);
+          if (!cauldronDecks[slot.id]) cauldronDecks[slot.id] = [];
+          result[slot.id] = drawFromDeck(cauldronDecks[slot.id], store.adjectives);
 
         } else if (slot.type === 'noun') {
           const fullPool = slot.pool === 'organic'   ? store.nounsOrganicFull
@@ -1488,17 +1507,23 @@
           const poolKey = slot.pool;
           if (!usedNames[poolKey]) usedNames[poolKey] = new Set();
           const deduped = candidates.filter(n => !usedNames[poolKey].has(n.name));
-          const chosen = pick(deduped.length ? deduped : candidates);
-          result[slot.id] = chosen.name;
-          usedNames[poolKey].add(chosen.name);
+          const drawPool = (deduped.length ? deduped : candidates).map(n => n.name);
+          if (!cauldronDecks[slot.id]) cauldronDecks[slot.id] = [];
+          const chosen = drawFromDeck(cauldronDecks[slot.id], drawPool);
+          result[slot.id] = chosen;
+          usedNames[poolKey].add(chosen);
 
         } else if (slot.type === 'verb') {
           const filtered = filterByTags(store.verbsFull, slot.tags ?? [], slot.tagMode);
-          result[slot.id] = pick(filtered.length ? filtered : store.verbsFull).name;
+          const verbPool = (filtered.length ? filtered : store.verbsFull).map(i => i.name);
+          if (!cauldronDecks[slot.id]) cauldronDecks[slot.id] = [];
+          result[slot.id] = drawFromDeck(cauldronDecks[slot.id], verbPool);
 
         } else if (slot.type === 'environment') {
           const filtered = filterByTags(store.environmentsFull, slot.tags ?? [], slot.tagMode);
-          result[slot.id] = pick(filtered.length ? filtered : store.environmentsFull).name;
+          const envPool = (filtered.length ? filtered : store.environmentsFull).map(i => i.name);
+          if (!cauldronDecks[slot.id]) cauldronDecks[slot.id] = [];
+          result[slot.id] = drawFromDeck(cauldronDecks[slot.id], envPool);
         }
       }
       return result;
@@ -1811,6 +1836,8 @@ function renderCauldronConfig() {
     const HISTORY_MAX = 20;
     let promptHistory = [];    // string[] for Sparks; prompt object[] for Surreal/Mutations
     let historyIndex = -1;     // -1 = empty; 0 = oldest; length-1 = newest
+    let justDrawDeck = [];     // shuffle deck for Everyday Life — reset on entry from Home
+    let cauldronDecks = {};    // { [slotId]: string[] } — reset on every Generate tap
 
     // ── History helpers ──────────────────────────────────────────
     function clearHistory() {
@@ -1900,6 +1927,7 @@ function renderCauldronConfig() {
     // ── Event wiring ─────────────────────────────────────────────
     document.getElementById('btn-just-draw').addEventListener('click', () => {
       clearHistory();
+      justDrawDeck = [];
       const finalValue = generateJustDraw();
       const el = document.getElementById('just-draw-prompt');
       showScreen('screen-just-draw');
@@ -1970,6 +1998,7 @@ function renderCauldronConfig() {
       if (!cauldronConfig) return;
       clearHistory();
       lockedSlots = {};
+      cauldronDecks = {};
       imagineMode = 'cauldron';
       promptBackTarget = 'screen-cauldron-config';
       currentPrompt = generateCauldron(cauldronConfig, null, {});
