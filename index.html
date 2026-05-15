@@ -1349,6 +1349,17 @@
           container.appendChild(s);
         }
       });
+
+      // Sync regen button disabled state with lock state
+      const regenBtn = document.getElementById('btn-regen-imagine');
+      if (regenBtn) {
+        const activeSlots = (mode === 'cauldron' && cauldronConfig)
+          ? cauldronConfig.slots.filter(s => s.enabled)
+          : [];
+        const allLocked = activeSlots.length > 0 &&
+          activeSlots.every(s => lockedSlots[s.id]);
+        regenBtn.disabled = allLocked;
+      }
     }
 
     function animateSlot(el, pool, finalValue, durationMs) {
