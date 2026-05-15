@@ -2010,12 +2010,10 @@ function renderCauldronConfig() {
 
     document.getElementById('cc-generate').addEventListener('click', () => {
       if (!cauldronConfig) return;
-      clearHistory();
-      lockedSlots = {};
       cauldronDecks = {};
       imagineMode = 'cauldron';
       promptBackTarget = 'screen-cauldron-config';
-      currentPrompt = generateCauldron(cauldronConfig, null, {});
+      currentPrompt = generateCauldron(cauldronConfig, currentPrompt, lockedSlots);
       document.getElementById('imagine-screen-label').textContent = 'Surreal Cauldron';
       showScreen('screen-imagine-prompt');
       const container = document.getElementById('imagine-prompt');
