@@ -1821,10 +1821,6 @@ function renderCauldronConfig() {
     }
 
     function pushToHistory(prompt) {
-      // Truncate any forward entries if mid-history (regen while browsing back)
-      if (historyIndex < promptHistory.length - 1) {
-        promptHistory = promptHistory.slice(0, historyIndex + 1);
-      }
       promptHistory.push(prompt);
       if (promptHistory.length > HISTORY_MAX) {
         promptHistory.shift();
