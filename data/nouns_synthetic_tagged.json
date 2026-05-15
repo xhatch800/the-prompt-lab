@@ -95,7 +95,8 @@
       "medium",
       "mythic",
       "uncanny",
-      "fantasy"
+      "fantasy",
+      "ornate"
     ]
   },
   {
@@ -111,6 +112,7 @@
   {
     "name": "frame",
     "tags": [
+      "decoration",
       "furniture",
       "mundane",
       "small"
@@ -145,12 +147,13 @@
   {
     "name": "knife",
     "tags": [
-      "kitchen",
-      "tool",
-      "mundane",
       "dangerous",
+      "kitchen",
+      "mundane",
+      "sharp",
       "small",
-      "sharp"
+      "tool",
+      "weapon"
     ]
   },
   {
@@ -343,7 +346,8 @@
       "mythic",
       "small",
       "ancient",
-      "fantasy"
+      "fantasy",
+      "ornate"
     ]
   },
   {
@@ -456,11 +460,12 @@
   {
     "name": "axe",
     "tags": [
-      "tool",
       "dangerous",
       "medium",
       "mythic",
-      "sharp"
+      "sharp",
+      "tool",
+      "weapon"
     ]
   },
   {
@@ -542,21 +547,24 @@
     "name": "gear",
     "tags": [
       "mechanical",
-      "small"
+      "small",
+      "tool"
     ]
   },
   {
     "name": "engine",
     "tags": [
       "mechanical",
-      "large"
+      "large",
+      "tool"
     ]
   },
   {
     "name": "spring",
     "tags": [
       "mechanical",
-      "tiny"
+      "tiny",
+      "tool"
     ]
   },
   {
@@ -572,14 +580,16 @@
     "name": "piston",
     "tags": [
       "mechanical",
-      "medium"
+      "medium",
+      "tool"
     ]
   },
   {
     "name": "valve",
     "tags": [
       "mechanical",
-      "small"
+      "small",
+      "tool"
     ]
   },
   {
@@ -594,14 +604,16 @@
     "name": "pump",
     "tags": [
       "mechanical",
-      "medium"
+      "medium",
+      "tool"
     ]
   },
   {
     "name": "turbine",
     "tags": [
       "mechanical",
-      "enormous"
+      "enormous",
+      "tool"
     ]
   },
   {
@@ -760,6 +772,7 @@
     "name": "envelope",
     "tags": [
       "container",
+      "literary",
       "mundane",
       "tiny"
     ]
@@ -785,12 +798,14 @@
   {
     "name": "compass",
     "tags": [
-      "instrument",
       "ancient",
-      "small",
+      "fantasy",
+      "instrument",
       "mythic",
       "sharp",
-      "fantasy"
+      "small",
+      "trinket",
+      "ornate"
     ]
   },
   {
@@ -811,17 +826,20 @@
   {
     "name": "hourglass",
     "tags": [
-      "instrument",
       "ancient",
-      "small",
+      "fantasy",
+      "fragile",
+      "instrument",
       "mythic",
+      "small",
       "uncanny",
-      "fantasy"
+      "ornate"
     ]
   },
   {
     "name": "thermometer",
     "tags": [
+      "fragile",
       "instrument",
       "small"
     ]
@@ -845,10 +863,11 @@
   {
     "name": "map",
     "tags": [
-      "instrument",
       "ancient",
-      "small",
-      "mythic"
+      "instrument",
+      "literary",
+      "mythic",
+      "small"
     ]
   },
   {
@@ -863,69 +882,83 @@
   {
     "name": "music box",
     "tags": [
-      "uncanny",
+      "decoration",
       "mechanical",
+      "mythic",
       "small",
-      "mythic"
+      "toy",
+      "uncanny",
+      "ornate"
     ]
   },
   {
     "name": "lantern",
     "tags": [
-      "uncanny",
-      "luminous",
       "ancient",
-      "small",
+      "decoration",
+      "fantasy",
+      "luminous",
       "mythic",
-      "fantasy"
+      "small",
+      "tool",
+      "uncanny",
+      "ornate"
     ]
   },
   {
     "name": "bell",
     "tags": [
-      "uncanny",
       "ancient",
-      "small",
+      "fantasy",
       "mythic",
-      "fantasy"
+      "small",
+      "tool",
+      "uncanny"
     ]
   },
   {
     "name": "doll",
     "tags": [
-      "uncanny",
+      "figure",
+      "grotesque",
       "mundane",
       "small",
-      "weird",
-      "grotesque"
+      "toy",
+      "uncanny",
+      "weird"
     ]
   },
   {
     "name": "puppet",
     "tags": [
-      "uncanny",
+      "figure",
+      "grotesque",
       "small",
-      "weird",
-      "grotesque"
+      "toy",
+      "uncanny",
+      "weird"
     ]
   },
   {
     "name": "jack-in-the-box",
     "tags": [
-      "uncanny",
+      "figure",
+      "grotesque",
       "small",
-      "weird",
-      "grotesque"
+      "toy",
+      "uncanny",
+      "weird"
     ]
   },
   {
     "name": "sundial",
     "tags": [
-      "uncanny",
-      "instrument",
       "ancient",
+      "decoration",
+      "instrument",
       "medium",
-      "mythic"
+      "mythic",
+      "uncanny"
     ]
   },
   {
@@ -958,13 +991,14 @@
   {
     "name": "sword",
     "tags": [
-      "tool",
-      "dangerous",
       "ancient",
+      "dangerous",
+      "fantasy",
       "medium",
       "mythic",
       "sharp",
-      "fantasy"
+      "tool",
+      "weapon"
     ]
   },
   {
@@ -974,18 +1008,20 @@
       "ancient",
       "medium",
       "mythic",
-      "fantasy"
+      "fantasy",
+      "ornate"
     ]
   },
   {
     "name": "bow",
     "tags": [
-      "tool",
-      "dangerous",
       "ancient",
+      "dangerous",
+      "fantasy",
       "medium",
       "mythic",
-      "fantasy"
+      "tool",
+      "weapon"
     ]
   },
   {
@@ -1003,39 +1039,45 @@
     "tags": [
       "ancient",
       "medium",
-      "mythic"
+      "mythic",
+      "tool",
+      "worn"
     ]
   },
   {
     "name": "coin",
     "tags": [
       "ancient",
+      "mythic",
       "tiny",
-      "mythic"
+      "trinket"
     ]
   },
   {
     "name": "book",
     "tags": [
+      "literary",
       "mundane",
-      "small",
-      "mythic"
+      "mythic",
+      "small"
     ]
   },
   {
     "name": "pen",
     "tags": [
-      "tool",
+      "literary",
       "mundane",
-      "tiny"
+      "tiny",
+      "tool"
     ]
   },
   {
     "name": "typewriter",
     "tags": [
+      "literary",
       "mechanical",
-      "mundane",
-      "medium"
+      "medium",
+      "mundane"
     ]
   },
   {
@@ -1044,7 +1086,8 @@
       "mechanical",
       "uncanny",
       "medium",
-      "ancient"
+      "ancient",
+      "instrument"
     ]
   },
   {
@@ -1053,43 +1096,48 @@
       "mechanical",
       "uncanny",
       "medium",
-      "weird"
+      "weird",
+      "instrument"
     ]
   },
   {
     "name": "gyroscope",
     "tags": [
-      "mechanical",
       "instrument",
+      "mechanical",
+      "scifi",
       "small",
-      "weird",
-      "scifi"
+      "toy",
+      "weird"
     ]
   },
   {
     "name": "taxidermy",
     "tags": [
-      "uncanny",
+      "figure",
+      "grotesque",
       "medium",
-      "weird",
-      "grotesque"
+      "uncanny",
+      "weird"
     ]
   },
   {
     "name": "ventriloquist dummy",
     "tags": [
-      "uncanny",
+      "figure",
+      "grotesque",
       "small",
-      "weird",
-      "grotesque"
+      "uncanny",
+      "weird"
     ]
   },
   {
     "name": "kaleidoscope",
     "tags": [
       "instrument",
-      "weird",
-      "small"
+      "small",
+      "toy",
+      "weird"
     ]
   },
   {
@@ -1105,9 +1153,10 @@
     "name": "zoetrope",
     "tags": [
       "mechanical",
-      "weird",
+      "small",
+      "toy",
       "uncanny",
-      "small"
+      "weird"
     ]
   },
   {
@@ -1123,7 +1172,8 @@
     "tags": [
       "mechanical",
       "weird",
-      "small"
+      "small",
+      "instrument"
     ]
   },
   {
@@ -1137,8 +1187,9 @@
   {
     "name": "weather balloon",
     "tags": [
-      "weird",
-      "enormous"
+      "enormous",
+      "vehicle",
+      "weird"
     ]
   },
   {
@@ -1153,35 +1204,41 @@
   {
     "name": "wind chime",
     "tags": [
-      "weird",
+      "decoration",
+      "small",
       "uncanny",
-      "small"
+      "weird"
     ]
   },
   {
     "name": "decoy duck",
     "tags": [
-      "weird",
-      "small"
+      "decoration",
+      "small",
+      "toy",
+      "weird"
     ]
   },
   {
     "name": "voodoo doll",
     "tags": [
-      "weird",
-      "uncanny",
-      "tiny",
+      "figure",
+      "grotesque",
       "mythic",
-      "grotesque"
+      "tiny",
+      "uncanny",
+      "weird"
     ]
   },
   {
     "name": "snow globe",
     "tags": [
-      "weird",
-      "uncanny",
+      "decoration",
       "fragile",
-      "small"
+      "small",
+      "toy",
+      "uncanny",
+      "weird"
     ]
   },
   {
@@ -1213,35 +1270,33 @@
   {
     "name": "vase",
     "tags": [
+      "decoration",
+      "fragile",
       "furniture",
-      "fragile",
       "mundane",
-      "small"
-    ]
-  },
-  {
-    "name": "porcelain cup",
-    "tags": [
-      "kitchen",
-      "fragile",
-      "tiny"
+      "small",
+      "ornate"
     ]
   },
   {
     "name": "chandelier",
     "tags": [
-      "furniture",
+      "decoration",
       "fragile",
+      "furniture",
+      "large",
       "luminous",
-      "large"
+      "ornate"
     ]
   },
   {
     "name": "ornament",
     "tags": [
-      "furniture",
+      "decoration",
       "fragile",
-      "tiny"
+      "furniture",
+      "tiny",
+      "ornate"
     ]
   },
   {
@@ -1263,25 +1318,12 @@
   {
     "name": "pocket watch",
     "tags": [
+      "fragile",
       "mechanical",
-      "fragile",
+      "mythic",
       "tiny",
-      "mythic"
-    ]
-  },
-  {
-    "name": "snowflake",
-    "tags": [
-      "fragile",
-      "tiny",
-      "weird"
-    ]
-  },
-  {
-    "name": "eggshell",
-    "tags": [
-      "fragile",
-      "tiny"
+      "trinket",
+      "ornate"
     ]
   },
   {
@@ -1310,15 +1352,6 @@
     ]
   },
   {
-    "name": "campfire",
-    "tags": [
-      "luminous",
-      "dangerous",
-      "medium",
-      "mythic"
-    ]
-  },
-  {
     "name": "match",
     "tags": [
       "tool",
@@ -1339,9 +1372,10 @@
   {
     "name": "lighthouse",
     "tags": [
-      "luminous",
       "enormous",
-      "mythic"
+      "luminous",
+      "mythic",
+      "structure"
     ]
   },
   {
@@ -1364,10 +1398,12 @@
   {
     "name": "candelabra",
     "tags": [
-      "luminous",
       "ancient",
+      "decoration",
+      "luminous",
       "medium",
-      "mythic"
+      "mythic",
+      "ornate"
     ]
   },
   {
@@ -1382,15 +1418,17 @@
     "name": "glow stick",
     "tags": [
       "luminous",
-      "tiny"
+      "tiny",
+      "tool"
     ]
   },
   {
     "name": "beacon",
     "tags": [
-      "luminous",
       "large",
-      "mythic"
+      "luminous",
+      "mythic",
+      "structure"
     ]
   },
   {
@@ -1400,15 +1438,6 @@
       "worn",
       "large",
       "soft"
-    ]
-  },
-  {
-    "name": "worn map",
-    "tags": [
-      "instrument",
-      "worn",
-      "ancient",
-      "small"
     ]
   },
   {
@@ -1422,24 +1451,27 @@
   {
     "name": "weathered sign",
     "tags": [
-      "worn",
-      "medium"
+      "medium",
+      "structure",
+      "worn"
     ]
   },
   {
     "name": "rusted gate",
     "tags": [
-      "worn",
+      "grotesque",
       "large",
+      "structure",
       "uncanny",
-      "grotesque"
+      "worn"
     ]
   },
   {
     "name": "bridge",
     "tags": [
+      "ancient",
       "enormous",
-      "ancient"
+      "structure"
     ]
   },
   {
@@ -1453,9 +1485,11 @@
   {
     "name": "cathedral",
     "tags": [
-      "enormous",
       "ancient",
-      "mythic"
+      "enormous",
+      "mythic",
+      "structure",
+      "ornate"
     ]
   },
   {
@@ -1469,14 +1503,16 @@
   {
     "name": "skyscraper",
     "tags": [
-      "enormous"
+      "enormous",
+      "structure"
     ]
   },
   {
     "name": "dam",
     "tags": [
       "enormous",
-      "mechanical"
+      "mechanical",
+      "structure"
     ]
   },
   {
@@ -1500,26 +1536,29 @@
     "tags": [
       "mechanical",
       "enormous",
-      "weird"
+      "weird",
+      "structure"
     ]
   },
   {
     "name": "windmill",
     "tags": [
-      "mechanical",
-      "enormous",
       "ancient",
-      "mythic"
+      "enormous",
+      "mechanical",
+      "mythic",
+      "structure"
     ]
   },
   {
     "name": "cannon",
     "tags": [
-      "tool",
-      "enormous",
-      "dangerous",
       "ancient",
-      "grotesque"
+      "dangerous",
+      "enormous",
+      "grotesque",
+      "tool",
+      "weapon"
     ]
   },
   {
@@ -1540,8 +1579,9 @@
     "name": "grenade",
     "tags": [
       "dangerous",
+      "grotesque",
       "small",
-      "grotesque"
+      "weapon"
     ]
   },
   {
@@ -1566,7 +1606,8 @@
     "name": "dynamite",
     "tags": [
       "dangerous",
-      "small"
+      "small",
+      "weapon"
     ]
   },
   {
@@ -1583,16 +1624,18 @@
     "name": "electric fence",
     "tags": [
       "dangerous",
+      "grotesque",
       "large",
-      "grotesque"
+      "weapon"
     ]
   },
   {
     "name": "mine",
     "tags": [
       "dangerous",
+      "grotesque",
       "small",
-      "grotesque"
+      "weapon"
     ]
   },
   {
@@ -1609,9 +1652,10 @@
     "name": "flamethrower",
     "tags": [
       "dangerous",
-      "luminous",
+      "grotesque",
       "large",
-      "grotesque"
+      "luminous",
+      "weapon"
     ]
   },
   {
@@ -1649,7 +1693,8 @@
       "ancient",
       "dangerous",
       "large",
-      "mythic"
+      "mythic",
+      "ornate"
     ]
   },
   {
@@ -1930,8 +1975,9 @@
   {
     "name": "weather vane",
     "tags": [
-      "instrument",
       "ancient",
+      "decoration",
+      "instrument",
       "medium"
     ]
   },
@@ -1948,22 +1994,26 @@
     "tags": [
       "clothing",
       "mundane",
-      "tiny"
+      "tiny",
+      "trinket"
     ]
   },
   {
     "name": "thimble",
     "tags": [
-      "tool",
       "mundane",
-      "tiny"
+      "tiny",
+      "tool",
+      "trinket"
     ]
   },
   {
     "name": "stamp",
     "tags": [
+      "literary",
       "mundane",
-      "tiny"
+      "tiny",
+      "trinket"
     ]
   },
   {
@@ -1978,20 +2028,10 @@
   {
     "name": "marble",
     "tags": [
+      "fragile",
       "tiny",
-      "fragile"
-    ]
-  },
-  {
-    "name": "pebble",
-    "tags": [
-      "tiny"
-    ]
-  },
-  {
-    "name": "seed",
-    "tags": [
-      "tiny"
+      "toy",
+      "trinket"
     ]
   },
   {
@@ -2090,15 +2130,17 @@
       "mechanical",
       "dangerous",
       "large",
-      "luminous"
+      "luminous",
+      "tool"
     ]
   },
   {
     "name": "printing press",
     "tags": [
-      "mechanical",
+      "ancient",
       "large",
-      "ancient"
+      "literary",
+      "mechanical"
     ]
   },
   {
@@ -2113,52 +2155,49 @@
   {
     "name": "drawbridge",
     "tags": [
-      "large",
       "ancient",
-      "mechanical"
+      "large",
+      "mechanical",
+      "structure"
     ]
   },
   {
     "name": "catapult",
     "tags": [
-      "tool",
+      "ancient",
       "dangerous",
       "large",
-      "ancient",
-      "sharp"
-    ]
-  },
-  {
-    "name": "cracked leather",
-    "tags": [
-      "worn",
-      "tiny",
-      "grotesque"
+      "sharp",
+      "tool",
+      "weapon"
     ]
   },
   {
     "name": "faded photograph",
     "tags": [
-      "worn",
+      "decoration",
+      "grotesque",
       "tiny",
       "uncanny",
-      "grotesque"
+      "worn"
     ]
   },
   {
     "name": "worn saddle",
     "tags": [
-      "worn",
       "medium",
-      "soft"
+      "soft",
+      "tool",
+      "worn"
     ]
   },
   {
     "name": "patched tent",
     "tags": [
-      "worn",
       "large",
-      "soft"
+      "soft",
+      "structure",
+      "worn"
     ]
   },
   {
@@ -2167,7 +2206,8 @@
       "fragile",
       "luminous",
       "medium",
-      "mythic"
+      "mythic",
+      "structure"
     ]
   },
   {
@@ -2193,7 +2233,8 @@
     "tags": [
       "worn",
       "mechanical",
-      "tiny"
+      "tiny",
+      "tool"
     ]
   },
   {
@@ -2208,19 +2249,21 @@
   {
     "name": "robot",
     "tags": [
-      "scifi",
+      "figure",
       "mechanical",
-      "weird",
-      "medium"
+      "medium",
+      "scifi",
+      "weird"
     ]
   },
   {
     "name": "android",
     "tags": [
+      "figure",
+      "medium",
       "scifi",
-      "weird",
       "uncanny",
-      "medium"
+      "weird"
     ]
   },
   {
@@ -2261,37 +2304,41 @@
   {
     "name": "cauldron",
     "tags": [
-      "fantasy",
       "ancient",
-      "mythic",
+      "container",
+      "fantasy",
       "medium",
+      "mythic",
       "uncanny"
     ]
   },
   {
     "name": "wand",
     "tags": [
+      "ancient",
       "fantasy",
       "mythic",
-      "ancient",
-      "tiny"
+      "tiny",
+      "tool"
     ]
   },
   {
     "name": "crystal ball",
     "tags": [
       "fantasy",
-      "mythic",
-      "uncanny",
       "fragile",
-      "small"
+      "instrument",
+      "mythic",
+      "small",
+      "uncanny"
     ]
   },
   {
     "name": "scroll",
     "tags": [
-      "fantasy",
       "ancient",
+      "fantasy",
+      "literary",
       "mythic",
       "small"
     ]
@@ -2299,28 +2346,32 @@
   {
     "name": "chalice",
     "tags": [
-      "fantasy",
       "ancient",
+      "container",
+      "fantasy",
       "mythic",
-      "small"
+      "small",
+      "ornate"
     ]
   },
   {
     "name": "rune stone",
     "tags": [
-      "fantasy",
       "ancient",
+      "fantasy",
       "mythic",
-      "tiny"
+      "tiny",
+      "trinket"
     ]
   },
   {
     "name": "golem",
     "tags": [
       "fantasy",
-      "scifi",
-      "mythic",
+      "figure",
       "large",
+      "mythic",
+      "scifi",
       "weird"
     ]
   },
@@ -2328,19 +2379,22 @@
     "name": "automaton",
     "tags": [
       "fantasy",
-      "scifi",
+      "figure",
       "mechanical",
-      "uncanny",
-      "medium"
+      "medium",
+      "scifi",
+      "uncanny"
     ]
   },
   {
     "name": "tome",
     "tags": [
-      "fantasy",
       "ancient",
+      "fantasy",
+      "literary",
+      "medium",
       "mythic",
-      "medium"
+      "worn"
     ]
   },
   {
@@ -2349,6 +2403,582 @@
       "clothing",
       "worn",
       "small"
+    ]
+  },
+  {
+    "name": "quill",
+    "tags": [
+      "ancient",
+      "literary",
+      "mythic",
+      "small",
+      "tool"
+    ]
+  },
+  {
+    "name": "inkwell",
+    "tags": [
+      "ancient",
+      "literary",
+      "small",
+      "tool"
+    ]
+  },
+  {
+    "name": "journal",
+    "tags": [
+      "literary",
+      "mundane",
+      "small"
+    ]
+  },
+  {
+    "name": "newspaper",
+    "tags": [
+      "literary",
+      "medium",
+      "mundane"
+    ]
+  },
+  {
+    "name": "ledger",
+    "tags": [
+      "ancient",
+      "literary",
+      "medium",
+      "mundane"
+    ]
+  },
+  {
+    "name": "wax seal",
+    "tags": [
+      "ancient",
+      "literary",
+      "mythic",
+      "tiny",
+      "tool"
+    ]
+  },
+  {
+    "name": "papyrus",
+    "tags": [
+      "ancient",
+      "literary",
+      "medium",
+      "mythic"
+    ]
+  },
+  {
+    "name": "calligraphy brush",
+    "tags": [
+      "ancient",
+      "literary",
+      "small",
+      "tool"
+    ]
+  },
+  {
+    "name": "telegraph",
+    "tags": [
+      "ancient",
+      "electronic",
+      "literary",
+      "mechanical",
+      "medium"
+    ]
+  },
+  {
+    "name": "postcard",
+    "tags": [
+      "literary",
+      "mundane",
+      "tiny"
+    ]
+  },
+  {
+    "name": "cipher",
+    "tags": [
+      "instrument",
+      "literary",
+      "small",
+      "weird"
+    ]
+  },
+  {
+    "name": "spear",
+    "tags": [
+      "ancient",
+      "large",
+      "mythic",
+      "sharp",
+      "tool",
+      "weapon"
+    ]
+  },
+  {
+    "name": "dagger",
+    "tags": [
+      "ancient",
+      "dangerous",
+      "sharp",
+      "small",
+      "tool",
+      "weapon"
+    ]
+  },
+  {
+    "name": "mace",
+    "tags": [
+      "ancient",
+      "dangerous",
+      "medium",
+      "weapon"
+    ]
+  },
+  {
+    "name": "crossbow",
+    "tags": [
+      "ancient",
+      "dangerous",
+      "medium",
+      "tool",
+      "weapon"
+    ]
+  },
+  {
+    "name": "whip",
+    "tags": [
+      "ancient",
+      "dangerous",
+      "medium",
+      "soft",
+      "tool",
+      "weapon"
+    ]
+  },
+  {
+    "name": "lance",
+    "tags": [
+      "ancient",
+      "large",
+      "mythic",
+      "sharp",
+      "tool",
+      "weapon"
+    ]
+  },
+  {
+    "name": "sling",
+    "tags": [
+      "ancient",
+      "small",
+      "tool",
+      "weapon"
+    ]
+  },
+  {
+    "name": "trident",
+    "tags": [
+      "ancient",
+      "large",
+      "mythic",
+      "sharp",
+      "tool",
+      "weapon"
+    ]
+  },
+  {
+    "name": "flail",
+    "tags": [
+      "ancient",
+      "dangerous",
+      "medium",
+      "weapon"
+    ]
+  },
+  {
+    "name": "scarecrow",
+    "tags": [
+      "figure",
+      "large",
+      "mythic",
+      "structure",
+      "weird"
+    ]
+  },
+  {
+    "name": "mannequin",
+    "tags": [
+      "figure",
+      "furniture",
+      "medium",
+      "uncanny"
+    ]
+  },
+  {
+    "name": "statue",
+    "tags": [
+      "ancient",
+      "figure",
+      "large",
+      "mythic",
+      "structure"
+    ]
+  },
+  {
+    "name": "effigy",
+    "tags": [
+      "ancient",
+      "figure",
+      "medium",
+      "mythic",
+      "weird"
+    ]
+  },
+  {
+    "name": "totem",
+    "tags": [
+      "ancient",
+      "figure",
+      "large",
+      "mythic"
+    ]
+  },
+  {
+    "name": "bust",
+    "tags": [
+      "ancient",
+      "figure",
+      "mythic",
+      "small"
+    ]
+  },
+  {
+    "name": "marionette",
+    "tags": [
+      "figure",
+      "small",
+      "toy",
+      "uncanny",
+      "weird"
+    ]
+  },
+  {
+    "name": "gargoyle",
+    "tags": [
+      "ancient",
+      "decoration",
+      "figure",
+      "grotesque",
+      "mythic",
+      "small",
+      "structure"
+    ]
+  },
+  {
+    "name": "idol",
+    "tags": [
+      "ancient",
+      "figure",
+      "mythic",
+      "small"
+    ]
+  },
+  {
+    "name": "nutcracker",
+    "tags": [
+      "figure",
+      "small",
+      "toy",
+      "weird"
+    ]
+  },
+  {
+    "name": "tower",
+    "tags": [
+      "ancient",
+      "enormous",
+      "mythic",
+      "structure"
+    ]
+  },
+  {
+    "name": "arch",
+    "tags": [
+      "ancient",
+      "large",
+      "mythic",
+      "structure"
+    ]
+  },
+  {
+    "name": "chimney",
+    "tags": [
+      "large",
+      "mechanical",
+      "structure"
+    ]
+  },
+  {
+    "name": "obelisk",
+    "tags": [
+      "ancient",
+      "enormous",
+      "mythic",
+      "structure"
+    ]
+  },
+  {
+    "name": "aqueduct",
+    "tags": [
+      "ancient",
+      "enormous",
+      "structure"
+    ]
+  },
+  {
+    "name": "barn",
+    "tags": [
+      "large",
+      "mundane",
+      "structure"
+    ]
+  },
+  {
+    "name": "pagoda",
+    "tags": [
+      "ancient",
+      "large",
+      "mythic",
+      "structure",
+      "ornate"
+    ]
+  },
+  {
+    "name": "pyramid",
+    "tags": [
+      "ancient",
+      "enormous",
+      "mythic",
+      "structure"
+    ]
+  },
+  {
+    "name": "kite",
+    "tags": [
+      "large",
+      "toy",
+      "weird"
+    ]
+  },
+  {
+    "name": "spinning top",
+    "tags": [
+      "tiny",
+      "toy"
+    ]
+  },
+  {
+    "name": "yo-yo",
+    "tags": [
+      "small",
+      "toy"
+    ]
+  },
+  {
+    "name": "hoop",
+    "tags": [
+      "medium",
+      "toy"
+    ]
+  },
+  {
+    "name": "rattle",
+    "tags": [
+      "tiny",
+      "toy"
+    ]
+  },
+  {
+    "name": "pinwheel",
+    "tags": [
+      "small",
+      "toy",
+      "weird"
+    ]
+  },
+  {
+    "name": "slingshot",
+    "tags": [
+      "dangerous",
+      "small",
+      "tool",
+      "toy"
+    ]
+  },
+  {
+    "name": "jack",
+    "tags": [
+      "tiny",
+      "toy"
+    ]
+  },
+  {
+    "name": "ring",
+    "tags": [
+      "mythic",
+      "small",
+      "trinket"
+    ]
+  },
+  {
+    "name": "locket",
+    "tags": [
+      "ancient",
+      "mythic",
+      "small",
+      "trinket",
+      "ornate"
+    ]
+  },
+  {
+    "name": "brooch",
+    "tags": [
+      "ancient",
+      "mythic",
+      "small",
+      "trinket",
+      "ornate"
+    ]
+  },
+  {
+    "name": "dice",
+    "tags": [
+      "tiny",
+      "trinket"
+    ]
+  },
+  {
+    "name": "badge",
+    "tags": [
+      "mundane",
+      "small",
+      "trinket"
+    ]
+  },
+  {
+    "name": "pendant",
+    "tags": [
+      "ancient",
+      "mythic",
+      "small",
+      "trinket",
+      "ornate"
+    ]
+  },
+  {
+    "name": "amulet",
+    "tags": [
+      "ancient",
+      "mythic",
+      "small",
+      "trinket",
+      "ornate"
+    ]
+  },
+  {
+    "name": "cameo",
+    "tags": [
+      "ancient",
+      "mythic",
+      "small",
+      "trinket",
+      "ornate"
+    ]
+  },
+  {
+    "name": "matchbox",
+    "tags": [
+      "mundane",
+      "tiny",
+      "trinket"
+    ]
+  },
+  {
+    "name": "arrowhead",
+    "tags": [
+      "ancient",
+      "sharp",
+      "tiny",
+      "trinket"
+    ]
+  },
+  {
+    "name": "charm",
+    "tags": [
+      "mythic",
+      "tiny",
+      "trinket"
+    ]
+  },
+  {
+    "name": "token",
+    "tags": [
+      "mundane",
+      "tiny",
+      "trinket"
+    ]
+  },
+  {
+    "name": "tapestry",
+    "tags": [
+      "ancient",
+      "decoration",
+      "large",
+      "mythic",
+      "ornate"
+    ]
+  },
+  {
+    "name": "banner",
+    "tags": [
+      "ancient",
+      "decoration",
+      "large",
+      "mythic"
+    ]
+  },
+  {
+    "name": "wreath",
+    "tags": [
+      "decoration",
+      "mythic",
+      "small"
+    ]
+  },
+  {
+    "name": "trophy",
+    "tags": [
+      "decoration",
+      "medium",
+      "mundane"
+    ]
+  },
+  {
+    "name": "mobile",
+    "tags": [
+      "decoration",
+      "small",
+      "weird"
+    ]
+  },
+  {
+    "name": "dreamcatcher",
+    "tags": [
+      "decoration",
+      "mythic",
+      "small",
+      "weird"
     ]
   }
 ]

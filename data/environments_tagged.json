@@ -360,11 +360,17 @@
   },
   {
     "name": "in a fog bank",
-    "tags": []
+    "tags": [
+      "wet",
+      "tranquil"
+    ]
   },
   {
     "name": "in a thunderstorm",
-    "tags": []
+    "tags": [
+      "aerial",
+      "wet"
+    ]
   },
   {
     "name": "in a jungle",
@@ -374,11 +380,15 @@
   },
   {
     "name": "on a volcanic island",
-    "tags": []
+    "tags": [
+      "dry"
+    ]
   },
   {
     "name": "in a dead forest",
-    "tags": []
+    "tags": [
+      "dry"
+    ]
   },
   {
     "name": "on a cliff overlooking the sea",
@@ -784,13 +794,6 @@
     ]
   },
   {
-    "name": "in a subterranean lake",
-    "tags": [
-      "underground",
-      "wet"
-    ]
-  },
-  {
     "name": "above a volcano",
     "tags": [
       "aerial"
@@ -818,6 +821,13 @@
     "name": "on a cliff ledge",
     "tags": [
       "aerial"
+    ]
+  },
+  {
+    "name": "in a lava tube",
+    "tags": [
+      "underground",
+      "dry"
     ]
   }
 ]

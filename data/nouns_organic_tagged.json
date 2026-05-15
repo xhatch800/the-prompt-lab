@@ -2,22 +2,25 @@
   {
     "name": "whale",
     "tags": [
+      "animal",
       "aquatic",
-      "mammal",
-      "enormous"
+      "enormous",
+      "mammal"
     ]
   },
   {
     "name": "dolphin",
     "tags": [
+      "animal",
       "aquatic",
-      "mammal",
-      "large"
+      "large",
+      "mammal"
     ]
   },
   {
     "name": "seal",
     "tags": [
+      "animal",
       "aquatic",
       "mammal",
       "medium"
@@ -26,6 +29,7 @@
   {
     "name": "otter",
     "tags": [
+      "animal",
       "aquatic",
       "mammal",
       "small"
@@ -34,104 +38,117 @@
   {
     "name": "manatee",
     "tags": [
+      "animal",
       "aquatic",
-      "mammal",
-      "large"
+      "large",
+      "mammal"
     ]
   },
   {
     "name": "walrus",
     "tags": [
+      "animal",
       "aquatic",
-      "mammal",
-      "large"
+      "large",
+      "mammal"
     ]
   },
   {
     "name": "narwhal",
     "tags": [
+      "animal",
       "aquatic",
-      "mammal",
       "large",
+      "mammal",
       "weird"
     ]
   },
   {
     "name": "elephant",
     "tags": [
-      "mammal",
-      "enormous"
+      "animal",
+      "enormous",
+      "mammal"
     ]
   },
   {
     "name": "rhinoceros",
     "tags": [
-      "mammal",
-      "enormous"
+      "animal",
+      "enormous",
+      "mammal"
     ]
   },
   {
     "name": "hippopotamus",
     "tags": [
-      "mammal",
-      "enormous"
+      "animal",
+      "enormous",
+      "mammal"
     ]
   },
   {
     "name": "giraffe",
     "tags": [
-      "mammal",
-      "enormous"
+      "animal",
+      "enormous",
+      "mammal"
     ]
   },
   {
     "name": "lion",
     "tags": [
-      "mammal",
-      "predator",
+      "animal",
       "large",
-      "mythic"
+      "mammal",
+      "mythic",
+      "predator"
     ]
   },
   {
     "name": "tiger",
     "tags": [
-      "mammal",
-      "predator",
+      "animal",
       "large",
-      "mythic"
+      "mammal",
+      "mythic",
+      "predator"
     ]
   },
   {
     "name": "bear",
     "tags": [
-      "mammal",
-      "predator",
+      "animal",
       "large",
-      "mythic"
+      "mammal",
+      "mythic",
+      "predator"
     ]
   },
   {
     "name": "wolf",
     "tags": [
+      "animal",
       "mammal",
-      "predator",
       "medium",
-      "mythic"
+      "mythic",
+      "predator"
     ]
   },
   {
     "name": "fox",
     "tags": [
+      "animal",
       "mammal",
+      "mythic",
       "predator",
-      "small",
-      "mythic"
+      "small"
     ]
   },
   {
     "name": "deer",
     "tags": [
+      "animal",
       "mammal",
       "medium",
       "mythic"
@@ -140,57 +157,64 @@
   {
     "name": "horse",
     "tags": [
-      "mammal",
-      "large",
+      "animal",
       "domestic",
+      "large",
+      "mammal",
       "mythic"
     ]
   },
   {
     "name": "cow",
     "tags": [
-      "mammal",
+      "animal",
+      "domestic",
       "large",
-      "domestic"
+      "mammal"
     ]
   },
   {
     "name": "pig",
     "tags": [
+      "animal",
+      "domestic",
       "mammal",
-      "medium",
-      "domestic"
+      "medium"
     ]
   },
   {
     "name": "dog",
     "tags": [
+      "animal",
+      "domestic",
       "mammal",
       "medium",
-      "domestic",
       "mythic"
     ]
   },
   {
     "name": "cat",
     "tags": [
-      "mammal",
-      "small",
+      "animal",
       "domestic",
-      "mythic"
+      "mammal",
+      "mythic",
+      "small"
     ]
   },
   {
     "name": "rabbit",
     "tags": [
+      "animal",
+      "domestic",
       "mammal",
-      "small",
-      "domestic"
+      "small"
     ]
   },
   {
     "name": "mouse",
     "tags": [
+      "animal",
       "mammal",
       "tiny"
     ]
@@ -198,6 +222,7 @@
   {
     "name": "rat",
     "tags": [
+      "animal",
       "mammal",
       "tiny"
     ]
@@ -205,21 +230,24 @@
   {
     "name": "bat",
     "tags": [
+      "animal",
       "mammal",
-      "small",
-      "mythic"
+      "mythic",
+      "small"
     ]
   },
   {
     "name": "gorilla",
     "tags": [
-      "mammal",
-      "large"
+      "animal",
+      "large",
+      "mammal"
     ]
   },
   {
     "name": "chimpanzee",
     "tags": [
+      "animal",
       "mammal",
       "medium"
     ]
@@ -227,6 +255,7 @@
   {
     "name": "orangutan",
     "tags": [
+      "animal",
       "mammal",
       "medium"
     ]
@@ -234,6 +263,7 @@
   {
     "name": "sloth",
     "tags": [
+      "animal",
       "mammal",
       "medium",
       "weird"
@@ -242,6 +272,7 @@
   {
     "name": "pangolin",
     "tags": [
+      "animal",
       "mammal",
       "small",
       "weird"
@@ -250,6 +281,7 @@
   {
     "name": "porcupine",
     "tags": [
+      "animal",
       "mammal",
       "small"
     ]
@@ -257,6 +289,7 @@
   {
     "name": "beaver",
     "tags": [
+      "animal",
       "mammal",
       "small"
     ]
@@ -264,6 +297,7 @@
   {
     "name": "mole",
     "tags": [
+      "animal",
       "mammal",
       "tiny"
     ]
@@ -271,6 +305,7 @@
   {
     "name": "hedgehog",
     "tags": [
+      "animal",
       "mammal",
       "tiny"
     ]
@@ -278,41 +313,47 @@
   {
     "name": "moose",
     "tags": [
-      "mammal",
-      "enormous"
+      "animal",
+      "enormous",
+      "mammal"
     ]
   },
   {
     "name": "bison",
     "tags": [
-      "mammal",
-      "enormous"
+      "animal",
+      "enormous",
+      "mammal"
     ]
   },
   {
     "name": "camel",
     "tags": [
-      "mammal",
-      "large"
+      "animal",
+      "large",
+      "mammal"
     ]
   },
   {
     "name": "zebra",
     "tags": [
-      "mammal",
-      "large"
+      "animal",
+      "large",
+      "mammal"
     ]
   },
   {
     "name": "kangaroo",
     "tags": [
-      "mammal",
-      "large"
+      "animal",
+      "large",
+      "mammal"
     ]
   },
   {
     "name": "platypus",
     "tags": [
+      "animal",
       "mammal",
       "small",
       "weird"
@@ -321,32 +362,36 @@
   {
     "name": "eagle",
     "tags": [
+      "animal",
       "bird",
-      "predator",
       "large",
-      "mythic"
+      "mythic",
+      "predator"
     ]
   },
   {
     "name": "owl",
     "tags": [
+      "animal",
       "bird",
+      "mythic",
       "predator",
-      "small",
-      "mythic"
+      "small"
     ]
   },
   {
     "name": "raven",
     "tags": [
+      "animal",
       "bird",
-      "small",
-      "mythic"
+      "mythic",
+      "small"
     ]
   },
   {
     "name": "swan",
     "tags": [
+      "animal",
       "bird",
       "medium",
       "mythic"
@@ -355,6 +400,7 @@
   {
     "name": "peacock",
     "tags": [
+      "animal",
       "bird",
       "medium",
       "mythic"
@@ -363,6 +409,7 @@
   {
     "name": "flamingo",
     "tags": [
+      "animal",
       "bird",
       "medium"
     ]
@@ -370,6 +417,7 @@
   {
     "name": "pelican",
     "tags": [
+      "animal",
       "bird",
       "medium"
     ]
@@ -377,6 +425,7 @@
   {
     "name": "toucan",
     "tags": [
+      "animal",
       "bird",
       "small"
     ]
@@ -384,14 +433,16 @@
   {
     "name": "parrot",
     "tags": [
+      "animal",
       "bird",
-      "small",
-      "domestic"
+      "domestic",
+      "small"
     ]
   },
   {
     "name": "hummingbird",
     "tags": [
+      "animal",
       "bird",
       "tiny"
     ]
@@ -399,14 +450,16 @@
   {
     "name": "penguin",
     "tags": [
-      "bird",
+      "animal",
       "aquatic",
+      "bird",
       "small"
     ]
   },
   {
     "name": "crane",
     "tags": [
+      "animal",
       "bird",
       "large",
       "mythic"
@@ -415,6 +468,7 @@
   {
     "name": "albatross",
     "tags": [
+      "animal",
       "bird",
       "large"
     ]
@@ -422,14 +476,16 @@
   {
     "name": "vulture",
     "tags": [
+      "animal",
       "bird",
-      "predator",
-      "large"
+      "large",
+      "predator"
     ]
   },
   {
     "name": "heron",
     "tags": [
+      "animal",
       "bird",
       "medium"
     ]
@@ -437,6 +493,7 @@
   {
     "name": "stork",
     "tags": [
+      "animal",
       "bird",
       "medium",
       "mythic"
@@ -445,6 +502,7 @@
   {
     "name": "ostrich",
     "tags": [
+      "animal",
       "bird",
       "enormous"
     ]
@@ -452,23 +510,26 @@
   {
     "name": "condor",
     "tags": [
+      "animal",
       "bird",
-      "predator",
-      "large"
+      "large",
+      "predator"
     ]
   },
   {
     "name": "rooster",
     "tags": [
+      "animal",
       "bird",
-      "small",
       "domestic",
-      "mythic"
+      "mythic",
+      "small"
     ]
   },
   {
     "name": "sparrow",
     "tags": [
+      "animal",
       "bird",
       "tiny"
     ]
@@ -476,37 +537,42 @@
   {
     "name": "crow",
     "tags": [
+      "animal",
       "bird",
-      "small",
-      "mythic"
+      "mythic",
+      "small"
     ]
   },
   {
     "name": "crocodile",
     "tags": [
-      "reptile",
+      "animal",
+      "enormous",
       "predator",
-      "enormous"
+      "reptile"
     ]
   },
   {
     "name": "komodo dragon",
     "tags": [
-      "reptile",
+      "animal",
+      "large",
       "predator",
-      "large"
+      "reptile"
     ]
   },
   {
     "name": "iguana",
     "tags": [
-      "reptile",
-      "medium"
+      "animal",
+      "medium",
+      "reptile"
     ]
   },
   {
     "name": "chameleon",
     "tags": [
+      "animal",
       "reptile",
       "small"
     ]
@@ -514,6 +580,7 @@
   {
     "name": "gecko",
     "tags": [
+      "animal",
       "reptile",
       "tiny"
     ]
@@ -521,46 +588,52 @@
   {
     "name": "tortoise",
     "tags": [
-      "reptile",
-      "large"
+      "animal",
+      "large",
+      "reptile"
     ]
   },
   {
     "name": "king cobra",
     "tags": [
-      "reptile",
-      "predator",
+      "animal",
       "large",
-      "mythic"
+      "mythic",
+      "predator",
+      "reptile"
     ]
   },
   {
     "name": "python",
     "tags": [
-      "reptile",
+      "animal",
+      "large",
       "predator",
-      "large"
+      "reptile"
     ]
   },
   {
     "name": "rattlesnake",
     "tags": [
-      "reptile",
+      "animal",
+      "medium",
       "predator",
-      "medium"
+      "reptile"
     ]
   },
   {
     "name": "alligator",
     "tags": [
-      "reptile",
+      "animal",
+      "large",
       "predator",
-      "large"
+      "reptile"
     ]
   },
   {
     "name": "frog",
     "tags": [
+      "animal",
       "reptile",
       "small"
     ]
@@ -568,6 +641,7 @@
   {
     "name": "toad",
     "tags": [
+      "animal",
       "reptile",
       "small"
     ]
@@ -575,6 +649,7 @@
   {
     "name": "salamander",
     "tags": [
+      "animal",
       "reptile",
       "small"
     ]
@@ -582,8 +657,9 @@
   {
     "name": "axolotl",
     "tags": [
-      "reptile",
+      "animal",
       "aquatic",
+      "reptile",
       "small",
       "weird"
     ]
@@ -591,15 +667,17 @@
   {
     "name": "shark",
     "tags": [
+      "animal",
       "aquatic",
-      "predator",
       "enormous",
-      "mythic"
+      "mythic",
+      "predator"
     ]
   },
   {
     "name": "octopus",
     "tags": [
+      "animal",
       "aquatic",
       "medium",
       "mythic"
@@ -608,6 +686,7 @@
   {
     "name": "squid",
     "tags": [
+      "animal",
       "aquatic",
       "medium"
     ]
@@ -615,6 +694,7 @@
   {
     "name": "jellyfish",
     "tags": [
+      "animal",
       "aquatic",
       "small",
       "weird"
@@ -623,6 +703,7 @@
   {
     "name": "sea horse",
     "tags": [
+      "animal",
       "aquatic",
       "tiny",
       "weird"
@@ -631,6 +712,7 @@
   {
     "name": "clownfish",
     "tags": [
+      "animal",
       "aquatic",
       "tiny"
     ]
@@ -638,6 +720,7 @@
   {
     "name": "pufferfish",
     "tags": [
+      "animal",
       "aquatic",
       "small",
       "weird"
@@ -646,6 +729,7 @@
   {
     "name": "manta ray",
     "tags": [
+      "animal",
       "aquatic",
       "large"
     ]
@@ -653,6 +737,7 @@
   {
     "name": "stingray",
     "tags": [
+      "animal",
       "aquatic",
       "medium"
     ]
@@ -660,6 +745,7 @@
   {
     "name": "lobster",
     "tags": [
+      "animal",
       "aquatic",
       "small"
     ]
@@ -667,6 +753,7 @@
   {
     "name": "crab",
     "tags": [
+      "animal",
       "aquatic",
       "small"
     ]
@@ -674,6 +761,7 @@
   {
     "name": "starfish",
     "tags": [
+      "animal",
       "aquatic",
       "small"
     ]
@@ -681,6 +769,7 @@
   {
     "name": "nautilus",
     "tags": [
+      "animal",
       "aquatic",
       "small",
       "weird"
@@ -689,6 +778,7 @@
   {
     "name": "coelacanth",
     "tags": [
+      "animal",
       "aquatic",
       "large",
       "weird"
@@ -697,23 +787,26 @@
   {
     "name": "anglerfish",
     "tags": [
+      "animal",
       "aquatic",
-      "predator",
       "medium",
+      "predator",
       "weird"
     ]
   },
   {
     "name": "swordfish",
     "tags": [
+      "animal",
       "aquatic",
-      "predator",
-      "large"
+      "large",
+      "predator"
     ]
   },
   {
     "name": "piranha",
     "tags": [
+      "animal",
       "aquatic",
       "predator",
       "tiny"
@@ -722,73 +815,83 @@
   {
     "name": "eel",
     "tags": [
+      "animal",
       "aquatic",
-      "predator",
-      "medium"
+      "medium",
+      "predator"
     ]
   },
   {
     "name": "bee",
     "tags": [
-      "insect",
+      "animal",
+      "bug",
       "tiny"
     ]
   },
   {
     "name": "butterfly",
     "tags": [
-      "insect",
-      "tiny",
-      "mythic"
+      "animal",
+      "bug",
+      "mythic",
+      "tiny"
     ]
   },
   {
     "name": "moth",
     "tags": [
-      "insect",
-      "tiny",
-      "mythic"
+      "animal",
+      "bug",
+      "mythic",
+      "tiny"
     ]
   },
   {
     "name": "beetle",
     "tags": [
-      "insect",
+      "animal",
+      "bug",
       "tiny"
     ]
   },
   {
     "name": "ant",
     "tags": [
-      "insect",
+      "animal",
+      "bug",
       "tiny"
     ]
   },
   {
     "name": "dragonfly",
     "tags": [
-      "insect",
+      "animal",
+      "bug",
       "tiny"
     ]
   },
   {
     "name": "firefly",
     "tags": [
-      "insect",
+      "animal",
+      "bug",
       "tiny"
     ]
   },
   {
     "name": "grasshopper",
     "tags": [
-      "insect",
+      "animal",
+      "bug",
       "tiny"
     ]
   },
   {
     "name": "praying mantis",
     "tags": [
-      "insect",
+      "animal",
+      "bug",
       "predator",
       "tiny",
       "weird"
@@ -797,25 +900,28 @@
   {
     "name": "scorpion",
     "tags": [
-      "insect",
+      "animal",
+      "bug",
+      "mythic",
       "predator",
-      "tiny",
-      "mythic"
+      "tiny"
     ]
   },
   {
     "name": "spider",
     "tags": [
-      "insect",
+      "animal",
+      "bug",
+      "mythic",
       "predator",
-      "tiny",
-      "mythic"
+      "tiny"
     ]
   },
   {
     "name": "centipede",
     "tags": [
-      "insect",
+      "animal",
+      "bug",
       "predator",
       "tiny"
     ]
@@ -823,43 +929,46 @@
   {
     "name": "cicada",
     "tags": [
-      "insect",
+      "animal",
+      "bug",
       "tiny"
     ]
   },
   {
     "name": "snail",
     "tags": [
-      "insect",
+      "animal",
       "tiny"
     ]
   },
   {
     "name": "slug",
     "tags": [
-      "insect",
+      "animal",
       "tiny"
     ]
   },
   {
     "name": "worm",
     "tags": [
-      "insect",
+      "animal",
       "tiny"
     ]
   },
   {
     "name": "millipede",
     "tags": [
-      "insect",
+      "animal",
+      "bug",
       "tiny"
     ]
   },
   {
     "name": "mantis shrimp",
     "tags": [
+      "animal",
       "aquatic",
-      "insect",
+      "bug",
       "small",
       "weird"
     ]
@@ -867,62 +976,62 @@
   {
     "name": "oak tree",
     "tags": [
-      "plant",
       "enormous",
-      "mythic"
+      "mythic",
+      "plant"
     ]
   },
   {
     "name": "sequoia",
     "tags": [
-      "plant",
-      "enormous"
+      "enormous",
+      "plant"
     ]
   },
   {
     "name": "weeping willow",
     "tags": [
-      "plant",
       "enormous",
-      "mythic"
+      "mythic",
+      "plant"
     ]
   },
   {
     "name": "baobab tree",
     "tags": [
-      "plant",
       "enormous",
+      "plant",
       "weird"
     ]
   },
   {
     "name": "cactus",
     "tags": [
-      "plant",
-      "medium"
+      "medium",
+      "plant"
     ]
   },
   {
     "name": "sunflower",
     "tags": [
-      "plant",
-      "medium"
+      "medium",
+      "plant"
     ]
   },
   {
     "name": "rose",
     "tags": [
+      "mythic",
       "plant",
-      "small",
-      "mythic"
+      "small"
     ]
   },
   {
     "name": "lotus",
     "tags": [
+      "mythic",
       "plant",
-      "small",
-      "mythic"
+      "small"
     ]
   },
   {
@@ -965,46 +1074,46 @@
   {
     "name": "bamboo",
     "tags": [
-      "plant",
-      "large"
+      "large",
+      "plant"
     ]
   },
   {
     "name": "seaweed",
     "tags": [
-      "plant",
       "aquatic",
-      "medium"
+      "medium",
+      "plant"
     ]
   },
   {
     "name": "kelp",
     "tags": [
-      "plant",
       "aquatic",
-      "large"
+      "large",
+      "plant"
     ]
   },
   {
     "name": "water lily",
     "tags": [
-      "plant",
       "aquatic",
+      "plant",
       "small"
     ]
   },
   {
     "name": "ivy",
     "tags": [
-      "plant",
-      "medium"
+      "medium",
+      "plant"
     ]
   },
   {
     "name": "tumbleweed",
     "tags": [
-      "plant",
-      "medium"
+      "medium",
+      "plant"
     ]
   },
   {
@@ -1018,16 +1127,16 @@
     "name": "mushroom",
     "tags": [
       "fungus",
-      "small",
-      "mythic"
+      "mythic",
+      "small"
     ]
   },
   {
     "name": "fly agaric",
     "tags": [
       "fungus",
-      "small",
-      "mythic"
+      "mythic",
+      "small"
     ]
   },
   {
@@ -1123,8 +1232,8 @@
   {
     "name": "spore",
     "tags": [
-      "microscopic",
       "fungus",
+      "microscopic",
       "tiny"
     ]
   },
@@ -1139,8 +1248,8 @@
     "name": "death cap",
     "tags": [
       "fungus",
-      "tiny",
-      "mythic"
+      "mythic",
+      "tiny"
     ]
   },
   {
@@ -1199,98 +1308,110 @@
   {
     "name": "sheep",
     "tags": [
+      "animal",
+      "domestic",
       "mammal",
-      "medium",
-      "domestic"
+      "medium"
     ]
   },
   {
     "name": "goat",
     "tags": [
+      "animal",
+      "domestic",
       "mammal",
-      "medium",
-      "domestic"
+      "medium"
     ]
   },
   {
     "name": "chicken",
     "tags": [
+      "animal",
       "bird",
-      "small",
-      "domestic"
+      "domestic",
+      "small"
     ]
   },
   {
     "name": "duck",
     "tags": [
+      "animal",
       "bird",
-      "small",
-      "domestic"
+      "domestic",
+      "small"
     ]
   },
   {
     "name": "donkey",
     "tags": [
-      "mammal",
+      "animal",
+      "domestic",
       "large",
-      "domestic"
+      "mammal"
     ]
   },
   {
     "name": "llama",
     "tags": [
-      "mammal",
+      "animal",
+      "domestic",
       "large",
-      "domestic"
+      "mammal"
     ]
   },
   {
     "name": "goldfish",
     "tags": [
+      "animal",
       "aquatic",
-      "tiny",
-      "domestic"
+      "domestic",
+      "tiny"
     ]
   },
   {
     "name": "hamster",
     "tags": [
+      "animal",
+      "domestic",
       "mammal",
-      "tiny",
-      "domestic"
+      "tiny"
     ]
   },
   {
     "name": "guinea pig",
     "tags": [
+      "animal",
+      "domestic",
       "mammal",
-      "tiny",
-      "domestic"
+      "tiny"
     ]
   },
   {
     "name": "goose",
     "tags": [
+      "animal",
       "bird",
-      "medium",
       "domestic",
+      "medium",
       "mythic"
     ]
   },
   {
     "name": "turkey",
     "tags": [
+      "animal",
       "bird",
-      "medium",
-      "domestic"
+      "domestic",
+      "medium"
     ]
   },
   {
     "name": "canary",
     "tags": [
+      "animal",
       "bird",
-      "tiny",
-      "domestic"
+      "domestic",
+      "tiny"
     ]
   },
   {
@@ -1311,8 +1432,8 @@
   {
     "name": "plankton",
     "tags": [
-      "microscopic",
       "aquatic",
+      "microscopic",
       "tiny"
     ]
   },
@@ -1333,8 +1454,8 @@
   {
     "name": "hydra",
     "tags": [
-      "microscopic",
       "aquatic",
+      "microscopic",
       "tiny",
       "weird"
     ]
@@ -1357,8 +1478,8 @@
   {
     "name": "foraminifera",
     "tags": [
-      "microscopic",
       "aquatic",
+      "microscopic",
       "tiny"
     ]
   },
@@ -1380,14 +1501,16 @@
   {
     "name": "anaconda",
     "tags": [
-      "reptile",
+      "animal",
+      "enormous",
       "predator",
-      "enormous"
+      "reptile"
     ]
   },
   {
     "name": "giant clam",
     "tags": [
+      "animal",
       "aquatic",
       "enormous",
       "weird"
@@ -1396,8 +1519,8 @@
   {
     "name": "titan arum",
     "tags": [
-      "plant",
       "enormous",
+      "plant",
       "weird"
     ]
   },
@@ -1405,9 +1528,6 @@
     "name": "eye",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "external",
       "small"
     ]
   },
@@ -1415,8 +1535,6 @@
     "name": "hand",
     "tags": [
       "anatomy",
-      "human",
-      "external",
       "small"
     ]
   },
@@ -1424,8 +1542,6 @@
     "name": "foot",
     "tags": [
       "anatomy",
-      "human",
-      "external",
       "small"
     ]
   },
@@ -1433,9 +1549,6 @@
     "name": "spine",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "internal",
       "medium"
     ]
   },
@@ -1443,31 +1556,22 @@
     "name": "heart",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "internal",
-      "small",
-      "mythic"
+      "mythic",
+      "small"
     ]
   },
   {
     "name": "skull",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "external",
-      "small",
-      "mythic"
+      "mythic",
+      "small"
     ]
   },
   {
     "name": "brain",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "internal",
       "small"
     ]
   },
@@ -1475,9 +1579,6 @@
     "name": "rib cage",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "internal",
       "medium"
     ]
   },
@@ -1485,9 +1586,6 @@
     "name": "lung",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "internal",
       "small"
     ]
   },
@@ -1495,9 +1593,6 @@
     "name": "tongue",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "external",
       "small"
     ]
   },
@@ -1505,9 +1600,6 @@
     "name": "ear",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "external",
       "tiny"
     ]
   },
@@ -1515,9 +1607,6 @@
     "name": "teeth",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "external",
       "tiny"
     ]
   },
@@ -1525,8 +1614,6 @@
     "name": "horn",
     "tags": [
       "anatomy",
-      "animal",
-      "external",
       "medium",
       "mythic"
     ]
@@ -1535,8 +1622,6 @@
     "name": "claw",
     "tags": [
       "anatomy",
-      "animal",
-      "external",
       "tiny"
     ]
   },
@@ -1544,8 +1629,6 @@
     "name": "hoof",
     "tags": [
       "anatomy",
-      "animal",
-      "external",
       "small"
     ]
   },
@@ -1553,8 +1636,6 @@
     "name": "wing",
     "tags": [
       "anatomy",
-      "animal",
-      "external",
       "medium",
       "mythic"
     ]
@@ -1563,8 +1644,6 @@
     "name": "tail",
     "tags": [
       "anatomy",
-      "animal",
-      "external",
       "medium"
     ]
   },
@@ -1572,8 +1651,6 @@
     "name": "tentacle",
     "tags": [
       "anatomy",
-      "animal",
-      "external",
       "medium",
       "weird"
     ]
@@ -1582,18 +1659,14 @@
     "name": "fang",
     "tags": [
       "anatomy",
-      "animal",
-      "external",
-      "tiny",
-      "mythic"
+      "mythic",
+      "tiny"
     ]
   },
   {
     "name": "feather",
     "tags": [
       "anatomy",
-      "animal",
-      "external",
       "tiny"
     ]
   },
@@ -1601,8 +1674,6 @@
     "name": "scale",
     "tags": [
       "anatomy",
-      "animal",
-      "external",
       "tiny"
     ]
   },
@@ -1610,8 +1681,6 @@
     "name": "shell",
     "tags": [
       "anatomy",
-      "animal",
-      "external",
       "medium"
     ]
   },
@@ -1619,9 +1688,7 @@
     "name": "fin",
     "tags": [
       "anatomy",
-      "animal",
       "aquatic",
-      "external",
       "small"
     ]
   },
@@ -1629,9 +1696,8 @@
     "name": "root",
     "tags": [
       "anatomy",
-      "plant",
-      "external",
-      "medium"
+      "medium",
+      "plant"
     ]
   },
   {
@@ -1639,22 +1705,22 @@
     "tags": [
       "anatomy",
       "plant",
-      "human",
-      "internal",
       "tiny"
     ]
   },
   {
     "name": "monitor lizard",
     "tags": [
-      "reptile",
+      "animal",
+      "large",
       "predator",
-      "large"
+      "reptile"
     ]
   },
   {
     "name": "skink",
     "tags": [
+      "animal",
       "reptile",
       "small"
     ]
@@ -1663,9 +1729,6 @@
     "name": "stomach",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "internal",
       "small"
     ]
   },
@@ -1673,9 +1736,6 @@
     "name": "kidney",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "internal",
       "small"
     ]
   },
@@ -1683,9 +1743,6 @@
     "name": "liver",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "internal",
       "medium"
     ]
   },
@@ -1693,29 +1750,13 @@
     "name": "intestine",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "internal",
       "medium"
-    ]
-  },
-  {
-    "name": "artery",
-    "tags": [
-      "anatomy",
-      "human",
-      "animal",
-      "internal",
-      "tiny"
     ]
   },
   {
     "name": "nerve",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "internal",
       "tiny"
     ]
   },
@@ -1723,9 +1764,6 @@
     "name": "bone",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "internal",
       "small"
     ]
   },
@@ -1733,59 +1771,13 @@
     "name": "muscle",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "internal",
       "medium"
-    ]
-  },
-  {
-    "name": "eye socket",
-    "tags": [
-      "anatomy",
-      "human",
-      "animal",
-      "internal",
-      "small"
-    ]
-  },
-  {
-    "name": "marrow",
-    "tags": [
-      "anatomy",
-      "human",
-      "animal",
-      "internal",
-      "tiny"
-    ]
-  },
-  {
-    "name": "tendon",
-    "tags": [
-      "anatomy",
-      "human",
-      "animal",
-      "internal",
-      "tiny"
-    ]
-  },
-  {
-    "name": "cartilage",
-    "tags": [
-      "anatomy",
-      "human",
-      "animal",
-      "internal",
-      "small"
     ]
   },
   {
     "name": "bladder",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "internal",
       "small"
     ]
   },
@@ -1793,16 +1785,14 @@
     "name": "trachea",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "internal",
       "medium"
     ]
   },
   {
     "name": "termite",
     "tags": [
-      "insect",
+      "animal",
+      "bug",
       "tiny"
     ]
   },
@@ -1810,8 +1800,6 @@
     "name": "tusk",
     "tags": [
       "anatomy",
-      "animal",
-      "external",
       "medium",
       "mythic"
     ]
@@ -1841,22 +1829,25 @@
   {
     "name": "hornet",
     "tags": [
-      "insect",
-      "tiny",
-      "predator"
+      "animal",
+      "bug",
+      "predator",
+      "tiny"
     ]
   },
   {
     "name": "turtle",
     "tags": [
-      "reptile",
+      "animal",
       "aquatic",
-      "medium"
+      "medium",
+      "reptile"
     ]
   },
   {
     "name": "horned lizard",
     "tags": [
+      "animal",
       "reptile",
       "small",
       "weird"
@@ -1865,43 +1856,44 @@
   {
     "name": "blue whale",
     "tags": [
+      "animal",
       "aquatic",
-      "mammal",
-      "enormous"
+      "enormous",
+      "mammal"
     ]
   },
   {
     "name": "orca",
     "tags": [
+      "animal",
       "aquatic",
+      "enormous",
       "mammal",
-      "predator",
-      "enormous"
+      "predator"
     ]
   },
   {
     "name": "mako shark",
     "tags": [
+      "animal",
       "aquatic",
-      "predator",
-      "enormous"
+      "enormous",
+      "predator"
     ]
   },
   {
     "name": "boa constrictor",
     "tags": [
-      "reptile",
+      "animal",
+      "large",
       "predator",
-      "large"
+      "reptile"
     ]
   },
   {
     "name": "head",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "external",
       "small"
     ]
   },
@@ -1909,8 +1901,6 @@
     "name": "face",
     "tags": [
       "anatomy",
-      "human",
-      "external",
       "small"
     ]
   },
@@ -1918,8 +1908,6 @@
     "name": "finger",
     "tags": [
       "anatomy",
-      "human",
-      "external",
       "tiny"
     ]
   },
@@ -1927,9 +1915,6 @@
     "name": "nose",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "external",
       "tiny"
     ]
   },
@@ -1937,9 +1922,6 @@
     "name": "mouth",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "external",
       "small"
     ]
   },
@@ -1947,9 +1929,6 @@
     "name": "neck",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "external",
       "small"
     ]
   },
@@ -1957,8 +1936,6 @@
     "name": "arm",
     "tags": [
       "anatomy",
-      "human",
-      "external",
       "small"
     ]
   },
@@ -1966,9 +1943,6 @@
     "name": "leg",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "external",
       "medium"
     ]
   },
@@ -1976,9 +1950,6 @@
     "name": "skin",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "external",
       "medium"
     ]
   },
@@ -1986,9 +1957,6 @@
     "name": "hair",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "external",
       "tiny"
     ]
   },
@@ -1996,10 +1964,32 @@
     "name": "jaw",
     "tags": [
       "anatomy",
-      "human",
-      "animal",
-      "external",
       "small"
+    ]
+  },
+  {
+    "name": "cockroach",
+    "tags": [
+      "animal",
+      "bug",
+      "medium"
+    ]
+  },
+  {
+    "name": "cricket",
+    "tags": [
+      "animal",
+      "bug",
+      "tiny"
+    ]
+  },
+  {
+    "name": "stick insect",
+    "tags": [
+      "animal",
+      "bug",
+      "small",
+      "weird"
     ]
   }
 ]
