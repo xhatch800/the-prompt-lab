@@ -1496,7 +1496,7 @@
       const usedNames = {}; // tracks used noun names per pool key to prevent duplicates
 
       for (const slot of activeSlots) {
-        if (locked[slot.id]) {
+        if (locked[slot.id] && prev[slot.id] != null) {
           result[slot.id] = prev[slot.id];
           // Track locked noun names so subsequent noun slots don't pick the same word
           if (slot.type === 'noun' && prev[slot.id]) {
