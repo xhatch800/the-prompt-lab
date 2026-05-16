@@ -126,25 +126,27 @@
       top: 1.2rem;
       right: 1.2rem;
       z-index: 10;
-      background: none;
-      border: none;
-      cursor: pointer;
+      font-family: 'Caveat', cursive;
+      font-size: 1rem;
+      background: #fdf8f0;
+      border: 1.5px solid #b85c38;
+      border-radius: 6px;
       color: #b85c38;
-      font-size: 1.3rem;
-      line-height: 1;
-      padding: 4px;
-      transition: color 0.15s ease;
+      padding: 1px 8px;
+      cursor: pointer;
+      line-height: 1.5;
+      transition: background 0.1s, color 0.1s;
     }
     .copy-btn:hover { opacity: 0.7; }
-    .copy-btn.copied { color: #b85c38; }
+    .copy-btn.copied { background: #b85c38; color: #fdf8f0; }
 
     .back-row {
       display: flex;
       align-items: center;
       gap: 6px;
       position: absolute;
-      top: 1.5rem;
-      left: 1.5rem;
+      top: 1.2rem;
+      left: 1.2rem;
       z-index: 10;
     }
 
@@ -1367,7 +1369,7 @@
     </div>
     <div class="jd-header-right">
       <button id="jd-filter-btn" class="jd-filter-btn">⊞ filter</button>
-      <button class="copy-btn" id="copy-just-draw" title="Copy prompt">⧉</button>
+      <button class="copy-btn" id="copy-just-draw" title="Copy prompt">⧉ copy</button>
     </div>
     <p id="just-draw-prompt" class="prompt-text"></p>
     <p id="jd-tag-indicator" class="jd-tag-indicator"></p>
@@ -1424,7 +1426,7 @@
       <button id="btn-back-imagine" class="back-btn">←</button>
       <span id="imagine-screen-label" class="screen-label"></span>
     </div>
-    <button class="copy-btn" id="copy-imagine" title="Copy prompt">⧉</button>
+    <button class="copy-btn" id="copy-imagine" title="Copy prompt">⧉ copy</button>
     <div id="imagine-prompt" class="prompt-text"></div>
     <p id="lock-hint-imagine" class="lock-hint">tap a word to lock it</p>
     <button id="btn-regen-imagine" class="regen-btn">↺ new prompt</button>
