@@ -1,418 +1,9 @@
 [
   {
-    "name": "whale",
+    "name": "acrobat",
     "tags": [
-      "animal",
-      "aquatic",
-      "mammal"
-    ]
-  },
-  {
-    "name": "dolphin",
-    "tags": [
-      "animal",
-      "aquatic",
-      "mammal"
-    ]
-  },
-  {
-    "name": "seal",
-    "tags": [
-      "animal",
-      "aquatic",
-      "mammal"
-    ]
-  },
-  {
-    "name": "otter",
-    "tags": [
-      "animal",
-      "aquatic",
-      "mammal"
-    ]
-  },
-  {
-    "name": "manatee",
-    "tags": [
-      "animal",
-      "aquatic",
-      "mammal"
-    ]
-  },
-  {
-    "name": "walrus",
-    "tags": [
-      "animal",
-      "aquatic",
-      "mammal"
-    ]
-  },
-  {
-    "name": "narwhal",
-    "tags": [
-      "animal",
-      "aquatic",
-      "mammal",
+      "human",
       "weird"
-    ]
-  },
-  {
-    "name": "elephant",
-    "tags": [
-      "animal",
-      "mammal"
-    ]
-  },
-  {
-    "name": "rhinoceros",
-    "tags": [
-      "animal",
-      "mammal"
-    ]
-  },
-  {
-    "name": "hippopotamus",
-    "tags": [
-      "animal",
-      "mammal"
-    ]
-  },
-  {
-    "name": "giraffe",
-    "tags": [
-      "animal",
-      "mammal"
-    ]
-  },
-  {
-    "name": "lion",
-    "tags": [
-      "animal",
-      "mammal",
-      "mythic",
-      "predator"
-    ]
-  },
-  {
-    "name": "tiger",
-    "tags": [
-      "animal",
-      "mammal",
-      "mythic",
-      "predator"
-    ]
-  },
-  {
-    "name": "bear",
-    "tags": [
-      "animal",
-      "mammal",
-      "mythic",
-      "predator"
-    ]
-  },
-  {
-    "name": "wolf",
-    "tags": [
-      "animal",
-      "mammal",
-      "mythic",
-      "predator"
-    ]
-  },
-  {
-    "name": "fox",
-    "tags": [
-      "animal",
-      "mammal",
-      "mythic",
-      "predator"
-    ]
-  },
-  {
-    "name": "deer",
-    "tags": [
-      "animal",
-      "mammal",
-      "mythic"
-    ]
-  },
-  {
-    "name": "horse",
-    "tags": [
-      "animal",
-      "domestic",
-      "mammal",
-      "mythic"
-    ]
-  },
-  {
-    "name": "cow",
-    "tags": [
-      "animal",
-      "domestic",
-      "mammal"
-    ]
-  },
-  {
-    "name": "pig",
-    "tags": [
-      "animal",
-      "domestic",
-      "mammal"
-    ]
-  },
-  {
-    "name": "dog",
-    "tags": [
-      "animal",
-      "domestic",
-      "mammal",
-      "mythic"
-    ]
-  },
-  {
-    "name": "cat",
-    "tags": [
-      "animal",
-      "domestic",
-      "mammal",
-      "mythic"
-    ]
-  },
-  {
-    "name": "rabbit",
-    "tags": [
-      "animal",
-      "domestic",
-      "mammal"
-    ]
-  },
-  {
-    "name": "mouse",
-    "tags": [
-      "animal",
-      "mammal"
-    ]
-  },
-  {
-    "name": "rat",
-    "tags": [
-      "animal",
-      "mammal"
-    ]
-  },
-  {
-    "name": "bat",
-    "tags": [
-      "animal",
-      "mammal",
-      "mythic"
-    ]
-  },
-  {
-    "name": "gorilla",
-    "tags": [
-      "animal",
-      "mammal"
-    ]
-  },
-  {
-    "name": "chimpanzee",
-    "tags": [
-      "animal",
-      "mammal"
-    ]
-  },
-  {
-    "name": "orangutan",
-    "tags": [
-      "animal",
-      "mammal"
-    ]
-  },
-  {
-    "name": "sloth",
-    "tags": [
-      "animal",
-      "mammal",
-      "weird"
-    ]
-  },
-  {
-    "name": "pangolin",
-    "tags": [
-      "animal",
-      "mammal",
-      "weird"
-    ]
-  },
-  {
-    "name": "porcupine",
-    "tags": [
-      "animal",
-      "mammal"
-    ]
-  },
-  {
-    "name": "beaver",
-    "tags": [
-      "animal",
-      "mammal"
-    ]
-  },
-  {
-    "name": "mole",
-    "tags": [
-      "animal",
-      "mammal"
-    ]
-  },
-  {
-    "name": "hedgehog",
-    "tags": [
-      "animal",
-      "mammal"
-    ]
-  },
-  {
-    "name": "moose",
-    "tags": [
-      "animal",
-      "mammal"
-    ]
-  },
-  {
-    "name": "bison",
-    "tags": [
-      "animal",
-      "mammal"
-    ]
-  },
-  {
-    "name": "camel",
-    "tags": [
-      "animal",
-      "mammal"
-    ]
-  },
-  {
-    "name": "zebra",
-    "tags": [
-      "animal",
-      "mammal"
-    ]
-  },
-  {
-    "name": "kangaroo",
-    "tags": [
-      "animal",
-      "mammal"
-    ]
-  },
-  {
-    "name": "platypus",
-    "tags": [
-      "animal",
-      "mammal",
-      "weird"
-    ]
-  },
-  {
-    "name": "eagle",
-    "tags": [
-      "animal",
-      "bird",
-      "mythic",
-      "predator"
-    ]
-  },
-  {
-    "name": "owl",
-    "tags": [
-      "animal",
-      "bird",
-      "mythic",
-      "predator"
-    ]
-  },
-  {
-    "name": "raven",
-    "tags": [
-      "animal",
-      "bird",
-      "mythic"
-    ]
-  },
-  {
-    "name": "swan",
-    "tags": [
-      "animal",
-      "bird",
-      "mythic"
-    ]
-  },
-  {
-    "name": "peacock",
-    "tags": [
-      "animal",
-      "bird",
-      "mythic"
-    ]
-  },
-  {
-    "name": "flamingo",
-    "tags": [
-      "animal",
-      "bird",
-      "fragile"
-    ]
-  },
-  {
-    "name": "pelican",
-    "tags": [
-      "animal",
-      "bird"
-    ]
-  },
-  {
-    "name": "toucan",
-    "tags": [
-      "animal",
-      "bird"
-    ]
-  },
-  {
-    "name": "parrot",
-    "tags": [
-      "animal",
-      "bird",
-      "domestic"
-    ]
-  },
-  {
-    "name": "hummingbird",
-    "tags": [
-      "animal",
-      "bird",
-      "fragile"
-    ]
-  },
-  {
-    "name": "penguin",
-    "tags": [
-      "animal",
-      "aquatic",
-      "bird"
-    ]
-  },
-  {
-    "name": "crane",
-    "tags": [
-      "animal",
-      "bird",
-      "mythic",
-      "fragile"
     ]
   },
   {
@@ -423,134 +14,10 @@
     ]
   },
   {
-    "name": "vulture",
+    "name": "alchemist",
     "tags": [
-      "animal",
-      "bird",
-      "predator"
-    ]
-  },
-  {
-    "name": "heron",
-    "tags": [
-      "animal",
-      "bird"
-    ]
-  },
-  {
-    "name": "stork",
-    "tags": [
-      "animal",
-      "bird",
+      "human",
       "mythic"
-    ]
-  },
-  {
-    "name": "ostrich",
-    "tags": [
-      "animal",
-      "bird"
-    ]
-  },
-  {
-    "name": "condor",
-    "tags": [
-      "animal",
-      "bird",
-      "predator"
-    ]
-  },
-  {
-    "name": "rooster",
-    "tags": [
-      "animal",
-      "bird",
-      "domestic",
-      "mythic"
-    ]
-  },
-  {
-    "name": "sparrow",
-    "tags": [
-      "animal",
-      "bird"
-    ]
-  },
-  {
-    "name": "crow",
-    "tags": [
-      "animal",
-      "bird",
-      "mythic"
-    ]
-  },
-  {
-    "name": "crocodile",
-    "tags": [
-      "animal",
-      "predator",
-      "reptile"
-    ]
-  },
-  {
-    "name": "komodo dragon",
-    "tags": [
-      "animal",
-      "predator",
-      "reptile"
-    ]
-  },
-  {
-    "name": "iguana",
-    "tags": [
-      "animal",
-      "reptile"
-    ]
-  },
-  {
-    "name": "chameleon",
-    "tags": [
-      "animal",
-      "reptile"
-    ]
-  },
-  {
-    "name": "gecko",
-    "tags": [
-      "animal",
-      "reptile"
-    ]
-  },
-  {
-    "name": "tortoise",
-    "tags": [
-      "animal",
-      "reptile"
-    ]
-  },
-  {
-    "name": "king cobra",
-    "tags": [
-      "animal",
-      "mythic",
-      "predator",
-      "reptile"
-    ]
-  },
-  {
-    "name": "python",
-    "tags": [
-      "animal",
-      "predator",
-      "reptile"
-    ]
-  },
-  {
-    "name": "rattlesnake",
-    "tags": [
-      "animal",
-      "predator",
-      "reptile"
     ]
   },
   {
@@ -562,794 +29,15 @@
     ]
   },
   {
-    "name": "frog",
-    "tags": [
-      "animal",
-      "reptile"
-    ]
-  },
-  {
-    "name": "toad",
-    "tags": [
-      "animal",
-      "reptile"
-    ]
-  },
-  {
-    "name": "salamander",
-    "tags": [
-      "animal",
-      "reptile"
-    ]
-  },
-  {
-    "name": "axolotl",
-    "tags": [
-      "animal",
-      "aquatic",
-      "reptile",
-      "weird"
-    ]
-  },
-  {
-    "name": "shark",
-    "tags": [
-      "animal",
-      "aquatic",
-      "mythic",
-      "predator",
-      "fish"
-    ]
-  },
-  {
-    "name": "octopus",
-    "tags": [
-      "animal",
-      "aquatic",
-      "mythic"
-    ]
-  },
-  {
-    "name": "squid",
-    "tags": [
-      "animal",
-      "aquatic"
-    ]
-  },
-  {
-    "name": "jellyfish",
-    "tags": [
-      "animal",
-      "aquatic",
-      "weird",
-      "fragile"
-    ]
-  },
-  {
-    "name": "sea horse",
-    "tags": [
-      "animal",
-      "aquatic",
-      "weird",
-      "fragile"
-    ]
-  },
-  {
-    "name": "clownfish",
-    "tags": [
-      "animal",
-      "aquatic",
-      "fish"
-    ]
-  },
-  {
-    "name": "pufferfish",
-    "tags": [
-      "animal",
-      "aquatic",
-      "weird",
-      "fish"
-    ]
-  },
-  {
-    "name": "manta ray",
-    "tags": [
-      "animal",
-      "aquatic"
-    ]
-  },
-  {
-    "name": "stingray",
-    "tags": [
-      "animal",
-      "aquatic"
-    ]
-  },
-  {
-    "name": "lobster",
-    "tags": [
-      "animal",
-      "aquatic"
-    ]
-  },
-  {
-    "name": "crab",
-    "tags": [
-      "animal",
-      "aquatic"
-    ]
-  },
-  {
-    "name": "starfish",
-    "tags": [
-      "animal",
-      "aquatic"
-    ]
-  },
-  {
-    "name": "nautilus",
-    "tags": [
-      "animal",
-      "aquatic",
-      "weird"
-    ]
-  },
-  {
-    "name": "coelacanth",
-    "tags": [
-      "animal",
-      "aquatic",
-      "weird",
-      "fish"
-    ]
-  },
-  {
-    "name": "anglerfish",
-    "tags": [
-      "animal",
-      "aquatic",
-      "predator",
-      "weird",
-      "fish"
-    ]
-  },
-  {
-    "name": "swordfish",
-    "tags": [
-      "animal",
-      "aquatic",
-      "predator",
-      "fish"
-    ]
-  },
-  {
-    "name": "piranha",
-    "tags": [
-      "animal",
-      "aquatic",
-      "predator",
-      "fish"
-    ]
-  },
-  {
-    "name": "eel",
-    "tags": [
-      "animal",
-      "aquatic",
-      "predator",
-      "fish"
-    ]
-  },
-  {
-    "name": "bee",
-    "tags": [
-      "animal",
-      "bug"
-    ]
-  },
-  {
-    "name": "butterfly",
-    "tags": [
-      "animal",
-      "bug",
-      "mythic",
-      "fragile"
-    ]
-  },
-  {
-    "name": "moth",
-    "tags": [
-      "animal",
-      "bug",
-      "mythic",
-      "fragile"
-    ]
-  },
-  {
-    "name": "beetle",
-    "tags": [
-      "animal",
-      "bug"
-    ]
-  },
-  {
-    "name": "ant",
-    "tags": [
-      "animal",
-      "bug"
-    ]
-  },
-  {
-    "name": "dragonfly",
-    "tags": [
-      "animal",
-      "bug",
-      "fragile"
-    ]
-  },
-  {
-    "name": "firefly",
-    "tags": [
-      "animal",
-      "bug"
-    ]
-  },
-  {
-    "name": "grasshopper",
-    "tags": [
-      "animal",
-      "bug"
-    ]
-  },
-  {
-    "name": "praying mantis",
-    "tags": [
-      "animal",
-      "bug",
-      "predator",
-      "weird"
-    ]
-  },
-  {
-    "name": "scorpion",
-    "tags": [
-      "animal",
-      "bug",
-      "mythic",
-      "predator"
-    ]
-  },
-  {
-    "name": "spider",
-    "tags": [
-      "animal",
-      "bug",
-      "mythic",
-      "predator"
-    ]
-  },
-  {
-    "name": "centipede",
-    "tags": [
-      "animal",
-      "bug",
-      "predator"
-    ]
-  },
-  {
-    "name": "cicada",
-    "tags": [
-      "animal",
-      "bug"
-    ]
-  },
-  {
-    "name": "snail",
-    "tags": [
-      "animal"
-    ]
-  },
-  {
-    "name": "slug",
-    "tags": [
-      "animal",
-      "grotesque"
-    ]
-  },
-  {
-    "name": "worm",
-    "tags": [
-      "animal",
-      "grotesque"
-    ]
-  },
-  {
-    "name": "millipede",
-    "tags": [
-      "animal",
-      "bug"
-    ]
-  },
-  {
-    "name": "mantis shrimp",
-    "tags": [
-      "animal",
-      "aquatic",
-      "bug",
-      "weird"
-    ]
-  },
-  {
-    "name": "oak tree",
-    "tags": [
-      "mythic",
-      "plant"
-    ]
-  },
-  {
-    "name": "sequoia",
-    "tags": [
-      "plant"
-    ]
-  },
-  {
-    "name": "weeping willow",
-    "tags": [
-      "mythic",
-      "plant"
-    ]
-  },
-  {
-    "name": "baobab tree",
-    "tags": [
-      "plant",
-      "weird"
-    ]
-  },
-  {
-    "name": "cactus",
-    "tags": [
-      "plant"
-    ]
-  },
-  {
-    "name": "sunflower",
-    "tags": [
-      "plant"
-    ]
-  },
-  {
-    "name": "rose",
-    "tags": [
-      "mythic",
-      "plant"
-    ]
-  },
-  {
-    "name": "lotus",
-    "tags": [
-      "mythic",
-      "plant"
-    ]
-  },
-  {
-    "name": "venus flytrap",
-    "tags": [
-      "plant",
-      "weird"
-    ]
-  },
-  {
-    "name": "pitcher plant",
-    "tags": [
-      "plant",
-      "weird"
-    ]
-  },
-  {
-    "name": "fern",
-    "tags": [
-      "plant",
-      "fragile"
-    ]
-  },
-  {
-    "name": "moss",
-    "tags": [
-      "plant"
-    ]
-  },
-  {
-    "name": "lichen",
-    "tags": [
-      "plant"
-    ]
-  },
-  {
-    "name": "bamboo",
-    "tags": [
-      "plant"
-    ]
-  },
-  {
-    "name": "seaweed",
-    "tags": [
-      "aquatic",
-      "plant"
-    ]
-  },
-  {
-    "name": "kelp",
-    "tags": [
-      "aquatic",
-      "plant"
-    ]
-  },
-  {
-    "name": "water lily",
-    "tags": [
-      "aquatic",
-      "plant"
-    ]
-  },
-  {
-    "name": "ivy",
-    "tags": [
-      "plant"
-    ]
-  },
-  {
-    "name": "tumbleweed",
-    "tags": [
-      "plant"
-    ]
-  },
-  {
-    "name": "thistle",
-    "tags": [
-      "plant"
-    ]
-  },
-  {
-    "name": "mushroom",
-    "tags": [
-      "fungus",
-      "mythic"
-    ]
-  },
-  {
-    "name": "fly agaric",
-    "tags": [
-      "fungus",
-      "mythic"
-    ]
-  },
-  {
-    "name": "puffball",
+    "name": "amanita",
     "tags": [
       "fungus",
       "weird",
       "fragile"
-    ]
-  },
-  {
-    "name": "bracket fungus",
-    "tags": [
-      "fungus"
-    ]
-  },
-  {
-    "name": "truffle",
-    "tags": [
-      "fungus"
-    ]
-  },
-  {
-    "name": "cordyceps",
-    "tags": [
-      "fungus",
-      "weird",
-      "grotesque"
-    ]
-  },
-  {
-    "name": "bioluminescent fungus",
-    "tags": [
-      "fungus",
-      "weird"
     ]
   },
   {
     "name": "amoeba",
-    "tags": [
-      "microscopic"
-    ]
-  },
-  {
-    "name": "tardigrade",
-    "tags": [
-      "microscopic",
-      "weird"
-    ]
-  },
-  {
-    "name": "diatom",
-    "tags": [
-      "microscopic",
-      "fragile"
-    ]
-  },
-  {
-    "name": "paramecium",
-    "tags": [
-      "microscopic"
-    ]
-  },
-  {
-    "name": "rotifer",
-    "tags": [
-      "microscopic"
-    ]
-  },
-  {
-    "name": "slime mold",
-    "tags": [
-      "microscopic",
-      "weird",
-      "grotesque"
-    ]
-  },
-  {
-    "name": "pollen grain",
-    "tags": [
-      "microscopic",
-      "plant",
-      "fragile"
-    ]
-  },
-  {
-    "name": "spore",
-    "tags": [
-      "fungus",
-      "microscopic",
-      "fragile"
-    ]
-  },
-  {
-    "name": "chanterelle",
-    "tags": [
-      "fungus",
-      "fragile"
-    ]
-  },
-  {
-    "name": "death cap",
-    "tags": [
-      "fungus",
-      "mythic",
-      "grotesque"
-    ]
-  },
-  {
-    "name": "morel",
-    "tags": [
-      "fungus"
-    ]
-  },
-  {
-    "name": "ink cap",
-    "tags": [
-      "fungus",
-      "fragile"
-    ]
-  },
-  {
-    "name": "ghost fungus",
-    "tags": [
-      "fungus",
-      "weird"
-    ]
-  },
-  {
-    "name": "stinkhorn",
-    "tags": [
-      "fungus",
-      "weird",
-      "grotesque"
-    ]
-  },
-  {
-    "name": "earthstar",
-    "tags": [
-      "fungus",
-      "weird",
-      "fragile"
-    ]
-  },
-  {
-    "name": "turkey tail",
-    "tags": [
-      "fungus"
-    ]
-  },
-  {
-    "name": "mold",
-    "tags": [
-      "fungus",
-      "microscopic",
-      "grotesque"
-    ]
-  },
-  {
-    "name": "sheep",
-    "tags": [
-      "animal",
-      "domestic",
-      "mammal"
-    ]
-  },
-  {
-    "name": "goat",
-    "tags": [
-      "animal",
-      "domestic",
-      "mammal"
-    ]
-  },
-  {
-    "name": "chicken",
-    "tags": [
-      "animal",
-      "bird",
-      "domestic"
-    ]
-  },
-  {
-    "name": "duck",
-    "tags": [
-      "animal",
-      "bird",
-      "domestic"
-    ]
-  },
-  {
-    "name": "donkey",
-    "tags": [
-      "animal",
-      "domestic",
-      "mammal"
-    ]
-  },
-  {
-    "name": "llama",
-    "tags": [
-      "animal",
-      "domestic",
-      "mammal"
-    ]
-  },
-  {
-    "name": "goldfish",
-    "tags": [
-      "animal",
-      "aquatic",
-      "domestic",
-      "fish"
-    ]
-  },
-  {
-    "name": "hamster",
-    "tags": [
-      "animal",
-      "domestic",
-      "mammal"
-    ]
-  },
-  {
-    "name": "guinea pig",
-    "tags": [
-      "animal",
-      "domestic",
-      "mammal"
-    ]
-  },
-  {
-    "name": "goose",
-    "tags": [
-      "animal",
-      "bird",
-      "domestic",
-      "mythic"
-    ]
-  },
-  {
-    "name": "turkey",
-    "tags": [
-      "animal",
-      "bird",
-      "domestic"
-    ]
-  },
-  {
-    "name": "canary",
-    "tags": [
-      "animal",
-      "bird",
-      "domestic"
-    ]
-  },
-  {
-    "name": "bacterium",
-    "tags": [
-      "microscopic"
-    ]
-  },
-  {
-    "name": "virus",
-    "tags": [
-      "microscopic",
-      "weird",
-      "grotesque"
-    ]
-  },
-  {
-    "name": "plankton",
-    "tags": [
-      "aquatic",
-      "microscopic"
-    ]
-  },
-  {
-    "name": "dust mite",
-    "tags": [
-      "microscopic"
-    ]
-  },
-  {
-    "name": "nematode",
-    "tags": [
-      "microscopic"
-    ]
-  },
-  {
-    "name": "hydra",
-    "tags": [
-      "aquatic",
-      "microscopic",
-      "weird"
-    ]
-  },
-  {
-    "name": "euglena",
-    "tags": [
-      "microscopic",
-      "fragile"
-    ]
-  },
-  {
-    "name": "radiolarian",
-    "tags": [
-      "microscopic",
-      "weird",
-      "fragile"
-    ]
-  },
-  {
-    "name": "foraminifera",
-    "tags": [
-      "aquatic",
-      "microscopic"
-    ]
-  },
-  {
-    "name": "vorticella",
-    "tags": [
-      "microscopic",
-      "weird"
-    ]
-  },
-  {
-    "name": "spirochete",
     "tags": [
       "microscopic"
     ]
@@ -1363,17 +51,635 @@
     ]
   },
   {
-    "name": "giant clam",
+    "name": "anatomist",
     "tags": [
-      "animal",
-      "aquatic",
+      "human",
       "weird"
     ]
   },
   {
-    "name": "titan arum",
+    "name": "anglerfish",
+    "tags": [
+      "animal",
+      "aquatic",
+      "predator",
+      "weird",
+      "fish"
+    ]
+  },
+  {
+    "name": "ant",
+    "tags": [
+      "animal",
+      "bug"
+    ]
+  },
+  {
+    "name": "arm",
+    "tags": [
+      "anatomy",
+      "uncanny"
+    ]
+  },
+  {
+    "name": "astronaut",
+    "tags": [
+      "human",
+      "weird"
+    ]
+  },
+  {
+    "name": "axolotl",
+    "tags": [
+      "animal",
+      "aquatic",
+      "reptile",
+      "weird"
+    ]
+  },
+  {
+    "name": "bacterium",
+    "tags": [
+      "microscopic"
+    ]
+  },
+  {
+    "name": "bamboo",
+    "tags": [
+      "plant"
+    ]
+  },
+  {
+    "name": "banshee",
+    "tags": [
+      "monster",
+      "mythic",
+      "weird"
+    ]
+  },
+  {
+    "name": "baobab tree",
     "tags": [
       "plant",
+      "weird"
+    ]
+  },
+  {
+    "name": "barracuda",
+    "tags": [
+      "animal",
+      "aquatic",
+      "fish",
+      "predator"
+    ]
+  },
+  {
+    "name": "basilisk",
+    "tags": [
+      "monster",
+      "mythic",
+      "predator",
+      "reptile"
+    ]
+  },
+  {
+    "name": "bat",
+    "tags": [
+      "animal",
+      "mammal",
+      "mythic"
+    ]
+  },
+  {
+    "name": "bear",
+    "tags": [
+      "animal",
+      "mammal",
+      "mythic",
+      "predator"
+    ]
+  },
+  {
+    "name": "beaver",
+    "tags": [
+      "animal",
+      "mammal"
+    ]
+  },
+  {
+    "name": "bee",
+    "tags": [
+      "animal",
+      "bug"
+    ]
+  },
+  {
+    "name": "beekeeper",
+    "tags": [
+      "human"
+    ]
+  },
+  {
+    "name": "beetle",
+    "tags": [
+      "animal",
+      "bug"
+    ]
+  },
+  {
+    "name": "berserker",
+    "tags": [
+      "human",
+      "mythic",
+      "weird"
+    ]
+  },
+  {
+    "name": "bioluminescent fungus",
+    "tags": [
+      "fungus",
+      "weird"
+    ]
+  },
+  {
+    "name": "bison",
+    "tags": [
+      "animal",
+      "mammal"
+    ]
+  },
+  {
+    "name": "blacksmith",
+    "tags": [
+      "human"
+    ]
+  },
+  {
+    "name": "bladder",
+    "tags": [
+      "anatomy",
+      "grotesque"
+    ]
+  },
+  {
+    "name": "blobfish",
+    "tags": [
+      "animal",
+      "aquatic",
+      "fish",
+      "weird",
+      "grotesque"
+    ]
+  },
+  {
+    "name": "blue whale",
+    "tags": [
+      "animal",
+      "aquatic",
+      "mammal"
+    ]
+  },
+  {
+    "name": "boa constrictor",
+    "tags": [
+      "animal",
+      "predator",
+      "reptile"
+    ]
+  },
+  {
+    "name": "bone",
+    "tags": [
+      "anatomy",
+      "grotesque"
+    ]
+  },
+  {
+    "name": "bracket fungus",
+    "tags": [
+      "fungus"
+    ]
+  },
+  {
+    "name": "brain",
+    "tags": [
+      "anatomy"
+    ]
+  },
+  {
+    "name": "butterfly",
+    "tags": [
+      "animal",
+      "bug",
+      "mythic",
+      "fragile"
+    ]
+  },
+  {
+    "name": "cactus",
+    "tags": [
+      "plant"
+    ]
+  },
+  {
+    "name": "cadaver",
+    "tags": [
+      "anatomy",
+      "grotesque",
+      "uncanny"
+    ]
+  },
+  {
+    "name": "camel",
+    "tags": [
+      "animal",
+      "mammal"
+    ]
+  },
+  {
+    "name": "canary",
+    "tags": [
+      "animal",
+      "bird",
+      "domestic"
+    ]
+  },
+  {
+    "name": "cat",
+    "tags": [
+      "animal",
+      "domestic",
+      "mammal",
+      "mythic"
+    ]
+  },
+  {
+    "name": "catfish",
+    "tags": [
+      "animal",
+      "aquatic",
+      "fish"
+    ]
+  },
+  {
+    "name": "centaur",
+    "tags": [
+      "monster",
+      "mythic"
+    ]
+  },
+  {
+    "name": "centipede",
+    "tags": [
+      "animal",
+      "bug",
+      "predator"
+    ]
+  },
+  {
+    "name": "centurion",
+    "tags": [
+      "human",
+      "mythic"
+    ]
+  },
+  {
+    "name": "cerberus",
+    "tags": [
+      "monster",
+      "mythic",
+      "predator",
+      "mammal"
+    ]
+  },
+  {
+    "name": "chameleon",
+    "tags": [
+      "animal",
+      "reptile"
+    ]
+  },
+  {
+    "name": "chanterelle",
+    "tags": [
+      "fungus",
+      "fragile"
+    ]
+  },
+  {
+    "name": "chicken",
+    "tags": [
+      "animal",
+      "bird",
+      "domestic"
+    ]
+  },
+  {
+    "name": "chimera",
+    "tags": [
+      "monster",
+      "mythic",
+      "predator",
+      "weird"
+    ]
+  },
+  {
+    "name": "chimney sweep",
+    "tags": [
+      "human"
+    ]
+  },
+  {
+    "name": "chimpanzee",
+    "tags": [
+      "animal",
+      "mammal"
+    ]
+  },
+  {
+    "name": "cicada",
+    "tags": [
+      "animal",
+      "bug"
+    ]
+  },
+  {
+    "name": "claw",
+    "tags": [
+      "anatomy"
+    ]
+  },
+  {
+    "name": "clown",
+    "tags": [
+      "human",
+      "weird",
+      "uncanny"
+    ]
+  },
+  {
+    "name": "clownfish",
+    "tags": [
+      "animal",
+      "aquatic",
+      "fish"
+    ]
+  },
+  {
+    "name": "cockroach",
+    "tags": [
+      "animal",
+      "bug"
+    ]
+  },
+  {
+    "name": "coelacanth",
+    "tags": [
+      "animal",
+      "aquatic",
+      "weird",
+      "fish"
+    ]
+  },
+  {
+    "name": "condor",
+    "tags": [
+      "animal",
+      "bird",
+      "predator"
+    ]
+  },
+  {
+    "name": "conquistador",
+    "tags": [
+      "human",
+      "mythic"
+    ]
+  },
+  {
+    "name": "cordyceps",
+    "tags": [
+      "fungus",
+      "weird",
+      "grotesque"
+    ]
+  },
+  {
+    "name": "cow",
+    "tags": [
+      "animal",
+      "domestic",
+      "mammal"
+    ]
+  },
+  {
+    "name": "crab",
+    "tags": [
+      "animal",
+      "aquatic"
+    ]
+  },
+  {
+    "name": "crane",
+    "tags": [
+      "animal",
+      "bird",
+      "mythic",
+      "fragile"
+    ]
+  },
+  {
+    "name": "cricket",
+    "tags": [
+      "animal",
+      "bug"
+    ]
+  },
+  {
+    "name": "crocodile",
+    "tags": [
+      "animal",
+      "predator",
+      "reptile"
+    ]
+  },
+  {
+    "name": "crow",
+    "tags": [
+      "animal",
+      "bird",
+      "mythic"
+    ]
+  },
+  {
+    "name": "cyclops",
+    "tags": [
+      "monster",
+      "mythic",
+      "predator"
+    ]
+  },
+  {
+    "name": "death cap",
+    "tags": [
+      "fungus",
+      "mythic",
+      "grotesque"
+    ]
+  },
+  {
+    "name": "deep sea diver",
+    "tags": [
+      "human",
+      "weird"
+    ]
+  },
+  {
+    "name": "deer",
+    "tags": [
+      "animal",
+      "mammal",
+      "mythic"
+    ]
+  },
+  {
+    "name": "diatom",
+    "tags": [
+      "microscopic",
+      "fragile"
+    ]
+  },
+  {
+    "name": "dog",
+    "tags": [
+      "animal",
+      "domestic",
+      "mammal",
+      "mythic"
+    ]
+  },
+  {
+    "name": "dolphin",
+    "tags": [
+      "animal",
+      "aquatic",
+      "mammal"
+    ]
+  },
+  {
+    "name": "donkey",
+    "tags": [
+      "animal",
+      "domestic",
+      "mammal"
+    ]
+  },
+  {
+    "name": "doppelganger",
+    "tags": [
+      "monster",
+      "mythic",
+      "weird",
+      "uncanny"
+    ]
+  },
+  {
+    "name": "dragon",
+    "tags": [
+      "monster",
+      "mythic",
+      "predator",
+      "reptile"
+    ]
+  },
+  {
+    "name": "dragonfly",
+    "tags": [
+      "animal",
+      "bug",
+      "fragile"
+    ]
+  },
+  {
+    "name": "druid",
+    "tags": [
+      "human",
+      "mythic"
+    ]
+  },
+  {
+    "name": "duck",
+    "tags": [
+      "animal",
+      "bird",
+      "domestic"
+    ]
+  },
+  {
+    "name": "dust mite",
+    "tags": [
+      "microscopic"
+    ]
+  },
+  {
+    "name": "eagle",
+    "tags": [
+      "animal",
+      "bird",
+      "mythic",
+      "predator"
+    ]
+  },
+  {
+    "name": "ear",
+    "tags": [
+      "anatomy",
+      "uncanny"
+    ]
+  },
+  {
+    "name": "earthstar",
+    "tags": [
+      "fungus",
+      "weird",
+      "fragile"
+    ]
+  },
+  {
+    "name": "eel",
+    "tags": [
+      "animal",
+      "aquatic",
+      "predator",
+      "fish"
+    ]
+  },
+  {
+    "name": "elephant",
+    "tags": [
+      "animal",
+      "mammal"
+    ]
+  },
+  {
+    "name": "entrails",
+    "tags": [
+      "anatomy",
+      "grotesque"
+    ]
+  },
+  {
+    "name": "euglena",
+    "tags": [
+      "microscopic",
+      "fragile"
+    ]
+  },
+  {
+    "name": "executioner",
+    "tags": [
+      "human",
+      "mythic",
       "weird"
     ]
   },
@@ -1385,119 +691,16 @@
     ]
   },
   {
-    "name": "hand",
+    "name": "face",
     "tags": [
       "anatomy",
       "uncanny"
     ]
   },
   {
-    "name": "foot",
+    "name": "falconer",
     "tags": [
-      "anatomy"
-    ]
-  },
-  {
-    "name": "spine",
-    "tags": [
-      "anatomy",
-      "grotesque"
-    ]
-  },
-  {
-    "name": "heart",
-    "tags": [
-      "anatomy",
-      "mythic"
-    ]
-  },
-  {
-    "name": "skull",
-    "tags": [
-      "anatomy",
-      "mythic",
-      "uncanny"
-    ]
-  },
-  {
-    "name": "brain",
-    "tags": [
-      "anatomy"
-    ]
-  },
-  {
-    "name": "rib cage",
-    "tags": [
-      "anatomy",
-      "grotesque"
-    ]
-  },
-  {
-    "name": "lung",
-    "tags": [
-      "anatomy",
-      "grotesque"
-    ]
-  },
-  {
-    "name": "tongue",
-    "tags": [
-      "anatomy",
-      "uncanny"
-    ]
-  },
-  {
-    "name": "ear",
-    "tags": [
-      "anatomy",
-      "uncanny"
-    ]
-  },
-  {
-    "name": "teeth",
-    "tags": [
-      "anatomy",
-      "uncanny"
-    ]
-  },
-  {
-    "name": "horn",
-    "tags": [
-      "anatomy",
-      "mythic"
-    ]
-  },
-  {
-    "name": "claw",
-    "tags": [
-      "anatomy"
-    ]
-  },
-  {
-    "name": "hoof",
-    "tags": [
-      "anatomy"
-    ]
-  },
-  {
-    "name": "wing",
-    "tags": [
-      "anatomy",
-      "mythic",
-      "fragile"
-    ]
-  },
-  {
-    "name": "tail",
-    "tags": [
-      "anatomy"
-    ]
-  },
-  {
-    "name": "tentacle",
-    "tags": [
-      "anatomy",
-      "weird"
+      "human"
     ]
   },
   {
@@ -1515,389 +718,10 @@
     ]
   },
   {
-    "name": "scale",
+    "name": "fern",
     "tags": [
-      "anatomy"
-    ]
-  },
-  {
-    "name": "shell",
-    "tags": [
-      "anatomy"
-    ]
-  },
-  {
-    "name": "fin",
-    "tags": [
-      "anatomy",
-      "aquatic"
-    ]
-  },
-  {
-    "name": "root",
-    "tags": [
-      "anatomy",
-      "plant"
-    ]
-  },
-  {
-    "name": "vein",
-    "tags": [
-      "anatomy",
-      "plant"
-    ]
-  },
-  {
-    "name": "monitor lizard",
-    "tags": [
-      "animal",
-      "predator",
-      "reptile"
-    ]
-  },
-  {
-    "name": "skink",
-    "tags": [
-      "animal",
-      "reptile"
-    ]
-  },
-  {
-    "name": "stomach",
-    "tags": [
-      "anatomy",
-      "grotesque"
-    ]
-  },
-  {
-    "name": "kidney",
-    "tags": [
-      "anatomy",
-      "grotesque"
-    ]
-  },
-  {
-    "name": "liver",
-    "tags": [
-      "anatomy",
-      "grotesque"
-    ]
-  },
-  {
-    "name": "intestine",
-    "tags": [
-      "anatomy",
-      "grotesque"
-    ]
-  },
-  {
-    "name": "nerve",
-    "tags": [
-      "anatomy"
-    ]
-  },
-  {
-    "name": "bone",
-    "tags": [
-      "anatomy",
-      "grotesque"
-    ]
-  },
-  {
-    "name": "muscle",
-    "tags": [
-      "anatomy"
-    ]
-  },
-  {
-    "name": "bladder",
-    "tags": [
-      "anatomy",
-      "grotesque"
-    ]
-  },
-  {
-    "name": "trachea",
-    "tags": [
-      "anatomy",
-      "grotesque"
-    ]
-  },
-  {
-    "name": "termite",
-    "tags": [
-      "animal",
-      "bug"
-    ]
-  },
-  {
-    "name": "tusk",
-    "tags": [
-      "anatomy",
-      "mythic"
-    ]
-  },
-  {
-    "name": "shiitake",
-    "tags": [
-      "fungus"
-    ]
-  },
-  {
-    "name": "portobello",
-    "tags": [
-      "fungus"
-    ]
-  },
-  {
-    "name": "amanita",
-    "tags": [
-      "fungus",
-      "weird",
+      "plant",
       "fragile"
-    ]
-  },
-  {
-    "name": "hornet",
-    "tags": [
-      "animal",
-      "bug",
-      "predator"
-    ]
-  },
-  {
-    "name": "turtle",
-    "tags": [
-      "animal",
-      "aquatic",
-      "reptile"
-    ]
-  },
-  {
-    "name": "horned lizard",
-    "tags": [
-      "animal",
-      "reptile",
-      "weird"
-    ]
-  },
-  {
-    "name": "blue whale",
-    "tags": [
-      "animal",
-      "aquatic",
-      "mammal"
-    ]
-  },
-  {
-    "name": "orca",
-    "tags": [
-      "animal",
-      "aquatic",
-      "mammal",
-      "predator"
-    ]
-  },
-  {
-    "name": "boa constrictor",
-    "tags": [
-      "animal",
-      "predator",
-      "reptile"
-    ]
-  },
-  {
-    "name": "head",
-    "tags": [
-      "anatomy",
-      "uncanny"
-    ]
-  },
-  {
-    "name": "face",
-    "tags": [
-      "anatomy",
-      "uncanny"
-    ]
-  },
-  {
-    "name": "finger",
-    "tags": [
-      "anatomy",
-      "uncanny"
-    ]
-  },
-  {
-    "name": "nose",
-    "tags": [
-      "anatomy",
-      "uncanny"
-    ]
-  },
-  {
-    "name": "mouth",
-    "tags": [
-      "anatomy"
-    ]
-  },
-  {
-    "name": "neck",
-    "tags": [
-      "anatomy",
-      "uncanny"
-    ]
-  },
-  {
-    "name": "arm",
-    "tags": [
-      "anatomy",
-      "uncanny"
-    ]
-  },
-  {
-    "name": "leg",
-    "tags": [
-      "anatomy",
-      "uncanny"
-    ]
-  },
-  {
-    "name": "skin",
-    "tags": [
-      "anatomy",
-      "uncanny"
-    ]
-  },
-  {
-    "name": "hair",
-    "tags": [
-      "anatomy"
-    ]
-  },
-  {
-    "name": "jaw",
-    "tags": [
-      "anatomy",
-      "grotesque"
-    ]
-  },
-  {
-    "name": "cockroach",
-    "tags": [
-      "animal",
-      "bug"
-    ]
-  },
-  {
-    "name": "cricket",
-    "tags": [
-      "animal",
-      "bug"
-    ]
-  },
-  {
-    "name": "stick insect",
-    "tags": [
-      "animal",
-      "bug",
-      "weird"
-    ]
-  },
-  {
-    "name": "acrobat",
-    "tags": [
-      "human",
-      "weird"
-    ]
-  },
-  {
-    "name": "alchemist",
-    "tags": [
-      "human",
-      "mythic"
-    ]
-  },
-  {
-    "name": "astronaut",
-    "tags": [
-      "human",
-      "weird"
-    ]
-  },
-  {
-    "name": "beekeeper",
-    "tags": [
-      "human"
-    ]
-  },
-  {
-    "name": "berserker",
-    "tags": [
-      "human",
-      "mythic",
-      "weird"
-    ]
-  },
-  {
-    "name": "blacksmith",
-    "tags": [
-      "human"
-    ]
-  },
-  {
-    "name": "centurion",
-    "tags": [
-      "human",
-      "mythic"
-    ]
-  },
-  {
-    "name": "chimney sweep",
-    "tags": [
-      "human"
-    ]
-  },
-  {
-    "name": "clown",
-    "tags": [
-      "human",
-      "weird",
-      "uncanny"
-    ]
-  },
-  {
-    "name": "conquistador",
-    "tags": [
-      "human",
-      "mythic"
-    ]
-  },
-  {
-    "name": "deep sea diver",
-    "tags": [
-      "human",
-      "weird"
-    ]
-  },
-  {
-    "name": "druid",
-    "tags": [
-      "human",
-      "mythic"
-    ]
-  },
-  {
-    "name": "executioner",
-    "tags": [
-      "human",
-      "mythic",
-      "weird"
-    ]
-  },
-  {
-    "name": "falconer",
-    "tags": [
-      "human"
     ]
   },
   {
@@ -1908,6 +732,20 @@
     ]
   },
   {
+    "name": "fin",
+    "tags": [
+      "anatomy",
+      "aquatic"
+    ]
+  },
+  {
+    "name": "finger",
+    "tags": [
+      "anatomy",
+      "uncanny"
+    ]
+  },
+  {
     "name": "fire eater",
     "tags": [
       "human",
@@ -1915,9 +753,140 @@
     ]
   },
   {
+    "name": "firefly",
+    "tags": [
+      "animal",
+      "bug"
+    ]
+  },
+  {
+    "name": "flamingo",
+    "tags": [
+      "animal",
+      "bird",
+      "fragile"
+    ]
+  },
+  {
+    "name": "flatfish",
+    "tags": [
+      "animal",
+      "aquatic",
+      "fish",
+      "weird"
+    ]
+  },
+  {
+    "name": "flesh",
+    "tags": [
+      "anatomy",
+      "grotesque"
+    ]
+  },
+  {
+    "name": "fly agaric",
+    "tags": [
+      "fungus",
+      "mythic"
+    ]
+  },
+  {
+    "name": "flying fish",
+    "tags": [
+      "animal",
+      "aquatic",
+      "fish",
+      "weird"
+    ]
+  },
+  {
+    "name": "foot",
+    "tags": [
+      "anatomy"
+    ]
+  },
+  {
+    "name": "foraminifera",
+    "tags": [
+      "aquatic",
+      "microscopic"
+    ]
+  },
+  {
+    "name": "fox",
+    "tags": [
+      "animal",
+      "mammal",
+      "mythic",
+      "predator"
+    ]
+  },
+  {
+    "name": "frankenstein's monster",
+    "tags": [
+      "monster",
+      "mythic",
+      "weird",
+      "grotesque",
+      "uncanny"
+    ]
+  },
+  {
+    "name": "frog",
+    "tags": [
+      "animal",
+      "reptile"
+    ]
+  },
+  {
+    "name": "gecko",
+    "tags": [
+      "animal",
+      "reptile"
+    ]
+  },
+  {
     "name": "geisha",
     "tags": [
       "human"
+    ]
+  },
+  {
+    "name": "ghost",
+    "tags": [
+      "monster",
+      "mythic",
+      "weird",
+      "uncanny"
+    ]
+  },
+  {
+    "name": "ghost fungus",
+    "tags": [
+      "fungus",
+      "weird"
+    ]
+  },
+  {
+    "name": "giant",
+    "tags": [
+      "monster",
+      "mythic"
+    ]
+  },
+  {
+    "name": "giant clam",
+    "tags": [
+      "animal",
+      "aquatic",
+      "weird"
+    ]
+  },
+  {
+    "name": "giraffe",
+    "tags": [
+      "animal",
+      "mammal"
     ]
   },
   {
@@ -1928,9 +897,96 @@
     ]
   },
   {
+    "name": "goat",
+    "tags": [
+      "animal",
+      "domestic",
+      "mammal"
+    ]
+  },
+  {
+    "name": "goblin",
+    "tags": [
+      "monster",
+      "mythic",
+      "weird"
+    ]
+  },
+  {
+    "name": "goldfish",
+    "tags": [
+      "animal",
+      "aquatic",
+      "domestic",
+      "fish"
+    ]
+  },
+  {
+    "name": "goose",
+    "tags": [
+      "animal",
+      "bird",
+      "domestic",
+      "mythic"
+    ]
+  },
+  {
+    "name": "gorilla",
+    "tags": [
+      "animal",
+      "mammal"
+    ]
+  },
+  {
+    "name": "grasshopper",
+    "tags": [
+      "animal",
+      "bug"
+    ]
+  },
+  {
     "name": "gravedigger",
     "tags": [
       "human"
+    ]
+  },
+  {
+    "name": "griffin",
+    "tags": [
+      "monster",
+      "mythic",
+      "predator",
+      "bird",
+      "mammal"
+    ]
+  },
+  {
+    "name": "guinea pig",
+    "tags": [
+      "animal",
+      "domestic",
+      "mammal"
+    ]
+  },
+  {
+    "name": "hair",
+    "tags": [
+      "anatomy"
+    ]
+  },
+  {
+    "name": "hamster",
+    "tags": [
+      "animal",
+      "domestic",
+      "mammal"
+    ]
+  },
+  {
+    "name": "hand",
+    "tags": [
+      "anatomy",
+      "uncanny"
     ]
   },
   {
@@ -1942,9 +998,46 @@
     ]
   },
   {
+    "name": "harpy",
+    "tags": [
+      "monster",
+      "mythic",
+      "predator",
+      "bird"
+    ]
+  },
+  {
+    "name": "head",
+    "tags": [
+      "anatomy",
+      "uncanny"
+    ]
+  },
+  {
+    "name": "heart",
+    "tags": [
+      "anatomy",
+      "mythic"
+    ]
+  },
+  {
+    "name": "hedgehog",
+    "tags": [
+      "animal",
+      "mammal"
+    ]
+  },
+  {
     "name": "hermit",
     "tags": [
       "human"
+    ]
+  },
+  {
+    "name": "heron",
+    "tags": [
+      "animal",
+      "bird"
     ]
   },
   {
@@ -1952,6 +1045,125 @@
     "tags": [
       "human",
       "mythic"
+    ]
+  },
+  {
+    "name": "hippopotamus",
+    "tags": [
+      "animal",
+      "mammal"
+    ]
+  },
+  {
+    "name": "hoof",
+    "tags": [
+      "anatomy"
+    ]
+  },
+  {
+    "name": "horn",
+    "tags": [
+      "anatomy",
+      "mythic"
+    ]
+  },
+  {
+    "name": "horned lizard",
+    "tags": [
+      "animal",
+      "reptile",
+      "weird"
+    ]
+  },
+  {
+    "name": "hornet",
+    "tags": [
+      "animal",
+      "bug",
+      "predator"
+    ]
+  },
+  {
+    "name": "horse",
+    "tags": [
+      "animal",
+      "domestic",
+      "mammal",
+      "mythic"
+    ]
+  },
+  {
+    "name": "hummingbird",
+    "tags": [
+      "animal",
+      "bird",
+      "fragile"
+    ]
+  },
+  {
+    "name": "husk",
+    "tags": [
+      "plant",
+      "weird"
+    ]
+  },
+  {
+    "name": "hydra",
+    "tags": [
+      "aquatic",
+      "microscopic",
+      "weird"
+    ]
+  },
+  {
+    "name": "iguana",
+    "tags": [
+      "animal",
+      "reptile"
+    ]
+  },
+  {
+    "name": "imp",
+    "tags": [
+      "monster",
+      "mythic",
+      "weird"
+    ]
+  },
+  {
+    "name": "ink cap",
+    "tags": [
+      "fungus",
+      "fragile"
+    ]
+  },
+  {
+    "name": "intestine",
+    "tags": [
+      "anatomy",
+      "grotesque"
+    ]
+  },
+  {
+    "name": "ivy",
+    "tags": [
+      "plant"
+    ]
+  },
+  {
+    "name": "jaw",
+    "tags": [
+      "anatomy",
+      "grotesque"
+    ]
+  },
+  {
+    "name": "jellyfish",
+    "tags": [
+      "animal",
+      "aquatic",
+      "weird",
+      "fragile"
     ]
   },
   {
@@ -1971,10 +1183,105 @@
     ]
   },
   {
+    "name": "kangaroo",
+    "tags": [
+      "animal",
+      "mammal"
+    ]
+  },
+  {
+    "name": "kelp",
+    "tags": [
+      "aquatic",
+      "plant"
+    ]
+  },
+  {
+    "name": "kidney",
+    "tags": [
+      "anatomy",
+      "grotesque"
+    ]
+  },
+  {
+    "name": "king cobra",
+    "tags": [
+      "animal",
+      "mythic",
+      "predator",
+      "reptile"
+    ]
+  },
+  {
+    "name": "kirin",
+    "tags": [
+      "monster",
+      "mythic",
+      "mammal"
+    ]
+  },
+  {
     "name": "knight",
     "tags": [
       "human",
       "mythic"
+    ]
+  },
+  {
+    "name": "koi",
+    "tags": [
+      "animal",
+      "aquatic",
+      "fish",
+      "domestic"
+    ]
+  },
+  {
+    "name": "komodo dragon",
+    "tags": [
+      "animal",
+      "predator",
+      "reptile"
+    ]
+  },
+  {
+    "name": "kraken",
+    "tags": [
+      "monster",
+      "mythic",
+      "predator",
+      "aquatic"
+    ]
+  },
+  {
+    "name": "leg",
+    "tags": [
+      "anatomy",
+      "uncanny"
+    ]
+  },
+  {
+    "name": "leviathan",
+    "tags": [
+      "monster",
+      "mythic",
+      "predator",
+      "aquatic"
+    ]
+  },
+  {
+    "name": "lich",
+    "tags": [
+      "monster",
+      "mythic",
+      "weird",
+      "uncanny"
+    ]
+  },
+  {
+    "name": "lichen",
+    "tags": [
+      "plant"
     ]
   },
   {
@@ -1984,15 +1291,135 @@
     ]
   },
   {
+    "name": "lion",
+    "tags": [
+      "animal",
+      "mammal",
+      "mythic",
+      "predator"
+    ]
+  },
+  {
+    "name": "lionfish",
+    "tags": [
+      "animal",
+      "aquatic",
+      "fish",
+      "predator",
+      "weird"
+    ]
+  },
+  {
+    "name": "liver",
+    "tags": [
+      "anatomy",
+      "grotesque"
+    ]
+  },
+  {
+    "name": "llama",
+    "tags": [
+      "animal",
+      "domestic",
+      "mammal"
+    ]
+  },
+  {
+    "name": "lobster",
+    "tags": [
+      "animal",
+      "aquatic"
+    ]
+  },
+  {
+    "name": "lotus",
+    "tags": [
+      "mythic",
+      "plant"
+    ]
+  },
+  {
+    "name": "lung",
+    "tags": [
+      "anatomy",
+      "grotesque"
+    ]
+  },
+  {
     "name": "magician",
     "tags": [
       "human"
     ]
   },
   {
+    "name": "manatee",
+    "tags": [
+      "animal",
+      "aquatic",
+      "mammal"
+    ]
+  },
+  {
+    "name": "manta ray",
+    "tags": [
+      "animal",
+      "aquatic"
+    ]
+  },
+  {
+    "name": "manticore",
+    "tags": [
+      "monster",
+      "mythic",
+      "predator",
+      "mammal"
+    ]
+  },
+  {
+    "name": "mantis shrimp",
+    "tags": [
+      "animal",
+      "aquatic",
+      "bug",
+      "weird"
+    ]
+  },
+  {
     "name": "matador",
     "tags": [
       "human"
+    ]
+  },
+  {
+    "name": "maw",
+    "tags": [
+      "anatomy",
+      "grotesque",
+      "mythic"
+    ]
+  },
+  {
+    "name": "medusa",
+    "tags": [
+      "monster",
+      "mythic",
+      "weird",
+      "predator"
+    ]
+  },
+  {
+    "name": "mermaid",
+    "tags": [
+      "monster",
+      "mythic",
+      "aquatic"
+    ]
+  },
+  {
+    "name": "millipede",
+    "tags": [
+      "animal",
+      "bug"
     ]
   },
   {
@@ -2004,9 +1431,112 @@
     ]
   },
   {
+    "name": "minotaur",
+    "tags": [
+      "monster",
+      "mythic",
+      "predator"
+    ]
+  },
+  {
+    "name": "mold",
+    "tags": [
+      "fungus",
+      "microscopic",
+      "grotesque"
+    ]
+  },
+  {
+    "name": "mole",
+    "tags": [
+      "animal",
+      "mammal"
+    ]
+  },
+  {
+    "name": "monitor lizard",
+    "tags": [
+      "animal",
+      "predator",
+      "reptile"
+    ]
+  },
+  {
     "name": "monk",
     "tags": [
       "human"
+    ]
+  },
+  {
+    "name": "moose",
+    "tags": [
+      "animal",
+      "mammal"
+    ]
+  },
+  {
+    "name": "morel",
+    "tags": [
+      "fungus"
+    ]
+  },
+  {
+    "name": "moss",
+    "tags": [
+      "plant"
+    ]
+  },
+  {
+    "name": "moth",
+    "tags": [
+      "animal",
+      "bug",
+      "mythic",
+      "fragile"
+    ]
+  },
+  {
+    "name": "mouse",
+    "tags": [
+      "animal",
+      "mammal"
+    ]
+  },
+  {
+    "name": "mouth",
+    "tags": [
+      "anatomy"
+    ]
+  },
+  {
+    "name": "mudskipper",
+    "tags": [
+      "animal",
+      "aquatic",
+      "fish",
+      "weird"
+    ]
+  },
+  {
+    "name": "mummy",
+    "tags": [
+      "monster",
+      "mythic",
+      "weird",
+      "uncanny"
+    ]
+  },
+  {
+    "name": "muscle",
+    "tags": [
+      "anatomy"
+    ]
+  },
+  {
+    "name": "mushroom",
+    "tags": [
+      "fungus",
+      "mythic"
     ]
   },
   {
@@ -2017,10 +1547,85 @@
     ]
   },
   {
+    "name": "narwhal",
+    "tags": [
+      "animal",
+      "aquatic",
+      "mammal",
+      "weird"
+    ]
+  },
+  {
+    "name": "nautilus",
+    "tags": [
+      "animal",
+      "aquatic",
+      "weird"
+    ]
+  },
+  {
+    "name": "neck",
+    "tags": [
+      "anatomy",
+      "uncanny"
+    ]
+  },
+  {
+    "name": "nematode",
+    "tags": [
+      "microscopic"
+    ]
+  },
+  {
+    "name": "nerve",
+    "tags": [
+      "anatomy"
+    ]
+  },
+  {
     "name": "ninja",
     "tags": [
       "human",
       "mythic"
+    ]
+  },
+  {
+    "name": "nose",
+    "tags": [
+      "anatomy",
+      "uncanny"
+    ]
+  },
+  {
+    "name": "oak tree",
+    "tags": [
+      "mythic",
+      "plant"
+    ]
+  },
+  {
+    "name": "oarfish",
+    "tags": [
+      "animal",
+      "aquatic",
+      "fish",
+      "weird"
+    ]
+  },
+  {
+    "name": "octopus",
+    "tags": [
+      "animal",
+      "aquatic",
+      "mythic"
+    ]
+  },
+  {
+    "name": "ogre",
+    "tags": [
+      "monster",
+      "mythic",
+      "predator"
     ]
   },
   {
@@ -2031,10 +1636,128 @@
     ]
   },
   {
+    "name": "orangutan",
+    "tags": [
+      "animal",
+      "mammal"
+    ]
+  },
+  {
+    "name": "orca",
+    "tags": [
+      "animal",
+      "aquatic",
+      "mammal",
+      "predator"
+    ]
+  },
+  {
+    "name": "orifice",
+    "tags": [
+      "anatomy",
+      "grotesque",
+      "weird"
+    ]
+  },
+  {
+    "name": "ostrich",
+    "tags": [
+      "animal",
+      "bird"
+    ]
+  },
+  {
+    "name": "otter",
+    "tags": [
+      "animal",
+      "aquatic",
+      "mammal"
+    ]
+  },
+  {
+    "name": "owl",
+    "tags": [
+      "animal",
+      "bird",
+      "mythic",
+      "predator"
+    ]
+  },
+  {
+    "name": "pangolin",
+    "tags": [
+      "animal",
+      "mammal",
+      "weird"
+    ]
+  },
+  {
+    "name": "paramecium",
+    "tags": [
+      "microscopic"
+    ]
+  },
+  {
+    "name": "parrot",
+    "tags": [
+      "animal",
+      "bird",
+      "domestic"
+    ]
+  },
+  {
+    "name": "peacock",
+    "tags": [
+      "animal",
+      "bird",
+      "mythic"
+    ]
+  },
+  {
+    "name": "pegasus",
+    "tags": [
+      "monster",
+      "mythic",
+      "mammal",
+      "bird"
+    ]
+  },
+  {
+    "name": "pelican",
+    "tags": [
+      "animal",
+      "bird"
+    ]
+  },
+  {
+    "name": "penguin",
+    "tags": [
+      "animal",
+      "aquatic",
+      "bird"
+    ]
+  },
+  {
     "name": "pharaoh",
     "tags": [
       "human",
       "mythic"
+    ]
+  },
+  {
+    "name": "phoenix",
+    "tags": [
+      "monster",
+      "mythic",
+      "bird"
+    ]
+  },
+  {
+    "name": "pig",
+    "tags": [
+      "animal",
+      "domestic",
+      "mammal"
     ]
   },
   {
@@ -2044,10 +1767,26 @@
     ]
   },
   {
+    "name": "piranha",
+    "tags": [
+      "animal",
+      "aquatic",
+      "predator",
+      "fish"
+    ]
+  },
+  {
     "name": "pirate",
     "tags": [
       "human",
       "mythic"
+    ]
+  },
+  {
+    "name": "pitcher plant",
+    "tags": [
+      "plant",
+      "weird"
     ]
   },
   {
@@ -2059,10 +1798,186 @@
     ]
   },
   {
+    "name": "plankton",
+    "tags": [
+      "aquatic",
+      "microscopic"
+    ]
+  },
+  {
+    "name": "platypus",
+    "tags": [
+      "animal",
+      "mammal",
+      "weird"
+    ]
+  },
+  {
+    "name": "pollen grain",
+    "tags": [
+      "microscopic",
+      "plant",
+      "fragile"
+    ]
+  },
+  {
+    "name": "porcupine",
+    "tags": [
+      "animal",
+      "mammal"
+    ]
+  },
+  {
+    "name": "portobello",
+    "tags": [
+      "fungus"
+    ]
+  },
+  {
+    "name": "praying mantis",
+    "tags": [
+      "animal",
+      "bug",
+      "predator",
+      "weird"
+    ]
+  },
+  {
+    "name": "puffball",
+    "tags": [
+      "fungus",
+      "weird",
+      "fragile"
+    ]
+  },
+  {
+    "name": "pufferfish",
+    "tags": [
+      "animal",
+      "aquatic",
+      "weird",
+      "fish"
+    ]
+  },
+  {
+    "name": "python",
+    "tags": [
+      "animal",
+      "predator",
+      "reptile"
+    ]
+  },
+  {
+    "name": "rabbit",
+    "tags": [
+      "animal",
+      "domestic",
+      "mammal"
+    ]
+  },
+  {
+    "name": "radiolarian",
+    "tags": [
+      "microscopic",
+      "weird",
+      "fragile"
+    ]
+  },
+  {
+    "name": "rat",
+    "tags": [
+      "animal",
+      "mammal"
+    ]
+  },
+  {
+    "name": "rattlesnake",
+    "tags": [
+      "animal",
+      "predator",
+      "reptile"
+    ]
+  },
+  {
+    "name": "raven",
+    "tags": [
+      "animal",
+      "bird",
+      "mythic"
+    ]
+  },
+  {
+    "name": "rhinoceros",
+    "tags": [
+      "animal",
+      "mammal"
+    ]
+  },
+  {
+    "name": "rib cage",
+    "tags": [
+      "anatomy",
+      "grotesque"
+    ]
+  },
+  {
     "name": "ringmaster",
     "tags": [
       "human",
       "weird"
+    ]
+  },
+  {
+    "name": "roc",
+    "tags": [
+      "monster",
+      "mythic",
+      "predator",
+      "bird"
+    ]
+  },
+  {
+    "name": "rooster",
+    "tags": [
+      "animal",
+      "bird",
+      "domestic",
+      "mythic"
+    ]
+  },
+  {
+    "name": "root",
+    "tags": [
+      "anatomy",
+      "plant"
+    ]
+  },
+  {
+    "name": "rose",
+    "tags": [
+      "mythic",
+      "plant"
+    ]
+  },
+  {
+    "name": "rotifer",
+    "tags": [
+      "microscopic"
+    ]
+  },
+  {
+    "name": "salamander",
+    "tags": [
+      "animal",
+      "reptile"
+    ]
+  },
+  {
+    "name": "salmon",
+    "tags": [
+      "animal",
+      "aquatic",
+      "fish"
     ]
   },
   {
@@ -2073,9 +1988,255 @@
     ]
   },
   {
+    "name": "satyr",
+    "tags": [
+      "monster",
+      "mythic"
+    ]
+  },
+  {
+    "name": "scale",
+    "tags": [
+      "anatomy"
+    ]
+  },
+  {
+    "name": "scorpion",
+    "tags": [
+      "animal",
+      "bug",
+      "mythic",
+      "predator"
+    ]
+  },
+  {
+    "name": "sea horse",
+    "tags": [
+      "animal",
+      "aquatic",
+      "weird",
+      "fragile"
+    ]
+  },
+  {
+    "name": "sea serpent",
+    "tags": [
+      "monster",
+      "mythic",
+      "predator",
+      "aquatic"
+    ]
+  },
+  {
+    "name": "seal",
+    "tags": [
+      "animal",
+      "aquatic",
+      "mammal"
+    ]
+  },
+  {
+    "name": "seaweed",
+    "tags": [
+      "aquatic",
+      "plant"
+    ]
+  },
+  {
+    "name": "sequoia",
+    "tags": [
+      "plant"
+    ]
+  },
+  {
     "name": "shaman",
     "tags": [
       "human",
+      "mythic"
+    ]
+  },
+  {
+    "name": "shark",
+    "tags": [
+      "animal",
+      "aquatic",
+      "mythic",
+      "predator",
+      "fish"
+    ]
+  },
+  {
+    "name": "sheep",
+    "tags": [
+      "animal",
+      "domestic",
+      "mammal"
+    ]
+  },
+  {
+    "name": "shell",
+    "tags": [
+      "anatomy"
+    ]
+  },
+  {
+    "name": "shiitake",
+    "tags": [
+      "fungus"
+    ]
+  },
+  {
+    "name": "skeleton warrior",
+    "tags": [
+      "monster",
+      "mythic",
+      "weird"
+    ]
+  },
+  {
+    "name": "skin",
+    "tags": [
+      "anatomy",
+      "uncanny"
+    ]
+  },
+  {
+    "name": "skink",
+    "tags": [
+      "animal",
+      "reptile"
+    ]
+  },
+  {
+    "name": "skull",
+    "tags": [
+      "anatomy",
+      "mythic",
+      "uncanny"
+    ]
+  },
+  {
+    "name": "slime mold",
+    "tags": [
+      "microscopic",
+      "weird",
+      "grotesque"
+    ]
+  },
+  {
+    "name": "sloth",
+    "tags": [
+      "animal",
+      "mammal",
+      "weird"
+    ]
+  },
+  {
+    "name": "slug",
+    "tags": [
+      "animal",
+      "grotesque"
+    ]
+  },
+  {
+    "name": "snail",
+    "tags": [
+      "animal"
+    ]
+  },
+  {
+    "name": "sparrow",
+    "tags": [
+      "animal",
+      "bird"
+    ]
+  },
+  {
+    "name": "sphinx",
+    "tags": [
+      "monster",
+      "mythic"
+    ]
+  },
+  {
+    "name": "spider",
+    "tags": [
+      "animal",
+      "bug",
+      "mythic",
+      "predator"
+    ]
+  },
+  {
+    "name": "spine",
+    "tags": [
+      "anatomy",
+      "grotesque"
+    ]
+  },
+  {
+    "name": "spirochete",
+    "tags": [
+      "microscopic"
+    ]
+  },
+  {
+    "name": "spore",
+    "tags": [
+      "fungus",
+      "microscopic",
+      "fragile"
+    ]
+  },
+  {
+    "name": "squid",
+    "tags": [
+      "animal",
+      "aquatic"
+    ]
+  },
+  {
+    "name": "starfish",
+    "tags": [
+      "animal",
+      "aquatic"
+    ]
+  },
+  {
+    "name": "stick insect",
+    "tags": [
+      "animal",
+      "bug",
+      "weird"
+    ]
+  },
+  {
+    "name": "stingray",
+    "tags": [
+      "animal",
+      "aquatic"
+    ]
+  },
+  {
+    "name": "stinkhorn",
+    "tags": [
+      "fungus",
+      "weird",
+      "grotesque"
+    ]
+  },
+  {
+    "name": "stomach",
+    "tags": [
+      "anatomy",
+      "grotesque"
+    ]
+  },
+  {
+    "name": "stork",
+    "tags": [
+      "animal",
+      "bird",
       "mythic"
     ]
   },
@@ -2093,9 +2254,92 @@
     ]
   },
   {
-    "name": "tinker",
+    "name": "sunfish",
     "tags": [
-      "human"
+      "animal",
+      "aquatic",
+      "fish",
+      "weird"
+    ]
+  },
+  {
+    "name": "sunflower",
+    "tags": [
+      "plant"
+    ]
+  },
+  {
+    "name": "swan",
+    "tags": [
+      "animal",
+      "bird",
+      "mythic"
+    ]
+  },
+  {
+    "name": "swordfish",
+    "tags": [
+      "animal",
+      "aquatic",
+      "predator",
+      "fish"
+    ]
+  },
+  {
+    "name": "tail",
+    "tags": [
+      "anatomy"
+    ]
+  },
+  {
+    "name": "tardigrade",
+    "tags": [
+      "microscopic",
+      "weird"
+    ]
+  },
+  {
+    "name": "teeth",
+    "tags": [
+      "anatomy",
+      "uncanny"
+    ]
+  },
+  {
+    "name": "tentacle",
+    "tags": [
+      "anatomy",
+      "weird"
+    ]
+  },
+  {
+    "name": "termite",
+    "tags": [
+      "animal",
+      "bug"
+    ]
+  },
+  {
+    "name": "thistle",
+    "tags": [
+      "plant"
+    ]
+  },
+  {
+    "name": "thunderbird",
+    "tags": [
+      "monster",
+      "mythic",
+      "bird"
+    ]
+  },
+  {
+    "name": "tiger",
+    "tags": [
+      "animal",
+      "mammal",
+      "mythic",
+      "predator"
     ]
   },
   {
@@ -2106,10 +2350,225 @@
     ]
   },
   {
+    "name": "tinker",
+    "tags": [
+      "human"
+    ]
+  },
+  {
+    "name": "titan arum",
+    "tags": [
+      "plant",
+      "weird"
+    ]
+  },
+  {
+    "name": "toad",
+    "tags": [
+      "animal",
+      "reptile"
+    ]
+  },
+  {
+    "name": "tongue",
+    "tags": [
+      "anatomy",
+      "uncanny"
+    ]
+  },
+  {
+    "name": "tortoise",
+    "tags": [
+      "animal",
+      "reptile"
+    ]
+  },
+  {
+    "name": "toucan",
+    "tags": [
+      "animal",
+      "bird"
+    ]
+  },
+  {
+    "name": "trachea",
+    "tags": [
+      "anatomy",
+      "grotesque"
+    ]
+  },
+  {
+    "name": "triggerfish",
+    "tags": [
+      "animal",
+      "aquatic",
+      "fish",
+      "weird"
+    ]
+  },
+  {
+    "name": "troll",
+    "tags": [
+      "monster",
+      "mythic"
+    ]
+  },
+  {
+    "name": "truffle",
+    "tags": [
+      "fungus"
+    ]
+  },
+  {
+    "name": "tumbleweed",
+    "tags": [
+      "plant"
+    ]
+  },
+  {
+    "name": "tuna",
+    "tags": [
+      "animal",
+      "aquatic",
+      "fish"
+    ]
+  },
+  {
+    "name": "turkey",
+    "tags": [
+      "animal",
+      "bird",
+      "domestic"
+    ]
+  },
+  {
+    "name": "turkey tail",
+    "tags": [
+      "fungus"
+    ]
+  },
+  {
+    "name": "turtle",
+    "tags": [
+      "animal",
+      "aquatic",
+      "reptile"
+    ]
+  },
+  {
+    "name": "tusk",
+    "tags": [
+      "anatomy",
+      "mythic"
+    ]
+  },
+  {
+    "name": "unicorn",
+    "tags": [
+      "monster",
+      "mythic",
+      "mammal"
+    ]
+  },
+  {
+    "name": "vampire",
+    "tags": [
+      "monster",
+      "mythic",
+      "weird",
+      "predator"
+    ]
+  },
+  {
+    "name": "vein",
+    "tags": [
+      "anatomy",
+      "plant"
+    ]
+  },
+  {
+    "name": "venus flytrap",
+    "tags": [
+      "plant",
+      "weird"
+    ]
+  },
+  {
     "name": "viking",
     "tags": [
       "human",
       "mythic"
+    ]
+  },
+  {
+    "name": "virus",
+    "tags": [
+      "microscopic",
+      "weird",
+      "grotesque"
+    ]
+  },
+  {
+    "name": "vorticella",
+    "tags": [
+      "microscopic",
+      "weird"
+    ]
+  },
+  {
+    "name": "vulture",
+    "tags": [
+      "animal",
+      "bird",
+      "predator"
+    ]
+  },
+  {
+    "name": "walrus",
+    "tags": [
+      "animal",
+      "aquatic",
+      "mammal"
+    ]
+  },
+  {
+    "name": "water lily",
+    "tags": [
+      "aquatic",
+      "plant"
+    ]
+  },
+  {
+    "name": "weeping willow",
+    "tags": [
+      "mythic",
+      "plant"
+    ]
+  },
+  {
+    "name": "werewolf",
+    "tags": [
+      "monster",
+      "mythic",
+      "weird",
+      "predator",
+      "mammal"
+    ]
+  },
+  {
+    "name": "whale",
+    "tags": [
+      "animal",
+      "aquatic",
+      "mammal"
+    ]
+  },
+  {
+    "name": "wing",
+    "tags": [
+      "anatomy",
+      "mythic",
+      "fragile"
     ]
   },
   {
@@ -2127,67 +2586,19 @@
     ]
   },
   {
-    "name": "vampire",
+    "name": "wolf",
     "tags": [
-      "monster",
+      "animal",
+      "mammal",
       "mythic",
-      "weird",
       "predator"
     ]
   },
   {
-    "name": "zombie",
+    "name": "worm",
     "tags": [
-      "monster",
-      "mythic",
-      "weird",
-      "grotesque",
-      "uncanny"
-    ]
-  },
-  {
-    "name": "mummy",
-    "tags": [
-      "monster",
-      "mythic",
-      "weird",
-      "uncanny"
-    ]
-  },
-  {
-    "name": "ghost",
-    "tags": [
-      "monster",
-      "mythic",
-      "weird",
-      "uncanny"
-    ]
-  },
-  {
-    "name": "banshee",
-    "tags": [
-      "monster",
-      "mythic",
-      "weird"
-    ]
-  },
-  {
-    "name": "lich",
-    "tags": [
-      "monster",
-      "mythic",
-      "weird",
-      "uncanny"
-    ]
-  },
-  {
-    "name": "frankenstein's monster",
-    "tags": [
-      "monster",
-      "mythic",
-      "weird",
-      "grotesque",
-      "uncanny"
+      "animal",
+      "grotesque"
     ]
   },
   {
@@ -2200,136 +2611,6 @@
     ]
   },
   {
-    "name": "doppelganger",
-    "tags": [
-      "monster",
-      "mythic",
-      "weird",
-      "uncanny"
-    ]
-  },
-  {
-    "name": "skeleton warrior",
-    "tags": [
-      "monster",
-      "mythic",
-      "weird"
-    ]
-  },
-  {
-    "name": "minotaur",
-    "tags": [
-      "monster",
-      "mythic",
-      "predator"
-    ]
-  },
-  {
-    "name": "centaur",
-    "tags": [
-      "monster",
-      "mythic"
-    ]
-  },
-  {
-    "name": "mermaid",
-    "tags": [
-      "monster",
-      "mythic",
-      "aquatic"
-    ]
-  },
-  {
-    "name": "medusa",
-    "tags": [
-      "monster",
-      "mythic",
-      "weird",
-      "predator"
-    ]
-  },
-  {
-    "name": "harpy",
-    "tags": [
-      "monster",
-      "mythic",
-      "predator",
-      "bird"
-    ]
-  },
-  {
-    "name": "satyr",
-    "tags": [
-      "monster",
-      "mythic"
-    ]
-  },
-  {
-    "name": "werewolf",
-    "tags": [
-      "monster",
-      "mythic",
-      "weird",
-      "predator",
-      "mammal"
-    ]
-  },
-  {
-    "name": "cyclops",
-    "tags": [
-      "monster",
-      "mythic",
-      "predator"
-    ]
-  },
-  {
-    "name": "ogre",
-    "tags": [
-      "monster",
-      "mythic",
-      "predator"
-    ]
-  },
-  {
-    "name": "giant",
-    "tags": [
-      "monster",
-      "mythic"
-    ]
-  },
-  {
-    "name": "troll",
-    "tags": [
-      "monster",
-      "mythic"
-    ]
-  },
-  {
-    "name": "goblin",
-    "tags": [
-      "monster",
-      "mythic",
-      "weird"
-    ]
-  },
-  {
-    "name": "imp",
-    "tags": [
-      "monster",
-      "mythic",
-      "weird"
-    ]
-  },
-  {
-    "name": "dragon",
-    "tags": [
-      "monster",
-      "mythic",
-      "predator",
-      "reptile"
-    ]
-  },
-  {
     "name": "wyvern",
     "tags": [
       "monster",
@@ -2339,249 +2620,20 @@
     ]
   },
   {
-    "name": "basilisk",
+    "name": "zebra",
     "tags": [
-      "monster",
-      "mythic",
-      "predator",
-      "reptile"
-    ]
-  },
-  {
-    "name": "sea serpent",
-    "tags": [
-      "monster",
-      "mythic",
-      "predator",
-      "aquatic"
-    ]
-  },
-  {
-    "name": "kraken",
-    "tags": [
-      "monster",
-      "mythic",
-      "predator",
-      "aquatic"
-    ]
-  },
-  {
-    "name": "leviathan",
-    "tags": [
-      "monster",
-      "mythic",
-      "predator",
-      "aquatic"
-    ]
-  },
-  {
-    "name": "chimera",
-    "tags": [
-      "monster",
-      "mythic",
-      "predator",
-      "weird"
-    ]
-  },
-  {
-    "name": "griffin",
-    "tags": [
-      "monster",
-      "mythic",
-      "predator",
-      "bird",
+      "animal",
       "mammal"
     ]
   },
   {
-    "name": "phoenix",
+    "name": "zombie",
     "tags": [
       "monster",
       "mythic",
-      "bird"
-    ]
-  },
-  {
-    "name": "roc",
-    "tags": [
-      "monster",
-      "mythic",
-      "predator",
-      "bird"
-    ]
-  },
-  {
-    "name": "manticore",
-    "tags": [
-      "monster",
-      "mythic",
-      "predator",
-      "mammal"
-    ]
-  },
-  {
-    "name": "sphinx",
-    "tags": [
-      "monster",
-      "mythic"
-    ]
-  },
-  {
-    "name": "cerberus",
-    "tags": [
-      "monster",
-      "mythic",
-      "predator",
-      "mammal"
-    ]
-  },
-  {
-    "name": "pegasus",
-    "tags": [
-      "monster",
-      "mythic",
-      "mammal",
-      "bird"
-    ]
-  },
-  {
-    "name": "unicorn",
-    "tags": [
-      "monster",
-      "mythic",
-      "mammal"
-    ]
-  },
-  {
-    "name": "thunderbird",
-    "tags": [
-      "monster",
-      "mythic",
-      "bird"
-    ]
-  },
-  {
-    "name": "kirin",
-    "tags": [
-      "monster",
-      "mythic",
-      "mammal"
-    ]
-  },
-  {
-    "name": "lionfish",
-    "tags": [
-      "animal",
-      "aquatic",
-      "fish",
-      "predator",
-      "weird"
-    ]
-  },
-  {
-    "name": "oarfish",
-    "tags": [
-      "animal",
-      "aquatic",
-      "fish",
-      "weird"
-    ]
-  },
-  {
-    "name": "sunfish",
-    "tags": [
-      "animal",
-      "aquatic",
-      "fish",
-      "weird"
-    ]
-  },
-  {
-    "name": "flying fish",
-    "tags": [
-      "animal",
-      "aquatic",
-      "fish",
-      "weird"
-    ]
-  },
-  {
-    "name": "barracuda",
-    "tags": [
-      "animal",
-      "aquatic",
-      "fish",
-      "predator"
-    ]
-  },
-  {
-    "name": "catfish",
-    "tags": [
-      "animal",
-      "aquatic",
-      "fish"
-    ]
-  },
-  {
-    "name": "koi",
-    "tags": [
-      "animal",
-      "aquatic",
-      "fish",
-      "domestic"
-    ]
-  },
-  {
-    "name": "flatfish",
-    "tags": [
-      "animal",
-      "aquatic",
-      "fish",
-      "weird"
-    ]
-  },
-  {
-    "name": "mudskipper",
-    "tags": [
-      "animal",
-      "aquatic",
-      "fish",
-      "weird"
-    ]
-  },
-  {
-    "name": "blobfish",
-    "tags": [
-      "animal",
-      "aquatic",
-      "fish",
       "weird",
-      "grotesque"
-    ]
-  },
-  {
-    "name": "salmon",
-    "tags": [
-      "animal",
-      "aquatic",
-      "fish"
-    ]
-  },
-  {
-    "name": "tuna",
-    "tags": [
-      "animal",
-      "aquatic",
-      "fish"
-    ]
-  },
-  {
-    "name": "triggerfish",
-    "tags": [
-      "animal",
-      "aquatic",
-      "fish",
-      "weird"
+      "grotesque",
+      "uncanny"
     ]
   }
 ]
