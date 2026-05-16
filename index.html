@@ -1444,7 +1444,7 @@
     }
 
     function animateJustDraw(el, finalValue) {
-      animateSlot(el, store.justDraw, finalValue, 1200);
+      animateSlot(el, store.justDrawNames, finalValue, 1200);
     }
 
     // ── Cauldron helpers ─────────────────────────────────────────
@@ -2149,7 +2149,7 @@ function renderCauldronConfig() {
       try {
         const [justDraw, adjectives, nounsOrganicRaw, nounsSyntheticRaw, verbsRaw, environmentsRaw] =
           await Promise.all([
-            fetch('data/just_draw.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
+            fetch('data/just_draw_tagged.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
             fetch('data/adjectives.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
             fetch('data/nouns_organic_tagged.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
             fetch('data/nouns_synthetic_tagged.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
@@ -2163,6 +2163,7 @@ function renderCauldronConfig() {
         }
 
         store.justDraw            = justDraw;
+        store.justDrawNames       = justDraw.map(i => i.name);
         store.adjectives          = adjectives;
         // Name-only arrays — used by existing generation functions unchanged
         store.nounsOrganic        = nounsOrganicRaw.map(i => i.name);
