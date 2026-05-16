@@ -1259,7 +1259,11 @@
 
     // ── Prompt generators ────────────────────────────────────────
     function generateJustDraw() {
-      return drawFromDeck(justDrawDeck, store.justDraw);
+      const pool = justDrawActiveTags.length === 0
+        ? store.justDraw
+        : filterByTags(store.justDraw, justDrawActiveTags, justDrawTagMode);
+      const item = drawFromDeck(justDrawDeck, pool.length > 0 ? pool : store.justDraw);
+      return item ? item.name : '';
     }
 
     function generateSurrealNarrative(current, locked) {
@@ -1850,7 +1854,9 @@ function renderCauldronConfig() {
     const HISTORY_MAX = 20;
     let promptHistory = [];    // string[] for Sparks; prompt object[] for Surreal/Mutations
     let historyIndex = -1;     // -1 = empty; 0 = oldest; length-1 = newest
-    let justDrawDeck = [];     // shuffle deck for Everyday Life — reset on entry from Home
+    let justDrawDeck = [];          // shuffle deck for Everyday Life — reset on entry from Home
+    let justDrawActiveTags = [];    // tag filter; empty = all prompts
+    let justDrawTagMode = 'any';    // 'any' | 'all'
     let cauldronDecks = {};    // { [slotId]: string[] } — reset on every Generate tap
 
     // ── History helpers ──────────────────────────────────────────
@@ -1942,6 +1948,8 @@ function renderCauldronConfig() {
     document.getElementById('btn-just-draw').addEventListener('click', () => {
       clearHistory();
       justDrawDeck = [];
+      justDrawActiveTags = [];
+      justDrawTagMode = 'any';
       const finalValue = generateJustDraw();
       const el = document.getElementById('just-draw-prompt');
       showScreen('screen-just-draw');
