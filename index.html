@@ -346,6 +346,10 @@
       .just-draw-attribution { bottom: 0.4rem; font-size: 0.52rem; }
     }
 
+#screen-strange-scenes .regen-btn { bottom: 2.2rem; }
+#screen-strange-scenes .history-nav { bottom: 5rem; }
+#screen-strange-scenes .prompt-text { max-height: calc(100vh - 10rem); }
+
 /* ── Everyday Life attribution ── */
 #screen-just-draw .regen-btn {
   bottom: 3.2rem; /* nudged up to make room for attribution */
@@ -1353,6 +1357,7 @@
 <!--      <button id="btn-surreal" class="mode-btn">Surreal Narratives</button>-->
 <!--      <button id="btn-mutations" class="mode-btn">Strange Combinations</button>-->
       <button id="btn-cauldron" class="mode-btn">✦ Surreal Cauldron</button>
+      <button id="btn-strange-scenes" class="mode-btn" disabled>Strange Scenes</button>
     </div>
   </div>
 
@@ -1408,6 +1413,45 @@
       <div class="pm-sheet-actions">
         <button id="jd-clear-btn" class="pm-clear-btn">clear</button>
         <button id="jd-apply-btn" class="pm-apply-btn">↺ new prompt</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen: Strange Scenes -->
+  <div id="screen-strange-scenes" class="screen">
+    <div class="back-row">
+      <button class="back-btn" data-target="screen-home">←</button>
+      <span class="screen-label">Strange Scenes</span>
+    </div>
+    <div class="pm-header-right">
+      <button id="ss-filter-btn" class="pm-filter-btn">⊞ filter</button>
+      <button class="copy-btn" id="copy-strange-scenes" title="Copy prompt">⧉ copy</button>
+    </div>
+    <p id="ss-prompt" class="prompt-text"></p>
+    <p id="ss-tag-indicator" class="pm-tag-indicator"></p>
+    <button id="btn-regen-strange-scenes" class="regen-btn">↺ new prompt</button>
+    <div class="history-nav" id="history-nav-strange-scenes">
+      <button class="hist-arrow" id="hist-prev-strange-scenes">‹</button>
+      <div class="hist-dots" id="hist-dots-strange-scenes"></div>
+      <button class="hist-arrow" id="hist-next-strange-scenes">›</button>
+    </div>
+    <p class="just-draw-attribution">Prompts inspired by the work of Roland Topor</p>
+    <div id="ss-filter-backdrop" class="pm-filter-backdrop"></div>
+    <div id="ss-filter-sheet" class="pm-filter-sheet hidden">
+      <div class="pm-sheet-title">Filter by theme</div>
+      <p class="pm-sheet-subtitle">All prompts shown when nothing selected</p>
+      <div id="ss-tag-chips" class="pm-tag-chips"></div>
+      <div id="ss-any-all-row" class="pm-any-all-row hidden">
+        <span class="pm-any-all-label">match</span>
+        <div class="pm-any-all-toggle">
+          <button class="pm-aa-btn active" data-mode="any">any</button>
+          <button class="pm-aa-btn" data-mode="all">all</button>
+        </div>
+        <span id="ss-pool-count" class="pm-pool-count"></span>
+      </div>
+      <div class="pm-sheet-actions">
+        <button id="ss-clear-btn" class="pm-clear-btn">clear</button>
+        <button id="ss-apply-btn" class="pm-apply-btn">↺ new prompt</button>
       </div>
     </div>
   </div>
@@ -1483,8 +1527,8 @@
       document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
       document.getElementById(id).classList.add('active');
       document.getElementById('wallpaper-layer')
-        .classList.toggle('dimmed', id === 'screen-imagine-prompt' || id === 'screen-just-draw');
-      if (id !== 'screen-just-draw' && id !== 'screen-imagine-prompt' && id !== 'screen-cauldron-config') {
+        .classList.toggle('dimmed', id === 'screen-imagine-prompt' || id === 'screen-just-draw' || id === 'screen-strange-scenes');
+      if (id !== 'screen-just-draw' && id !== 'screen-imagine-prompt' && id !== 'screen-cauldron-config' && id !== 'screen-strange-scenes') {
         currentPrompt = null;
         lockedSlots = {};
         clearHistory();
@@ -2152,6 +2196,7 @@ function renderCauldronConfig() {
       historyIndex = -1;
       document.getElementById('history-nav-imagine').classList.remove('visible');
       document.getElementById('history-nav-just-draw').classList.remove('visible');
+      document.getElementById('history-nav-strange-scenes').classList.remove('visible');
     }
 
     function pushToHistory(prompt) {
