@@ -2121,18 +2121,10 @@ function renderCauldronConfig() {
     let promptHistory = [];    // string[] for Sparks; prompt object[] for Surreal/Mutations
     let historyIndex = -1;     // -1 = empty; 0 = oldest; length-1 = newest
     // ── Pool-mode configs ─────────────────────────────────────────
-    const JD_TAGS = [
-      'still_life', 'organic', 'sensory', 'emotional',
-      'spatial', 'temporal', 'urban', 'craft',
-      'nature', 'figures', 'imagination'
-    ];
-    const SS_TAGS = ['body', 'objects', 'shadow', 'domestic', 'nature', 'architecture'];
-
     const jdConfig = {
       getPool:   () => store.justDraw,
       getNames:  () => store.justDrawNames,
       textField: 'name',
-      tags:      JD_TAGS,
       sheetTitle: 'Filter by subject',
       deck:       [],
       activeTags: [],
@@ -2162,7 +2154,6 @@ function renderCauldronConfig() {
       getPool:   () => store.strangeScenes,
       getNames:  () => store.strangeSceneTexts,
       textField: 'text',
-      tags:      SS_TAGS,
       sheetTitle: 'Filter by theme',
       deck:       [],
       activeTags: [],
@@ -2306,8 +2297,9 @@ function renderCauldronConfig() {
       const applyBtn     = document.getElementById(ids.applyBtn);
       const aaBtns       = anyAllRow.querySelectorAll('.pm-aa-btn');
 
+      const tags = [...new Set(cfg.getPool().flatMap(item => item.tags || []))].sort();
       chipsEl.innerHTML = '';
-      cfg.tags.forEach(tag => {
+      tags.forEach(tag => {
         const chip = document.createElement('button');
         chip.className = 'pm-chip' + (cfg.sheetTags.includes(tag) ? ' on' : '');
         chip.textContent = tag.replace('_', ' ');
