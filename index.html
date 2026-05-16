@@ -1166,9 +1166,11 @@
     <div class="back-row">
       <button class="back-btn" data-target="screen-home">←</button>
       <span class="screen-label">Everyday Life</span>
+      <button id="jd-filter-btn" class="jd-filter-btn">⊞ filter</button>
     </div>
     <button class="copy-btn" id="copy-just-draw" title="Copy prompt">⧉</button>
     <p id="just-draw-prompt" class="prompt-text"></p>
+    <p id="jd-tag-indicator" class="jd-tag-indicator"></p>
     <button id="btn-regen-just-draw" class="regen-btn">↺ new prompt</button>
     <div class="history-nav" id="history-nav-just-draw">
       <button class="hist-arrow" id="hist-prev-just-draw">‹</button>
@@ -1176,6 +1178,26 @@
       <button class="hist-arrow" id="hist-next-just-draw">›</button>
     </div>
     <p class="just-draw-attribution">Prompt list by <a href="https://dannygregorysblog.com/community/edm-challenges/" target="_blank" rel="noopener">Danny Gregory</a></p>
+
+    <!-- Filter sheet overlay -->
+    <div id="jd-filter-backdrop" class="jd-filter-backdrop hidden"></div>
+    <div id="jd-filter-sheet" class="jd-filter-sheet hidden">
+      <div class="jd-sheet-title">Filter by subject</div>
+      <p class="jd-sheet-subtitle">All prompts shown when nothing selected</p>
+      <div id="jd-tag-chips" class="jd-tag-chips"></div>
+      <div id="jd-any-all-row" class="jd-any-all-row hidden">
+        <span class="jd-any-all-label">match</span>
+        <div class="jd-any-all-toggle">
+          <button class="jd-aa-btn active" data-mode="any">any</button>
+          <button class="jd-aa-btn" data-mode="all">all</button>
+        </div>
+        <span id="jd-pool-count" class="jd-pool-count"></span>
+      </div>
+      <div class="jd-sheet-actions">
+        <button id="jd-clear-btn" class="jd-clear-btn">clear</button>
+        <button id="jd-apply-btn" class="jd-apply-btn">↺ new prompt</button>
+      </div>
+    </div>
   </div>
 
   <!-- Screen: Surreal Cauldron Config -->
