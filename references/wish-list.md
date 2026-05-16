@@ -77,3 +77,19 @@ Ensure we don't regen on locked words to preserve words.
 Right now - regen is enabled and it keeps regenerating.
 
 
+## IDEA-007 - Use tagged just_draw_tagged.json file
+
+AS a user, I want to be able to narrow down the Everyday Life prompts I'm given by subjects I select.
+
+I can select subjects using the tags in theh just_draw_tagged.json.
+
+We don't need to use the untagged list just_draw.json.
+
+Questions:
+- Do we configure tags first before showing prompts?  Or should we show random prompts as is but give option to configure prompts?    Need to weigh pros and cons.
+
+
+## IDEA-008 - Integrate references/topor-prompts.md into app.
+
+Questions:
+- Hesitant to add these in Everyday Life because they are not everyday life.   Surreal Cauldron is better fit but right now - that mode is driven by different components each generated randomly (composition based) - rather than full prompt based.    I will need ideas on how to marry composition-based prompting vs full phrase prompts.  AS a surrealist artist,   I can probaby go either mode. 

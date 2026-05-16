@@ -84,7 +84,7 @@ Applied in addition to primary tags. Do not use context tags as a substitute for
 5. `organic` covers body parts and self-portraiture (hand, eye, foot, self portrait).
 6. `still_life` covers food and drink as a subject category. Prompts where food is the subject get `still_life` regardless of whether they also involve sensory qualities.
 7. `urban` applies to on-location drawing in cities and built environments. "Draw the front of your house" is `urban`. "Draw your kitchen" is `still_life`, not `urban`.
-8. `nature`, `figures`, and `urban` are distinct drawing practices — they co-exist with subject tags like `organic` and `still_life`. A nature prompt about a leaf is both `nature` and `organic`.
+8. `nature`, `figures`, and `urban` are distinct drawing practices — they co-exist with subject tags. A nature prompt about a leaf is both `nature` and `organic`.
 9. `imagination` applies when the prompt cannot be answered by looking around and choosing something visible. The artist must reach into their mind rather than their surroundings.
 
 ### Ambiguous cases
@@ -102,7 +102,7 @@ Applied in addition to primary tags. Do not use context tags as a substitute for
 
 ### Coverage exceptions
 
-The coverage threshold is **20 items per primary tag**. Known exceptions where a tag may launch below 20 and should be grown over time rather than removed:
+The coverage threshold is **20 items per primary tag**. Known exceptions where a tag may sit below 20 and should be grown over time rather than removed:
 
 - `imagination` — a deliberately sparse category; prompts are hard to write without overlapping existing ones
 
