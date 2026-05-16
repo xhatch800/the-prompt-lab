@@ -354,8 +354,7 @@
 }
 
 #screen-just-draw .prompt-text {
-  max-height: calc(100vh - 14rem); /* prevent long prompts reaching fixed footer */
-  overflow: hidden;
+  max-height: calc(100vh - 17rem);
 }
 
 .just-draw-attribution {
@@ -370,6 +369,190 @@
   letter-spacing: 0.02em;
   pointer-events: auto;
 }
+
+    /* ── Everyday Life filter ── */
+    .jd-filter-btn {
+      font-family: 'Caveat', cursive;
+      font-size: 1rem;
+      border: 1.5px solid #b85c38;
+      border-radius: 6px;
+      color: #b85c38;
+      background: transparent;
+      padding: 1px 8px;
+      cursor: pointer;
+      line-height: 1.5;
+      transition: background 0.1s, color 0.1s;
+    }
+    .jd-filter-btn.active {
+      background: #b85c38;
+      color: #fdf8f0;
+    }
+
+    .jd-tag-indicator {
+      position: absolute;
+      bottom: 10.8rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: sans-serif;
+      font-size: 0.7rem;
+      color: #b85c38;
+      opacity: 0.72;
+      pointer-events: none;
+      min-height: 1.1rem;
+    }
+
+    /* ── Filter sheet ── */
+    .jd-filter-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(44, 44, 44, 0.3);
+      z-index: 20;
+    }
+
+    .jd-filter-sheet {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #fdf8f0;
+      border-radius: 20px 20px 0 0;
+      padding: 1.2rem 1.4rem 2rem;
+      z-index: 21;
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.12);
+    }
+
+    .jd-sheet-title {
+      font-family: 'Caveat', cursive;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #2c2c2c;
+      margin-bottom: 0.15rem;
+    }
+
+    .jd-sheet-subtitle {
+      font-family: sans-serif;
+      font-size: 0.7rem;
+      color: #aaa;
+      margin-bottom: 0.85rem;
+    }
+
+    .jd-tag-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .jd-chip {
+      font-family: 'Caveat', cursive;
+      font-size: 1.2rem;
+      border: 1.5px solid #b85c38;
+      border-radius: 20px;
+      padding: 0.05rem 0.75rem;
+      background: #fdf8f0;
+      color: #b85c38;
+      cursor: pointer;
+      transition: background 0.1s, color 0.1s;
+    }
+
+    .jd-chip.on {
+      background: #b85c38;
+      color: #fdf8f0;
+    }
+
+    .jd-any-all-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .jd-any-all-label {
+      font-family: sans-serif;
+      font-size: 0.72rem;
+      color: #888;
+    }
+
+    .jd-any-all-toggle {
+      display: flex;
+      border: 1.5px solid #b85c38;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .jd-aa-btn {
+      font-family: sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 9px;
+      background: none;
+      border: none;
+      color: #b85c38;
+      cursor: pointer;
+    }
+
+    .jd-aa-btn + .jd-aa-btn {
+      border-left: 1.5px solid #b85c38;
+    }
+
+    .jd-aa-btn.active {
+      background: #b85c38;
+      color: #fdf8f0;
+    }
+
+    .jd-pool-count {
+      font-family: sans-serif;
+      font-size: 0.7rem;
+      color: #b85c38;
+      opacity: 0.65;
+      margin-left: auto;
+    }
+
+    .jd-sheet-actions {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .jd-clear-btn {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      background: none;
+      border: 1.5px solid #ccc;
+      border-radius: 10px;
+      color: #aaa;
+      padding: 0.3rem 1rem;
+      cursor: pointer;
+      flex: 1;
+    }
+
+    .jd-apply-btn {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      background: #b85c38;
+      border: 1.5px solid #b85c38;
+      border-radius: 10px;
+      color: #fdf8f0;
+      padding: 0.3rem 1.4rem;
+      cursor: pointer;
+      flex: 2;
+      box-shadow: 2px 2px 0 #7a3a1e;
+    }
+
+    .jd-apply-btn:disabled {
+      opacity: 0.35;
+      cursor: default;
+      box-shadow: none;
+    }
+
+    .jd-empty-warning {
+      font-family: sans-serif;
+      font-size: 0.68rem;
+      color: #b85c38;
+      opacity: 0.75;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
 
 .just-draw-attribution a {
   color: rgba(184, 92, 56, 0.65);
