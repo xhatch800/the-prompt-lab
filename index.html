@@ -2562,9 +2562,10 @@ function renderCauldronConfig() {
     // ── Data loading ─────────────────────────────────────────────
     async function init() {
       try {
-        const [justDraw, adjectives, nounsOrganicRaw, nounsSyntheticRaw, verbsRaw, environmentsRaw] =
+        const [justDraw, strangeScenes, adjectives, nounsOrganicRaw, nounsSyntheticRaw, verbsRaw, environmentsRaw] =
           await Promise.all([
             fetch('data/just_draw_tagged.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
+            fetch('data/strange_scenes.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
             fetch('data/adjectives.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
             fetch('data/nouns_organic_tagged.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
             fetch('data/nouns_synthetic_tagged.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
@@ -2572,13 +2573,15 @@ function renderCauldronConfig() {
             fetch('data/environments_tagged.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
           ]);
 
-        if ([justDraw, adjectives, nounsOrganicRaw, nounsSyntheticRaw, verbsRaw, environmentsRaw]
+        if ([justDraw, strangeScenes, adjectives, nounsOrganicRaw, nounsSyntheticRaw, verbsRaw, environmentsRaw]
             .some(d => !Array.isArray(d) || d.length === 0)) {
           throw new Error('Empty data');
         }
 
         store.justDraw            = justDraw;
         store.justDrawNames       = justDraw.map(i => i.name);
+        store.strangeScenes       = strangeScenes;
+        store.strangeSceneTexts   = strangeScenes.map(i => i.text);
         store.adjectives          = adjectives;
         // Name-only arrays — used by existing generation functions unchanged
         store.nounsOrganic        = nounsOrganicRaw.map(i => i.name);
@@ -2599,12 +2602,14 @@ function renderCauldronConfig() {
         // document.getElementById('btn-surreal').disabled = false;
         // document.getElementById('btn-mutations').disabled = false;
         document.getElementById('btn-cauldron').disabled = false;
+        document.getElementById('btn-strange-scenes').disabled = false;
       } catch {
         document.getElementById('error-banner').classList.remove('hidden');
         document.getElementById('btn-just-draw').disabled = true;
         // document.getElementById('btn-surreal').disabled = true;
         //document.getElementById('btn-mutations').disabled = true;
         document.getElementById('btn-cauldron').disabled = true;
+        document.getElementById('btn-strange-scenes').disabled = true;
       }
     }
 
