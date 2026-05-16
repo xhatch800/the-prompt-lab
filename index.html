@@ -125,7 +125,7 @@
       position: absolute;
       top: 1.2rem;
       right: 1.2rem;
-      z-index: 10;
+      z-index: 25;
       font-family: 'Caveat', cursive;
       font-size: 1rem;
       background: #fdf8f0;
@@ -147,7 +147,7 @@
       position: absolute;
       top: 1.2rem;
       left: 1.2rem;
-      z-index: 10;
+      z-index: 25;
     }
 
     .screen-label {
@@ -380,7 +380,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      z-index: 10;
+      z-index: 25;
     }
     .jd-header-right .copy-btn {
       position: static;
@@ -424,6 +424,13 @@
       inset: 0;
       background: rgba(44, 44, 44, 0.3);
       z-index: 20;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+    .jd-filter-backdrop.visible {
+      opacity: 1;
+      pointer-events: auto;
     }
 
     .jd-filter-sheet {
@@ -1382,7 +1389,7 @@
     <p class="just-draw-attribution">Prompt list by <a href="https://dannygregorysblog.com/community/edm-challenges/" target="_blank" rel="noopener">Danny Gregory</a></p>
 
     <!-- Filter sheet overlay -->
-    <div id="jd-filter-backdrop" class="jd-filter-backdrop hidden"></div>
+    <div id="jd-filter-backdrop" class="jd-filter-backdrop"></div>
     <div id="jd-filter-sheet" class="jd-filter-sheet hidden">
       <div class="jd-sheet-title">Filter by subject</div>
       <p class="jd-sheet-subtitle">All prompts shown when nothing selected</p>
@@ -2241,14 +2248,14 @@ function renderCauldronConfig() {
       // Snapshot current active state into sheet scratch state
       jdSheetTags = [...justDrawActiveTags];
       jdSheetMode = justDrawTagMode;
-      document.getElementById('jd-filter-backdrop').classList.remove('hidden');
+      document.getElementById('jd-filter-backdrop').classList.add('visible');
       document.getElementById('jd-filter-sheet').classList.remove('hidden');
       document.getElementById('jd-filter-btn').classList.add('active');
       renderJdSheet();
     }
 
     function closeJdFilterSheet() {
-      document.getElementById('jd-filter-backdrop').classList.add('hidden');
+      document.getElementById('jd-filter-backdrop').classList.remove('visible');
       document.getElementById('jd-filter-sheet').classList.add('hidden');
     }
 
