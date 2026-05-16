@@ -339,41 +339,15 @@
       .back-btn { font-size: 1.4rem; }
       .regen-btn { font-size: 1.2rem; bottom: 1rem; }
       .history-nav { bottom: 4rem; }
-      /* just-draw landscape: override the portrait specificity winners with explicit landscape values */
-      #screen-just-draw .regen-btn { bottom: 2.2rem; font-size: 1.2rem; }
-      #screen-just-draw .history-nav { bottom: 5rem; }
       #screen-just-draw .prompt-text { max-height: calc(100vh - 10rem); }
-      .just-draw-attribution { bottom: 0.4rem; font-size: 0.52rem; }
     }
 
 #screen-strange-scenes .regen-btn { bottom: 2.2rem; }
 #screen-strange-scenes .history-nav { bottom: 5rem; }
 #screen-strange-scenes .prompt-text { max-height: calc(100vh - 10rem); }
 
-/* ── Everyday Life attribution ── */
-#screen-just-draw .regen-btn {
-  bottom: 3.2rem; /* nudged up to make room for attribution */
-}
-
-#screen-just-draw .history-nav {
-  bottom: 7.2rem;
-}
-
 #screen-just-draw .prompt-text {
   max-height: calc(100vh - 17rem);
-}
-
-.just-draw-attribution {
-  position: absolute;
-  bottom: 0.75rem;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-family: sans-serif;
-  font-size: 0.58rem;
-  color: rgba(44, 44, 44, 0.4);
-  letter-spacing: 0.02em;
-  pointer-events: auto;
 }
 
     /* ── Everyday Life header right group ── */
@@ -585,9 +559,16 @@
       margin-bottom: 0.5rem;
     }
 
-.just-draw-attribution a {
-  color: rgba(184, 92, 56, 0.65);
-  text-decoration: underline;
+.just-draw-attribution {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 0.58rem;
+  color: rgba(44, 44, 44, 0.4);
+  letter-spacing: 0.02em;
 }
 
 /* ── Surreal Cauldron config screen ── */
@@ -1394,8 +1375,6 @@
       <div class="hist-dots" id="hist-dots-just-draw"></div>
       <button class="hist-arrow" id="hist-next-just-draw">›</button>
     </div>
-    <p class="just-draw-attribution">Prompt list by <a href="https://dannygregorysblog.com/community/edm-challenges/" target="_blank" rel="noopener">Danny Gregory</a></p>
-
     <!-- Filter sheet overlay -->
     <div id="jd-filter-backdrop" class="pm-filter-backdrop"></div>
     <div id="jd-filter-sheet" class="pm-filter-sheet hidden">
