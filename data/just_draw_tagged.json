@@ -222,8 +222,7 @@
   {
     "name": "Draw a holiday card",
     "tags": [
-      "still_life",
-      "holiday"
+      "still_life"
     ]
   },
   {
@@ -245,8 +244,7 @@
   {
     "name": "Draw something summer",
     "tags": [
-      "temporal",
-      "seasonal"
+      "temporal"
     ]
   },
   {
@@ -355,7 +353,6 @@
     "name": "Draw a sign of spring (or fall if you live in the southern hemisphere)",
     "tags": [
       "organic",
-      "seasonal",
       "nature"
     ]
   },
@@ -545,8 +542,7 @@
   {
     "name": "Draw a Winter Olympic event",
     "tags": [
-      "organic",
-      "seasonal"
+      "organic"
     ]
   },
   {
@@ -565,7 +561,6 @@
     "name": "Draw (or paint) a tree in autumn",
     "tags": [
       "organic",
-      "seasonal",
       "nature"
     ]
   },
@@ -629,15 +624,13 @@
   {
     "name": "Draw a summer joy",
     "tags": [
-      "emotional",
-      "seasonal"
+      "emotional"
     ]
   },
   {
     "name": "Draw something Dad – in honor of Fathers Day",
     "tags": [
-      "emotional",
-      "holiday"
+      "emotional"
     ]
   },
   {
@@ -699,8 +692,7 @@
   {
     "name": "Draw something related to Halloween, All Souls Day, Dia de los Muertos, All Saints, etc.",
     "tags": [
-      "emotional",
-      "holiday"
+      "emotional"
     ]
   },
   {
@@ -848,9 +840,7 @@
   {
     "name": "Draw something October",
     "tags": [
-      "temporal",
-      "seasonal",
-      "holiday"
+      "temporal"
     ]
   },
   {
@@ -1095,7 +1085,6 @@
     "name": "Draw a fall leaf",
     "tags": [
       "organic",
-      "seasonal",
       "nature"
     ]
   },
@@ -1252,8 +1241,7 @@
   {
     "name": "Draw something holiday themed (Hanukah, Christmas, Kwanzaa, winter solstice)",
     "tags": [
-      "emotional",
-      "holiday"
+      "emotional"
     ]
   },
   {
@@ -1663,8 +1651,7 @@
   {
     "name": "Draw something Mom – your mother, something that reminds you of motherhood",
     "tags": [
-      "emotional",
-      "holiday"
+      "emotional"
     ]
   },
   {
