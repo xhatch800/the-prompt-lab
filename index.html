@@ -1492,14 +1492,6 @@
     }
 
     // ── Prompt generators ────────────────────────────────────────
-    function generateJustDraw() {
-      const pool = justDrawActiveTags.length === 0
-        ? store.justDraw
-        : filterByTags(store.justDraw, justDrawActiveTags, justDrawTagMode);
-      const item = drawFromDeck(justDrawDeck, pool.length > 0 ? pool : store.justDraw);
-      return item ? item.name : '';
-    }
-
     function generateSurrealNarrative(current, locked) {
       const prev = current || {};
       const adjective  = locked.adjective   ? prev.adjective   : pick(store.adjectives);
@@ -1679,10 +1671,6 @@
         if (!pools[slot]) { console.warn('animateUnlockedSlots: unknown slot', slot); return; }
         animateSlot(span, pools[slot], currentPrompt[slot], 1200);
       });
-    }
-
-    function animateJustDraw(el, finalValue) {
-      animateSlot(el, store.justDrawNames, finalValue, 1200);
     }
 
     // ── Cauldron helpers ─────────────────────────────────────────
@@ -2088,9 +2076,74 @@ function renderCauldronConfig() {
     const HISTORY_MAX = 20;
     let promptHistory = [];    // string[] for Sparks; prompt object[] for Surreal/Mutations
     let historyIndex = -1;     // -1 = empty; 0 = oldest; length-1 = newest
-    let justDrawDeck = [];          // shuffle deck for Everyday Life — reset on entry from Home
-    let justDrawActiveTags = [];    // tag filter; empty = all prompts
-    let justDrawTagMode = 'any';    // 'any' | 'all'
+    // ── Pool-mode configs ─────────────────────────────────────────
+    const JD_TAGS = [
+      'still_life', 'organic', 'sensory', 'emotional',
+      'spatial', 'temporal', 'urban', 'craft',
+      'nature', 'figures', 'imagination'
+    ];
+    const SS_TAGS = ['body', 'objects', 'shadow', 'domestic', 'nature', 'architecture'];
+
+    const jdConfig = {
+      getPool:   () => store.justDraw,
+      getNames:  () => store.justDrawNames,
+      textField: 'name',
+      tags:      JD_TAGS,
+      sheetTitle: 'Filter by subject',
+      deck:       [],
+      activeTags: [],
+      tagMode:    'any',
+      sheetTags:  [],
+      sheetMode:  'any',
+      ids: {
+        promptEl:       'just-draw-prompt',
+        tagIndicator:   'jd-tag-indicator',
+        filterBtn:      'jd-filter-btn',
+        filterBackdrop: 'jd-filter-backdrop',
+        filterSheet:    'jd-filter-sheet',
+        tagChips:       'jd-tag-chips',
+        anyAllRow:      'jd-any-all-row',
+        poolCount:      'jd-pool-count',
+        clearBtn:       'jd-clear-btn',
+        applyBtn:       'jd-apply-btn',
+        histNav:        'history-nav-just-draw',
+        histDots:       'hist-dots-just-draw',
+        histPrev:       'hist-prev-just-draw',
+        histNext:       'hist-next-just-draw',
+        copyBtn:        'copy-just-draw',
+      }
+    };
+
+    const ssConfig = {
+      getPool:   () => store.strangeScenes,
+      getNames:  () => store.strangeSceneTexts,
+      textField: 'text',
+      tags:      SS_TAGS,
+      sheetTitle: 'Filter by theme',
+      deck:       [],
+      activeTags: [],
+      tagMode:    'any',
+      sheetTags:  [],
+      sheetMode:  'any',
+      ids: {
+        promptEl:       'ss-prompt',
+        tagIndicator:   'ss-tag-indicator',
+        filterBtn:      'ss-filter-btn',
+        filterBackdrop: 'ss-filter-backdrop',
+        filterSheet:    'ss-filter-sheet',
+        tagChips:       'ss-tag-chips',
+        anyAllRow:      'ss-any-all-row',
+        poolCount:      'ss-pool-count',
+        clearBtn:       'ss-clear-btn',
+        applyBtn:       'ss-apply-btn',
+        histNav:        'history-nav-strange-scenes',
+        histDots:       'hist-dots-strange-scenes',
+        histPrev:       'hist-prev-strange-scenes',
+        histNext:       'hist-next-strange-scenes',
+        copyBtn:        'copy-strange-scenes',
+      }
+    };
+
     let cauldronDecks = {};    // { [slotId]: string[] } — reset on every Generate tap
 
     // ── History helpers ──────────────────────────────────────────
@@ -2178,67 +2231,66 @@ function renderCauldronConfig() {
       );
     }
 
-    // ── Everyday Life filter ──────────────────────────────────────
-    const JD_TAGS = [
-      'still_life', 'organic', 'sensory', 'emotional',
-      'spatial', 'temporal', 'urban', 'craft',
-      'nature', 'figures', 'imagination'
-    ];
+    // ── Shared pool-mode functions ────────────────────────────────
 
-    // Scratch state — represents what's in the open sheet (not yet applied)
-    let jdSheetTags = [];
-    let jdSheetMode = 'any';
-
-    function jdPoolCount(tags, mode) {
-      if (tags.length === 0) return store.justDraw.length;
-      return filterByTags(store.justDraw, tags, mode).length;
+    function generateFromPool(cfg) {
+      const fullPool = cfg.getPool();
+      const pool = cfg.activeTags.length === 0
+        ? fullPool
+        : filterByTags(fullPool, cfg.activeTags, cfg.tagMode);
+      const item = drawFromDeck(cfg.deck, pool.length > 0 ? pool : fullPool);
+      return item ? item[cfg.textField] : '';
     }
 
-    function renderJdSheet() {
-      const chipsEl = document.getElementById('jd-tag-chips');
-      const anyAllRow = document.getElementById('jd-any-all-row');
-      const poolCountEl = document.getElementById('jd-pool-count');
-      const applyBtn = document.getElementById('jd-apply-btn');
-      const aaBtns = document.querySelectorAll('.pm-aa-btn');
+    function regenPoolMode(cfg) {
+      const finalValue = generateFromPool(cfg);
+      const el = document.getElementById(cfg.ids.promptEl);
+      el.textContent = finalValue;
+      animateSlot(el, cfg.getNames(), finalValue, 1200);
+      pushToHistory(finalValue);
+      renderHistoryWidget(cfg.ids.histNav, cfg.ids.histDots, cfg.ids.histPrev, cfg.ids.histNext);
+    }
 
-      // Rebuild chips
+    function renderFilterSheet(cfg) {
+      const ids = cfg.ids;
+      const chipsEl      = document.getElementById(ids.tagChips);
+      const anyAllRow    = document.getElementById(ids.anyAllRow);
+      const poolCountEl  = document.getElementById(ids.poolCount);
+      const applyBtn     = document.getElementById(ids.applyBtn);
+      const aaBtns       = anyAllRow.querySelectorAll('.pm-aa-btn');
+
       chipsEl.innerHTML = '';
-      JD_TAGS.forEach(tag => {
+      cfg.tags.forEach(tag => {
         const chip = document.createElement('button');
-        chip.className = 'pm-chip' + (jdSheetTags.includes(tag) ? ' on' : '');
+        chip.className = 'pm-chip' + (cfg.sheetTags.includes(tag) ? ' on' : '');
         chip.textContent = tag.replace('_', ' ');
         chip.addEventListener('click', () => {
-          if (jdSheetTags.includes(tag)) {
-            jdSheetTags = jdSheetTags.filter(t => t !== tag);
-            if (jdSheetTags.length === 0) jdSheetMode = 'any';
+          if (cfg.sheetTags.includes(tag)) {
+            cfg.sheetTags = cfg.sheetTags.filter(t => t !== tag);
+            if (cfg.sheetTags.length === 0) cfg.sheetMode = 'any';
           } else {
-            jdSheetTags = [...jdSheetTags, tag];
+            cfg.sheetTags = [...cfg.sheetTags, tag];
           }
-          renderJdSheet();
+          renderFilterSheet(cfg);
         });
         chipsEl.appendChild(chip);
       });
 
-      // Any/all row visibility
-      anyAllRow.classList.toggle('hidden', jdSheetTags.length === 0);
+      anyAllRow.classList.toggle('hidden', cfg.sheetTags.length === 0);
+      aaBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.mode === cfg.sheetMode));
 
-      // Any/all button active state
-      aaBtns.forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.mode === jdSheetMode);
-      });
+      const count = cfg.sheetTags.length === 0
+        ? cfg.getPool().length
+        : filterByTags(cfg.getPool(), cfg.sheetTags, cfg.sheetMode).length;
+      poolCountEl.textContent = cfg.sheetTags.length > 0 ? `${count} prompts` : '';
 
-      // Pool count and apply button
-      const count = jdPoolCount(jdSheetTags, jdSheetMode);
-      poolCountEl.textContent = jdSheetTags.length > 0 ? `${count} prompts` : '';
-
-      // Empty pool warning
       let warning = chipsEl.parentElement.querySelector('.pm-empty-warning');
-      if (count === 0 && jdSheetTags.length > 0) {
+      if (count === 0 && cfg.sheetTags.length > 0) {
         if (!warning) {
           warning = document.createElement('p');
           warning.className = 'pm-empty-warning';
           warning.textContent = "no prompts match — try 'any' or fewer tags";
-          document.getElementById('jd-any-all-row').after(warning);
+          document.getElementById(ids.anyAllRow).after(warning);
         }
       } else if (warning) {
         warning.remove();
@@ -2247,104 +2299,80 @@ function renderCauldronConfig() {
       applyBtn.disabled = count === 0;
     }
 
-    function openJdFilterSheet() {
-      // Snapshot current active state into sheet scratch state
-      jdSheetTags = [...justDrawActiveTags];
-      jdSheetMode = justDrawTagMode;
-      document.getElementById('jd-filter-backdrop').classList.add('visible');
-      document.getElementById('jd-filter-sheet').classList.remove('hidden');
-      document.getElementById('jd-filter-btn').classList.add('active');
-      renderJdSheet();
+    function openFilterSheet(cfg) {
+      cfg.sheetTags = [...cfg.activeTags];
+      cfg.sheetMode = cfg.tagMode;
+      document.getElementById(cfg.ids.filterBackdrop).classList.add('visible');
+      document.getElementById(cfg.ids.filterSheet).classList.remove('hidden');
+      document.getElementById(cfg.ids.filterBtn).classList.add('active');
+      renderFilterSheet(cfg);
     }
 
-    function closeJdFilterSheet() {
-      document.getElementById('jd-filter-backdrop').classList.remove('visible');
-      document.getElementById('jd-filter-sheet').classList.add('hidden');
+    function closeFilterSheet(cfg) {
+      document.getElementById(cfg.ids.filterBackdrop).classList.remove('visible');
+      document.getElementById(cfg.ids.filterSheet).classList.add('hidden');
     }
 
-    function applyJdFilter() {
-      justDrawActiveTags = [...jdSheetTags];
-      justDrawTagMode = jdSheetMode;
-      justDrawDeck = [];
-      closeJdFilterSheet();
-      updateJdFilterBtn();
-      updateJdTagIndicator();
+    function applyFilter(cfg) {
+      cfg.activeTags = [...cfg.sheetTags];
+      cfg.tagMode    = cfg.sheetMode;
+      cfg.deck       = [];
+      closeFilterSheet(cfg);
+      updateFilterBtn(cfg);
+      updateTagIndicator(cfg);
     }
 
-    function updateJdFilterBtn() {
-      document.getElementById('jd-filter-btn')
-        .classList.toggle('active', justDrawActiveTags.length > 0);
+    function updateFilterBtn(cfg) {
+      document.getElementById(cfg.ids.filterBtn)
+        .classList.toggle('active', cfg.activeTags.length > 0);
     }
 
-    function updateJdTagIndicator() {
-      const el = document.getElementById('jd-tag-indicator');
-      if (justDrawActiveTags.length === 0) {
+    function updateTagIndicator(cfg) {
+      const el = document.getElementById(cfg.ids.tagIndicator);
+      if (cfg.activeTags.length === 0) {
         el.textContent = '';
       } else {
-        const labels = justDrawActiveTags.map(t => t.replace('_', ' ')).join(', ');
-        el.textContent = `${justDrawTagMode}: ${labels}`;
+        const labels = cfg.activeTags.map(t => t.replace('_', ' ')).join(', ');
+        el.textContent = `${cfg.tagMode}: ${labels}`;
       }
     }
 
-    // Filter button
-    document.getElementById('jd-filter-btn').addEventListener('click', openJdFilterSheet);
-
-    // Backdrop closes sheet without applying
+    // ── Everyday Life filter event wiring ────────────────────────
+    document.getElementById('jd-filter-btn').addEventListener('click', () => openFilterSheet(jdConfig));
     document.getElementById('jd-filter-backdrop').addEventListener('click', () => {
-      closeJdFilterSheet();
-      updateJdFilterBtn();
+      closeFilterSheet(jdConfig);
+      updateFilterBtn(jdConfig);
     });
-
-    // Any/all toggle buttons
-    document.querySelectorAll('.pm-aa-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        jdSheetMode = btn.dataset.mode;
-        renderJdSheet();
-      });
-    });
-
-    // Clear button
     document.getElementById('jd-clear-btn').addEventListener('click', () => {
-      jdSheetTags = [];
-      jdSheetMode = 'any';
-      renderJdSheet();
+      jdConfig.sheetTags = [];
+      jdConfig.sheetMode = 'any';
+      renderFilterSheet(jdConfig);
     });
-
-    // Apply button
     document.getElementById('jd-apply-btn').addEventListener('click', () => {
-      applyJdFilter();
-      const finalValue = generateJustDraw();
-      const el = document.getElementById('just-draw-prompt');
-      el.textContent = finalValue;
-      animateJustDraw(el, finalValue);
-      pushToHistory(finalValue);
-      renderHistoryWidget('history-nav-just-draw', 'hist-dots-just-draw', 'hist-prev-just-draw', 'hist-next-just-draw');
+      applyFilter(jdConfig);
+      regenPoolMode(jdConfig);
+    });
+    document.querySelectorAll('#jd-any-all-row .pm-aa-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        jdConfig.sheetMode = btn.dataset.mode;
+        renderFilterSheet(jdConfig);
+      });
     });
 
     // ── Event wiring ─────────────────────────────────────────────
     document.getElementById('btn-just-draw').addEventListener('click', () => {
       clearHistory();
-      justDrawDeck = [];
-      justDrawActiveTags = [];
-      justDrawTagMode = 'any';
-      updateJdFilterBtn();
-      updateJdTagIndicator();
-      const finalValue = generateJustDraw();
-      const el = document.getElementById('just-draw-prompt');
+      jdConfig.deck       = [];
+      jdConfig.activeTags = [];
+      jdConfig.tagMode    = 'any';
+      updateFilterBtn(jdConfig);
+      updateTagIndicator(jdConfig);
       showScreen('screen-just-draw');
-      el.textContent = finalValue;
-      animateJustDraw(el, finalValue);
-      pushToHistory(finalValue);
-      renderHistoryWidget('history-nav-just-draw', 'hist-dots-just-draw', 'hist-prev-just-draw', 'hist-next-just-draw');
+      regenPoolMode(jdConfig);
     });
 
     document.getElementById('btn-regen-just-draw').addEventListener('click', () => {
-      const finalValue = generateJustDraw();
-      const el = document.getElementById('just-draw-prompt');
-      el.textContent = finalValue;
-      animateJustDraw(el, finalValue);
-      pushToHistory(finalValue);
-      renderHistoryWidget('history-nav-just-draw', 'hist-dots-just-draw', 'hist-prev-just-draw', 'hist-next-just-draw');
+      regenPoolMode(jdConfig);
     });
 
     /**
