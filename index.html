@@ -1445,8 +1445,6 @@
     // ── Data store ──────────────────────────────────────────────
     const store = {};
     document.getElementById('btn-just-draw').disabled = true;
-    // document.getElementById('btn-surreal').disabled = true;
-    // document.getElementById('btn-mutations').disabled = true;
 
     // ── Utilities ───────────────────────────────────────────────
     function pick(arr) {
@@ -2401,30 +2399,6 @@ function renderCauldronConfig() {
       });
     });
 
-    /**
-    document.getElementById('btn-surreal').addEventListener('click', () => {
-      clearHistory();
-      imagineMode = 'surreal';
-      promptBackTarget = 'screen-home';
-      currentPrompt = generateSurrealNarrative(null, {});
-      document.getElementById('imagine-screen-label').textContent = 'Surreal Narratives';
-      showScreen('screen-imagine-prompt');
-      const container = document.getElementById('imagine-prompt');
-      renderPrompt(container, 'surreal');
-      const hint = document.getElementById('lock-hint-imagine');
-      hint.classList.add('animating');
-      animateUnlockedSlots(container);
-      setTimeout(() => hint.classList.remove('animating'), 1200);
-      pushToHistory(currentPrompt);
-      renderHistoryWidget('history-nav-imagine', 'hist-dots-imagine', 'hist-prev-imagine', 'hist-next-imagine');
-    });
-
-    document.getElementById('btn-mutations').addEventListener('click', () => {
-      showScreen('screen-mutations-type');
-    });
-
-    **/
-
     document.getElementById('btn-cauldron').addEventListener('click', () => {
       clearHistory();
       lockedSlots = {};
@@ -2465,26 +2439,6 @@ function renderCauldronConfig() {
       setTimeout(() => hint.classList.remove('animating'), 1200);
       pushToHistory(currentPrompt);
       renderHistoryWidget('history-nav-imagine', 'hist-dots-imagine', 'hist-prev-imagine', 'hist-next-imagine');
-    });
-
-    ['organic-organic', 'organic-synthetic', 'synthetic-synthetic', 'random'].forEach(type => {
-      document.getElementById(`btn-type-${type}`).addEventListener('click', () => {
-        clearHistory();
-        imagineMode = 'mutations';
-        mutationType = type;  // 'random' stays 'random' — each regen re-rolls the concrete type
-        promptBackTarget = 'screen-mutations-type';
-        currentPrompt = generateMutation(type, null, {});
-        document.getElementById('imagine-screen-label').textContent = 'Strange Combinations';
-        showScreen('screen-imagine-prompt');
-        const container = document.getElementById('imagine-prompt');
-        renderPrompt(container, 'mutations');
-        const hint = document.getElementById('lock-hint-imagine');
-        hint.classList.add('animating');
-        animateUnlockedSlots(container);
-        setTimeout(() => hint.classList.remove('animating'), 1200);
-        pushToHistory(currentPrompt);
-        renderHistoryWidget('history-nav-imagine', 'hist-dots-imagine', 'hist-prev-imagine', 'hist-next-imagine');
-      });
     });
 
     document.getElementById('btn-regen-imagine').addEventListener('click', () => {
@@ -2634,15 +2588,11 @@ function renderCauldronConfig() {
         store.verbsTags           = [...new Set(verbsRaw.flatMap(i => i.tags))].sort();
         store.environmentsTags    = [...new Set(environmentsRaw.flatMap(i => i.tags))].sort();
         document.getElementById('btn-just-draw').disabled = false;
-        // document.getElementById('btn-surreal').disabled = false;
-        // document.getElementById('btn-mutations').disabled = false;
         document.getElementById('btn-cauldron').disabled = false;
         document.getElementById('btn-strange-scenes').disabled = false;
       } catch {
         document.getElementById('error-banner').classList.remove('hidden');
         document.getElementById('btn-just-draw').disabled = true;
-        // document.getElementById('btn-surreal').disabled = true;
-        //document.getElementById('btn-mutations').disabled = true;
         document.getElementById('btn-cauldron').disabled = true;
         document.getElementById('btn-strange-scenes').disabled = true;
       }
