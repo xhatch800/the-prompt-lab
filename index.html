@@ -370,6 +370,20 @@
   pointer-events: auto;
 }
 
+    /* ── Everyday Life header right group ── */
+    .jd-header-right {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 10;
+    }
+    .jd-header-right .copy-btn {
+      position: static;
+    }
+
     /* ── Everyday Life filter ── */
     .jd-filter-btn {
       font-family: 'Caveat', cursive;
@@ -1350,9 +1364,11 @@
     <div class="back-row">
       <button class="back-btn" data-target="screen-home">←</button>
       <span class="screen-label">Everyday Life</span>
-      <button id="jd-filter-btn" class="jd-filter-btn">⊞ filter</button>
     </div>
-    <button class="copy-btn" id="copy-just-draw" title="Copy prompt">⧉</button>
+    <div class="jd-header-right">
+      <button id="jd-filter-btn" class="jd-filter-btn">⊞ filter</button>
+      <button class="copy-btn" id="copy-just-draw" title="Copy prompt">⧉</button>
+    </div>
     <p id="just-draw-prompt" class="prompt-text"></p>
     <p id="jd-tag-indicator" class="jd-tag-indicator"></p>
     <button id="btn-regen-just-draw" class="regen-btn">↺ new prompt</button>
