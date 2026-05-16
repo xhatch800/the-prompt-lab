@@ -1378,11 +1378,11 @@
       <span class="screen-label">Everyday Life</span>
     </div>
     <div class="pm-header-right">
-      <button id="pm-filter-btn" class="pm-filter-btn">⊞ filter</button>
+      <button id="jd-filter-btn" class="pm-filter-btn">⊞ filter</button>
       <button class="copy-btn" id="copy-just-draw" title="Copy prompt">⧉ copy</button>
     </div>
     <p id="just-draw-prompt" class="prompt-text"></p>
-    <p id="pm-tag-indicator" class="pm-tag-indicator"></p>
+    <p id="jd-tag-indicator" class="pm-tag-indicator"></p>
     <button id="btn-regen-just-draw" class="regen-btn">↺ new prompt</button>
     <div class="history-nav" id="history-nav-just-draw">
       <button class="hist-arrow" id="hist-prev-just-draw">‹</button>
@@ -1392,22 +1392,22 @@
     <p class="just-draw-attribution">Prompt list by <a href="https://dannygregorysblog.com/community/edm-challenges/" target="_blank" rel="noopener">Danny Gregory</a></p>
 
     <!-- Filter sheet overlay -->
-    <div id="pm-filter-backdrop" class="pm-filter-backdrop"></div>
-    <div id="pm-filter-sheet" class="pm-filter-sheet hidden">
+    <div id="jd-filter-backdrop" class="pm-filter-backdrop"></div>
+    <div id="jd-filter-sheet" class="pm-filter-sheet hidden">
       <div class="pm-sheet-title">Filter by subject</div>
       <p class="pm-sheet-subtitle">All prompts shown when nothing selected</p>
-      <div id="pm-tag-chips" class="pm-tag-chips"></div>
-      <div id="pm-any-all-row" class="pm-any-all-row hidden">
+      <div id="jd-tag-chips" class="pm-tag-chips"></div>
+      <div id="jd-any-all-row" class="pm-any-all-row hidden">
         <span class="pm-any-all-label">match</span>
         <div class="pm-any-all-toggle">
           <button class="pm-aa-btn active" data-mode="any">any</button>
           <button class="pm-aa-btn" data-mode="all">all</button>
         </div>
-        <span id="pm-pool-count" class="pm-pool-count"></span>
+        <span id="jd-pool-count" class="pm-pool-count"></span>
       </div>
       <div class="pm-sheet-actions">
-        <button id="pm-clear-btn" class="pm-clear-btn">clear</button>
-        <button id="pm-apply-btn" class="pm-apply-btn">↺ new prompt</button>
+        <button id="jd-clear-btn" class="pm-clear-btn">clear</button>
+        <button id="jd-apply-btn" class="pm-apply-btn">↺ new prompt</button>
       </div>
     </div>
   </div>
@@ -2195,10 +2195,10 @@ function renderCauldronConfig() {
     }
 
     function renderJdSheet() {
-      const chipsEl = document.getElementById('pm-tag-chips');
-      const anyAllRow = document.getElementById('pm-any-all-row');
-      const poolCountEl = document.getElementById('pm-pool-count');
-      const applyBtn = document.getElementById('pm-apply-btn');
+      const chipsEl = document.getElementById('jd-tag-chips');
+      const anyAllRow = document.getElementById('jd-any-all-row');
+      const poolCountEl = document.getElementById('jd-pool-count');
+      const applyBtn = document.getElementById('jd-apply-btn');
       const aaBtns = document.querySelectorAll('.pm-aa-btn');
 
       // Rebuild chips
@@ -2238,7 +2238,7 @@ function renderCauldronConfig() {
           warning = document.createElement('p');
           warning.className = 'pm-empty-warning';
           warning.textContent = "no prompts match — try 'any' or fewer tags";
-          document.getElementById('pm-any-all-row').after(warning);
+          document.getElementById('jd-any-all-row').after(warning);
         }
       } else if (warning) {
         warning.remove();
@@ -2251,15 +2251,15 @@ function renderCauldronConfig() {
       // Snapshot current active state into sheet scratch state
       jdSheetTags = [...justDrawActiveTags];
       jdSheetMode = justDrawTagMode;
-      document.getElementById('pm-filter-backdrop').classList.add('visible');
-      document.getElementById('pm-filter-sheet').classList.remove('hidden');
-      document.getElementById('pm-filter-btn').classList.add('active');
+      document.getElementById('jd-filter-backdrop').classList.add('visible');
+      document.getElementById('jd-filter-sheet').classList.remove('hidden');
+      document.getElementById('jd-filter-btn').classList.add('active');
       renderJdSheet();
     }
 
     function closeJdFilterSheet() {
-      document.getElementById('pm-filter-backdrop').classList.remove('visible');
-      document.getElementById('pm-filter-sheet').classList.add('hidden');
+      document.getElementById('jd-filter-backdrop').classList.remove('visible');
+      document.getElementById('jd-filter-sheet').classList.add('hidden');
     }
 
     function applyJdFilter() {
@@ -2272,12 +2272,12 @@ function renderCauldronConfig() {
     }
 
     function updateJdFilterBtn() {
-      document.getElementById('pm-filter-btn')
+      document.getElementById('jd-filter-btn')
         .classList.toggle('active', justDrawActiveTags.length > 0);
     }
 
     function updateJdTagIndicator() {
-      const el = document.getElementById('pm-tag-indicator');
+      const el = document.getElementById('jd-tag-indicator');
       if (justDrawActiveTags.length === 0) {
         el.textContent = '';
       } else {
@@ -2287,10 +2287,10 @@ function renderCauldronConfig() {
     }
 
     // Filter button
-    document.getElementById('pm-filter-btn').addEventListener('click', openJdFilterSheet);
+    document.getElementById('jd-filter-btn').addEventListener('click', openJdFilterSheet);
 
     // Backdrop closes sheet without applying
-    document.getElementById('pm-filter-backdrop').addEventListener('click', () => {
+    document.getElementById('jd-filter-backdrop').addEventListener('click', () => {
       closeJdFilterSheet();
       updateJdFilterBtn();
     });
@@ -2304,14 +2304,14 @@ function renderCauldronConfig() {
     });
 
     // Clear button
-    document.getElementById('pm-clear-btn').addEventListener('click', () => {
+    document.getElementById('jd-clear-btn').addEventListener('click', () => {
       jdSheetTags = [];
       jdSheetMode = 'any';
       renderJdSheet();
     });
 
     // Apply button
-    document.getElementById('pm-apply-btn').addEventListener('click', () => {
+    document.getElementById('jd-apply-btn').addEventListener('click', () => {
       applyJdFilter();
       const finalValue = generateJustDraw();
       const el = document.getElementById('just-draw-prompt');
