@@ -9,6 +9,8 @@
 
 Add a "Strange Scenes" mode to the home screen. It draws randomly from ~50 curated Roland Topor-inspired full prompts, with tag-based filtering. The experience mirrors "Everyday Life" exactly: its own dedicated screen, filter sheet, regen, history, and copy — no component locking (prompts are atomic).
 
+**Approach:** Refactor Everyday Life's bespoke filter sheet code into shared parameterized abstractions, then build Strange Scenes on top of those same abstractions. No duplication between the two modes.
+
 The Topor component words (adjectives, nouns, verbs) were added to the existing data pools separately and are not part of this feature.
 
 ---
@@ -26,7 +28,7 @@ Array of prompt objects, each with `text` (string) and `tags` (array of strings)
 ]
 ```
 
-**Tag vocabulary** (thematic, not exhaustive per prompt):
+**Tag vocabulary:**
 
 | Tag | Theme |
 |---|---|
@@ -41,67 +43,139 @@ All ~50 prompts from `references/topor-prompts.md` are tagged and included.
 
 ---
 
+## Shared Abstractions (Refactor)
+
+Everyday Life's filter sheet is currently bespoke: hardcoded to `jd-*` element IDs and `store.justDraw`. This refactor extracts it into parameterized functions that both modes share.
+
+### Mode Config Object
+
+Each pool mode (Everyday Life, Strange Scenes) is described by a config object:
+
+```js
+{
+  pool: [],            // full data array (e.g. store.justDraw or store.strangeScenes)
+  tags: [],            // available tag strings for this mode
+  deck: [],            // shuffle deck (no-repeat); reset on home entry
+  activeTags: [],      // applied filter (empty = no filter)
+  tagMode: 'any',      // 'any' | 'all'
+  ids: {               // element IDs specific to this mode's screen
+    screen: '',
+    promptEl: '',
+    tagIndicator: '',
+    regenBtn: '',
+    filterBtn: '',
+    filterBackdrop: '',
+    filterSheet: '',
+    tagChips: '',
+    anyAllRow: '',
+    aaBtns: '',        // CSS selector for any/all buttons in this sheet
+    poolCount: '',
+    clearBtn: '',
+    applyBtn: '',
+    histNav: '',
+    histDots: '',
+    histPrev: '',
+    histNext: '',
+    copyBtn: ''
+  }
+}
+```
+
+### Shared Functions (replacing bespoke `jd*` functions)
+
+| New function | Replaces |
+|---|---|
+| `renderFilterSheet(cfg)` | `renderJdSheet()` |
+| `openFilterSheet(cfg)` | `openJdFilterSheet()` |
+| `closeFilterSheet(cfg)` | `closeJdFilterSheet()` |
+| `applyFilter(cfg)` | `applyJdFilter()` |
+| `updateFilterBtn(cfg)` | `updateJdFilterBtn()` |
+| `updateTagIndicator(cfg)` | `updateJdTagIndicator()` |
+| `generateFromPool(cfg)` | `generateJustDraw()` |
+| `regenPoolMode(cfg)` | inline regen logic in event listeners |
+
+Each function takes the mode's config object and operates on its `ids` and state — no hardcoded `jd-*` references.
+
+### CSS Classes
+
+Rename `jd-*` filter sheet classes to shared `pm-*` (pool mode) classes:
+
+| Old (Everyday Life only) | New (shared) |
+|---|---|
+| `.jd-filter-btn` | `.pm-filter-btn` |
+| `.jd-filter-backdrop` | `.pm-filter-backdrop` |
+| `.jd-filter-sheet` | `.pm-filter-sheet` |
+| `.jd-chip` | `.pm-chip` |
+| `.jd-any-all-row` | `.pm-any-all-row` |
+| `.jd-aa-btn` | `.pm-aa-btn` |
+| `.jd-pool-count` | `.pm-pool-count` |
+| `.jd-sheet-actions` | `.pm-sheet-actions` |
+| `.jd-clear-btn` | `.pm-clear-btn` |
+| `.jd-apply-btn` | `.pm-apply-btn` |
+| `.jd-empty-warning` | `.pm-empty-warning` |
+| `.jd-tag-indicator` | `.pm-tag-indicator` |
+| `.jd-header-right` | `.pm-header-right` |
+| `.jd-sheet-title` | `.pm-sheet-title` |
+| `.jd-sheet-subtitle` | `.pm-sheet-subtitle` |
+| `.jd-tag-chips` | `.pm-tag-chips` |
+
+Everyday Life's HTML is updated to use `pm-*` classes. Strange Scenes HTML uses the same `pm-*` classes from the start.
+
+Screen-specific layout overrides (positioning of regen-btn, history-nav, prompt-text) stay scoped to each screen ID (`#screen-just-draw`, `#screen-strange-scenes`) — those are not shared.
+
+---
+
 ## Home Screen
 
-Add a "Strange Scenes" button to the `.mode-buttons` group on the home screen, alongside "Everyday Life" and "✦ Surreal Cauldron".
+Add a "Strange Scenes" button to the `.mode-buttons` group alongside "Everyday Life" and "✦ Surreal Cauldron".
 
 ---
 
 ## Screen: `screen-strange-scenes`
 
-Mirrors `screen-just-draw` in structure:
+Structure mirrors `screen-just-draw`, using shared `pm-*` classes:
 
 ```
 [ ← back ]  [ Strange Scenes ]  [ ⊞ filter ]  [ ⧉ copy ]
 <p id="ss-prompt" class="prompt-text"></p>
-<p id="ss-tag-indicator" class="ss-tag-indicator"></p>
+<p id="ss-tag-indicator" class="pm-tag-indicator"></p>
 [ ↺ new prompt ]
-[ ‹  ● ● ○  › ]   (history nav)
+[ ‹  ● ● ○  › ]
 Prompts inspired by the work of Roland Topor
-[ filter backdrop + filter sheet ]
+[ pm-filter-backdrop ][ pm-filter-sheet ]
 ```
 
-- **No locking** — prompts are atomic single sentences; no slot lock controls
-- **Filter sheet** — same chip + any/all + pool count + apply pattern as Everyday Life, using the 6 Topor tags
-- **History** — reuses existing history nav pattern; keyed to `'strange-scenes'` mode
-- **Attribution** — "Prompts inspired by the work of Roland Topor"
+- No locking — prompts are atomic single sentences
+- Attribution: "Prompts inspired by the work of Roland Topor"
+- Filter sheet title: "Filter by theme" (vs Everyday Life's "Filter by subject")
 
 ---
 
-## Mode Identifier
+## State
 
-Internal mode string: `'strange-scenes'`
+```js
+// Everyday Life (existing, kept as-is in shape, values reset on home entry)
+const jdConfig = { pool: [], tags: JD_TAGS, deck: [], activeTags: [], tagMode: 'any', ids: { ... } };
 
-Used in `imagineMode` state, `renderPrompt()` branch, `animateUnlockedSlots()` branch, history keying, and filter state.
+// Strange Scenes (new)
+const ssConfig = { pool: [], tags: SS_TAGS, deck: [], activeTags: [], tagMode: 'any', ids: { ... } };
+```
 
----
-
-## Generate Function: `generateStrangeScenes()`
-
-Mirrors `generateJustDraw()` in structure:
-
-1. Filter `strangeScenes` pool by selected tags (any/all mode)
-2. Draw one prompt using the existing `drawFromDeck` no-repeat pattern, keyed to a `scenesDecks` deck
-3. Return the prompt text
-
-No sub-slots. The returned value is a plain string rendered into `#ss-prompt`.
+`store.strangeScenes` holds the loaded `strange_scenes.json` data (same load pattern as `store.justDraw`).
 
 ---
 
-## Filter State
+## History
 
-Separate from the Everyday Life filter state. New variables:
+History is shared (`promptHistory`, `historyIndex`, `pushToHistory`). Both modes use `renderHistoryWidget` with their own nav element IDs — already parameterized, no change needed.
 
-- `ssActiveTags` — set of active tag strings (default: all off = no filter)
-- `ssAnyAll` — `'any'` or `'all'` (default: `'any'`)
-
-Filter applies on "Apply" tap, same as Everyday Life.
+`navigateHistory` currently hardcodes suffix logic (`'just-draw'` vs `'imagine'`). This is extended to handle `'strange-scenes'` the same way, or refactored to derive suffix from the mode config.
 
 ---
 
 ## What Is Not Changing
 
 - Surreal Cauldron — untouched
-- Everyday Life — untouched
 - Shared prompt screen (`screen-imagine-prompt`) — untouched
 - Existing data files — untouched (Topor words already added separately)
+- Everyday Life behavior — identical after refactor, only internals change
