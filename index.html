@@ -373,7 +373,7 @@
 }
 
     /* ── Everyday Life header right group ── */
-    .jd-header-right {
+    .pm-header-right {
       position: absolute;
       top: 1.2rem;
       right: 1.2rem;
@@ -382,12 +382,12 @@
       gap: 8px;
       z-index: 25;
     }
-    .jd-header-right .copy-btn {
+    .pm-header-right .copy-btn {
       position: static;
     }
 
     /* ── Everyday Life filter ── */
-    .jd-filter-btn {
+    .pm-filter-btn {
       font-family: 'Caveat', cursive;
       font-size: 1rem;
       border: 1.5px solid #b85c38;
@@ -399,12 +399,12 @@
       line-height: 1.5;
       transition: background 0.1s, color 0.1s;
     }
-    .jd-filter-btn.active {
+    .pm-filter-btn.active {
       background: #b85c38;
       color: #fdf8f0;
     }
 
-    .jd-tag-indicator {
+    .pm-tag-indicator {
       position: absolute;
       bottom: 9.5rem;
       left: 0;
@@ -419,7 +419,7 @@
     }
 
     /* ── Filter sheet ── */
-    .jd-filter-backdrop {
+    .pm-filter-backdrop {
       position: absolute;
       top: 3.5rem;
       left: 0;
@@ -431,12 +431,12 @@
       pointer-events: none;
       transition: opacity 0.2s ease;
     }
-    .jd-filter-backdrop.visible {
+    .pm-filter-backdrop.visible {
       opacity: 1;
       pointer-events: auto;
     }
 
-    .jd-filter-sheet {
+    .pm-filter-sheet {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -448,7 +448,7 @@
       box-shadow: 0 -4px 24px rgba(0,0,0,0.12);
     }
 
-    .jd-sheet-title {
+    .pm-sheet-title {
       font-family: 'Caveat', cursive;
       font-size: 1.6rem;
       font-weight: 700;
@@ -456,21 +456,21 @@
       margin-bottom: 0.15rem;
     }
 
-    .jd-sheet-subtitle {
+    .pm-sheet-subtitle {
       font-family: sans-serif;
       font-size: 0.9rem;
       color: #aaa;
       margin-bottom: 0.85rem;
     }
 
-    .jd-tag-chips {
+    .pm-tag-chips {
       display: flex;
       flex-wrap: wrap;
       gap: 0.45rem;
       margin-bottom: 0.8rem;
     }
 
-    .jd-chip {
+    .pm-chip {
       font-family: 'Caveat', cursive;
       font-size: 1.4rem;
       border: 1.5px solid #b85c38;
@@ -482,33 +482,33 @@
       transition: background 0.1s, color 0.1s;
     }
 
-    .jd-chip.on {
+    .pm-chip.on {
       background: #b85c38;
       color: #fdf8f0;
     }
 
-    .jd-any-all-row {
+    .pm-any-all-row {
       display: flex;
       align-items: center;
       gap: 0.6rem;
       margin-bottom: 0.8rem;
     }
-    .jd-any-all-row.hidden { display: none; }
+    .pm-any-all-row.hidden { display: none; }
 
-    .jd-any-all-label {
+    .pm-any-all-label {
       font-family: sans-serif;
       font-size: 0.95rem;
       color: #888;
     }
 
-    .jd-any-all-toggle {
+    .pm-any-all-toggle {
       display: flex;
       border: 1.5px solid #b85c38;
       border-radius: 8px;
       overflow: hidden;
     }
 
-    .jd-aa-btn {
+    .pm-aa-btn {
       font-family: sans-serif;
       font-size: 0.95rem;
       font-weight: 700;
@@ -519,16 +519,16 @@
       cursor: pointer;
     }
 
-    .jd-aa-btn + .jd-aa-btn {
+    .pm-aa-btn + .pm-aa-btn {
       border-left: 1.5px solid #b85c38;
     }
 
-    .jd-aa-btn.active {
+    .pm-aa-btn.active {
       background: #b85c38;
       color: #fdf8f0;
     }
 
-    .jd-pool-count {
+    .pm-pool-count {
       font-family: sans-serif;
       font-size: 0.95rem;
       color: #b85c38;
@@ -536,12 +536,12 @@
       margin-left: auto;
     }
 
-    .jd-sheet-actions {
+    .pm-sheet-actions {
       display: flex;
       gap: 0.6rem;
     }
 
-    .jd-clear-btn {
+    .pm-clear-btn {
       font-family: 'Caveat', cursive;
       font-size: 1.5rem;
       background: #fdf8f0;
@@ -553,7 +553,7 @@
       flex: 1;
     }
 
-    .jd-apply-btn {
+    .pm-apply-btn {
       font-family: 'Caveat', cursive;
       font-size: 1.5rem;
       background: #fdf8f0;
@@ -566,13 +566,13 @@
       box-shadow: 2px 2px 0 #b85c38;
     }
 
-    .jd-apply-btn:disabled {
+    .pm-apply-btn:disabled {
       opacity: 0.35;
       cursor: default;
       box-shadow: none;
     }
 
-    .jd-empty-warning {
+    .pm-empty-warning {
       font-family: sans-serif;
       font-size: 0.9rem;
       color: #b85c38;
@@ -1377,12 +1377,12 @@
       <button class="back-btn" data-target="screen-home">←</button>
       <span class="screen-label">Everyday Life</span>
     </div>
-    <div class="jd-header-right">
-      <button id="jd-filter-btn" class="jd-filter-btn">⊞ filter</button>
+    <div class="pm-header-right">
+      <button id="pm-filter-btn" class="pm-filter-btn">⊞ filter</button>
       <button class="copy-btn" id="copy-just-draw" title="Copy prompt">⧉ copy</button>
     </div>
     <p id="just-draw-prompt" class="prompt-text"></p>
-    <p id="jd-tag-indicator" class="jd-tag-indicator"></p>
+    <p id="pm-tag-indicator" class="pm-tag-indicator"></p>
     <button id="btn-regen-just-draw" class="regen-btn">↺ new prompt</button>
     <div class="history-nav" id="history-nav-just-draw">
       <button class="hist-arrow" id="hist-prev-just-draw">‹</button>
@@ -1392,22 +1392,22 @@
     <p class="just-draw-attribution">Prompt list by <a href="https://dannygregorysblog.com/community/edm-challenges/" target="_blank" rel="noopener">Danny Gregory</a></p>
 
     <!-- Filter sheet overlay -->
-    <div id="jd-filter-backdrop" class="jd-filter-backdrop"></div>
-    <div id="jd-filter-sheet" class="jd-filter-sheet hidden">
-      <div class="jd-sheet-title">Filter by subject</div>
-      <p class="jd-sheet-subtitle">All prompts shown when nothing selected</p>
-      <div id="jd-tag-chips" class="jd-tag-chips"></div>
-      <div id="jd-any-all-row" class="jd-any-all-row hidden">
-        <span class="jd-any-all-label">match</span>
-        <div class="jd-any-all-toggle">
-          <button class="jd-aa-btn active" data-mode="any">any</button>
-          <button class="jd-aa-btn" data-mode="all">all</button>
+    <div id="pm-filter-backdrop" class="pm-filter-backdrop"></div>
+    <div id="pm-filter-sheet" class="pm-filter-sheet hidden">
+      <div class="pm-sheet-title">Filter by subject</div>
+      <p class="pm-sheet-subtitle">All prompts shown when nothing selected</p>
+      <div id="pm-tag-chips" class="pm-tag-chips"></div>
+      <div id="pm-any-all-row" class="pm-any-all-row hidden">
+        <span class="pm-any-all-label">match</span>
+        <div class="pm-any-all-toggle">
+          <button class="pm-aa-btn active" data-mode="any">any</button>
+          <button class="pm-aa-btn" data-mode="all">all</button>
         </div>
-        <span id="jd-pool-count" class="jd-pool-count"></span>
+        <span id="pm-pool-count" class="pm-pool-count"></span>
       </div>
-      <div class="jd-sheet-actions">
-        <button id="jd-clear-btn" class="jd-clear-btn">clear</button>
-        <button id="jd-apply-btn" class="jd-apply-btn">↺ new prompt</button>
+      <div class="pm-sheet-actions">
+        <button id="pm-clear-btn" class="pm-clear-btn">clear</button>
+        <button id="pm-apply-btn" class="pm-apply-btn">↺ new prompt</button>
       </div>
     </div>
   </div>
@@ -2195,17 +2195,17 @@ function renderCauldronConfig() {
     }
 
     function renderJdSheet() {
-      const chipsEl = document.getElementById('jd-tag-chips');
-      const anyAllRow = document.getElementById('jd-any-all-row');
-      const poolCountEl = document.getElementById('jd-pool-count');
-      const applyBtn = document.getElementById('jd-apply-btn');
-      const aaBtns = document.querySelectorAll('.jd-aa-btn');
+      const chipsEl = document.getElementById('pm-tag-chips');
+      const anyAllRow = document.getElementById('pm-any-all-row');
+      const poolCountEl = document.getElementById('pm-pool-count');
+      const applyBtn = document.getElementById('pm-apply-btn');
+      const aaBtns = document.querySelectorAll('.pm-aa-btn');
 
       // Rebuild chips
       chipsEl.innerHTML = '';
       JD_TAGS.forEach(tag => {
         const chip = document.createElement('button');
-        chip.className = 'jd-chip' + (jdSheetTags.includes(tag) ? ' on' : '');
+        chip.className = 'pm-chip' + (jdSheetTags.includes(tag) ? ' on' : '');
         chip.textContent = tag.replace('_', ' ');
         chip.addEventListener('click', () => {
           if (jdSheetTags.includes(tag)) {
@@ -2232,13 +2232,13 @@ function renderCauldronConfig() {
       poolCountEl.textContent = jdSheetTags.length > 0 ? `${count} prompts` : '';
 
       // Empty pool warning
-      let warning = chipsEl.parentElement.querySelector('.jd-empty-warning');
+      let warning = chipsEl.parentElement.querySelector('.pm-empty-warning');
       if (count === 0 && jdSheetTags.length > 0) {
         if (!warning) {
           warning = document.createElement('p');
-          warning.className = 'jd-empty-warning';
+          warning.className = 'pm-empty-warning';
           warning.textContent = "no prompts match — try 'any' or fewer tags";
-          document.getElementById('jd-any-all-row').after(warning);
+          document.getElementById('pm-any-all-row').after(warning);
         }
       } else if (warning) {
         warning.remove();
@@ -2251,15 +2251,15 @@ function renderCauldronConfig() {
       // Snapshot current active state into sheet scratch state
       jdSheetTags = [...justDrawActiveTags];
       jdSheetMode = justDrawTagMode;
-      document.getElementById('jd-filter-backdrop').classList.add('visible');
-      document.getElementById('jd-filter-sheet').classList.remove('hidden');
-      document.getElementById('jd-filter-btn').classList.add('active');
+      document.getElementById('pm-filter-backdrop').classList.add('visible');
+      document.getElementById('pm-filter-sheet').classList.remove('hidden');
+      document.getElementById('pm-filter-btn').classList.add('active');
       renderJdSheet();
     }
 
     function closeJdFilterSheet() {
-      document.getElementById('jd-filter-backdrop').classList.remove('visible');
-      document.getElementById('jd-filter-sheet').classList.add('hidden');
+      document.getElementById('pm-filter-backdrop').classList.remove('visible');
+      document.getElementById('pm-filter-sheet').classList.add('hidden');
     }
 
     function applyJdFilter() {
@@ -2272,12 +2272,12 @@ function renderCauldronConfig() {
     }
 
     function updateJdFilterBtn() {
-      document.getElementById('jd-filter-btn')
+      document.getElementById('pm-filter-btn')
         .classList.toggle('active', justDrawActiveTags.length > 0);
     }
 
     function updateJdTagIndicator() {
-      const el = document.getElementById('jd-tag-indicator');
+      const el = document.getElementById('pm-tag-indicator');
       if (justDrawActiveTags.length === 0) {
         el.textContent = '';
       } else {
@@ -2287,16 +2287,16 @@ function renderCauldronConfig() {
     }
 
     // Filter button
-    document.getElementById('jd-filter-btn').addEventListener('click', openJdFilterSheet);
+    document.getElementById('pm-filter-btn').addEventListener('click', openJdFilterSheet);
 
     // Backdrop closes sheet without applying
-    document.getElementById('jd-filter-backdrop').addEventListener('click', () => {
+    document.getElementById('pm-filter-backdrop').addEventListener('click', () => {
       closeJdFilterSheet();
       updateJdFilterBtn();
     });
 
     // Any/all toggle buttons
-    document.querySelectorAll('.jd-aa-btn').forEach(btn => {
+    document.querySelectorAll('.pm-aa-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         jdSheetMode = btn.dataset.mode;
         renderJdSheet();
@@ -2304,14 +2304,14 @@ function renderCauldronConfig() {
     });
 
     // Clear button
-    document.getElementById('jd-clear-btn').addEventListener('click', () => {
+    document.getElementById('pm-clear-btn').addEventListener('click', () => {
       jdSheetTags = [];
       jdSheetMode = 'any';
       renderJdSheet();
     });
 
     // Apply button
-    document.getElementById('jd-apply-btn').addEventListener('click', () => {
+    document.getElementById('pm-apply-btn').addEventListener('click', () => {
       applyJdFilter();
       const finalValue = generateJustDraw();
       const el = document.getElementById('just-draw-prompt');
