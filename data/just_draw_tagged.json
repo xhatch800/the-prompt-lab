@@ -20,7 +20,6 @@
   {
     "name": "Draw a fish",
     "tags": [
-      "organic",
       "nature"
     ]
   },
@@ -82,7 +81,6 @@
   {
     "name": "Draw your neighbor",
     "tags": [
-      "organic",
       "figures"
     ]
   },
@@ -137,7 +135,6 @@
   {
     "name": "Draw an eye",
     "tags": [
-      "organic",
       "figures"
     ]
   },
@@ -150,7 +147,6 @@
   {
     "name": "Draw something that loves the sun",
     "tags": [
-      "organic",
       "sensory",
       "nature"
     ]
@@ -177,7 +173,6 @@
   {
     "name": "Draw a skyscape",
     "tags": [
-      "organic",
       "spatial",
       "nature"
     ]
@@ -229,14 +224,12 @@
     "name": "Draw something under water",
     "tags": [
       "spatial",
-      "organic",
       "nature"
     ]
   },
   {
     "name": "Draw your hair in the morning",
     "tags": [
-      "organic",
       "temporal",
       "figures"
     ]
@@ -307,7 +300,6 @@
   {
     "name": "Draw a dog (yours or a friend's or anyone's)",
     "tags": [
-      "organic",
       "nature"
     ]
   },
@@ -333,7 +325,7 @@
   {
     "name": "Draw something with more than 2 legs",
     "tags": [
-      "organic"
+      "nature"
     ]
   },
   {
@@ -352,7 +344,6 @@
   {
     "name": "Draw a sign of spring (or fall if you live in the southern hemisphere)",
     "tags": [
-      "organic",
       "nature"
     ]
   },
@@ -366,7 +357,8 @@
   {
     "name": "Draw an herb or spice",
     "tags": [
-      "still_life"
+      "still_life",
+      "botanical"
     ]
   },
   {
@@ -378,7 +370,6 @@
   {
     "name": "Draw a person near you on a train, bus or plane",
     "tags": [
-      "organic",
       "urban",
       "figures"
     ]
@@ -393,8 +384,8 @@
   {
     "name": "Draw a tree or trees, leaves or branches",
     "tags": [
-      "organic",
-      "nature"
+      "nature",
+      "botanical"
     ]
   },
   {
@@ -406,15 +397,15 @@
   {
     "name": "Draw a pine or fir tree",
     "tags": [
-      "organic",
-      "nature"
+      "nature",
+      "botanical"
     ]
   },
   {
     "name": "Draw a house plant",
     "tags": [
-      "organic",
-      "nature"
+      "nature",
+      "botanical"
     ]
   },
   {
@@ -444,7 +435,6 @@
   {
     "name": "Draw or paint something that's alive \u2013 an animal or plant",
     "tags": [
-      "organic",
       "nature"
     ]
   },
@@ -457,7 +447,6 @@
   {
     "name": "Draw a butterfly",
     "tags": [
-      "organic",
       "nature"
     ]
   },
@@ -470,7 +459,8 @@
   {
     "name": "Draw a piece of fruit",
     "tags": [
-      "still_life"
+      "still_life",
+      "botanical"
     ]
   },
   {
@@ -542,7 +532,7 @@
   {
     "name": "Draw a Winter Olympic event",
     "tags": [
-      "organic"
+      "figures"
     ]
   },
   {
@@ -560,8 +550,8 @@
   {
     "name": "Draw (or paint) a tree in autumn",
     "tags": [
-      "organic",
-      "nature"
+      "nature",
+      "botanical"
     ]
   },
   {
@@ -579,7 +569,6 @@
   {
     "name": "Draw a cat",
     "tags": [
-      "organic",
       "nature"
     ]
   },
@@ -605,7 +594,6 @@
   {
     "name": "Draw a self portrait",
     "tags": [
-      "organic",
       "figures"
     ]
   },
@@ -654,7 +642,8 @@
   {
     "name": "Draw a nut",
     "tags": [
-      "still_life"
+      "still_life",
+      "botanical"
     ]
   },
   {
@@ -673,7 +662,7 @@
   {
     "name": "Draw an animal \u2013 a pet, a zoo animal, a stuffed one",
     "tags": [
-      "organic"
+      "nature"
     ]
   },
   {
@@ -762,16 +751,15 @@
   {
     "name": "Draw your thumb",
     "tags": [
-      "organic",
       "figures"
     ]
   },
   {
     "name": "Draw some flowers (or colorful showy foliage)",
     "tags": [
-      "organic",
       "sensory",
-      "nature"
+      "nature",
+      "botanical"
     ]
   },
   {
@@ -796,7 +784,6 @@
   {
     "name": "Draw people doing something",
     "tags": [
-      "organic",
       "figures"
     ]
   },
@@ -809,7 +796,8 @@
   {
     "name": "Draw or paint a lemon",
     "tags": [
-      "still_life"
+      "still_life",
+      "botanical"
     ]
   },
   {
@@ -858,7 +846,6 @@
   {
     "name": "Draw a bird",
     "tags": [
-      "organic",
       "nature"
     ]
   },
@@ -983,7 +970,6 @@
   {
     "name": "Draw an ear, or two or three or more",
     "tags": [
-      "organic",
       "figures"
     ]
   },
@@ -1010,7 +996,6 @@
   {
     "name": "Draw your hand or hands (or someone else's if you like)",
     "tags": [
-      "organic",
       "figures"
     ]
   },
@@ -1084,8 +1069,8 @@
   {
     "name": "Draw a fall leaf",
     "tags": [
-      "organic",
-      "nature"
+      "nature",
+      "botanical"
     ]
   },
   {
@@ -1118,7 +1103,6 @@
   {
     "name": "Draw some rocks",
     "tags": [
-      "organic",
       "nature"
     ]
   },
@@ -1162,7 +1146,6 @@
   {
     "name": "Draw or paint a landscape",
     "tags": [
-      "organic",
       "spatial",
       "nature"
     ]
@@ -1278,7 +1261,6 @@
   {
     "name": "Draw your foot",
     "tags": [
-      "organic",
       "figures"
     ]
   },
@@ -1329,7 +1311,6 @@
   {
     "name": "Draw a toe",
     "tags": [
-      "organic",
       "figures"
     ]
   },
@@ -1367,7 +1348,6 @@
   {
     "name": "Draw some hair",
     "tags": [
-      "organic",
       "figures"
     ]
   },
@@ -1400,7 +1380,6 @@
   {
     "name": "Draw a nearby body of water \u2013 ocean, lake, pond, river",
     "tags": [
-      "organic",
       "spatial",
       "nature"
     ]
@@ -1483,7 +1462,6 @@
   {
     "name": "Draw the moon",
     "tags": [
-      "organic",
       "sensory",
       "nature"
     ]
@@ -1491,8 +1469,7 @@
   {
     "name": "Draw something from a pet's point of view",
     "tags": [
-      "spatial",
-      "organic"
+      "spatial"
     ]
   },
   {
@@ -1516,7 +1493,8 @@
   {
     "name": "Draw an onion",
     "tags": [
-      "still_life"
+      "still_life",
+      "botanical"
     ]
   },
   {
@@ -1528,7 +1506,8 @@
   {
     "name": "Draw an apple",
     "tags": [
-      "still_life"
+      "still_life",
+      "botanical"
     ]
   },
   {
@@ -1632,7 +1611,6 @@
   {
     "name": "Draw something that has a shell, or draw a seashell",
     "tags": [
-      "organic",
       "nature"
     ]
   },
@@ -1676,7 +1654,7 @@
   {
     "name": "Draw something with wings",
     "tags": [
-      "organic"
+      "nature"
     ]
   },
   {
@@ -1694,7 +1672,8 @@
   {
     "name": "Draw a peach",
     "tags": [
-      "still_life"
+      "still_life",
+      "botanical"
     ]
   },
   {
@@ -1730,7 +1709,6 @@
   {
     "name": "Draw a mouth",
     "tags": [
-      "organic",
       "figures"
     ]
   },
@@ -1808,7 +1786,8 @@
   {
     "name": "Draw a peanut in the shell or out",
     "tags": [
-      "still_life"
+      "still_life",
+      "botanical"
     ]
   },
   {
@@ -1883,7 +1862,6 @@
   {
     "name": "Draw some clouds",
     "tags": [
-      "organic",
       "nature"
     ]
   },
@@ -1896,7 +1874,6 @@
   {
     "name": "Draw your nose, a friend's or a stranger's. Or a pet's.",
     "tags": [
-      "organic",
       "figures"
     ]
   },
@@ -1935,9 +1912,9 @@
   {
     "name": "Go on a nature walk, pick up items, draw what you find",
     "tags": [
-      "organic",
       "craft",
-      "nature"
+      "nature",
+      "botanical"
     ]
   },
   {
@@ -1976,7 +1953,6 @@
   {
     "name": "Draw the palm of your left hand",
     "tags": [
-      "organic",
       "figures"
     ]
   },
@@ -2144,7 +2120,6 @@
     "name": "Draw your own feet and the floor texture they are resting on.",
     "tags": [
       "spatial",
-      "organic",
       "figures"
     ]
   },
@@ -2262,8 +2237,8 @@
     "name": "Draw a plant next to a plastic object and emphasize the difference in surface.",
     "tags": [
       "sensory",
-      "organic",
-      "still_life"
+      "still_life",
+      "botanical"
     ]
   },
   {
@@ -2324,7 +2299,6 @@
     "name": "Draw a 1-inch square of your own skin (freckles, hair, pores).",
     "tags": [
       "sensory",
-      "organic",
       "craft",
       "figures"
     ]
@@ -2333,7 +2307,6 @@
     "name": "Draw your hand in 1 minute. Then 30 seconds. Then 10 seconds.",
     "tags": [
       "craft",
-      "organic",
       "temporal",
       "figures"
     ]
@@ -2364,7 +2337,6 @@
     "name": "Draw your own face in a mirror without looking at the paper.",
     "tags": [
       "craft",
-      "organic",
       "temporal",
       "figures"
     ]
@@ -2403,7 +2375,6 @@
     "name": "Draw an indentation on a couch or a bed where someone was recently sitting.",
     "tags": [
       "temporal",
-      "organic",
       "figures"
     ]
   },
@@ -2426,7 +2397,6 @@
     "tags": [
       "temporal",
       "craft",
-      "organic",
       "figures"
     ]
   },
@@ -2499,7 +2469,6 @@
     "name": "Draw a market stall \u2014 the canopy overhead, the stacked goods, the vendor's hands.",
     "tags": [
       "urban",
-      "organic",
       "figures"
     ]
   },
@@ -2519,8 +2488,7 @@
   {
     "name": "the paving pattern, a fountain or bench, and whoever happens to be there.",
     "tags": [
-      "urban",
-      "organic"
+      "urban"
     ]
   },
   {
@@ -2541,7 +2509,6 @@
     "name": "Draw someone waiting \u2014 at a bus stop, on a bench, staring at their phone.",
     "tags": [
       "urban",
-      "organic",
       "figures"
     ]
   },
@@ -2577,7 +2544,6 @@
     "name": "the seats, the overhead bars, the other passengers.",
     "tags": [
       "urban",
-      "organic",
       "figures"
     ]
   },
@@ -2597,7 +2563,6 @@
     "name": "the path ahead, the trees, the people passing.",
     "tags": [
       "urban",
-      "organic",
       "spatial",
       "nature"
     ]
@@ -2606,7 +2571,6 @@
     "name": "Draw a crosswalk and the legs of people mid-stride crossing it.",
     "tags": [
       "urban",
-      "organic",
       "figures"
     ]
   },
@@ -2614,7 +2578,6 @@
     "name": "Draw your hand as a single unbroken silhouette \u2014 no interior lines, just the outline.",
     "tags": [
       "craft",
-      "organic",
       "figures"
     ]
   },
@@ -2642,7 +2605,8 @@
     "name": "Draw a piece of fruit using only hatching \u2014 no outlines, only parallel lines building up the form.",
     "tags": [
       "craft",
-      "still_life"
+      "still_life",
+      "botanical"
     ]
   },
   {
@@ -2657,7 +2621,8 @@
     "name": "Find a leaf. Draw the \"skeleton\" (the veins) before you draw the rest of the leaf.",
     "tags": [
       "nature",
-      "craft"
+      "craft",
+      "botanical"
     ]
   },
   {
@@ -2671,7 +2636,8 @@
     "name": "Find a rotting log or a dead leaf next to a fresh sprout. Draw them together.",
     "tags": [
       "nature",
-      "temporal"
+      "temporal",
+      "botanical"
     ]
   },
   {
@@ -2679,7 +2645,8 @@
     "tags": [
       "nature",
       "sensory",
-      "temporal"
+      "temporal",
+      "botanical"
     ]
   },
   {
@@ -2687,7 +2654,8 @@
     "tags": [
       "nature",
       "spatial",
-      "craft"
+      "craft",
+      "botanical"
     ]
   },
   {
@@ -2701,7 +2669,8 @@
     "name": "Pick five different types of leaves from the ground and draw them in a neat, scientific row.",
     "tags": [
       "nature",
-      "craft"
+      "craft",
+      "botanical"
     ]
   },
   {
@@ -2716,7 +2685,8 @@
     "name": "Don't draw the whole tree. Draw a small patch of bark, focusing on the deep \"valleys\" and \"peaks\" of the wood.",
     "tags": [
       "nature",
-      "sensory"
+      "sensory",
+      "botanical"
     ]
   },
   {
@@ -2738,7 +2708,8 @@
     "name": "Get your face as close to the ground as possible. Draw the \"forest\" of grass blades from that height.",
     "tags": [
       "nature",
-      "spatial"
+      "spatial",
+      "botanical"
     ]
   },
   {
@@ -2767,7 +2738,8 @@
     "name": "Find a \"symmetrical\" flower or leaf. Draw it, but intentionally include all its \"imperfections\" (bug bites, tears, lopsidedness).",
     "tags": [
       "nature",
-      "craft"
+      "craft",
+      "botanical"
     ]
   },
   {
@@ -2782,7 +2754,8 @@
     "name": "Find a pinecone, acorn, or seed pod. Draw it at 5x its actual size.",
     "tags": [
       "nature",
-      "craft"
+      "craft",
+      "botanical"
     ]
   },
   {
@@ -2811,8 +2784,7 @@
   {
     "name": "Draw a creature that has never existed.",
     "tags": [
-      "imagination",
-      "organic"
+      "imagination"
     ]
   },
   {

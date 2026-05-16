@@ -364,7 +364,8 @@
     "name": "flamingo",
     "tags": [
       "animal",
-      "bird"
+      "bird",
+      "fragile"
     ]
   },
   {
@@ -393,7 +394,8 @@
     "name": "hummingbird",
     "tags": [
       "animal",
-      "bird"
+      "bird",
+      "fragile"
     ]
   },
   {
@@ -409,7 +411,8 @@
     "tags": [
       "animal",
       "bird",
-      "mythic"
+      "mythic",
+      "fragile"
     ]
   },
   {
@@ -618,7 +621,8 @@
     "tags": [
       "animal",
       "aquatic",
-      "weird"
+      "weird",
+      "fragile"
     ]
   },
   {
@@ -626,7 +630,8 @@
     "tags": [
       "animal",
       "aquatic",
-      "weird"
+      "weird",
+      "fragile"
     ]
   },
   {
@@ -747,7 +752,8 @@
     "tags": [
       "animal",
       "bug",
-      "mythic"
+      "mythic",
+      "fragile"
     ]
   },
   {
@@ -755,7 +761,8 @@
     "tags": [
       "animal",
       "bug",
-      "mythic"
+      "mythic",
+      "fragile"
     ]
   },
   {
@@ -776,7 +783,8 @@
     "name": "dragonfly",
     "tags": [
       "animal",
-      "bug"
+      "bug",
+      "fragile"
     ]
   },
   {
@@ -844,13 +852,15 @@
   {
     "name": "slug",
     "tags": [
-      "animal"
+      "animal",
+      "grotesque"
     ]
   },
   {
     "name": "worm",
     "tags": [
-      "animal"
+      "animal",
+      "grotesque"
     ]
   },
   {
@@ -939,7 +949,8 @@
   {
     "name": "fern",
     "tags": [
-      "plant"
+      "plant",
+      "fragile"
     ]
   },
   {
@@ -1017,7 +1028,8 @@
     "name": "puffball",
     "tags": [
       "fungus",
-      "weird"
+      "weird",
+      "fragile"
     ]
   },
   {
@@ -1036,7 +1048,8 @@
     "name": "cordyceps",
     "tags": [
       "fungus",
-      "weird"
+      "weird",
+      "grotesque"
     ]
   },
   {
@@ -1062,7 +1075,8 @@
   {
     "name": "diatom",
     "tags": [
-      "microscopic"
+      "microscopic",
+      "fragile"
     ]
   },
   {
@@ -1081,34 +1095,39 @@
     "name": "slime mold",
     "tags": [
       "microscopic",
-      "weird"
+      "weird",
+      "grotesque"
     ]
   },
   {
     "name": "pollen grain",
     "tags": [
       "microscopic",
-      "plant"
+      "plant",
+      "fragile"
     ]
   },
   {
     "name": "spore",
     "tags": [
       "fungus",
-      "microscopic"
+      "microscopic",
+      "fragile"
     ]
   },
   {
     "name": "chanterelle",
     "tags": [
-      "fungus"
+      "fungus",
+      "fragile"
     ]
   },
   {
     "name": "death cap",
     "tags": [
       "fungus",
-      "mythic"
+      "mythic",
+      "grotesque"
     ]
   },
   {
@@ -1120,7 +1139,8 @@
   {
     "name": "ink cap",
     "tags": [
-      "fungus"
+      "fungus",
+      "fragile"
     ]
   },
   {
@@ -1134,14 +1154,16 @@
     "name": "stinkhorn",
     "tags": [
       "fungus",
-      "weird"
+      "weird",
+      "grotesque"
     ]
   },
   {
     "name": "earthstar",
     "tags": [
       "fungus",
-      "weird"
+      "weird",
+      "fragile"
     ]
   },
   {
@@ -1154,7 +1176,8 @@
     "name": "mold",
     "tags": [
       "fungus",
-      "microscopic"
+      "microscopic",
+      "grotesque"
     ]
   },
   {
@@ -1265,7 +1288,8 @@
     "name": "virus",
     "tags": [
       "microscopic",
-      "weird"
+      "weird",
+      "grotesque"
     ]
   },
   {
@@ -1298,14 +1322,16 @@
   {
     "name": "euglena",
     "tags": [
-      "microscopic"
+      "microscopic",
+      "fragile"
     ]
   },
   {
     "name": "radiolarian",
     "tags": [
       "microscopic",
-      "weird"
+      "weird",
+      "fragile"
     ]
   },
   {
@@ -1354,13 +1380,15 @@
   {
     "name": "eye",
     "tags": [
-      "anatomy"
+      "anatomy",
+      "uncanny"
     ]
   },
   {
     "name": "hand",
     "tags": [
-      "anatomy"
+      "anatomy",
+      "uncanny"
     ]
   },
   {
@@ -1372,7 +1400,8 @@
   {
     "name": "spine",
     "tags": [
-      "anatomy"
+      "anatomy",
+      "grotesque"
     ]
   },
   {
@@ -1386,7 +1415,8 @@
     "name": "skull",
     "tags": [
       "anatomy",
-      "mythic"
+      "mythic",
+      "uncanny"
     ]
   },
   {
@@ -1398,31 +1428,36 @@
   {
     "name": "rib cage",
     "tags": [
-      "anatomy"
+      "anatomy",
+      "grotesque"
     ]
   },
   {
     "name": "lung",
     "tags": [
-      "anatomy"
+      "anatomy",
+      "grotesque"
     ]
   },
   {
     "name": "tongue",
     "tags": [
-      "anatomy"
+      "anatomy",
+      "uncanny"
     ]
   },
   {
     "name": "ear",
     "tags": [
-      "anatomy"
+      "anatomy",
+      "uncanny"
     ]
   },
   {
     "name": "teeth",
     "tags": [
-      "anatomy"
+      "anatomy",
+      "uncanny"
     ]
   },
   {
@@ -1448,7 +1483,8 @@
     "name": "wing",
     "tags": [
       "anatomy",
-      "mythic"
+      "mythic",
+      "fragile"
     ]
   },
   {
@@ -1474,7 +1510,8 @@
   {
     "name": "feather",
     "tags": [
-      "anatomy"
+      "anatomy",
+      "fragile"
     ]
   },
   {
@@ -1528,25 +1565,29 @@
   {
     "name": "stomach",
     "tags": [
-      "anatomy"
+      "anatomy",
+      "grotesque"
     ]
   },
   {
     "name": "kidney",
     "tags": [
-      "anatomy"
+      "anatomy",
+      "grotesque"
     ]
   },
   {
     "name": "liver",
     "tags": [
-      "anatomy"
+      "anatomy",
+      "grotesque"
     ]
   },
   {
     "name": "intestine",
     "tags": [
-      "anatomy"
+      "anatomy",
+      "grotesque"
     ]
   },
   {
@@ -1558,7 +1599,8 @@
   {
     "name": "bone",
     "tags": [
-      "anatomy"
+      "anatomy",
+      "grotesque"
     ]
   },
   {
@@ -1570,13 +1612,15 @@
   {
     "name": "bladder",
     "tags": [
-      "anatomy"
+      "anatomy",
+      "grotesque"
     ]
   },
   {
     "name": "trachea",
     "tags": [
-      "anatomy"
+      "anatomy",
+      "grotesque"
     ]
   },
   {
@@ -1609,7 +1653,8 @@
     "name": "amanita",
     "tags": [
       "fungus",
-      "weird"
+      "weird",
+      "fragile"
     ]
   },
   {
@@ -1664,25 +1709,29 @@
   {
     "name": "head",
     "tags": [
-      "anatomy"
+      "anatomy",
+      "uncanny"
     ]
   },
   {
     "name": "face",
     "tags": [
-      "anatomy"
+      "anatomy",
+      "uncanny"
     ]
   },
   {
     "name": "finger",
     "tags": [
-      "anatomy"
+      "anatomy",
+      "uncanny"
     ]
   },
   {
     "name": "nose",
     "tags": [
-      "anatomy"
+      "anatomy",
+      "uncanny"
     ]
   },
   {
@@ -1694,25 +1743,29 @@
   {
     "name": "neck",
     "tags": [
-      "anatomy"
+      "anatomy",
+      "uncanny"
     ]
   },
   {
     "name": "arm",
     "tags": [
-      "anatomy"
+      "anatomy",
+      "uncanny"
     ]
   },
   {
     "name": "leg",
     "tags": [
-      "anatomy"
+      "anatomy",
+      "uncanny"
     ]
   },
   {
     "name": "skin",
     "tags": [
-      "anatomy"
+      "anatomy",
+      "uncanny"
     ]
   },
   {
@@ -1724,7 +1777,8 @@
   {
     "name": "jaw",
     "tags": [
-      "anatomy"
+      "anatomy",
+      "grotesque"
     ]
   },
   {
@@ -1807,7 +1861,8 @@
     "name": "clown",
     "tags": [
       "human",
-      "weird"
+      "weird",
+      "uncanny"
     ]
   },
   {
@@ -1882,7 +1937,8 @@
     "name": "harlequin",
     "tags": [
       "human",
-      "weird"
+      "weird",
+      "uncanny"
     ]
   },
   {
@@ -1910,7 +1966,8 @@
     "name": "kabuki actor",
     "tags": [
       "human",
-      "weird"
+      "weird",
+      "uncanny"
     ]
   },
   {
@@ -1942,7 +1999,8 @@
     "name": "mime",
     "tags": [
       "human",
-      "weird"
+      "weird",
+      "uncanny"
     ]
   },
   {
@@ -2082,7 +2140,9 @@
     "tags": [
       "monster",
       "mythic",
-      "weird"
+      "weird",
+      "grotesque",
+      "uncanny"
     ]
   },
   {
@@ -2090,7 +2150,8 @@
     "tags": [
       "monster",
       "mythic",
-      "weird"
+      "weird",
+      "uncanny"
     ]
   },
   {
@@ -2098,7 +2159,8 @@
     "tags": [
       "monster",
       "mythic",
-      "weird"
+      "weird",
+      "uncanny"
     ]
   },
   {
@@ -2114,7 +2176,8 @@
     "tags": [
       "monster",
       "mythic",
-      "weird"
+      "weird",
+      "uncanny"
     ]
   },
   {
@@ -2122,7 +2185,9 @@
     "tags": [
       "monster",
       "mythic",
-      "weird"
+      "weird",
+      "grotesque",
+      "uncanny"
     ]
   },
   {
@@ -2130,7 +2195,8 @@
     "tags": [
       "monster",
       "mythic",
-      "weird"
+      "weird",
+      "uncanny"
     ]
   },
   {
@@ -2138,7 +2204,8 @@
     "tags": [
       "monster",
       "mythic",
-      "weird"
+      "weird",
+      "uncanny"
     ]
   },
   {
@@ -2488,7 +2555,8 @@
       "animal",
       "aquatic",
       "fish",
-      "weird"
+      "weird",
+      "grotesque"
     ]
   },
   {

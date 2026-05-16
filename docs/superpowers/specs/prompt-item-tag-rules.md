@@ -59,8 +59,8 @@ Tags operate on two tiers:
 | `temporal` | The prompt is anchored in time: memory, personal history with an object, age or change, before/after, time-of-day, routine |
 | `emotional` | The prompt is about internal states, feelings, meaning, or relationships — the subject evokes or represents something felt |
 | `craft` | The prompt specifies HOW to draw rather than WHAT — a technique, constraint, style directive, or meta-drawing approach |
-| `organic` | The primary subject is a living thing: animal, plant, person, body part, or natural phenomenon |
 | `still_life` | The primary subject is an inanimate everyday object: food, drink, household item, tool, clothing, or accessory |
+| `botanical` | The primary subject is a plant, fungus, or plant-derived specimen studied for its form — flowers, leaves, bark, roots, seeds, fruit, vegetables, moss. Applies to both indoor specimens (still-life fruit, cut flowers, herb jars) and field specimens (a pinecone, a single leaf, a patch of bark). Does not apply to processed food where the plant origin is no longer the visual subject (bread, toast, noodles), or to landscapes where plants are incidental to the scene. May co-exist with `still_life` or `nature` depending on context. |
 | `urban` | Drawing practice focused on the built environment: streets, architecture, shop fronts, public spaces, city infrastructure — on-location sketching |
 | `nature` | Drawing practice focused on the natural world: plants, wildlife, landscapes, weather, natural phenomena — field sketching |
 | `figures` | Drawing practice focused on people and the human form: portraits, body parts, self-portraiture, gesture, people in public |
@@ -81,10 +81,11 @@ Applied in addition to primary tags. Do not use context tags as a substitute for
 2. Tags describe what the prompt **primarily** engages. Do not tag incidental qualities — "Draw a red apple" is `organic`, not `sensory`, because the color is incidental to the subject.
 3. Exception to rule 2: when a sensory quality IS the subject of the prompt ("Draw something shiny", "Draw a shadow"), apply `sensory` alongside the subject tag.
 4. `craft` applies only when the prompt explicitly constrains the drawing method — not merely because any drawing involves craft. "Draw a dog" is not `craft`. "Draw a dog in the style of an old master" is `craft`.
-5. `organic` covers body parts and self-portraiture (hand, eye, foot, self portrait).
+5. `figures` covers body parts and self-portraiture (hand, eye, foot, self portrait) as well as people in public.
 6. `still_life` covers food and drink as a subject category. Prompts where food is the subject get `still_life` regardless of whether they also involve sensory qualities.
-7. `urban` applies to on-location drawing in cities and built environments. "Draw the front of your house" is `urban`. "Draw your kitchen" is `still_life`, not `urban`.
-8. `nature`, `figures`, and `urban` are distinct drawing practices — they co-exist with subject tags. A nature prompt about a leaf is both `nature` and `organic`.
+7. `botanical` may be added alongside `still_life` when the subject is a plant or plant-derived specimen (a lemon, an apple, an herb jar). It may be added alongside `nature` when the prompt is a close study of a plant in the field (a single leaf, a patch of bark, a pinecone). Do not add `botanical` to prompts where plants are incidental to a broader scene (a landscape, a cityscape with trees).
+8. `urban` applies to on-location drawing in cities and built environments. "Draw the front of your house" is `urban`. "Draw your kitchen" is `still_life`, not `urban`.
+9. `nature`, `figures`, and `urban` are distinct drawing practices — they co-exist with subject tags. A nature prompt about a leaf is both `nature` and `botanical`.
 9. `imagination` applies when the prompt cannot be answered by looking around and choosing something visible. The artist must reach into their mind rather than their surroundings.
 
 ### Ambiguous cases
@@ -94,7 +95,7 @@ Applied in addition to primary tags. Do not use context tags as a substitute for
 | Named color prompts ("Draw something green") | `sensory` — color IS the subject |
 | Emotional adjective as subject ("Draw something sad") | `emotional` |
 | Body parts ("Draw your hand") | `organic` + `figures` |
-| Food/drink items ("Draw a lemon") | `still_life` |
+| Food/drink items ("Draw a lemon") | `still_life` + `botanical` if the subject is a whole plant-derived specimen (fruit, vegetable, herb); `still_life` only if the plant origin is no longer the visual subject (bread, toast, noodles) |
 | Prompts with personal history ("Draw something you cherish") | `temporal` or `emotional` depending on whether time or feeling dominates |
 | Prompts with both viewpoint AND subject ("Draw what you see from your kitchen window") | `spatial` + subject tag |
 | Technique + subject ("Draw in the style of an old master") | `craft` + subject tag |
@@ -105,6 +106,7 @@ Applied in addition to primary tags. Do not use context tags as a substitute for
 The coverage threshold is **20 items per primary tag**. Known exceptions where a tag may sit below 20 and should be grown over time rather than removed:
 
 - `imagination` — a deliberately sparse category; prompts are hard to write without overlapping existing ones
+- `botanical` — new tag; currently at 26 items, above threshold, but a smaller pool than most. Grow alongside `nature` and `still_life` additions.
 
 ### Items with no primary tag
 
