@@ -222,8 +222,7 @@
   {
     "name": "Draw a holiday card",
     "tags": [
-      "still_life",
-      "holiday"
+      "still_life"
     ]
   },
   {
@@ -245,8 +244,7 @@
   {
     "name": "Draw something summer",
     "tags": [
-      "temporal",
-      "seasonal"
+      "temporal"
     ]
   },
   {
@@ -355,7 +353,6 @@
     "name": "Draw a sign of spring (or fall if you live in the southern hemisphere)",
     "tags": [
       "organic",
-      "seasonal",
       "nature"
     ]
   },
@@ -445,7 +442,7 @@
     ]
   },
   {
-    "name": "Draw or paint something that's alive – an animal or plant",
+    "name": "Draw or paint something that's alive \u2013 an animal or plant",
     "tags": [
       "organic",
       "nature"
@@ -545,8 +542,7 @@
   {
     "name": "Draw a Winter Olympic event",
     "tags": [
-      "organic",
-      "seasonal"
+      "organic"
     ]
   },
   {
@@ -565,7 +561,6 @@
     "name": "Draw (or paint) a tree in autumn",
     "tags": [
       "organic",
-      "seasonal",
       "nature"
     ]
   },
@@ -629,15 +624,13 @@
   {
     "name": "Draw a summer joy",
     "tags": [
-      "emotional",
-      "seasonal"
+      "emotional"
     ]
   },
   {
-    "name": "Draw something Dad – in honor of Fathers Day",
+    "name": "Draw something Dad \u2013 in honor of Fathers Day",
     "tags": [
-      "emotional",
-      "holiday"
+      "emotional"
     ]
   },
   {
@@ -647,7 +640,7 @@
     ]
   },
   {
-    "name": "Draw something breezy – something that blows in the wind",
+    "name": "Draw something breezy \u2013 something that blows in the wind",
     "tags": [
       "sensory"
     ]
@@ -678,7 +671,7 @@
     ]
   },
   {
-    "name": "Draw an animal – a pet, a zoo animal, a stuffed one",
+    "name": "Draw an animal \u2013 a pet, a zoo animal, a stuffed one",
     "tags": [
       "organic"
     ]
@@ -699,8 +692,7 @@
   {
     "name": "Draw something related to Halloween, All Souls Day, Dia de los Muertos, All Saints, etc.",
     "tags": [
-      "emotional",
-      "holiday"
+      "emotional"
     ]
   },
   {
@@ -717,7 +709,7 @@
     ]
   },
   {
-    "name": "Draw your artspace – drawing board, desk, studio, table",
+    "name": "Draw your artspace \u2013 drawing board, desk, studio, table",
     "tags": [
       "still_life"
     ]
@@ -755,7 +747,7 @@
     ]
   },
   {
-    "name": "Draw somewhere new – go somewhere new to you and draw what you find",
+    "name": "Draw somewhere new \u2013 go somewhere new to you and draw what you find",
     "tags": [
       "urban",
       "craft"
@@ -848,9 +840,7 @@
   {
     "name": "Draw something October",
     "tags": [
-      "temporal",
-      "seasonal",
-      "holiday"
+      "temporal"
     ]
   },
   {
@@ -1095,7 +1085,6 @@
     "name": "Draw a fall leaf",
     "tags": [
       "organic",
-      "seasonal",
       "nature"
     ]
   },
@@ -1252,8 +1241,7 @@
   {
     "name": "Draw something holiday themed (Hanukah, Christmas, Kwanzaa, winter solstice)",
     "tags": [
-      "emotional",
-      "holiday"
+      "emotional"
     ]
   },
   {
@@ -1410,7 +1398,7 @@
     ]
   },
   {
-    "name": "Draw a nearby body of water – ocean, lake, pond, river",
+    "name": "Draw a nearby body of water \u2013 ocean, lake, pond, river",
     "tags": [
       "organic",
       "spatial",
@@ -1661,10 +1649,9 @@
     ]
   },
   {
-    "name": "Draw something Mom – your mother, something that reminds you of motherhood",
+    "name": "Draw something Mom \u2013 your mother, something that reminds you of motherhood",
     "tags": [
-      "emotional",
-      "holiday"
+      "emotional"
     ]
   },
   {
@@ -1888,7 +1875,7 @@
     ]
   },
   {
-    "name": "Free choice – draw anything you like",
+    "name": "Free choice \u2013 draw anything you like",
     "tags": [
       "imagination"
     ]
@@ -1940,7 +1927,7 @@
     ]
   },
   {
-    "name": "Draw your sink – at home, work or wherever",
+    "name": "Draw your sink \u2013 at home, work or wherever",
     "tags": [
       "still_life"
     ]
@@ -2018,7 +2005,7 @@
     ]
   },
   {
-    "name": "Draw a bit of organized chaos – your messy desk, your table stacked with books, etc.",
+    "name": "Draw a bit of organized chaos \u2013 your messy desk, your table stacked with books, etc.",
     "tags": [
       "still_life"
     ]
@@ -2069,92 +2056,92 @@
     ]
   },
   {
-    "name": "The Horizon Line: Find the literal eye level in your room and draw everything that sits exactly on that line.",
+    "name": "Find the literal eye level in your room and draw everything that sits exactly on that line.",
     "tags": [
       "spatial"
     ]
   },
   {
-    "name": "Corner Study: Pick the least interesting corner of the room and make it look architectural.",
+    "name": "Pick the least interesting corner of the room and make it look architectural.",
     "tags": [
       "spatial",
       "urban"
     ]
   },
   {
-    "name": "The Floor Plan: Draw a \"map\" of your current room from memory, then draw it again while looking at it to see what you missed.",
+    "name": "Draw a \"map\" of your current room from memory, then draw it again while looking at it to see what you missed.",
     "tags": [
       "spatial",
       "craft"
     ]
   },
   {
-    "name": "Under the Table: Sit on the floor and draw the underside of a piece of furniture.",
+    "name": "Sit on the floor and draw the underside of a piece of furniture.",
     "tags": [
       "spatial",
       "still_life"
     ]
   },
   {
-    "name": "Negative Space: Draw the gaps between the legs of a chair rather than the chair itself.",
+    "name": "Draw the gaps between the legs of a chair rather than the chair itself.",
     "tags": [
       "spatial",
       "still_life"
     ]
   },
   {
-    "name": "The Window Frame: Draw the view outside, but focus 70% of the detail on the window frame and latch.",
+    "name": "Draw the view outside, but focus 70% of the detail on the window frame and latch.",
     "tags": [
       "spatial",
       "still_life"
     ]
   },
   {
-    "name": "Fish-eye Lens: Draw your room as if you were looking through a peephole.",
+    "name": "Draw your room as if you were looking through a peephole.",
     "tags": [
       "spatial"
     ]
   },
   {
-    "name": "The Ceiling: Draw the light fixture and any molding directly above your head.",
+    "name": "Draw the light fixture and any molding directly above your head.",
     "tags": [
       "spatial"
     ]
   },
   {
-    "name": "Overlapping Planes: Find three objects at different distances and draw how they overlap.",
+    "name": "Find three objects at different distances and draw how they overlap.",
     "tags": [
       "spatial"
     ]
   },
   {
-    "name": "The Doorway: Draw a door that is slightly ajar, focusing on the sliver of the room beyond.",
+    "name": "Draw a door that is slightly ajar, focusing on the sliver of the room beyond.",
     "tags": [
       "spatial"
     ]
   },
   {
-    "name": "Reflections: Draw what you see in the reflection of a window or a TV screen.",
+    "name": "Draw what you see in the reflection of a window or a TV screen.",
     "tags": [
       "spatial",
       "sensory"
     ]
   },
   {
-    "name": "The \"Mess\" Cluster: Find the most cluttered spot in the room and draw it exactly as it is.",
+    "name": "Find the most cluttered spot in the room and draw it exactly as it is.",
     "tags": [
       "spatial",
       "still_life"
     ]
   },
   {
-    "name": "Vanishing Point: Find a long hallway or a bookshelf and draw the lines as they recede.",
+    "name": "Find a long hallway or a bookshelf and draw the lines as they recede.",
     "tags": [
       "spatial"
     ]
   },
   {
-    "name": "The Foot View: Draw your own feet and the floor texture they are resting on.",
+    "name": "Draw your own feet and the floor texture they are resting on.",
     "tags": [
       "spatial",
       "organic",
@@ -2162,35 +2149,35 @@
     ]
   },
   {
-    "name": "Scale Shift: Draw a tiny object (like a paperclip) as if it were the size of a building in your room.",
+    "name": "Draw a tiny object (like a paperclip) as if it were the size of a building in your room.",
     "tags": [
       "spatial",
       "craft"
     ]
   },
   {
-    "name": "Top-Down Desk: A flat-lay drawing of everything currently on your desk.",
+    "name": "A flat-lay drawing of everything currently on your desk.",
     "tags": [
       "spatial",
       "still_life"
     ]
   },
   {
-    "name": "The Mirror: Draw the room as it appears reflected in a mirror (including yourself).",
+    "name": "Draw the room as it appears reflected in a mirror (including yourself).",
     "tags": [
       "spatial",
       "figures"
     ]
   },
   {
-    "name": "The Backside: Pick an object usually pushed against a wall and draw its back.",
+    "name": "Pick an object usually pushed against a wall and draw its back.",
     "tags": [
       "spatial",
       "still_life"
     ]
   },
   {
-    "name": "Shadow Shapes: Draw the shapes the furniture casts on the floor at this exact time of day.",
+    "name": "Draw the shapes the furniture casts on the floor at this exact time of day.",
     "tags": [
       "spatial",
       "sensory",
@@ -2198,81 +2185,81 @@
     ]
   },
   {
-    "name": "The Path: Draw a \"trail\" of objects from where you are sitting to the exit of the room.",
+    "name": "Draw a \"trail\" of objects from where you are sitting to the exit of the room.",
     "tags": [
       "spatial",
       "still_life"
     ]
   },
   {
-    "name": "Monochrome Hunt: Find 10 items of the same color and group them in one drawing.",
+    "name": "Find 10 items of the same color and group them in one drawing.",
     "tags": [
       "sensory",
       "still_life"
     ]
   },
   {
-    "name": "Texture Rubbing: Don't draw—place your paper over five different surfaces and rub with a pencil.",
+    "name": "Don't draw\u2014place your paper over five different surfaces and rub with a pencil.",
     "tags": [
       "craft",
       "sensory"
     ]
   },
   {
-    "name": "The Warmest Spot: Draw the object in the room that feels the \"warmest\" (color-wise or temperature-wise).",
+    "name": "Draw the object in the room that feels the \"warmest\" (color-wise or temperature-wise).",
     "tags": [
       "sensory"
     ]
   },
   {
-    "name": "High Contrast: Use only a black marker to draw the darkest shadows in the room.",
+    "name": "Use only a black marker to draw the darkest shadows in the room.",
     "tags": [
       "sensory",
       "craft"
     ]
   },
   {
-    "name": "Complementary Pair: Find something orange and something blue; draw them together.",
+    "name": "Find something orange and something blue; draw them together.",
     "tags": [
       "sensory",
       "still_life"
     ]
   },
   {
-    "name": "The Metallic Study: Draw something shiny (keys, a spoon) and focus on the \"white\" highlights.",
+    "name": "Draw something shiny (keys, a spoon) and focus on the \"white\" highlights.",
     "tags": [
       "sensory",
       "still_life"
     ]
   },
   {
-    "name": "Fabric Folds: Draw a discarded piece of clothing or a blanket focusing on the shadows in the folds.",
+    "name": "Draw a discarded piece of clothing or a blanket focusing on the shadows in the folds.",
     "tags": [
       "sensory",
       "still_life"
     ]
   },
   {
-    "name": "Gradient Walk: Find objects that create a color gradient (e.g., light green to dark green) and draw them in order.",
+    "name": "Find objects that create a color gradient (e.g., light green to dark green) and draw them in order.",
     "tags": [
       "sensory"
     ]
   },
   {
-    "name": "Translucency: Draw a glass of water or a plastic bottle and how light bends through it.",
+    "name": "Draw a glass of water or a plastic bottle and how light bends through it.",
     "tags": [
       "sensory",
       "still_life"
     ]
   },
   {
-    "name": "The \"Rough\" Object: Draw the most textured thing you can find (a rug, a brick, a sweater).",
+    "name": "Draw the most textured thing you can find (a rug, a brick, a sweater).",
     "tags": [
       "sensory"
     ]
   },
   {
-    "name": "Artificial vs. Natural: Draw a plant next to a plastic object and emphasize the difference in surface.",
+    "name": "Draw a plant next to a plastic object and emphasize the difference in surface.",
     "tags": [
       "sensory",
       "organic",
@@ -2280,61 +2267,61 @@
     ]
   },
   {
-    "name": "The Color of \"Old\": Draw something that has faded or changed color over time.",
+    "name": "Draw something that has faded or changed color over time.",
     "tags": [
       "sensory",
       "temporal"
     ]
   },
   {
-    "name": "Subtle Grays: Draw a white object on a white background using only soft gray shading.",
+    "name": "Draw a white object on a white background using only soft gray shading.",
     "tags": [
       "sensory",
       "craft"
     ]
   },
   {
-    "name": "Neon/Brightest: Find the most saturated, \"loudest\" color in the room and draw it.",
+    "name": "Find the most saturated, \"loudest\" color in the room and draw it.",
     "tags": [
       "sensory"
     ]
   },
   {
-    "name": "The Sound of Color: Draw an object using colors that \"match\" the noise level of the room.",
+    "name": "Draw an object using colors that \"match\" the noise level of the room.",
     "tags": [
       "sensory",
       "craft"
     ]
   },
   {
-    "name": "Pattern Scan: Find a pattern (wallpaper, shirt, rug) and draw a 2x2 inch section in extreme detail.",
+    "name": "Find a pattern (wallpaper, shirt, rug) and draw a 2x2 inch section in extreme detail.",
     "tags": [
       "sensory",
       "craft"
     ]
   },
   {
-    "name": "Soft vs. Hard: Draw a pillow leaning against a hard wall.",
+    "name": "Draw a pillow leaning against a hard wall.",
     "tags": [
       "sensory",
       "still_life"
     ]
   },
   {
-    "name": "The Glow: Draw a lamp or screen and the way the light \"fuzzes\" out around the edges.",
+    "name": "Draw a lamp or screen and the way the light \"fuzzes\" out around the edges.",
     "tags": [
       "sensory",
       "still_life"
     ]
   },
   {
-    "name": "Dust & Grit: Draw a surface that needs cleaning, focusing on the particles and smudges.",
+    "name": "Draw a surface that needs cleaning, focusing on the particles and smudges.",
     "tags": [
       "sensory"
     ]
   },
   {
-    "name": "Micro-Focus: Draw a 1-inch square of your own skin (freckles, hair, pores).",
+    "name": "Draw a 1-inch square of your own skin (freckles, hair, pores).",
     "tags": [
       "sensory",
       "organic",
@@ -2343,7 +2330,7 @@
     ]
   },
   {
-    "name": "The 1-Minute Sprint: Draw your hand in 1 minute. Then 30 seconds. Then 10 seconds.",
+    "name": "Draw your hand in 1 minute. Then 30 seconds. Then 10 seconds.",
     "tags": [
       "craft",
       "organic",
@@ -2352,7 +2339,7 @@
     ]
   },
   {
-    "name": "The \"Before\" Picture: Draw a tidy pile of objects. Mess them up. Draw the \"After.\"",
+    "name": "Draw a tidy pile of objects. Mess them up. Draw the \"After.\"",
     "tags": [
       "temporal",
       "craft",
@@ -2360,21 +2347,21 @@
     ]
   },
   {
-    "name": "The Daily Tool: Draw the object you have touched the most today (phone, mouse, pen).",
+    "name": "Draw the object you have touched the most today (phone, mouse, pen).",
     "tags": [
       "temporal",
       "still_life"
     ]
   },
   {
-    "name": "The Remnant: Draw the crumbs left on a plate or the liquid at the bottom of a cup.",
+    "name": "Draw the crumbs left on a plate or the liquid at the bottom of a cup.",
     "tags": [
       "temporal",
       "still_life"
     ]
   },
   {
-    "name": "Blind Contour (No Looking): Draw your own face in a mirror without looking at the paper.",
+    "name": "Draw your own face in a mirror without looking at the paper.",
     "tags": [
       "craft",
       "organic",
@@ -2383,7 +2370,7 @@
     ]
   },
   {
-    "name": "Non-Dominant Hand: Draw your keys using your \"wrong\" hand.",
+    "name": "Draw your keys using your \"wrong\" hand.",
     "tags": [
       "craft",
       "still_life",
@@ -2391,21 +2378,21 @@
     ]
   },
   {
-    "name": "The Antique: Draw the oldest thing in the room.",
+    "name": "Draw the oldest thing in the room.",
     "tags": [
       "temporal",
       "still_life"
     ]
   },
   {
-    "name": "The Temporary: Draw something that won't be there tomorrow (a flower, a snack, the weather).",
+    "name": "Draw something that won't be there tomorrow (a flower, a snack, the weather).",
     "tags": [
       "temporal",
       "nature"
     ]
   },
   {
-    "name": "The Mechanical: Draw the inside of something (the battery compartment of a remote).",
+    "name": "Draw the inside of something (the battery compartment of a remote).",
     "tags": [
       "spatial",
       "still_life",
@@ -2413,7 +2400,7 @@
     ]
   },
   {
-    "name": "Human Trace: Draw an indentation on a couch or a bed where someone was recently sitting.",
+    "name": "Draw an indentation on a couch or a bed where someone was recently sitting.",
     "tags": [
       "temporal",
       "organic",
@@ -2421,21 +2408,21 @@
     ]
   },
   {
-    "name": "Stacked Time: Draw a pile of books or magazines in the order you last read them.",
+    "name": "Draw a pile of books or magazines in the order you last read them.",
     "tags": [
       "temporal",
       "still_life"
     ]
   },
   {
-    "name": "The \"Wait\" Drawing: Draw whatever is in front of you while you wait for a kettle to boil or a file to download.",
+    "name": "Draw whatever is in front of you while you wait for a kettle to boil or a file to download.",
     "tags": [
       "temporal",
       "craft"
     ]
   },
   {
-    "name": "Movement Lines: Draw a pet or a person, but use \"ghost lines\" to show where they were a second ago.",
+    "name": "Draw a pet or a person, but use \"ghost lines\" to show where they were a second ago.",
     "tags": [
       "temporal",
       "craft",
@@ -2444,14 +2431,14 @@
     ]
   },
   {
-    "name": "The Tangled: Draw a knot of cables or power cords.",
+    "name": "Draw a knot of cables or power cords.",
     "tags": [
       "still_life",
       "temporal"
     ]
   },
   {
-    "name": "The Sentimental: Draw an object that has a story, focusing on the scratches that prove its age.",
+    "name": "Draw an object that has a story, focusing on the scratches that prove its age.",
     "tags": [
       "temporal",
       "emotional",
@@ -2459,7 +2446,7 @@
     ]
   },
   {
-    "name": "Continuous Line: Draw your entire room without ever lifting your pen from the paper.",
+    "name": "Draw your entire room without ever lifting your pen from the paper.",
     "tags": [
       "craft",
       "spatial",
@@ -2467,21 +2454,21 @@
     ]
   },
   {
-    "name": "The Clock: Draw your watch or clock at three different times during your drawing session.",
+    "name": "Draw your watch or clock at three different times during your drawing session.",
     "tags": [
       "temporal",
       "still_life"
     ]
   },
   {
-    "name": "The \"Work in Progress\": Draw your drawing supplies exactly as they are laid out right now.",
+    "name": "Draw your drawing supplies exactly as they are laid out right now.",
     "tags": [
       "temporal",
       "still_life"
     ]
   },
   {
-    "name": "Light Shift: Draw the same window view at midday and again at sunset.",
+    "name": "Draw the same window view at midday and again at sunset.",
     "tags": [
       "temporal",
       "sensory",
@@ -2490,26 +2477,26 @@
     ]
   },
   {
-    "name": "The Future: Draw an object in the room, but add \"wear and tear\" to show how it might look in 50 years.",
+    "name": "Draw an object in the room, but add \"wear and tear\" to show how it might look in 50 years.",
     "tags": [
       "temporal",
       "still_life"
     ]
   },
   {
-    "name": "Draw the awning of a shop — its color, its stripes, its faded lettering.",
+    "name": "Draw the awning of a shop \u2014 its color, its stripes, its faded lettering.",
     "tags": [
       "urban"
     ]
   },
   {
-    "name": "Draw the exterior of a cafe: the door, the window, the menu board outside.",
+    "name": "the door, the window, the menu board outside.",
     "tags": [
       "urban"
     ]
   },
   {
-    "name": "Draw a market stall — the canopy overhead, the stacked goods, the vendor's hands.",
+    "name": "Draw a market stall \u2014 the canopy overhead, the stacked goods, the vendor's hands.",
     "tags": [
       "urban",
       "organic",
@@ -2517,20 +2504,20 @@
     ]
   },
   {
-    "name": "Draw a street corner: the two building facades meeting, the signage, the curb.",
+    "name": "the two building facades meeting, the signage, the curb.",
     "tags": [
       "urban",
       "spatial"
     ]
   },
   {
-    "name": "Draw a fire escape on the side of a building — the ladder, the railings, the shadow it casts.",
+    "name": "Draw a fire escape on the side of a building \u2014 the ladder, the railings, the shadow it casts.",
     "tags": [
       "urban"
     ]
   },
   {
-    "name": "Draw a public plaza: the paving pattern, a fountain or bench, and whoever happens to be there.",
+    "name": "the paving pattern, a fountain or bench, and whoever happens to be there.",
     "tags": [
       "urban",
       "organic"
@@ -2544,14 +2531,14 @@
     ]
   },
   {
-    "name": "Draw an alleyway: the narrow walls, the bins, the slice of sky above.",
+    "name": "the narrow walls, the bins, the slice of sky above.",
     "tags": [
       "urban",
       "spatial"
     ]
   },
   {
-    "name": "Draw someone waiting — at a bus stop, on a bench, staring at their phone.",
+    "name": "Draw someone waiting \u2014 at a bus stop, on a bench, staring at their phone.",
     "tags": [
       "urban",
       "organic",
@@ -2573,21 +2560,21 @@
     ]
   },
   {
-    "name": "Draw a staircase in a public building — the steps, the handrail, the view up or down.",
+    "name": "Draw a staircase in a public building \u2014 the steps, the handrail, the view up or down.",
     "tags": [
       "urban",
       "spatial"
     ]
   },
   {
-    "name": "Draw a window display in a shop — the objects arranged behind the glass.",
+    "name": "Draw a window display in a shop \u2014 the objects arranged behind the glass.",
     "tags": [
       "urban",
       "still_life"
     ]
   },
   {
-    "name": "Draw the inside of a bus or subway car: the seats, the overhead bars, the other passengers.",
+    "name": "the seats, the overhead bars, the other passengers.",
     "tags": [
       "urban",
       "organic",
@@ -2595,7 +2582,7 @@
     ]
   },
   {
-    "name": "Draw a construction site from the sidewalk: the hoardings, the crane, the exposed structure.",
+    "name": "the hoardings, the crane, the exposed structure.",
     "tags": [
       "urban"
     ]
@@ -2607,7 +2594,7 @@
     ]
   },
   {
-    "name": "Draw the view from a park bench: the path ahead, the trees, the people passing.",
+    "name": "the path ahead, the trees, the people passing.",
     "tags": [
       "urban",
       "organic",
@@ -2624,7 +2611,7 @@
     ]
   },
   {
-    "name": "Draw your hand as a single unbroken silhouette — no interior lines, just the outline.",
+    "name": "Draw your hand as a single unbroken silhouette \u2014 no interior lines, just the outline.",
     "tags": [
       "craft",
       "organic",
@@ -2639,27 +2626,27 @@
     ]
   },
   {
-    "name": "Draw something in your room in under 90 seconds — then draw it again taking as long as you like.",
+    "name": "Draw something in your room in under 90 seconds \u2014 then draw it again taking as long as you like.",
     "tags": [
       "craft"
     ]
   },
   {
-    "name": "Draw the view out your window using only your pen — no pencil underdrawing, no erasing.",
+    "name": "Draw the view out your window using only your pen \u2014 no pencil underdrawing, no erasing.",
     "tags": [
       "craft",
       "spatial"
     ]
   },
   {
-    "name": "Draw a piece of fruit using only hatching — no outlines, only parallel lines building up the form.",
+    "name": "Draw a piece of fruit using only hatching \u2014 no outlines, only parallel lines building up the form.",
     "tags": [
       "craft",
       "still_life"
     ]
   },
   {
-    "name": "The Root System: Draw where a tree meets the dirt. Focus on the tension of the roots \"gripping\" the earth.",
+    "name": "Draw where a tree meets the dirt. Focus on the tension of the roots \"gripping\" the earth.",
     "tags": [
       "nature",
       "sensory",
@@ -2667,28 +2654,28 @@
     ]
   },
   {
-    "name": "Fractal Study: Find a leaf. Draw the \"skeleton\" (the veins) before you draw the rest of the leaf.",
+    "name": "Find a leaf. Draw the \"skeleton\" (the veins) before you draw the rest of the leaf.",
     "tags": [
       "nature",
       "craft"
     ]
   },
   {
-    "name": "The Canopy Overlay: Look straight up. Draw the negative space created by the sky peeking through the leaves.",
+    "name": "Look straight up. Draw the negative space created by the sky peeking through the leaves.",
     "tags": [
       "nature",
       "spatial"
     ]
   },
   {
-    "name": "Decay vs. Growth: Find a rotting log or a dead leaf next to a fresh sprout. Draw them together.",
+    "name": "Find a rotting log or a dead leaf next to a fresh sprout. Draw them together.",
     "tags": [
       "nature",
       "temporal"
     ]
   },
   {
-    "name": "Wind Motion: Try to draw a long blade of grass or a branch using \"motion lines\" to show which way the wind is blowing it.",
+    "name": "Try to draw a long blade of grass or a branch using \"motion lines\" to show which way the wind is blowing it.",
     "tags": [
       "nature",
       "sensory",
@@ -2696,7 +2683,7 @@
     ]
   },
   {
-    "name": "Micro-Landscape: Zoom in on a single square inch of moss or dirt. Treat it like a vast mountain range.",
+    "name": "Zoom in on a single square inch of moss or dirt. Treat it like a vast mountain range.",
     "tags": [
       "nature",
       "spatial",
@@ -2704,21 +2691,21 @@
     ]
   },
   {
-    "name": "The Horizon Contrast: Draw the line where the soft trees meet the hard, flat horizon or a distant building.",
+    "name": "Draw the line where the soft trees meet the hard, flat horizon or a distant building.",
     "tags": [
       "nature",
       "spatial"
     ]
   },
   {
-    "name": "Specimen Row: Pick five different types of leaves from the ground and draw them in a neat, scientific row.",
+    "name": "Pick five different types of leaves from the ground and draw them in a neat, scientific row.",
     "tags": [
       "nature",
       "craft"
     ]
   },
   {
-    "name": "The Sun's Path: Draw the way a shadow falls across a rock. Wait fifteen minutes, then draw the new shadow line in a different color.",
+    "name": "Draw the way a shadow falls across a rock. Wait fifteen minutes, then draw the new shadow line in a different color.",
     "tags": [
       "nature",
       "temporal",
@@ -2726,21 +2713,21 @@
     ]
   },
   {
-    "name": "The Texture of Bark: Don't draw the whole tree. Draw a small patch of bark, focusing on the deep \"valleys\" and \"peaks\" of the wood.",
+    "name": "Don't draw the whole tree. Draw a small patch of bark, focusing on the deep \"valleys\" and \"peaks\" of the wood.",
     "tags": [
       "nature",
       "sensory"
     ]
   },
   {
-    "name": "Natural Geometry: Find a spiderweb. Draw it, including the \"anchor points\" where it attaches to plants.",
+    "name": "Find a spiderweb. Draw it, including the \"anchor points\" where it attaches to plants.",
     "tags": [
       "nature",
       "spatial"
     ]
   },
   {
-    "name": "The Water's Edge: If you're near water, draw the \"distortion\"—how the rocks look different underwater vs. above water.",
+    "name": "If you're near water, draw the \"distortion\"\u2014how the rocks look different underwater vs. above water.",
     "tags": [
       "nature",
       "sensory",
@@ -2748,28 +2735,28 @@
     ]
   },
   {
-    "name": "Insect's Eye View: Get your face as close to the ground as possible. Draw the \"forest\" of grass blades from that height.",
+    "name": "Get your face as close to the ground as possible. Draw the \"forest\" of grass blades from that height.",
     "tags": [
       "nature",
       "spatial"
     ]
   },
   {
-    "name": "The Stone Pile: Find three stones of different sizes. Stack them and draw the points where they touch.",
+    "name": "Find three stones of different sizes. Stack them and draw the points where they touch.",
     "tags": [
       "nature",
       "spatial"
     ]
   },
   {
-    "name": "Dappled Light: Draw the \"polka dots\" of sunlight hitting the ground under a tree, ignoring the objects themselves.",
+    "name": "Draw the \"polka dots\" of sunlight hitting the ground under a tree, ignoring the objects themselves.",
     "tags": [
       "nature",
       "sensory"
     ]
   },
   {
-    "name": "The Unnatural Guest: Find a piece of literal litter or a man-made object (like a fence post) and draw how nature is growing around it.",
+    "name": "Find a piece of literal litter or a man-made object (like a fence post) and draw how nature is growing around it.",
     "tags": [
       "nature",
       "urban",
@@ -2777,14 +2764,14 @@
     ]
   },
   {
-    "name": "Symmetry Check: Find a \"symmetrical\" flower or leaf. Draw it, but intentionally include all its \"imperfections\" (bug bites, tears, lopsidedness).",
+    "name": "Find a \"symmetrical\" flower or leaf. Draw it, but intentionally include all its \"imperfections\" (bug bites, tears, lopsidedness).",
     "tags": [
       "nature",
       "craft"
     ]
   },
   {
-    "name": "The Distant Layer: Draw the furthest thing you can see (a mountain or distant treeline) using the lightest lines possible.",
+    "name": "Draw the furthest thing you can see (a mountain or distant treeline) using the lightest lines possible.",
     "tags": [
       "nature",
       "spatial",
@@ -2792,14 +2779,14 @@
     ]
   },
   {
-    "name": "The Seed: Find a pinecone, acorn, or seed pod. Draw it at 5x its actual size.",
+    "name": "Find a pinecone, acorn, or seed pod. Draw it at 5x its actual size.",
     "tags": [
       "nature",
       "craft"
     ]
   },
   {
-    "name": "Cloud Sculpting: Look at a cloud. Draw its outline, then quickly shade the darkest parts before it changes shape.",
+    "name": "Look at a cloud. Draw its outline, then quickly shade the darkest parts before it changes shape.",
     "tags": [
       "nature",
       "temporal",
@@ -2807,7 +2794,7 @@
     ]
   },
   {
-    "name": "Draw a dream you remember — any fragment of it, however strange.",
+    "name": "Draw a dream you remember \u2014 any fragment of it, however strange.",
     "tags": [
       "imagination",
       "emotional",
@@ -2829,7 +2816,7 @@
     ]
   },
   {
-    "name": "Draw your perfect place — real or invented.",
+    "name": "Draw your perfect place \u2014 real or invented.",
     "tags": [
       "imagination",
       "emotional"

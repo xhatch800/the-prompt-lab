@@ -126,25 +126,27 @@
       top: 1.2rem;
       right: 1.2rem;
       z-index: 10;
-      background: none;
-      border: none;
-      cursor: pointer;
+      font-family: 'Caveat', cursive;
+      font-size: 1rem;
+      background: #fdf8f0;
+      border: 1.5px solid #b85c38;
+      border-radius: 6px;
       color: #b85c38;
-      font-size: 1.3rem;
-      line-height: 1;
-      padding: 4px;
-      transition: color 0.15s ease;
+      padding: 1px 8px;
+      cursor: pointer;
+      line-height: 1.5;
+      transition: background 0.1s, color 0.1s;
     }
     .copy-btn:hover { opacity: 0.7; }
-    .copy-btn.copied { color: #b85c38; }
+    .copy-btn.copied { background: #b85c38; color: #fdf8f0; }
 
     .back-row {
       display: flex;
       align-items: center;
       gap: 6px;
       position: absolute;
-      top: 1.5rem;
-      left: 1.5rem;
+      top: 1.2rem;
+      left: 1.2rem;
       z-index: 10;
     }
 
@@ -354,8 +356,7 @@
 }
 
 #screen-just-draw .prompt-text {
-  max-height: calc(100vh - 14rem); /* prevent long prompts reaching fixed footer */
-  overflow: hidden;
+  max-height: calc(100vh - 17rem);
 }
 
 .just-draw-attribution {
@@ -370,6 +371,205 @@
   letter-spacing: 0.02em;
   pointer-events: auto;
 }
+
+    /* ── Everyday Life header right group ── */
+    .jd-header-right {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 10;
+    }
+    .jd-header-right .copy-btn {
+      position: static;
+    }
+
+    /* ── Everyday Life filter ── */
+    .jd-filter-btn {
+      font-family: 'Caveat', cursive;
+      font-size: 1rem;
+      border: 1.5px solid #b85c38;
+      border-radius: 6px;
+      color: #b85c38;
+      background: #fdf8f0;
+      padding: 1px 8px;
+      cursor: pointer;
+      line-height: 1.5;
+      transition: background 0.1s, color 0.1s;
+    }
+    .jd-filter-btn.active {
+      background: #b85c38;
+      color: #fdf8f0;
+    }
+
+    .jd-tag-indicator {
+      position: absolute;
+      bottom: 9.5rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: sans-serif;
+      font-size: 0.7rem;
+      color: #b85c38;
+      opacity: 0.72;
+      pointer-events: none;
+      min-height: 1.1rem;
+    }
+
+    /* ── Filter sheet ── */
+    .jd-filter-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(44, 44, 44, 0.3);
+      z-index: 20;
+    }
+
+    .jd-filter-sheet {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #fdf8f0;
+      border-radius: 20px 20px 0 0;
+      padding: 1.2rem 1.4rem 2rem;
+      z-index: 21;
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.12);
+    }
+
+    .jd-sheet-title {
+      font-family: 'Caveat', cursive;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #2c2c2c;
+      margin-bottom: 0.15rem;
+    }
+
+    .jd-sheet-subtitle {
+      font-family: sans-serif;
+      font-size: 0.7rem;
+      color: #aaa;
+      margin-bottom: 0.85rem;
+    }
+
+    .jd-tag-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .jd-chip {
+      font-family: 'Caveat', cursive;
+      font-size: 1.2rem;
+      border: 1.5px solid #b85c38;
+      border-radius: 20px;
+      padding: 0.05rem 0.75rem;
+      background: #fdf8f0;
+      color: #b85c38;
+      cursor: pointer;
+      transition: background 0.1s, color 0.1s;
+    }
+
+    .jd-chip.on {
+      background: #b85c38;
+      color: #fdf8f0;
+    }
+
+    .jd-any-all-row {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.8rem;
+    }
+    .jd-any-all-row.hidden { display: none; }
+
+    .jd-any-all-label {
+      font-family: sans-serif;
+      font-size: 0.72rem;
+      color: #888;
+    }
+
+    .jd-any-all-toggle {
+      display: flex;
+      border: 1.5px solid #b85c38;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .jd-aa-btn {
+      font-family: sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 9px;
+      background: none;
+      border: none;
+      color: #b85c38;
+      cursor: pointer;
+    }
+
+    .jd-aa-btn + .jd-aa-btn {
+      border-left: 1.5px solid #b85c38;
+    }
+
+    .jd-aa-btn.active {
+      background: #b85c38;
+      color: #fdf8f0;
+    }
+
+    .jd-pool-count {
+      font-family: sans-serif;
+      font-size: 0.7rem;
+      color: #b85c38;
+      opacity: 0.65;
+      margin-left: auto;
+    }
+
+    .jd-sheet-actions {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .jd-clear-btn {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      background: #fdf8f0;
+      border: 1.5px solid #b85c38;
+      border-radius: 10px;
+      color: #b85c38;
+      padding: 0.3rem 1rem;
+      cursor: pointer;
+      flex: 1;
+    }
+
+    .jd-apply-btn {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      background: #fdf8f0;
+      border: 1.5px solid #b85c38;
+      border-radius: 10px;
+      color: #b85c38;
+      padding: 0.3rem 1.4rem;
+      cursor: pointer;
+      flex: 2;
+      box-shadow: 2px 2px 0 #b85c38;
+    }
+
+    .jd-apply-btn:disabled {
+      opacity: 0.35;
+      cursor: default;
+      box-shadow: none;
+    }
+
+    .jd-empty-warning {
+      font-family: sans-serif;
+      font-size: 0.68rem;
+      color: #b85c38;
+      opacity: 0.75;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
 
 .just-draw-attribution a {
   color: rgba(184, 92, 56, 0.65);
@@ -1167,8 +1367,12 @@
       <button class="back-btn" data-target="screen-home">←</button>
       <span class="screen-label">Everyday Life</span>
     </div>
-    <button class="copy-btn" id="copy-just-draw" title="Copy prompt">⧉</button>
+    <div class="jd-header-right">
+      <button id="jd-filter-btn" class="jd-filter-btn">⊞ filter</button>
+      <button class="copy-btn" id="copy-just-draw" title="Copy prompt">⧉ copy</button>
+    </div>
     <p id="just-draw-prompt" class="prompt-text"></p>
+    <p id="jd-tag-indicator" class="jd-tag-indicator"></p>
     <button id="btn-regen-just-draw" class="regen-btn">↺ new prompt</button>
     <div class="history-nav" id="history-nav-just-draw">
       <button class="hist-arrow" id="hist-prev-just-draw">‹</button>
@@ -1176,6 +1380,26 @@
       <button class="hist-arrow" id="hist-next-just-draw">›</button>
     </div>
     <p class="just-draw-attribution">Prompt list by <a href="https://dannygregorysblog.com/community/edm-challenges/" target="_blank" rel="noopener">Danny Gregory</a></p>
+
+    <!-- Filter sheet overlay -->
+    <div id="jd-filter-backdrop" class="jd-filter-backdrop hidden"></div>
+    <div id="jd-filter-sheet" class="jd-filter-sheet hidden">
+      <div class="jd-sheet-title">Filter by subject</div>
+      <p class="jd-sheet-subtitle">All prompts shown when nothing selected</p>
+      <div id="jd-tag-chips" class="jd-tag-chips"></div>
+      <div id="jd-any-all-row" class="jd-any-all-row hidden">
+        <span class="jd-any-all-label">match</span>
+        <div class="jd-any-all-toggle">
+          <button class="jd-aa-btn active" data-mode="any">any</button>
+          <button class="jd-aa-btn" data-mode="all">all</button>
+        </div>
+        <span id="jd-pool-count" class="jd-pool-count"></span>
+      </div>
+      <div class="jd-sheet-actions">
+        <button id="jd-clear-btn" class="jd-clear-btn">clear</button>
+        <button id="jd-apply-btn" class="jd-apply-btn">↺ new prompt</button>
+      </div>
+    </div>
   </div>
 
   <!-- Screen: Surreal Cauldron Config -->
@@ -1202,7 +1426,7 @@
       <button id="btn-back-imagine" class="back-btn">←</button>
       <span id="imagine-screen-label" class="screen-label"></span>
     </div>
-    <button class="copy-btn" id="copy-imagine" title="Copy prompt">⧉</button>
+    <button class="copy-btn" id="copy-imagine" title="Copy prompt">⧉ copy</button>
     <div id="imagine-prompt" class="prompt-text"></div>
     <p id="lock-hint-imagine" class="lock-hint">tap a word to lock it</p>
     <button id="btn-regen-imagine" class="regen-btn">↺ new prompt</button>
@@ -1259,7 +1483,11 @@
 
     // ── Prompt generators ────────────────────────────────────────
     function generateJustDraw() {
-      return drawFromDeck(justDrawDeck, store.justDraw);
+      const pool = justDrawActiveTags.length === 0
+        ? store.justDraw
+        : filterByTags(store.justDraw, justDrawActiveTags, justDrawTagMode);
+      const item = drawFromDeck(justDrawDeck, pool.length > 0 ? pool : store.justDraw);
+      return item ? item.name : '';
     }
 
     function generateSurrealNarrative(current, locked) {
@@ -1444,7 +1672,7 @@
     }
 
     function animateJustDraw(el, finalValue) {
-      animateSlot(el, store.justDraw, finalValue, 1200);
+      animateSlot(el, store.justDrawNames, finalValue, 1200);
     }
 
     // ── Cauldron helpers ─────────────────────────────────────────
@@ -1850,7 +2078,9 @@ function renderCauldronConfig() {
     const HISTORY_MAX = 20;
     let promptHistory = [];    // string[] for Sparks; prompt object[] for Surreal/Mutations
     let historyIndex = -1;     // -1 = empty; 0 = oldest; length-1 = newest
-    let justDrawDeck = [];     // shuffle deck for Everyday Life — reset on entry from Home
+    let justDrawDeck = [];          // shuffle deck for Everyday Life — reset on entry from Home
+    let justDrawActiveTags = [];    // tag filter; empty = all prompts
+    let justDrawTagMode = 'any';    // 'any' | 'all'
     let cauldronDecks = {};    // { [slotId]: string[] } — reset on every Generate tap
 
     // ── History helpers ──────────────────────────────────────────
@@ -1938,10 +2168,157 @@ function renderCauldronConfig() {
       );
     }
 
+    // ── Everyday Life filter ──────────────────────────────────────
+    const JD_TAGS = [
+      'still_life', 'organic', 'sensory', 'emotional',
+      'spatial', 'temporal', 'urban', 'craft',
+      'nature', 'figures', 'imagination'
+    ];
+
+    // Scratch state — represents what's in the open sheet (not yet applied)
+    let jdSheetTags = [];
+    let jdSheetMode = 'any';
+
+    function jdPoolCount(tags, mode) {
+      if (tags.length === 0) return store.justDraw.length;
+      return filterByTags(store.justDraw, tags, mode).length;
+    }
+
+    function renderJdSheet() {
+      const chipsEl = document.getElementById('jd-tag-chips');
+      const anyAllRow = document.getElementById('jd-any-all-row');
+      const poolCountEl = document.getElementById('jd-pool-count');
+      const applyBtn = document.getElementById('jd-apply-btn');
+      const aaBtns = document.querySelectorAll('.jd-aa-btn');
+
+      // Rebuild chips
+      chipsEl.innerHTML = '';
+      JD_TAGS.forEach(tag => {
+        const chip = document.createElement('button');
+        chip.className = 'jd-chip' + (jdSheetTags.includes(tag) ? ' on' : '');
+        chip.textContent = tag.replace('_', ' ');
+        chip.addEventListener('click', () => {
+          if (jdSheetTags.includes(tag)) {
+            jdSheetTags = jdSheetTags.filter(t => t !== tag);
+            if (jdSheetTags.length === 0) jdSheetMode = 'any';
+          } else {
+            jdSheetTags = [...jdSheetTags, tag];
+          }
+          renderJdSheet();
+        });
+        chipsEl.appendChild(chip);
+      });
+
+      // Any/all row visibility
+      anyAllRow.classList.toggle('hidden', jdSheetTags.length === 0);
+
+      // Any/all button active state
+      aaBtns.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.mode === jdSheetMode);
+      });
+
+      // Pool count and apply button
+      const count = jdPoolCount(jdSheetTags, jdSheetMode);
+      poolCountEl.textContent = jdSheetTags.length > 0 ? `${count} prompts` : '';
+
+      // Empty pool warning
+      let warning = chipsEl.parentElement.querySelector('.jd-empty-warning');
+      if (count === 0 && jdSheetTags.length > 0) {
+        if (!warning) {
+          warning = document.createElement('p');
+          warning.className = 'jd-empty-warning';
+          warning.textContent = "no prompts match — try 'any' or fewer tags";
+          document.getElementById('jd-any-all-row').after(warning);
+        }
+      } else if (warning) {
+        warning.remove();
+      }
+
+      applyBtn.disabled = count === 0;
+    }
+
+    function openJdFilterSheet() {
+      // Snapshot current active state into sheet scratch state
+      jdSheetTags = [...justDrawActiveTags];
+      jdSheetMode = justDrawTagMode;
+      document.getElementById('jd-filter-backdrop').classList.remove('hidden');
+      document.getElementById('jd-filter-sheet').classList.remove('hidden');
+      document.getElementById('jd-filter-btn').classList.add('active');
+      renderJdSheet();
+    }
+
+    function closeJdFilterSheet() {
+      document.getElementById('jd-filter-backdrop').classList.add('hidden');
+      document.getElementById('jd-filter-sheet').classList.add('hidden');
+    }
+
+    function applyJdFilter() {
+      justDrawActiveTags = [...jdSheetTags];
+      justDrawTagMode = jdSheetMode;
+      justDrawDeck = [];
+      closeJdFilterSheet();
+      updateJdFilterBtn();
+      updateJdTagIndicator();
+    }
+
+    function updateJdFilterBtn() {
+      document.getElementById('jd-filter-btn')
+        .classList.toggle('active', justDrawActiveTags.length > 0);
+    }
+
+    function updateJdTagIndicator() {
+      const el = document.getElementById('jd-tag-indicator');
+      if (justDrawActiveTags.length === 0) {
+        el.textContent = '';
+      } else {
+        const labels = justDrawActiveTags.map(t => t.replace('_', ' ')).join(', ');
+        el.textContent = `${justDrawTagMode}: ${labels}`;
+      }
+    }
+
+    // Filter button
+    document.getElementById('jd-filter-btn').addEventListener('click', openJdFilterSheet);
+
+    // Backdrop closes sheet without applying
+    document.getElementById('jd-filter-backdrop').addEventListener('click', () => {
+      closeJdFilterSheet();
+      updateJdFilterBtn();
+    });
+
+    // Any/all toggle buttons
+    document.querySelectorAll('.jd-aa-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        jdSheetMode = btn.dataset.mode;
+        renderJdSheet();
+      });
+    });
+
+    // Clear button
+    document.getElementById('jd-clear-btn').addEventListener('click', () => {
+      jdSheetTags = [];
+      jdSheetMode = 'any';
+      renderJdSheet();
+    });
+
+    // Apply button
+    document.getElementById('jd-apply-btn').addEventListener('click', () => {
+      applyJdFilter();
+      const finalValue = generateJustDraw();
+      const el = document.getElementById('just-draw-prompt');
+      el.textContent = finalValue;
+      animateJustDraw(el, finalValue);
+      pushToHistory(finalValue);
+      renderHistoryWidget('history-nav-just-draw', 'hist-dots-just-draw', 'hist-prev-just-draw', 'hist-next-just-draw');
+    });
+
     // ── Event wiring ─────────────────────────────────────────────
     document.getElementById('btn-just-draw').addEventListener('click', () => {
       clearHistory();
       justDrawDeck = [];
+      justDrawActiveTags = [];
+      justDrawTagMode = 'any';
+      updateJdFilterBtn();
+      updateJdTagIndicator();
       const finalValue = generateJustDraw();
       const el = document.getElementById('just-draw-prompt');
       showScreen('screen-just-draw');
@@ -2149,7 +2526,7 @@ function renderCauldronConfig() {
       try {
         const [justDraw, adjectives, nounsOrganicRaw, nounsSyntheticRaw, verbsRaw, environmentsRaw] =
           await Promise.all([
-            fetch('data/just_draw.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
+            fetch('data/just_draw_tagged.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
             fetch('data/adjectives.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
             fetch('data/nouns_organic_tagged.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
             fetch('data/nouns_synthetic_tagged.json').then(r => { if (!r.ok) throw new Error(); return r.json(); }),
@@ -2163,6 +2540,7 @@ function renderCauldronConfig() {
         }
 
         store.justDraw            = justDraw;
+        store.justDrawNames       = justDraw.map(i => i.name);
         store.adjectives          = adjectives;
         // Name-only arrays — used by existing generation functions unchanged
         store.nounsOrganic        = nounsOrganicRaw.map(i => i.name);
