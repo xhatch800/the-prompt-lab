@@ -2267,7 +2267,9 @@ function renderCauldronConfig() {
       void container.offsetWidth; // force reflow so animation re-triggers
       container.classList.add(direction === -1 ? 'slide-from-left' : 'slide-from-right');
 
-      const suffix = promptContainerId === 'imagine-prompt' ? 'imagine' : 'just-draw';
+      const suffix = promptContainerId === 'imagine-prompt' ? 'imagine'
+                   : promptContainerId === 'ss-prompt'      ? 'strange-scenes'
+                   : 'just-draw';
       renderHistoryWidget(
         `history-nav-${suffix}`,
         `hist-dots-${suffix}`,
@@ -2420,6 +2422,43 @@ function renderCauldronConfig() {
       regenPoolMode(jdConfig);
     });
 
+    document.getElementById('btn-strange-scenes').addEventListener('click', () => {
+      clearHistory();
+      ssConfig.deck       = [];
+      ssConfig.activeTags = [];
+      ssConfig.tagMode    = 'any';
+      updateFilterBtn(ssConfig);
+      updateTagIndicator(ssConfig);
+      showScreen('screen-strange-scenes');
+      regenPoolMode(ssConfig);
+    });
+
+    document.getElementById('btn-regen-strange-scenes').addEventListener('click', () => {
+      regenPoolMode(ssConfig);
+    });
+
+    // Strange Scenes filter sheet
+    document.getElementById('ss-filter-btn').addEventListener('click', () => openFilterSheet(ssConfig));
+    document.getElementById('ss-filter-backdrop').addEventListener('click', () => {
+      closeFilterSheet(ssConfig);
+      updateFilterBtn(ssConfig);
+    });
+    document.getElementById('ss-clear-btn').addEventListener('click', () => {
+      ssConfig.sheetTags = [];
+      ssConfig.sheetMode = 'any';
+      renderFilterSheet(ssConfig);
+    });
+    document.getElementById('ss-apply-btn').addEventListener('click', () => {
+      applyFilter(ssConfig);
+      regenPoolMode(ssConfig);
+    });
+    document.querySelectorAll('#ss-any-all-row .pm-aa-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        ssConfig.sheetMode = btn.dataset.mode;
+        renderFilterSheet(ssConfig);
+      });
+    });
+
     /**
     document.getElementById('btn-surreal').addEventListener('click', () => {
       clearHistory();
@@ -2567,6 +2606,9 @@ function renderCauldronConfig() {
     setupCopyBtn('copy-imagine', () =>
       document.getElementById('imagine-prompt').textContent.trim()
     );
+    setupCopyBtn('copy-strange-scenes', () =>
+      document.getElementById('ss-prompt').textContent.trim()
+    );
 
     document.getElementById('btn-back-imagine').addEventListener('click', () => {
       showScreen(promptBackTarget ?? 'screen-home');
@@ -2583,6 +2625,12 @@ function renderCauldronConfig() {
     });
     document.getElementById('hist-next-just-draw').addEventListener('click', () => {
       navigateHistory(1, 'just-draw-prompt', 'sparks');
+    });
+    document.getElementById('hist-prev-strange-scenes').addEventListener('click', () => {
+      navigateHistory(-1, 'ss-prompt', 'sparks');
+    });
+    document.getElementById('hist-next-strange-scenes').addEventListener('click', () => {
+      navigateHistory(1, 'ss-prompt', 'sparks');
     });
 
     // ── Swipe gestures for history ────────────────────────────────
