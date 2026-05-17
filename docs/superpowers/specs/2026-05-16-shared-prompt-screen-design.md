@@ -44,6 +44,7 @@ const jdConfig = {
   getNames:   () => store.justDrawNames,
   textField:  'name',
   label:      'Everyday Life',
+  backTarget: 'screen-home',
   sheetTitle: 'Filter by subject',
   hasFilter:  true,
   renderMode: 'pool',
@@ -59,6 +60,7 @@ const ssConfig = {
   getNames:   () => store.strangeSceneTexts,
   textField:  'text',
   label:      'Strange Scenes',
+  backTarget: 'screen-home',
   sheetTitle: 'Filter by theme',
   hasFilter:  true,
   renderMode: 'pool',
@@ -71,6 +73,7 @@ const ssConfig = {
 
 const cauldronConfig = {
   label:      'Surreal Cauldron',    // set dynamically from cauldron build
+  backTarget: 'screen-cauldron-config',
   hasFilter:  false,
   renderMode: 'cauldron',
 };
@@ -84,6 +87,7 @@ Single entry point for all modes:
 function enterMode(config) {
   activeConfig = config;
   document.getElementById('prompt-screen-label').textContent = config.label;
+  document.getElementById('prompt-back-btn').dataset.target = config.backTarget;
 
   // Show/hide filter UI
   const hasFilter = config.hasFilter;
