@@ -48,6 +48,7 @@ document.getElementById('btn-strange-scenes').addEventListener('click', () => {
 document.getElementById('btn-cauldron').addEventListener('click', () => {
   clearHistory();
   lockedSlots = {};
+  cauldronDecks = {};
   initCauldronConfig('surreal');
   renderCauldronConfig();
   showScreen('screen-cauldron-config');
@@ -71,7 +72,6 @@ document.getElementById('cc-preset-strange').addEventListener('click', () => {
 
 document.getElementById('cc-generate').addEventListener('click', () => {
   if (!cauldronConfig) return;
-  cauldronDecks = {};
   currentPrompt = generateCauldron(cauldronConfig, currentPrompt, lockedSlots);
   enterMode(cauldronModeConfig);
   const container = document.getElementById('prompt-content');
