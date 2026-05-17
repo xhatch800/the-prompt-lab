@@ -570,7 +570,7 @@ function renderCauldronConfig() {
 }
 
     function toggleLock(slot, container, mode) {
-      if (lockedSlots[slot]
+      if (lockedSlots[slot]) {
         delete lockedSlots[slot];
       } else {
         lockedSlots[slot] = true;
