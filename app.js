@@ -880,9 +880,7 @@ function renderCauldronConfig() {
     document.getElementById('cc-generate').addEventListener('click', () => {
       if (!cauldronConfig) return;
       cauldronDecks = {};
-      clearHistory();
-      lockedSlots = {};
-      currentPrompt = generateCauldron(cauldronConfig, null, {});
+      currentPrompt = generateCauldron(cauldronConfig, currentPrompt, lockedSlots);
       enterMode(cauldronModeConfig);
       const container = document.getElementById('prompt-content');
       renderPrompt(container, 'cauldron');
