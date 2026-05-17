@@ -422,82 +422,6 @@
     </div>
   </div>
 
-  <!-- Screen: Just Draw Prompt -->
-  <div id="screen-just-draw" class="screen">
-    <div class="back-row">
-      <button class="back-btn" data-target="screen-home">←</button>
-      <span class="screen-label">Everyday Life</span>
-    </div>
-    <div class="pm-header-right">
-      <button id="jd-filter-btn" class="pm-filter-btn">⊞ filter</button>
-      <button class="copy-btn" id="copy-just-draw" title="Copy prompt">⧉ copy</button>
-    </div>
-    <p id="just-draw-prompt" class="prompt-text"></p>
-    <p id="jd-tag-indicator" class="pm-tag-indicator"></p>
-    <button id="btn-regen-just-draw" class="regen-btn">↺ new prompt</button>
-    <div class="history-nav" id="history-nav-just-draw">
-      <button class="hist-arrow" id="hist-prev-just-draw">‹</button>
-      <div class="hist-dots" id="hist-dots-just-draw"></div>
-      <button class="hist-arrow" id="hist-next-just-draw">›</button>
-    </div>
-    <!-- Filter sheet overlay -->
-    <div id="jd-filter-backdrop" class="pm-filter-backdrop"></div>
-    <div id="jd-filter-sheet" class="pm-filter-sheet hidden">
-      <div class="pm-sheet-title">Filter by subject</div>
-      <p class="pm-sheet-subtitle">All prompts shown when nothing selected</p>
-      <div id="jd-tag-chips" class="pm-tag-chips"></div>
-      <div id="jd-any-all-row" class="pm-any-all-row hidden">
-        <span class="pm-any-all-label">match</span>
-        <div class="pm-any-all-toggle">
-          <button class="pm-aa-btn active" data-mode="any">any</button>
-          <button class="pm-aa-btn" data-mode="all">all</button>
-        </div>
-        <span id="jd-pool-count" class="pm-pool-count"></span>
-      </div>
-      <div class="pm-sheet-actions">
-        <button id="jd-clear-btn" class="pm-clear-btn">clear</button>
-        <button id="jd-apply-btn" class="pm-apply-btn">↺ new prompt</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Screen: Strange Scenes -->
-  <div id="screen-strange-scenes" class="screen">
-    <div class="back-row">
-      <button class="back-btn" data-target="screen-home">←</button>
-      <span class="screen-label">Strange Scenes</span>
-    </div>
-    <div class="pm-header-right">
-      <button id="ss-filter-btn" class="pm-filter-btn">⊞ filter</button>
-      <button class="copy-btn" id="copy-strange-scenes" title="Copy prompt">⧉ copy</button>
-    </div>
-    <p id="ss-prompt" class="prompt-text"></p>
-    <p id="ss-tag-indicator" class="pm-tag-indicator"></p>
-    <button id="btn-regen-strange-scenes" class="regen-btn">↺ new prompt</button>
-    <div class="history-nav" id="history-nav-strange-scenes">
-      <button class="hist-arrow" id="hist-prev-strange-scenes">‹</button>
-      <div class="hist-dots" id="hist-dots-strange-scenes"></div>
-      <button class="hist-arrow" id="hist-next-strange-scenes">›</button>
-    </div>
-    <div id="ss-filter-backdrop" class="pm-filter-backdrop"></div>
-    <div id="ss-filter-sheet" class="pm-filter-sheet hidden">
-      <div class="pm-sheet-title">Filter by theme</div>
-      <p class="pm-sheet-subtitle">All prompts shown when nothing selected</p>
-      <div id="ss-tag-chips" class="pm-tag-chips"></div>
-      <div id="ss-any-all-row" class="pm-any-all-row hidden">
-        <span class="pm-any-all-label">match</span>
-        <div class="pm-any-all-toggle">
-          <button class="pm-aa-btn active" data-mode="any">any</button>
-          <button class="pm-aa-btn" data-mode="all">all</button>
-        </div>
-        <span id="ss-pool-count" class="pm-pool-count"></span>
-      </div>
-      <div class="pm-sheet-actions">
-        <button id="ss-clear-btn" class="pm-clear-btn">clear</button>
-        <button id="ss-apply-btn" class="pm-apply-btn">↺ new prompt</button>
-      </div>
-    </div>
-  </div>
 
   <!-- Screen: Surreal Cauldron Config -->
   <div id="screen-cauldron-config" class="screen">
@@ -517,20 +441,43 @@
     </div>
   </div>
 
-  <!-- Screen: Imagination Prompt -->
-  <div id="screen-imagine-prompt" class="screen">
+  <!-- Screen: Shared Prompt -->
+  <div id="screen-prompt" class="screen">
     <div class="back-row">
-      <button id="btn-back-imagine" class="back-btn">←</button>
-      <span id="imagine-screen-label" class="screen-label"></span>
+      <button id="prompt-back-btn" class="back-btn">←</button>
+      <span id="prompt-screen-label" class="screen-label"></span>
     </div>
-    <button class="copy-btn" id="copy-imagine" title="Copy prompt">⧉ copy</button>
-    <div id="imagine-prompt" class="prompt-text"></div>
-    <p id="lock-hint-imagine" class="lock-hint">tap a word to lock it</p>
-    <button id="btn-regen-imagine" class="regen-btn">↺ new prompt</button>
-    <div class="history-nav" id="history-nav-imagine">
-      <button class="hist-arrow" id="hist-prev-imagine">‹</button>
-      <div class="hist-dots" id="hist-dots-imagine"></div>
-      <button class="hist-arrow" id="hist-next-imagine">›</button>
+    <div class="pm-header-right">
+      <button id="prompt-filter-btn" class="pm-filter-btn">⊞ filter</button>
+      <button class="copy-btn" id="prompt-copy-btn" title="Copy prompt">⧉ copy</button>
+    </div>
+    <div id="prompt-content" class="prompt-text"></div>
+    <p id="prompt-tag-indicator" class="pm-tag-indicator"></p>
+    <p id="prompt-lock-hint" class="lock-hint hidden">tap a word to lock it</p>
+    <button id="prompt-regen-btn" class="regen-btn">↺ new prompt</button>
+    <div class="history-nav" id="prompt-history-nav">
+      <button class="hist-arrow" id="prompt-hist-prev">‹</button>
+      <div class="hist-dots" id="prompt-hist-dots"></div>
+      <button class="hist-arrow" id="prompt-hist-next">›</button>
+    </div>
+    <!-- Filter sheet overlay -->
+    <div id="prompt-filter-backdrop" class="pm-filter-backdrop"></div>
+    <div id="prompt-filter-sheet" class="pm-filter-sheet hidden">
+      <div id="prompt-sheet-title" class="pm-sheet-title"></div>
+      <p class="pm-sheet-subtitle">All prompts shown when nothing selected</p>
+      <div id="prompt-tag-chips" class="pm-tag-chips"></div>
+      <div id="prompt-any-all-row" class="pm-any-all-row hidden">
+        <span class="pm-any-all-label">match</span>
+        <div class="pm-any-all-toggle">
+          <button class="pm-aa-btn active" data-mode="any">any</button>
+          <button class="pm-aa-btn" data-mode="all">all</button>
+        </div>
+        <span id="prompt-pool-count" class="pm-pool-count"></span>
+      </div>
+      <div class="pm-sheet-actions">
+        <button id="prompt-clear-btn" class="pm-clear-btn">clear</button>
+        <button id="prompt-apply-btn" class="pm-apply-btn">↺ new prompt</button>
+      </div>
     </div>
   </div>
 
