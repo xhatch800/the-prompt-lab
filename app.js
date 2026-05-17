@@ -1,6 +1,5 @@
     // ── Data store ──────────────────────────────────────────────
     const store = {};
-    document.getElementById('btn-just-draw').disabled = true;
 
     // ── Utilities ───────────────────────────────────────────────
     function pick(arr) {
@@ -47,38 +46,6 @@
       const verb       = locked.verb        ? prev.verb        : pick(store.verbs);
       const environment = locked.environment ? prev.environment : pick(store.environments);
       return { adjective, noun, verb, environment };
-    }
-
-    function generateMutation(type, current, locked) {
-      const prev = current || {};
-
-      // Determine the target pool for each slot
-      let pool1, pool2;
-      if (type === 'random') {
-        // In random mode, each unlocked slot draws from a freshly random pool
-        pool1 = Math.random() < 0.5 ? 'organic' : 'synthetic';
-        pool2 = Math.random() < 0.5 ? 'organic' : 'synthetic';
-      } else if (type === 'organic-organic') {
-        pool1 = 'organic';  pool2 = 'organic';
-      } else if (type === 'organic-synthetic') {
-        pool1 = 'organic';  pool2 = 'synthetic';
-      } else { // synthetic-synthetic
-        pool1 = 'synthetic'; pool2 = 'synthetic';
-      }
-
-      const noun1Pool = locked.noun1 ? prev.noun1Pool : pool1;
-      const noun2Pool = locked.noun2 ? prev.noun2Pool : pool2;
-      const noun1 = locked.noun1 ? prev.noun1 : pick(noun1Pool === 'organic' ? store.nounsOrganic : store.nounsSynthetic);
-      let noun2 = locked.noun2 ? prev.noun2 : pick(noun2Pool === 'organic' ? store.nounsOrganic : store.nounsSynthetic);
-
-      // Avoid duplicate when both nouns draw from the same pool
-      if (!locked.noun2 && noun1Pool === noun2Pool && noun2 === noun1) {
-        const pool = noun2Pool === 'organic' ? store.nounsOrganic : store.nounsSynthetic;
-        const candidates = pool.filter(w => w !== noun1);
-        if (candidates.length > 0) noun2 = pick(candidates);
-      }
-
-      return { noun1, noun1Pool, noun2, noun2Pool };
     }
 
     // ── Prompt rendering ─────────────────────────────────────────
@@ -603,7 +570,7 @@ function renderCauldronConfig() {
 }
 
     function toggleLock(slot, container, mode) {
-      if (lockedSlots[slot]) {
+      if (lockedSlots[slot]
         delete lockedSlots[slot];
       } else {
         lockedSlots[slot] = true;
