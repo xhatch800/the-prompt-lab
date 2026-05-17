@@ -106,7 +106,7 @@
         });
 
         // Sync regen button disabled state with lock state
-        const regenBtn = document.getElementById('btn-regen-imagine');
+        const regenBtn = document.getElementById('prompt-regen-btn');
         if (regenBtn) {
           const allLocked = activeSlots.length > 0 &&
             activeSlots.every(s => lockedSlots[s.id]);
@@ -178,7 +178,7 @@
       if (!currentPrompt) return;
 
       // ── Cauldron mode ──
-      if (imagineMode === 'cauldron' && cauldronConfig) {
+      if (activeConfig && activeConfig.renderMode === 'cauldron' && cauldronConfig) {
         container.querySelectorAll('.prompt-slot:not(.locked)').forEach(span => {
           const slotId = span.dataset.slot;
           const slotDef = cauldronConfig.slots.find(s => s.id === slotId);
@@ -863,28 +863,6 @@ function renderCauldronConfig() {
       }
     }
 
-    // ── Everyday Life filter event wiring ────────────────────────
-    document.getElementById('jd-filter-btn').addEventListener('click', () => openFilterSheet(jdConfig));
-    document.getElementById('jd-filter-backdrop').addEventListener('click', () => {
-      closeFilterSheet(jdConfig);
-      updateFilterBtn(jdConfig);
-    });
-    document.getElementById('jd-clear-btn').addEventListener('click', () => {
-      jdConfig.sheetTags = [];
-      jdConfig.sheetMode = 'any';
-      renderFilterSheet(jdConfig);
-    });
-    document.getElementById('jd-apply-btn').addEventListener('click', () => {
-      applyFilter(jdConfig);
-      regenPoolMode(jdConfig);
-    });
-    document.querySelectorAll('#jd-any-all-row .pm-aa-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        jdConfig.sheetMode = btn.dataset.mode;
-        renderFilterSheet(jdConfig);
-      });
-    });
-
     // ── Event wiring ─────────────────────────────────────────────
     document.getElementById('btn-just-draw').addEventListener('click', () => {
       clearHistory();
@@ -893,11 +871,7 @@ function renderCauldronConfig() {
       jdConfig.tagMode    = 'any';
       updateFilterBtn(jdConfig);
       updateTagIndicator(jdConfig);
-      showScreen('screen-just-draw');
-      regenPoolMode(jdConfig);
-    });
-
-    document.getElementById('btn-regen-just-draw').addEventListener('click', () => {
+      enterMode(jdConfig);
       regenPoolMode(jdConfig);
     });
 
@@ -908,34 +882,8 @@ function renderCauldronConfig() {
       ssConfig.tagMode    = 'any';
       updateFilterBtn(ssConfig);
       updateTagIndicator(ssConfig);
-      showScreen('screen-strange-scenes');
+      enterMode(ssConfig);
       regenPoolMode(ssConfig);
-    });
-
-    document.getElementById('btn-regen-strange-scenes').addEventListener('click', () => {
-      regenPoolMode(ssConfig);
-    });
-
-    // Strange Scenes filter sheet
-    document.getElementById('ss-filter-btn').addEventListener('click', () => openFilterSheet(ssConfig));
-    document.getElementById('ss-filter-backdrop').addEventListener('click', () => {
-      closeFilterSheet(ssConfig);
-      updateFilterBtn(ssConfig);
-    });
-    document.getElementById('ss-clear-btn').addEventListener('click', () => {
-      ssConfig.sheetTags = [];
-      ssConfig.sheetMode = 'any';
-      renderFilterSheet(ssConfig);
-    });
-    document.getElementById('ss-apply-btn').addEventListener('click', () => {
-      applyFilter(ssConfig);
-      regenPoolMode(ssConfig);
-    });
-    document.querySelectorAll('#ss-any-all-row .pm-aa-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        ssConfig.sheetMode = btn.dataset.mode;
-        renderFilterSheet(ssConfig);
-      });
     });
 
     document.getElementById('btn-cauldron').addEventListener('click', () => {
@@ -965,32 +913,18 @@ function renderCauldronConfig() {
     document.getElementById('cc-generate').addEventListener('click', () => {
       if (!cauldronConfig) return;
       cauldronDecks = {};
-      imagineMode = 'cauldron';
-      promptBackTarget = 'screen-cauldron-config';
-      currentPrompt = generateCauldron(cauldronConfig, currentPrompt, lockedSlots);
-      document.getElementById('imagine-screen-label').textContent = 'Surreal Cauldron';
-      showScreen('screen-imagine-prompt');
-      const container = document.getElementById('imagine-prompt');
+      clearHistory();
+      lockedSlots = {};
+      currentPrompt = generateCauldron(cauldronConfig, null, {});
+      enterMode(cauldronModeConfig);
+      const container = document.getElementById('prompt-content');
       renderPrompt(container, 'cauldron');
-      const hint = document.getElementById('lock-hint-imagine');
+      const hint = document.getElementById('prompt-lock-hint');
       hint.classList.add('animating');
       animateUnlockedSlots(container);
       setTimeout(() => hint.classList.remove('animating'), 1200);
       pushToHistory(currentPrompt);
-      renderHistoryWidget('history-nav-imagine', 'hist-dots-imagine', 'hist-prev-imagine', 'hist-next-imagine');
-    });
-
-    document.getElementById('btn-regen-imagine').addEventListener('click', () => {
-      if (!imagineMode) return;
-      const container = document.getElementById('imagine-prompt');
-      currentPrompt = generateCauldron(cauldronConfig, currentPrompt, lockedSlots);
-      renderPrompt(container, imagineMode);
-      const hint = document.getElementById('lock-hint-imagine');
-      hint.classList.add('animating');
-      animateUnlockedSlots(container);
-      setTimeout(() => hint.classList.remove('animating'), 1200);
-      pushToHistory(currentPrompt);
-      renderHistoryWidget('history-nav-imagine', 'hist-dots-imagine', 'hist-prev-imagine', 'hist-next-imagine');
+      renderHistoryWidget();
     });
 
     document.querySelectorAll('.back-btn[data-target]').forEach(btn => {
@@ -1029,26 +963,54 @@ function renderCauldronConfig() {
       });
     }
 
-    setupCopyBtn('copy-just-draw', () =>
-      document.getElementById('just-draw-prompt').textContent.trim()
-    );
-    setupCopyBtn('copy-imagine', () =>
-      document.getElementById('imagine-prompt').textContent.trim()
-    );
-    setupCopyBtn('copy-strange-scenes', () =>
-      document.getElementById('ss-prompt').textContent.trim()
-    );
-
-    document.getElementById('btn-back-imagine').addEventListener('click', () => {
-      showScreen(promptBackTarget ?? 'screen-home');
+    // ── Shared prompt screen event wiring ────────────────────────
+    document.getElementById('prompt-filter-btn').addEventListener('click', () => openFilterSheet(activeConfig));
+    document.getElementById('prompt-filter-backdrop').addEventListener('click', () => {
+      closeFilterSheet(activeConfig);
+      updateFilterBtn(activeConfig);
+    });
+    document.getElementById('prompt-clear-btn').addEventListener('click', () => {
+      activeConfig.sheetTags = [];
+      activeConfig.sheetMode = 'any';
+      renderFilterSheet(activeConfig);
+    });
+    document.getElementById('prompt-apply-btn').addEventListener('click', () => {
+      applyFilter(activeConfig);
+      regenPoolMode(activeConfig);
+    });
+    document.querySelectorAll('#prompt-any-all-row .pm-aa-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeConfig.sheetMode = btn.dataset.mode;
+        renderFilterSheet(activeConfig);
+      });
     });
 
-    document.getElementById('prompt-hist-prev').addEventListener('click', () => {
-      navigateHistory(-1);
+    document.getElementById('prompt-regen-btn').addEventListener('click', () => {
+      if (activeConfig.renderMode === 'pool') {
+        regenPoolMode(activeConfig);
+      } else {
+        const container = document.getElementById('prompt-content');
+        currentPrompt = generateCauldron(cauldronConfig, currentPrompt, lockedSlots);
+        renderPrompt(container, 'cauldron');
+        const hint = document.getElementById('prompt-lock-hint');
+        hint.classList.add('animating');
+        animateUnlockedSlots(container);
+        setTimeout(() => hint.classList.remove('animating'), 1200);
+        pushToHistory(currentPrompt);
+        renderHistoryWidget();
+      }
     });
-    document.getElementById('prompt-hist-next').addEventListener('click', () => {
-      navigateHistory(1);
+
+    document.getElementById('prompt-back-btn').addEventListener('click', () => {
+      showScreen(activeConfig.backTarget);
     });
+
+    document.getElementById('prompt-hist-prev').addEventListener('click', () => navigateHistory(-1));
+    document.getElementById('prompt-hist-next').addEventListener('click', () => navigateHistory(1));
+
+    setupCopyBtn('prompt-copy-btn', () =>
+      document.getElementById('prompt-content').textContent.trim()
+    );
 
     // ── Swipe gestures for history ────────────────────────────────
     const SWIPE_THRESHOLD = 40;
