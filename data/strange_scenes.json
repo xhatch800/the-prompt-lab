@@ -2,6 +2,7 @@
   {
     "text": "A man using his own ribs as the rungs of a ladder.",
     "tags": [
+      "dark",
       "grotesque",
       "dread"
     ]
@@ -9,6 +10,7 @@
   {
     "text": "A dinner plate where the food is screaming back at the diner.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -16,6 +18,7 @@
   {
     "text": "A woman unzipping her skin to reveal a second, identical woman.",
     "tags": [
+      "dark",
       "identity",
       "grotesque"
     ]
@@ -23,6 +26,7 @@
   {
     "text": "A cityscape where the buildings are made of giant, stacked teeth.",
     "tags": [
+      "dark",
       "grotesque",
       "dread"
     ]
@@ -30,13 +34,17 @@
   {
     "text": "A businessman's necktie that turns into a constrictor snake.",
     "tags": [
+      "dark",
       "satire",
-      "domestic"
+      "domestic",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A pair of eyes floating in a bowl of soup like meatballs.",
     "tags": [
+      "dark",
       "grotesque",
       "domestic"
     ]
@@ -44,6 +52,7 @@
   {
     "text": "A telephone handset that is a human ear on both ends.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -51,6 +60,7 @@
   {
     "text": "A tree where the leaves are tiny, reaching hands.",
     "tags": [
+      "dark",
       "grotesque",
       "dread"
     ]
@@ -58,6 +68,7 @@
   {
     "text": "A man trying to shave, but his reflection is refusing to move.",
     "tags": [
+      "dark",
       "identity",
       "paranoia"
     ]
@@ -65,6 +76,7 @@
   {
     "text": "A bird's nest made entirely of human hair and jewelry.",
     "tags": [
+      "dark",
       "grotesque",
       "dread"
     ]
@@ -72,6 +84,7 @@
   {
     "text": "A suitcase that, when opened, contains a miniature, crowded theater.",
     "tags": [
+      "dark",
       "domestic",
       "satire",
       "whimsical",
@@ -81,6 +94,7 @@
   {
     "text": "A teapot pouring out thick, black shadows instead of tea.",
     "tags": [
+      "dark",
       "domestic",
       "paranoia"
     ]
@@ -88,12 +102,14 @@
   {
     "text": "A hand with a mouth in the palm, biting its own fingers.",
     "tags": [
+      "dark",
       "grotesque"
     ]
   },
   {
     "text": "A person's shadow detaching itself to walk in the opposite direction.",
     "tags": [
+      "dark",
       "identity",
       "paranoia"
     ]
@@ -101,6 +117,7 @@
   {
     "text": "A bouquet of flowers where the centers are staring eyeballs.",
     "tags": [
+      "dark",
       "grotesque",
       "paranoia"
     ]
@@ -108,6 +125,7 @@
   {
     "text": "A man sewing his own shadow back onto his heels.",
     "tags": [
+      "dark",
       "identity",
       "grotesque"
     ]
@@ -115,6 +133,7 @@
   {
     "text": "A clock where the hands are long, pointed fingers.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -122,12 +141,14 @@
   {
     "text": "A face where the nose has been replaced by a smaller, screaming face.",
     "tags": [
+      "dark",
       "grotesque"
     ]
   },
   {
     "text": "A bathtub overflowing with letters that have never been read.",
     "tags": [
+      "dark",
       "domestic",
       "dread"
     ]
@@ -135,6 +156,7 @@
   {
     "text": "A person wearing a mask that is more realistic than their actual face.",
     "tags": [
+      "dark",
       "identity",
       "satire"
     ]
@@ -142,6 +164,7 @@
   {
     "text": "A chair that has human legs and is trying to walk away.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -149,13 +172,17 @@
   {
     "text": "A typewriter where the keys are individual human teeth.",
     "tags": [
+      "dark",
       "satire",
-      "grotesque"
+      "grotesque",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A man looking into a mirror and seeing his internal organs.",
     "tags": [
+      "dark",
       "identity",
       "grotesque"
     ]
@@ -163,6 +190,7 @@
   {
     "text": "A staircase that leads into a giant, open mouth.",
     "tags": [
+      "dark",
       "paranoia",
       "grotesque"
     ]
@@ -170,6 +198,7 @@
   {
     "text": "A sky where the clouds are shaped like various internal organs.",
     "tags": [
+      "dark",
       "grotesque",
       "dread"
     ]
@@ -177,6 +206,7 @@
   {
     "text": "A pair of scissors cutting through the fabric of the sky.",
     "tags": [
+      "dark",
       "domestic",
       "dread"
     ]
@@ -184,6 +214,7 @@
   {
     "text": "A person whose umbrella is raining on them from the inside.",
     "tags": [
+      "dark",
       "domestic",
       "dread"
     ]
@@ -191,6 +222,7 @@
   {
     "text": "A loaf of bread that contains a hidden, sleeping infant.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -198,6 +230,7 @@
   {
     "text": "A man's brain being sliced like a block of cheese.",
     "tags": [
+      "dark",
       "grotesque",
       "satire"
     ]
@@ -205,6 +238,7 @@
   {
     "text": "A dollhouse where the dolls are performing a complex surgery.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -212,6 +246,7 @@
   {
     "text": "A person's footprints filling up with dark, murky water.",
     "tags": [
+      "dark",
       "paranoia",
       "dread"
     ]
@@ -219,6 +254,7 @@
   {
     "text": "A lightbulb that emits darkness, turning the room pitch black.",
     "tags": [
+      "dark",
       "domestic",
       "paranoia"
     ]
@@ -226,6 +262,7 @@
   {
     "text": "A woman's dress made entirely of living butterflies.",
     "tags": [
+      "dark",
       "domestic",
       "dread"
     ]
@@ -233,6 +270,7 @@
   {
     "text": "A man's beard that has become a tangled web of spiders.",
     "tags": [
+      "dark",
       "grotesque",
       "paranoia"
     ]
@@ -240,6 +278,7 @@
   {
     "text": "A window that looks out onto a different century.",
     "tags": [
+      "dark",
       "domestic",
       "dread"
     ]
@@ -247,6 +286,7 @@
   {
     "text": "A person whose reflection is several seconds behind their movements.",
     "tags": [
+      "dark",
       "identity",
       "paranoia"
     ]
@@ -254,6 +294,7 @@
   {
     "text": "A musical instrument that produces visible, solid shapes instead of sound.",
     "tags": [
+      "dark",
       "domestic",
       "satire",
       "whimsical",
@@ -263,6 +304,7 @@
   {
     "text": "A dinner party where all the guests are wearing paper bags over their heads.",
     "tags": [
+      "dark",
       "domestic",
       "identity"
     ]
@@ -270,6 +312,7 @@
   {
     "text": "A man's shadow being stepped on, causing him physical pain.",
     "tags": [
+      "dark",
       "identity",
       "grotesque"
     ]
@@ -277,6 +320,7 @@
   {
     "text": "A bed that is actually a giant, open book.",
     "tags": [
+      "dark",
       "domestic",
       "satire",
       "whimsical",
@@ -286,6 +330,7 @@
   {
     "text": "A person's thoughts escaping their head as colorful, toxic smoke.",
     "tags": [
+      "dark",
       "grotesque",
       "dread"
     ]
@@ -293,6 +338,7 @@
   {
     "text": "A mirror that shows the viewer as they will look in fifty years.",
     "tags": [
+      "dark",
       "identity",
       "dread"
     ]
@@ -300,12 +346,14 @@
   {
     "text": "A bird with human arms instead of wings.",
     "tags": [
+      "dark",
       "grotesque"
     ]
   },
   {
     "text": "A person whose skin is covered in delicate, intricate maps.",
     "tags": [
+      "dark",
       "identity",
       "grotesque"
     ]
@@ -313,13 +361,17 @@
   {
     "text": "A fountain that is flowing with black ink.",
     "tags": [
+      "dark",
       "satire",
-      "dread"
+      "dread",
+      "activist",
+      "truth"
     ]
   },
   {
     "text": "A man trying to catch his own head as it rolls away.",
     "tags": [
+      "dark",
       "grotesque",
       "dread"
     ]
@@ -327,6 +379,7 @@
   {
     "text": "A house where the doors and windows are constantly shifting positions.",
     "tags": [
+      "dark",
       "domestic",
       "paranoia"
     ]
@@ -334,6 +387,7 @@
   {
     "text": "A person whose veins are visible and arranged like a city map.",
     "tags": [
+      "dark",
       "grotesque",
       "satire"
     ]
@@ -341,6 +395,7 @@
   {
     "text": "A giant eye watching a small, oblivious crowd from the horizon.",
     "tags": [
+      "dark",
       "paranoia",
       "dread"
     ]
@@ -348,6 +403,7 @@
   {
     "text": "A man melting into a puddle, leaving only his hat and glasses behind.",
     "tags": [
+      "dark",
       "identity",
       "dread"
     ]
@@ -355,6 +411,7 @@
   {
     "text": "A refrigerator that, when opened, reveals a brick wall instead of food.",
     "tags": [
+      "dark",
       "domestic",
       "dread"
     ]
@@ -362,6 +419,7 @@
   {
     "text": "A window shade that shows a different room inside when pulled down.",
     "tags": [
+      "dark",
       "domestic",
       "paranoia"
     ]
@@ -369,6 +427,7 @@
   {
     "text": "A coffee mug where the handle is a curled, tensed human finger.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -376,6 +435,7 @@
   {
     "text": "A standard floor lamp where the lightbulb is replaced by an unblinking tongue.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -383,6 +443,7 @@
   {
     "text": "A dinner fork with tines made of long, manicured fingernails.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -390,13 +451,17 @@
   {
     "text": "A desk calendar where every single date is stamped with the word 'YESTERDAY'.",
     "tags": [
+      "dark",
       "satire",
-      "dread"
+      "dread",
+      "activist",
+      "truth"
     ]
   },
   {
     "text": "A bar of soap that grows human hair the more it is used.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -404,6 +469,7 @@
   {
     "text": "A ceiling fan where the blades are flat, spinning neckties.",
     "tags": [
+      "dark",
       "domestic",
       "satire",
       "whimsical",
@@ -413,6 +479,7 @@
   {
     "text": "A wall clock that melts down the wall like grease when someone looks at it.",
     "tags": [
+      "dark",
       "domestic",
       "dread"
     ]
@@ -420,6 +487,7 @@
   {
     "text": "A closet full of hangers holding empty, hollow shapes of suits without fabric.",
     "tags": [
+      "dark",
       "domestic",
       "identity"
     ]
@@ -427,6 +495,7 @@
   {
     "text": "A vacuum cleaner that exhales a dense layer of dust onto clean carpets.",
     "tags": [
+      "dark",
       "domestic",
       "dread"
     ]
@@ -434,6 +503,7 @@
   {
     "text": "A doorknob that grows a set of teeth when a hand approaches it.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -441,6 +511,7 @@
   {
     "text": "A window pane that cracks into the precise pattern of a spiderweb when a bird flies past.",
     "tags": [
+      "dark",
       "domestic",
       "paranoia"
     ]
@@ -448,6 +519,7 @@
   {
     "text": "A standard pillow filled with heavy, rattling pebbles instead of feathers.",
     "tags": [
+      "dark",
       "domestic",
       "dread"
     ]
@@ -455,6 +527,7 @@
   {
     "text": "A stack of pancakes oozing thick, black tar instead of syrup.",
     "tags": [
+      "dark",
       "domestic",
       "dread"
     ]
@@ -462,6 +535,7 @@
   {
     "text": "A mirror that only reflects the back of the person standing in front of it.",
     "tags": [
+      "dark",
       "identity",
       "paranoia"
     ]
@@ -469,6 +543,7 @@
   {
     "text": "A wooden rocking chair that rocks violently only when empty.",
     "tags": [
+      "dark",
       "domestic",
       "paranoia"
     ]
@@ -476,6 +551,7 @@
   {
     "text": "A picture frame holding a portrait that slowly turns its back to the viewer.",
     "tags": [
+      "dark",
       "domestic",
       "identity"
     ]
@@ -483,6 +559,7 @@
   {
     "text": "A key that twists into a corkscrew shape the moment it enters a lock.",
     "tags": [
+      "dark",
       "domestic",
       "dread"
     ]
@@ -490,6 +567,7 @@
   {
     "text": "A wine bottle pouring out solid, brittle glass shards.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -497,6 +575,7 @@
   {
     "text": "A comb with rows of miniature human teeth instead of plastic bristles.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -504,6 +583,7 @@
   {
     "text": "A table lamp whose shadow on the wall resembles a crouching predatory bird.",
     "tags": [
+      "dark",
       "domestic",
       "paranoia"
     ]
@@ -511,13 +591,17 @@
   {
     "text": "A typewriter where every keystroke punches a clean hole through the paper.",
     "tags": [
+      "dark",
       "satire",
-      "dread"
+      "dread",
+      "activist",
+      "truth"
     ]
   },
   {
     "text": "A closed door with a keyhole that drips a single teardrop every hour.",
     "tags": [
+      "dark",
       "domestic",
       "dread"
     ]
@@ -525,6 +609,7 @@
   {
     "text": "A kitchen sponge shaped like a small, sleeping lung.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -532,6 +617,7 @@
   {
     "text": "A standard envelope that bites the finger of anyone attempting to open it.",
     "tags": [
+      "dark",
       "satire",
       "grotesque"
     ]
@@ -539,6 +625,7 @@
   {
     "text": "A desk drawer filled to the brim with loose, discarded human fingernails.",
     "tags": [
+      "dark",
       "satire",
       "grotesque"
     ]
@@ -546,6 +633,7 @@
   {
     "text": "A teapot with two spouts pouring liquid in completely opposite directions.",
     "tags": [
+      "dark",
       "domestic",
       "dread"
     ]
@@ -553,6 +641,7 @@
   {
     "text": "A pair of leather shoes that face away from each other when placed side-by-side.",
     "tags": [
+      "dark",
       "domestic",
       "identity"
     ]
@@ -560,6 +649,7 @@
   {
     "text": "A toothbrush with sharp, metallic needles instead of soft bristles.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -567,6 +657,7 @@
   {
     "text": "A wall mirror that acts like water, rippling when a finger touches its surface.",
     "tags": [
+      "dark",
       "domestic",
       "identity",
       "whimsical",
@@ -576,6 +667,7 @@
   {
     "text": "A bowl of cereal where the individual pieces are tiny, floating wedding rings.",
     "tags": [
+      "dark",
       "domestic",
       "satire",
       "whimsical",
@@ -585,6 +677,7 @@
   {
     "text": "A ceiling light fixture that hangs down like a heavy, industrial plumb bob.",
     "tags": [
+      "dark",
       "domestic",
       "dread"
     ]
@@ -592,6 +685,7 @@
   {
     "text": "A television screen showing a live broadcast of an empty chair in an empty room.",
     "tags": [
+      "dark",
       "domestic",
       "paranoia"
     ]
@@ -599,6 +693,7 @@
   {
     "text": "A salt shaker that dispenses fine, dark ashes instead of salt.",
     "tags": [
+      "dark",
       "domestic",
       "dread"
     ]
@@ -606,6 +701,7 @@
   {
     "text": "A staircase where every individual step is slightly narrower than the last.",
     "tags": [
+      "dark",
       "domestic",
       "paranoia"
     ]
@@ -613,6 +709,7 @@
   {
     "text": "A kitchen knife that bends like soft rubber whenever it touches food.",
     "tags": [
+      "dark",
       "domestic",
       "dread"
     ]
@@ -620,6 +717,7 @@
   {
     "text": "A clothes iron that leaves a charred, silhouette footprint on clothing.",
     "tags": [
+      "dark",
       "domestic",
       "identity"
     ]
@@ -627,6 +725,7 @@
   {
     "text": "A coat rack where the hooks are shaped like skeletal, reaching hands.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -634,6 +733,7 @@
   {
     "text": "A writing desk with legs that taper off into sharp, metallic spikes.",
     "tags": [
+      "dark",
       "satire",
       "dread"
     ]
@@ -641,6 +741,7 @@
   {
     "text": "A matchstick that burns with a cold, solid black flame.",
     "tags": [
+      "dark",
       "domestic",
       "dread"
     ]
@@ -648,13 +749,17 @@
   {
     "text": "A book whose pages are glued together around a hollowed-out, glass eye.",
     "tags": [
+      "dark",
       "satire",
-      "grotesque"
+      "grotesque",
+      "activist",
+      "truth"
     ]
   },
   {
     "text": "A wall clock with numbers that have all pooled down to the bottom of the face.",
     "tags": [
+      "dark",
       "domestic",
       "dread"
     ]
@@ -662,6 +767,7 @@
   {
     "text": "A bar stool that slowly sinks into the floor like quicksand under weight.",
     "tags": [
+      "dark",
       "domestic",
       "dread"
     ]
@@ -669,6 +775,7 @@
   {
     "text": "A coffee pot brewing a thick, opaque layer of red ink.",
     "tags": [
+      "dark",
       "domestic",
       "satire"
     ]
@@ -676,6 +783,7 @@
   {
     "text": "A window frame that tightly pinches shut like an eyelid.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -683,6 +791,7 @@
   {
     "text": "A pencil that writes in a texture resembling raised, surgical scars.",
     "tags": [
+      "dark",
       "satire",
       "grotesque"
     ]
@@ -690,6 +799,7 @@
   {
     "text": "A ceiling that is sagging downward like a heavy, water-logged mattress.",
     "tags": [
+      "dark",
       "domestic",
       "dread"
     ]
@@ -697,6 +807,7 @@
   {
     "text": "A leather briefcase that gasps for air whenever the latches are popped.",
     "tags": [
+      "dark",
       "satire",
       "grotesque"
     ]
@@ -704,6 +815,7 @@
   {
     "text": "A window looking directly into a solid, unyielding brick wall.",
     "tags": [
+      "dark",
       "domestic",
       "paranoia"
     ]
@@ -711,13 +823,17 @@
   {
     "text": "A wall calendar where the grid of dates is a labyrinth with no exit.",
     "tags": [
+      "dark",
       "satire",
-      "paranoia"
+      "paranoia",
+      "activist",
+      "truth"
     ]
   },
   {
     "text": "A teacup with an internal partition that prevents it from ever being filled.",
     "tags": [
+      "dark",
       "domestic",
       "dread"
     ]
@@ -725,6 +841,7 @@
   {
     "text": "A dining table supported by four massive, unmoving human thumbs.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -732,6 +849,7 @@
   {
     "text": "A pair of eyeglasses with opaque, solid marble spheres instead of lenses.",
     "tags": [
+      "dark",
       "identity",
       "paranoia"
     ]
@@ -739,12 +857,14 @@
   {
     "text": "A safety pin fastening together two separate flaps of living skin.",
     "tags": [
+      "dark",
       "grotesque"
     ]
   },
   {
     "text": "A wrist watch where the ticking mechanism mimics a rapid, nervous heartbeat.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -752,6 +872,7 @@
   {
     "text": "A slice of toast showing a burnt silhouette of a padlock.",
     "tags": [
+      "dark",
       "domestic",
       "paranoia"
     ]
@@ -759,6 +880,7 @@
   {
     "text": "A bathroom sink where the drain is a tiny, spiraling whirlpool of hair.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -766,6 +888,7 @@
   {
     "text": "A standard thimble made from a hollowed-out human tooth.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -773,6 +896,7 @@
   {
     "text": "A picture frame displaying nothing but a beautifully painted shadow.",
     "tags": [
+      "dark",
       "domestic",
       "identity",
       "whimsical",
@@ -782,6 +906,7 @@
   {
     "text": "A window string that ties itself into a neat hangman's noose.",
     "tags": [
+      "dark",
       "domestic",
       "dread"
     ]
@@ -789,6 +914,7 @@
   {
     "text": "A bookshelf where the volumes are bound in coarse, sand-paper texturing.",
     "tags": [
+      "dark",
       "domestic",
       "dread"
     ]
@@ -796,6 +922,7 @@
   {
     "text": "A pair of scissors where the blades are two profile faces kissing.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -803,6 +930,7 @@
   {
     "text": "A plate of spaghetti where the noodles are tightly knotted ballpoint wires.",
     "tags": [
+      "dark",
       "domestic",
       "satire"
     ]
@@ -810,6 +938,7 @@
   {
     "text": "A standard coin that has a screaming face stamped on both sides.",
     "tags": [
+      "dark",
       "satire",
       "grotesque"
     ]
@@ -817,6 +946,7 @@
   {
     "text": "A floor rug that has a distinct, rising human pulse beneath it.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -824,6 +954,7 @@
   {
     "text": "A light switch that pricks the user's finger every time it is toggled.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -831,6 +962,7 @@
   {
     "text": "A bar of soap with a rusted razor blade safely embedded dead-center.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -838,6 +970,7 @@
   {
     "text": "A water glass filled with a dense, unyielding block of clear ice.",
     "tags": [
+      "dark",
       "domestic",
       "dread"
     ]
@@ -845,6 +978,7 @@
   {
     "text": "A wooden wardrobe that hums a low, discordant tone when closed.",
     "tags": [
+      "dark",
       "domestic",
       "paranoia"
     ]
@@ -852,6 +986,7 @@
   {
     "text": "A man's hand where each knuckle is an independent, staring eye.",
     "tags": [
+      "dark",
       "grotesque",
       "paranoia"
     ]
@@ -859,6 +994,7 @@
   {
     "text": "A person whose torso is a birdcage housing a silent, featherless crow.",
     "tags": [
+      "dark",
       "grotesque",
       "dread"
     ]
@@ -866,6 +1002,7 @@
   {
     "text": "A profile of a woman whose braid is made entirely of twisted copper wire.",
     "tags": [
+      "dark",
       "grotesque",
       "satire"
     ]
@@ -873,6 +1010,7 @@
   {
     "text": "A man unbuttoning his own chest coat to reveal a hollow, empty cavity.",
     "tags": [
+      "dark",
       "identity",
       "dread"
     ]
@@ -880,6 +1018,7 @@
   {
     "text": "A pair of legs walking down the street with a rolling suitcase but no torso.",
     "tags": [
+      "dark",
       "identity",
       "grotesque"
     ]
@@ -887,6 +1026,7 @@
   {
     "text": "A human skull where the jawbone is replaced by a heavy brass zipper.",
     "tags": [
+      "dark",
       "grotesque",
       "dread"
     ]
@@ -894,13 +1034,17 @@
   {
     "text": "A person whose tongue has grown long enough to be tied into a necktie.",
     "tags": [
+      "dark",
       "grotesque",
-      "satire"
+      "satire",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A figure whose throat is a clear, hollow glass tube showing swallowed keys.",
     "tags": [
+      "dark",
       "grotesque",
       "paranoia"
     ]
@@ -908,6 +1052,7 @@
   {
     "text": "A man peeling off his own fingerprints like small stickers.",
     "tags": [
+      "dark",
       "identity",
       "grotesque"
     ]
@@ -915,6 +1060,7 @@
   {
     "text": "A woman's face where the lips are sewn shut with thick, coarse twine.",
     "tags": [
+      "dark",
       "grotesque",
       "paranoia"
     ]
@@ -922,12 +1068,14 @@
   {
     "text": "A human foot where the toes are arranged in a perfect, closed circle.",
     "tags": [
+      "dark",
       "grotesque"
     ]
   },
   {
     "text": "A person whose ears are replaced by miniature, tightly closed fists.",
     "tags": [
+      "dark",
       "grotesque",
       "paranoia"
     ]
@@ -935,19 +1083,24 @@
   {
     "text": "A torso wrapped tightly in layers of heavy, restrictive measuring tape.",
     "tags": [
+      "dark",
       "grotesque",
-      "satire"
+      "satire",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A man's arm that hinges backward at the elbow like a praying mantis.",
     "tags": [
+      "dark",
       "grotesque"
     ]
   },
   {
     "text": "A figure whose backbone is visible on the outside, resembling a zipper.",
     "tags": [
+      "dark",
       "grotesque",
       "dread"
     ]
@@ -955,6 +1108,7 @@
   {
     "text": "A person attempting to brush their teeth, but their gums are solid bone.",
     "tags": [
+      "dark",
       "grotesque",
       "dread"
     ]
@@ -962,6 +1116,7 @@
   {
     "text": "A man whose head is completely hollow, acting as an inkwell for a quill.",
     "tags": [
+      "dark",
       "identity",
       "satire",
       "whimsical",
@@ -971,12 +1126,14 @@
   {
     "text": "A face where the eyes have migrated down to sit on the cheekbones.",
     "tags": [
+      "dark",
       "grotesque"
     ]
   },
   {
     "text": "A woman whose long hair is woven directly into the fabric of her chair.",
     "tags": [
+      "dark",
       "domestic",
       "grotesque"
     ]
@@ -984,12 +1141,14 @@
   {
     "text": "A hand with an extra joint in every finger, folding like an accordion.",
     "tags": [
+      "dark",
       "grotesque"
     ]
   },
   {
     "text": "A man's neck that has elongated and twisted twice like a rope.",
     "tags": [
+      "dark",
       "grotesque",
       "dread"
     ]
@@ -997,6 +1156,7 @@
   {
     "text": "A figure whose chest features a small, functional peephole with a cover.",
     "tags": [
+      "dark",
       "identity",
       "paranoia"
     ]
@@ -1004,13 +1164,17 @@
   {
     "text": "A person whose skin is peeling back to reveal a layer of legal text.",
     "tags": [
+      "dark",
       "identity",
-      "satire"
+      "satire",
+      "activist",
+      "truth"
     ]
   },
   {
     "text": "A man holding his own heart in his palm like a pocket watch.",
     "tags": [
+      "dark",
       "grotesque",
       "dread"
     ]
@@ -1018,6 +1182,7 @@
   {
     "text": "A human mouth where the teeth are tiny, sharp, vertical filing cabinets.",
     "tags": [
+      "dark",
       "grotesque",
       "satire"
     ]
@@ -1025,6 +1190,7 @@
   {
     "text": "A figure whose limbs are jointed like a wooden artist's mannequin.",
     "tags": [
+      "dark",
       "identity",
       "grotesque"
     ]
@@ -1032,6 +1198,7 @@
   {
     "text": "A man shaving his face, only to reveal a layer of solid clockwork beneath.",
     "tags": [
+      "dark",
       "identity",
       "grotesque"
     ]
@@ -1039,13 +1206,17 @@
   {
     "text": "A person whose fingers taper off into long, functional sewing needles.",
     "tags": [
+      "dark",
       "grotesque",
-      "satire"
+      "satire",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A torso that splits down the middle to reveal a small, interior staircase.",
     "tags": [
+      "dark",
       "grotesque",
       "paranoia"
     ]
@@ -1053,12 +1224,14 @@
   {
     "text": "A man with a second, smaller pair of hands emerging from his collarbones.",
     "tags": [
+      "dark",
       "grotesque"
     ]
   },
   {
     "text": "A human eye with a tiny, working keyhole directly in the pupil.",
     "tags": [
+      "dark",
       "grotesque",
       "identity"
     ]
@@ -1066,6 +1239,7 @@
   {
     "text": "A figure whose head is entirely wrapped in heavy, thick bandages.",
     "tags": [
+      "dark",
       "identity",
       "dread"
     ]
@@ -1073,6 +1247,7 @@
   {
     "text": "A person whose lungs are visible through a transparent, glass chest wall.",
     "tags": [
+      "dark",
       "grotesque",
       "dread"
     ]
@@ -1080,12 +1255,14 @@
   {
     "text": "A man whose jaw opens wide enough to swallow his own fist.",
     "tags": [
+      "dark",
       "grotesque"
     ]
   },
   {
     "text": "A hand where the thumb is replaced by a small, working fountain pen nib.",
     "tags": [
+      "dark",
       "grotesque",
       "satire"
     ]
@@ -1093,6 +1270,7 @@
   {
     "text": "A person whose skin has the texture and grain of old, dry timber.",
     "tags": [
+      "dark",
       "grotesque",
       "dread"
     ]
@@ -1100,6 +1278,7 @@
   {
     "text": "A man pulling a long, endless thread out from an open seam in his wrist.",
     "tags": [
+      "dark",
       "grotesque",
       "identity"
     ]
@@ -1107,6 +1286,7 @@
   {
     "text": "A face where the eyebrows are two caterpillars crawling away.",
     "tags": [
+      "dark",
       "grotesque",
       "dread"
     ]
@@ -1114,13 +1294,17 @@
   {
     "text": "A human torso constructed out of stacked, leatherbound ledger books.",
     "tags": [
+      "dark",
       "satire",
-      "identity"
+      "identity",
+      "activist",
+      "truth"
     ]
   },
   {
     "text": "A figure whose legs are fused into a single, solid architectural pillar.",
     "tags": [
+      "dark",
       "grotesque",
       "satire"
     ]
@@ -1128,6 +1312,7 @@
   {
     "text": "A person whose fingernails have grown into small, pointed mirrors.",
     "tags": [
+      "dark",
       "grotesque",
       "identity"
     ]
@@ -1135,6 +1320,7 @@
   {
     "text": "A man trying to blow out a candle, but his breath is a solid spike.",
     "tags": [
+      "dark",
       "grotesque",
       "dread"
     ]
@@ -1142,6 +1328,7 @@
   {
     "text": "A hand where the lines of the palm are deep, bleeding trenches.",
     "tags": [
+      "dark",
       "grotesque",
       "dread"
     ]
@@ -1149,6 +1336,7 @@
   {
     "text": "A figure whose head is attached to their shoulders by a heavy hinge.",
     "tags": [
+      "dark",
       "grotesque",
       "identity"
     ]
@@ -1156,6 +1344,7 @@
   {
     "text": "A person whose ribcage has been converted into a small filing system.",
     "tags": [
+      "dark",
       "grotesque",
       "satire"
     ]
@@ -1163,6 +1352,7 @@
   {
     "text": "A man's face slowly melting down into his starched white collar.",
     "tags": [
+      "dark",
       "grotesque",
       "satire"
     ]
@@ -1170,6 +1360,7 @@
   {
     "text": "A human arm that ends in a heavy, solid wooden mallet.",
     "tags": [
+      "dark",
       "grotesque",
       "satire"
     ]
@@ -1177,6 +1368,7 @@
   {
     "text": "A figure whose ears are large, spiraled sea shells.",
     "tags": [
+      "dark",
       "grotesque",
       "whimsical",
       "absurdist"
@@ -1185,6 +1377,7 @@
   {
     "text": "A person whose shadow reveals an internal anatomy they do not possess.",
     "tags": [
+      "dark",
       "identity",
       "grotesque"
     ]
@@ -1192,6 +1385,7 @@
   {
     "text": "A man's mouth open to reveal a tiny, miniature version of himself inside.",
     "tags": [
+      "dark",
       "identity",
       "grotesque"
     ]
@@ -1199,6 +1393,7 @@
   {
     "text": "A foot where the heel has been replaced by a heavy iron wheel.",
     "tags": [
+      "dark",
       "grotesque",
       "satire"
     ]
@@ -1206,6 +1401,7 @@
   {
     "text": "A person whose collarbones are shaped like a wishbone about to snap.",
     "tags": [
+      "dark",
       "grotesque",
       "dread"
     ]
@@ -1213,6 +1409,7 @@
   {
     "text": "A hand clasping another hand, but both belong to the same arm.",
     "tags": [
+      "dark",
       "identity",
       "grotesque"
     ]
@@ -1220,6 +1417,7 @@
   {
     "text": "A figure whose stomach is a hollow alcove holding a ticking metronome.",
     "tags": [
+      "dark",
       "grotesque",
       "paranoia"
     ]
@@ -1227,6 +1425,7 @@
   {
     "text": "A man's head neatly sliced into three vertical, offset sections.",
     "tags": [
+      "dark",
       "grotesque",
       "identity"
     ]
@@ -1234,12 +1433,14 @@
   {
     "text": "A human tongue textured exactly like a rough piece of sandpaper.",
     "tags": [
+      "dark",
       "grotesque"
     ]
   },
   {
     "text": "A person whose spine is a heavy, rusted iron chain.",
     "tags": [
+      "dark",
       "grotesque",
       "dread"
     ]
@@ -1247,6 +1448,7 @@
   {
     "text": "A face where the eyes are tightly closed, but the eyelids have eyes painted on them.",
     "tags": [
+      "dark",
       "identity",
       "paranoia"
     ]
@@ -1254,6 +1456,7 @@
   {
     "text": "A man's fist enclosed within a second, larger translucent fist.",
     "tags": [
+      "dark",
       "identity",
       "grotesque"
     ]
@@ -1261,6 +1464,7 @@
   {
     "text": "A figure whose skin is cracked and crazed like old porcelain.",
     "tags": [
+      "dark",
       "grotesque",
       "dread"
     ]
@@ -1268,6 +1472,7 @@
   {
     "text": "A man's shadow on the wall holding a weapon he does not possess.",
     "tags": [
+      "dark",
       "paranoia",
       "identity"
     ]
@@ -1275,12 +1480,14 @@
   {
     "text": "A person walking down an alley where all the shadows point toward them.",
     "tags": [
+      "dark",
       "paranoia"
     ]
   },
   {
     "text": "A man looking into a mirror and seeing his reflection weeping silently.",
     "tags": [
+      "dark",
       "identity",
       "dread"
     ]
@@ -1288,6 +1495,7 @@
   {
     "text": "A shadow that remains standing upright after the person has sat down.",
     "tags": [
+      "dark",
       "identity",
       "paranoia"
     ]
@@ -1295,13 +1503,17 @@
   {
     "text": "Two men sitting across from each other, both holding the other's leash.",
     "tags": [
+      "dark",
       "paranoia",
-      "satire"
+      "satire",
+      "activist",
+      "solidarity"
     ]
   },
   {
     "text": "A person whose shadow is attached to the ceiling instead of the floor.",
     "tags": [
+      "dark",
       "paranoia",
       "identity"
     ]
@@ -1309,6 +1521,7 @@
   {
     "text": "A man looking at a silhouette of himself that has been cut out of the wall.",
     "tags": [
+      "dark",
       "identity",
       "paranoia"
     ]
@@ -1316,6 +1529,7 @@
   {
     "text": "A figure surrounded by a circle of shadows that are slowly closing in.",
     "tags": [
+      "dark",
       "paranoia",
       "dread"
     ]
@@ -1323,12 +1537,14 @@
   {
     "text": "A man shaking hands with his own reflection, which has reached out of the glass.",
     "tags": [
+      "dark",
       "identity"
     ]
   },
   {
     "text": "A shadow on the ground that has a completely different face than the subject.",
     "tags": [
+      "dark",
       "identity",
       "paranoia"
     ]
@@ -1336,6 +1552,7 @@
   {
     "text": "A person sitting in a room where their shadow is the only thing cast in color.",
     "tags": [
+      "dark",
       "identity",
       "domestic"
     ]
@@ -1343,6 +1560,7 @@
   {
     "text": "A man whose shadow is wearing a crown while he wears a bowler hat.",
     "tags": [
+      "dark",
       "identity",
       "satire",
       "whimsical",
@@ -1352,6 +1570,7 @@
   {
     "text": "A figure watching their own shadow run away down a dark street.",
     "tags": [
+      "dark",
       "identity",
       "paranoia"
     ]
@@ -1359,6 +1578,7 @@
   {
     "text": "A mirror that shows a completely empty room despite the man standing before it.",
     "tags": [
+      "dark",
       "identity",
       "dread"
     ]
@@ -1366,6 +1586,7 @@
   {
     "text": "A man's shadow that has been neatly folded up and left on a chair.",
     "tags": [
+      "dark",
       "identity",
       "domestic",
       "whimsical",
@@ -1375,6 +1596,7 @@
   {
     "text": "A person whose reflection is turning away in disgust from them.",
     "tags": [
+      "dark",
       "identity",
       "dread"
     ]
@@ -1382,6 +1604,7 @@
   {
     "text": "A shadow that appears to be heavier than the person casting it, dragging them back.",
     "tags": [
+      "dark",
       "identity",
       "dread"
     ]
@@ -1389,6 +1612,7 @@
   {
     "text": "A man looking into a pool and seeing his reflection drowning beneath the surface.",
     "tags": [
+      "dark",
       "identity",
       "dread"
     ]
@@ -1396,6 +1620,7 @@
   {
     "text": "A figure whose shadow is made of a dense swarm of tiny ants.",
     "tags": [
+      "dark",
       "identity",
       "grotesque"
     ]
@@ -1403,6 +1628,7 @@
   {
     "text": "A person standing between two mirrors, seeing an endless line of strangers.",
     "tags": [
+      "dark",
       "identity",
       "paranoia"
     ]
@@ -1410,6 +1636,7 @@
   {
     "text": "A man's shadow stretching out across the floor to trip another passerby.",
     "tags": [
+      "dark",
       "paranoia",
       "satire",
       "whimsical",
@@ -1419,6 +1646,7 @@
   {
     "text": "A shadow that possesses a distinct, sharp outline while the man is blurry.",
     "tags": [
+      "dark",
       "identity",
       "paranoia"
     ]
@@ -1426,6 +1654,7 @@
   {
     "text": "A person whose reflection is pointing a finger back at them accusingly.",
     "tags": [
+      "dark",
       "identity",
       "paranoia"
     ]
@@ -1433,6 +1662,7 @@
   {
     "text": "A man trying to escape a shadow that is slowly climbing up his own legs.",
     "tags": [
+      "dark",
       "paranoia",
       "identity"
     ]
@@ -1440,6 +1670,7 @@
   {
     "text": "A figure whose shadow is a complex maze that leads to their feet.",
     "tags": [
+      "dark",
       "identity",
       "dread"
     ]
@@ -1447,6 +1678,7 @@
   {
     "text": "A mirror cracked in a way that divides the face into two different ages.",
     "tags": [
+      "dark",
       "identity",
       "dread"
     ]
@@ -1454,6 +1686,7 @@
   {
     "text": "A man's shadow that has been pinned to the wall with heavy iron spikes.",
     "tags": [
+      "dark",
       "identity",
       "paranoia"
     ]
@@ -1461,12 +1694,14 @@
   {
     "text": "A person whose reflection is moving at half-speed compared to reality.",
     "tags": [
+      "dark",
       "identity"
     ]
   },
   {
     "text": "A shadow that appears to be whispering into the ear of the person casting it.",
     "tags": [
+      "dark",
       "identity",
       "paranoia"
     ]
@@ -1474,6 +1709,7 @@
   {
     "text": "A man looking into a vanity mirror and seeing a brick wall behind him.",
     "tags": [
+      "dark",
       "identity",
       "domestic"
     ]
@@ -1481,6 +1717,7 @@
   {
     "text": "A figure whose shadow is completely transparent, revealing the floor beneath.",
     "tags": [
+      "dark",
       "identity",
       "dread"
     ]
@@ -1488,6 +1725,7 @@
   {
     "text": "A person whose reflection has its eyes wide open while they are closed.",
     "tags": [
+      "dark",
       "identity",
       "paranoia"
     ]
@@ -1495,12 +1733,14 @@
   {
     "text": "A man's shadow that has broken into three separate, independent silhouettes.",
     "tags": [
+      "dark",
       "identity"
     ]
   },
   {
     "text": "A shadow on the wall that is slowly peeling away from the surface like wallpaper.",
     "tags": [
+      "dark",
       "identity",
       "domestic"
     ]
@@ -1508,6 +1748,7 @@
   {
     "text": "A person whose reflection is trapped behind a row of iron bars.",
     "tags": [
+      "dark",
       "identity",
       "paranoia"
     ]
@@ -1515,6 +1756,7 @@
   {
     "text": "A man looking at his shadow and noticing it has no head.",
     "tags": [
+      "dark",
       "identity",
       "dread"
     ]
@@ -1522,6 +1764,7 @@
   {
     "text": "A shadow that remains cast on the wall long after the light is turned off.",
     "tags": [
+      "dark",
       "paranoia",
       "dread"
     ]
@@ -1529,12 +1772,14 @@
   {
     "text": "A figure whose reflection is wearing a mask that the figure is not.",
     "tags": [
+      "dark",
       "identity"
     ]
   },
   {
     "text": "A man trying to sweep his own shadow into a dustpan.",
     "tags": [
+      "dark",
       "identity",
       "satire",
       "whimsical",
@@ -1544,6 +1789,7 @@
   {
     "text": "A shadow that appears to be lifting a heavy weight off the ground on its own.",
     "tags": [
+      "dark",
       "identity",
       "dread"
     ]
@@ -1551,6 +1797,7 @@
   {
     "text": "A person whose reflection is a skeletal frame in a business suit.",
     "tags": [
+      "dark",
       "identity",
       "dread"
     ]
@@ -1558,6 +1805,7 @@
   {
     "text": "A man's shadow that is tangled up in the shadows of nearby furniture.",
     "tags": [
+      "dark",
       "identity",
       "domestic"
     ]
@@ -1565,6 +1813,7 @@
   {
     "text": "A mirror that reflects everything in the room except the walls.",
     "tags": [
+      "dark",
       "identity",
       "domestic"
     ]
@@ -1572,6 +1821,7 @@
   {
     "text": "A figure whose shadow is shaped like a large, ominous pair of shears.",
     "tags": [
+      "dark",
       "identity",
       "paranoia"
     ]
@@ -1579,6 +1829,7 @@
   {
     "text": "A man looking into a pocket mirror and seeing a vast, open desert.",
     "tags": [
+      "dark",
       "identity",
       "dread"
     ]
@@ -1586,6 +1837,7 @@
   {
     "text": "A shadow that is slowly consuming the light around it like an ink stain.",
     "tags": [
+      "dark",
       "paranoia",
       "dread"
     ]
@@ -1593,6 +1845,7 @@
   {
     "text": "A person whose reflection is writing a letter on the inside of the glass.",
     "tags": [
+      "dark",
       "identity",
       "paranoia"
     ]
@@ -1600,6 +1853,7 @@
   {
     "text": "A man's shadow that appears to be made of rough, unhewn stone.",
     "tags": [
+      "dark",
       "identity",
       "dread"
     ]
@@ -1607,6 +1861,7 @@
   {
     "text": "A shadow that follows a step behind the person, mimicking their every hesitation.",
     "tags": [
+      "dark",
       "identity",
       "paranoia"
     ]
@@ -1614,6 +1869,7 @@
   {
     "text": "A mirror that shows the viewer's face with all features completely smoothed over.",
     "tags": [
+      "dark",
       "identity",
       "grotesque"
     ]
@@ -1621,6 +1877,7 @@
   {
     "text": "A man whose shadow is cast forward even though the light source is in front of him.",
     "tags": [
+      "dark",
       "identity",
       "paranoia"
     ]
@@ -1628,6 +1885,7 @@
   {
     "text": "A figure whose reflection has turned its back and is walking away into the distance.",
     "tags": [
+      "dark",
       "identity",
       "dread"
     ]
@@ -1635,6 +1893,7 @@
   {
     "text": "A shadow on the ground that appears to be a deep, bottomless trench.",
     "tags": [
+      "dark",
       "identity",
       "dread"
     ]
@@ -1642,6 +1901,7 @@
   {
     "text": "A person whose reflection is melting like hot wax down the mirror.",
     "tags": [
+      "dark",
       "identity",
       "grotesque"
     ]
@@ -1649,6 +1909,7 @@
   {
     "text": "A man's shadow that has been neatly ironed flat onto the pavement.",
     "tags": [
+      "dark",
       "identity",
       "satire",
       "whimsical",
@@ -1658,6 +1919,7 @@
   {
     "text": "A shadow that appears to be pulling the man toward a dark corner.",
     "tags": [
+      "dark",
       "identity",
       "paranoia"
     ]
@@ -1665,6 +1927,7 @@
   {
     "text": "A mirror that only reflects the skeletal structure of whatever is placed before it.",
     "tags": [
+      "dark",
       "identity",
       "grotesque"
     ]
@@ -1672,6 +1935,7 @@
   {
     "text": "A figure whose shadow is a dense weave of heavy black thread.",
     "tags": [
+      "dark",
       "identity",
       "dread"
     ]
@@ -1679,6 +1943,7 @@
   {
     "text": "A man looking at his reflection and realizing it is a photograph taped to the glass.",
     "tags": [
+      "dark",
       "identity",
       "satire",
       "whimsical",
@@ -1688,6 +1953,7 @@
   {
     "text": "A shadow that detaches from the wall to lie flat on the floor like a rug.",
     "tags": [
+      "dark",
       "identity",
       "domestic"
     ]
@@ -1695,55 +1961,77 @@
   {
     "text": "A bureaucrat whose head is a giant rubber stamp, stamping his own chest.",
     "tags": [
+      "dark",
       "satire",
-      "grotesque"
+      "grotesque",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A businessman climbing a mountain made entirely of discarded bowler hats.",
     "tags": [
+      "dark",
       "satire",
-      "dread"
+      "dread",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A man sitting at a desk where the telephone is tethered directly to his ankle.",
     "tags": [
+      "dark",
       "satire",
-      "paranoia"
+      "paranoia",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A row of identical men in suits, all connected by a single, shared necktie.",
     "tags": [
+      "dark",
       "satire",
-      "identity"
+      "identity",
+      "activist",
+      "solidarity"
     ]
   },
   {
     "text": "A judge whose gavel is a human fist made of solid stone.",
     "tags": [
+      "dark",
       "satire",
-      "grotesque"
+      "grotesque",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A man carrying an enormous, heavy boulder that is shaped like a dollar sign.",
     "tags": [
+      "dark",
       "satire",
-      "dread"
+      "dread",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A public monument where the statue is a man covering his face in shame.",
     "tags": [
+      "dark",
       "satire",
-      "dread"
+      "dread",
+      "activist",
+      "truth"
     ]
   },
   {
     "text": "A businessman whose briefcase is overflowing with sand that leaks onto the street.",
     "tags": [
+      "dark",
       "satire",
       "dread"
     ]
@@ -1751,15 +2039,21 @@
   {
     "text": "A man sitting at a typewriter that is slowly typing out his own obituary.",
     "tags": [
+      "dark",
       "satire",
-      "dread"
+      "dread",
+      "activist",
+      "truth"
     ]
   },
   {
     "text": "A line of people waiting to enter a door that has been painted onto a solid wall.",
     "tags": [
+      "dark",
       "satire",
       "paranoia",
+      "activist",
+      "solidarity",
       "whimsical",
       "absurdist"
     ]
@@ -1767,76 +2061,107 @@
   {
     "text": "A politician whose mouth is a megaphone made of living flesh.",
     "tags": [
+      "dark",
       "satire",
-      "grotesque"
+      "grotesque",
+      "activist",
+      "truth"
     ]
   },
   {
     "text": "A man trying to read a newspaper where all the text has run down into a puddle.",
     "tags": [
+      "dark",
       "satire",
-      "dread"
+      "dread",
+      "activist",
+      "truth"
     ]
   },
   {
     "text": "A bureaucrat whose desk has grown roots that anchor it deep into the floorboards.",
     "tags": [
+      "dark",
       "satire",
-      "paranoia"
+      "paranoia",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A man in a suit whose shadow is a giant, menacing puppet on strings.",
     "tags": [
+      "dark",
       "satire",
-      "identity"
+      "identity",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A factory assembly line where the products being made are small, wooden coffins.",
     "tags": [
+      "dark",
       "satire",
-      "dread"
+      "dread",
+      "activist",
+      "ecological"
     ]
   },
   {
     "text": "A man wearing a suit of armor made entirely of legal documents and contracts.",
     "tags": [
+      "dark",
       "satire",
-      "paranoia"
+      "paranoia",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A businessman whose head is a clock with no hands, only an empty face.",
     "tags": [
+      "dark",
       "satire",
-      "identity"
+      "identity",
+      "activist",
+      "truth"
     ]
   },
   {
     "text": "A line of identical men walking into a giant sausage grinder.",
     "tags": [
+      "dark",
       "satire",
-      "grotesque"
+      "grotesque",
+      "activist",
+      "solidarity"
     ]
   },
   {
     "text": "A man trying to catch a flying document that is out of his reach.",
     "tags": [
+      "dark",
       "satire",
-      "paranoia"
+      "paranoia",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A bureaucrat whose fountain pen is a syringe drawing ink directly from his veins.",
     "tags": [
+      "dark",
       "satire",
-      "grotesque"
+      "grotesque",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A man sitting in a theater where all the seats face away from the stage.",
     "tags": [
+      "dark",
       "satire",
       "paranoia"
     ]
@@ -1844,27 +2169,37 @@
   {
     "text": "A businessman whose necktie is so long it trails behind him like a leash.",
     "tags": [
+      "dark",
       "satire",
-      "paranoia"
+      "paranoia",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A man trying to open a safe using a key made of soft, melting wax.",
     "tags": [
+      "dark",
       "satire",
-      "dread"
+      "dread",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A public square where the pavement is made of giant, flat gravestones.",
     "tags": [
+      "dark",
       "satire",
-      "dread"
+      "dread",
+      "activist",
+      "ecological"
     ]
   },
   {
     "text": "A man in a suit whose body is a stack of cardboard boxes ready to collapse.",
     "tags": [
+      "dark",
       "satire",
       "dread"
     ]
@@ -1872,27 +2207,37 @@
   {
     "text": "A bureaucrat signing a document with a feather quill that is on fire.",
     "tags": [
+      "dark",
       "satire",
-      "dread"
+      "dread",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A man trying to scale a wall that is made of smooth, unyielding glass.",
     "tags": [
+      "dark",
       "satire",
-      "paranoia"
+      "paranoia",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A businessman whose shadow is a giant, gaping mouth consuming his footsteps.",
     "tags": [
+      "dark",
       "satire",
-      "grotesque"
+      "grotesque",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A line of people waiting for a bus that is a giant, hollow roller skate.",
     "tags": [
+      "dark",
       "satire",
       "dread",
       "whimsical",
@@ -1902,55 +2247,77 @@
   {
     "text": "A man sitting at a desk that is slowly sinking into a pool of black ink.",
     "tags": [
+      "dark",
       "satire",
-      "dread"
+      "dread",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A politician whose hands are replaced by two large, balancing scales.",
     "tags": [
+      "dark",
       "satire",
-      "identity"
+      "identity",
+      "activist",
+      "truth"
     ]
   },
   {
     "text": "A man trying to sweep up a pile of money that is turning into dead leaves.",
     "tags": [
+      "dark",
       "satire",
-      "dread"
+      "dread",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A bureaucrat whose eyeglasses have been painted black from the inside.",
     "tags": [
+      "dark",
       "satire",
-      "paranoia"
+      "paranoia",
+      "activist",
+      "truth"
     ]
   },
   {
     "text": "A man in a suit whose head is a heavy iron padlock with no key.",
     "tags": [
+      "dark",
       "satire",
-      "identity"
+      "identity",
+      "activist",
+      "truth"
     ]
   },
   {
     "text": "A factory chimney belching out thick, black smoke in the shape of human profiles.",
     "tags": [
+      "dark",
       "satire",
-      "identity"
+      "identity",
+      "activist",
+      "ecological"
     ]
   },
   {
     "text": "A man trying to fill a bucket that has a giant hole in the bottom.",
     "tags": [
+      "dark",
       "satire",
-      "dread"
+      "dread",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A businessman whose coat pockets are filled with heavy, smooth river stones.",
     "tags": [
+      "dark",
       "satire",
       "dread"
     ]
@@ -1958,13 +2325,17 @@
   {
     "text": "A line of people holding umbrellas that are all connected at the edges.",
     "tags": [
+      "dark",
       "satire",
-      "identity"
+      "identity",
+      "activist",
+      "solidarity"
     ]
   },
   {
     "text": "A man sitting at a dining table where the only dish is a large, iron key.",
     "tags": [
+      "dark",
       "satire",
       "domestic"
     ]
@@ -1972,20 +2343,27 @@
   {
     "text": "A bureaucrat whose chair is balanced precariously on a single, sharp nail.",
     "tags": [
+      "dark",
       "satire",
-      "paranoia"
+      "paranoia",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A man trying to walk against a wind that is blowing letters and papers at his face.",
     "tags": [
+      "dark",
       "satire",
-      "dread"
+      "dread",
+      "activist",
+      "truth"
     ]
   },
   {
     "text": "A businessman whose shadow is a giant, menacing bird of prey.",
     "tags": [
+      "dark",
       "satire",
       "paranoia"
     ]
@@ -1993,6 +2371,7 @@
   {
     "text": "A public park where all the benches face a solid brick wall.",
     "tags": [
+      "dark",
       "satire",
       "domestic"
     ]
@@ -2000,41 +2379,57 @@
   {
     "text": "A man trying to write on a piece of paper that is constantly rolling itself up.",
     "tags": [
+      "dark",
       "satire",
-      "dread"
+      "dread",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A bureaucrat whose head is a giant ball of tangled red tape.",
     "tags": [
+      "dark",
       "satire",
-      "identity"
+      "identity",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A man in a suit whose body is completely flat, like a cardboard cutout.",
     "tags": [
+      "dark",
       "satire",
-      "identity"
+      "identity",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A factory worker whose hands have been replaced by heavy iron wrenches.",
     "tags": [
+      "dark",
       "satire",
-      "grotesque"
+      "grotesque",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A man trying to open a door that has ten different locks but no handle.",
     "tags": [
+      "dark",
       "satire",
-      "paranoia"
+      "paranoia",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A businessman whose briefcase is a birdcage containing a frantic, trapped pigeon.",
     "tags": [
+      "dark",
       "satire",
       "paranoia",
       "whimsical",
@@ -2044,69 +2439,97 @@
   {
     "text": "A line of identical men all looking down into a deep, bottomless trench.",
     "tags": [
+      "dark",
       "satire",
-      "dread"
+      "dread",
+      "activist",
+      "solidarity"
     ]
   },
   {
     "text": "A politician whose tongue is a long, winding scroll of blank paper.",
     "tags": [
+      "dark",
       "satire",
-      "identity"
+      "identity",
+      "activist",
+      "truth"
     ]
   },
   {
     "text": "A man trying to balance a giant ledger book on the tip of his nose.",
     "tags": [
+      "dark",
       "satire",
-      "identity"
+      "identity",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A bureaucrat whose desk is surrounded by a high, impenetrable wall of filing cabinets.",
     "tags": [
+      "dark",
       "satire",
-      "paranoia"
+      "paranoia",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A man in a suit whose shadow is a giant pair of balances tipped completely to one side.",
     "tags": [
+      "dark",
       "satire",
-      "identity"
+      "identity",
+      "activist",
+      "truth"
     ]
   },
   {
     "text": "A factory where the smoke stacks are shaped like giant, grasping hands.",
     "tags": [
+      "dark",
       "satire",
-      "grotesque"
+      "grotesque",
+      "activist",
+      "ecological"
     ]
   },
   {
     "text": "A man trying to read a book where all the letters are scattered at the bottom of the page.",
     "tags": [
+      "dark",
       "satire",
-      "dread"
+      "dread",
+      "activist",
+      "truth"
     ]
   },
   {
     "text": "A businessman whose coat is buttoned with small, round gears that are turning.",
     "tags": [
+      "dark",
       "satire",
-      "grotesque"
+      "grotesque",
+      "activist",
+      "defiance"
     ]
   },
   {
     "text": "A line of people waiting to cross a bridge that terminates abruptly in mid-air.",
     "tags": [
+      "dark",
       "satire",
-      "dread"
+      "dread",
+      "activist",
+      "solidarity"
     ]
   },
   {
     "text": "A man sitting at a desk where the inkwell is a small, bottomless volcano.",
     "tags": [
+      "dark",
       "satire",
       "dread"
     ]
@@ -2114,8 +2537,11 @@
   {
     "text": "A bureaucrat whose head is a heavy iron safe, tightly locked and bolted shut.",
     "tags": [
+      "dark",
       "satire",
-      "identity"
+      "identity",
+      "activist",
+      "defiance"
     ]
   },
   {
@@ -2763,6 +3189,611 @@
       "whimsical",
       "mischievous",
       "absurdist"
+    ]
+  },
+  {
+    "text": "A child who has named every tree in her city and sends them birthday cards each spring.",
+    "tags": [
+      "whimsical",
+      "childlike",
+      "activist",
+      "ecological"
+    ]
+  },
+  {
+    "text": "A fox who tends a secret meadow in the heart of an industrial district, known only to the bees.",
+    "tags": [
+      "whimsical",
+      "folkloric",
+      "activist",
+      "ecological"
+    ]
+  },
+  {
+    "text": "A girl who teaches her classroom of seeds to grow toward light through a song she invented.",
+    "tags": [
+      "whimsical",
+      "childlike",
+      "activist",
+      "ecological"
+    ]
+  },
+  {
+    "text": "A bear who leads a delegation of forest animals to a city hall meeting, waiting patiently for their agenda item.",
+    "tags": [
+      "whimsical",
+      "folkloric",
+      "absurdist",
+      "activist",
+      "ecological"
+    ]
+  },
+  {
+    "text": "A crow who drops acorns through the windows of government buildings with small notes attached.",
+    "tags": [
+      "whimsical",
+      "mischievous",
+      "activist",
+      "ecological",
+      "truth"
+    ]
+  },
+  {
+    "text": "A child who writes apology letters to rivers on behalf of the city that has polluted them.",
+    "tags": [
+      "whimsical",
+      "childlike",
+      "activist",
+      "ecological",
+      "truth"
+    ]
+  },
+  {
+    "text": "A snail who has been appointed official witness to the slow return of a restored wetland.",
+    "tags": [
+      "whimsical",
+      "absurdist",
+      "activist",
+      "ecological"
+    ]
+  },
+  {
+    "text": "An old woman who visits the last tree of a species every morning, refusing to let it be forgotten.",
+    "tags": [
+      "whimsical",
+      "folkloric",
+      "activist",
+      "ecological"
+    ]
+  },
+  {
+    "text": "A boy who keeps a jar of clean mountain air and opens it at school to remind his classmates what it smells like.",
+    "tags": [
+      "whimsical",
+      "childlike",
+      "activist",
+      "ecological"
+    ]
+  },
+  {
+    "text": "A fox who maps the migration routes of butterflies and posts the maps on city telephone poles.",
+    "tags": [
+      "whimsical",
+      "folkloric",
+      "activist",
+      "ecological",
+      "truth"
+    ]
+  },
+  {
+    "text": "A group of children who have declared the vacant lot on their block a sovereign nation of wildflowers.",
+    "tags": [
+      "whimsical",
+      "childlike",
+      "activist",
+      "ecological",
+      "defiance"
+    ]
+  },
+  {
+    "text": "A woman who plants a tree for every meeting she attends about why trees cannot be planted.",
+    "tags": [
+      "whimsical",
+      "absurdist",
+      "activist",
+      "ecological",
+      "defiance"
+    ]
+  },
+  {
+    "text": "A sparrow who carries seeds from one side of a wall to the other, indifferent to whose wall it is.",
+    "tags": [
+      "whimsical",
+      "folkloric",
+      "activist",
+      "ecological",
+      "defiance"
+    ]
+  },
+  {
+    "text": "A cat who visits every household on a grieving street, spending exactly the right amount of time at each door.",
+    "tags": [
+      "whimsical",
+      "folkloric",
+      "activist",
+      "solidarity",
+      "care"
+    ]
+  },
+  {
+    "text": "A girl who organizes the birds of her neighborhood into a warning system, each species assigned a different alarm.",
+    "tags": [
+      "whimsical",
+      "childlike",
+      "activist",
+      "solidarity"
+    ]
+  },
+  {
+    "text": "A traveling circus that appears in neighborhoods in crisis and performs free shows until things improve.",
+    "tags": [
+      "whimsical",
+      "folkloric",
+      "activist",
+      "solidarity"
+    ]
+  },
+  {
+    "text": "A group of grandmothers who show up to every protest with thermoses of tea and their own folding chairs.",
+    "tags": [
+      "whimsical",
+      "folkloric",
+      "activist",
+      "solidarity",
+      "care"
+    ]
+  },
+  {
+    "text": "A postman who tucks one handwritten encouraging note into every envelope containing official bad news.",
+    "tags": [
+      "whimsical",
+      "mischievous",
+      "activist",
+      "solidarity",
+      "care"
+    ]
+  },
+  {
+    "text": "A dog who walks a different lonely neighbor home every evening, choosing by some ineffable canine instinct.",
+    "tags": [
+      "whimsical",
+      "folkloric",
+      "activist",
+      "solidarity",
+      "care"
+    ]
+  },
+  {
+    "text": "A crow who carries messages between two communities that have stopped speaking, using small found objects as tokens.",
+    "tags": [
+      "whimsical",
+      "folkloric",
+      "activist",
+      "solidarity"
+    ]
+  },
+  {
+    "text": "A child who keeps a map of every neighbor who seems afraid and delivers drawings to those addresses.",
+    "tags": [
+      "whimsical",
+      "childlike",
+      "activist",
+      "solidarity",
+      "care"
+    ]
+  },
+  {
+    "text": "A woman who bakes bread for every new family on the street before anyone else has thought to introduce themselves.",
+    "tags": [
+      "whimsical",
+      "folkloric",
+      "activist",
+      "solidarity",
+      "care"
+    ]
+  },
+  {
+    "text": "A snail who carries a tiny banner reading 'we are all still here' across the town square every single morning.",
+    "tags": [
+      "whimsical",
+      "absurdist",
+      "activist",
+      "solidarity",
+      "defiance"
+    ]
+  },
+  {
+    "text": "A group of children who have formed an official welcoming committee for anyone arriving in the neighborhood.",
+    "tags": [
+      "whimsical",
+      "childlike",
+      "activist",
+      "solidarity"
+    ]
+  },
+  {
+    "text": "A flock of starlings that murmurs in the shape of the names of missing people above the city each dusk.",
+    "tags": [
+      "whimsical",
+      "dreamlike",
+      "activist",
+      "solidarity",
+      "truth"
+    ]
+  },
+  {
+    "text": "A woman who has been knitting a very long scarf for twenty years, adding a row for every act of community kindness she witnesses.",
+    "tags": [
+      "whimsical",
+      "folkloric",
+      "activist",
+      "solidarity"
+    ]
+  },
+  {
+    "text": "A crow who replaces official signs with more accurate ones and has never once been caught.",
+    "tags": [
+      "whimsical",
+      "mischievous",
+      "activist",
+      "truth"
+    ]
+  },
+  {
+    "text": "A child who reads the fine print of every document aloud at the dinner table until the adults start paying attention.",
+    "tags": [
+      "whimsical",
+      "childlike",
+      "activist",
+      "truth"
+    ]
+  },
+  {
+    "text": "A fox who collects the things people say when they think no one is listening and arranges them into a small museum.",
+    "tags": [
+      "whimsical",
+      "folkloric",
+      "activist",
+      "truth"
+    ]
+  },
+  {
+    "text": "A librarian owl who flies through the city at night, leaving banned books on the windowsills of curious households.",
+    "tags": [
+      "whimsical",
+      "folkloric",
+      "activist",
+      "truth",
+      "defiance"
+    ]
+  },
+  {
+    "text": "A girl who keeps a notebook of every promise made by every official in her town and reads them back at inconvenient moments.",
+    "tags": [
+      "whimsical",
+      "childlike",
+      "mischievous",
+      "activist",
+      "truth"
+    ]
+  },
+  {
+    "text": "A parrot who has memorized the speeches of every politician she has heard and recites them back in the wrong order.",
+    "tags": [
+      "whimsical",
+      "mischievous",
+      "activist",
+      "truth"
+    ]
+  },
+  {
+    "text": "A tortoise who carries the complete history of a place on her shell in letters too small to read without getting very close.",
+    "tags": [
+      "whimsical",
+      "folkloric",
+      "activist",
+      "truth"
+    ]
+  },
+  {
+    "text": "A woman who embroiders the real names of things onto decorative cushions and leaves them in waiting rooms.",
+    "tags": [
+      "whimsical",
+      "absurdist",
+      "activist",
+      "truth",
+      "defiance"
+    ]
+  },
+  {
+    "text": "A crow who has been systematically replacing corporate logos with the names of the workers who made the products.",
+    "tags": [
+      "whimsical",
+      "mischievous",
+      "activist",
+      "truth"
+    ]
+  },
+  {
+    "text": "A child who asks every adult she meets the same three questions and keeps a meticulous record of the answers.",
+    "tags": [
+      "whimsical",
+      "childlike",
+      "activist",
+      "truth"
+    ]
+  },
+  {
+    "text": "A dog who can smell when someone is lying and sits directly in front of them with an expression of patient disappointment.",
+    "tags": [
+      "whimsical",
+      "folkloric",
+      "mischievous",
+      "activist",
+      "truth"
+    ]
+  },
+  {
+    "text": "A woman who translates bureaucratic letters into plain language and posts the translations beside the originals on community boards.",
+    "tags": [
+      "whimsical",
+      "absurdist",
+      "activist",
+      "truth",
+      "care"
+    ]
+  },
+  {
+    "text": "A woman who has been quietly correcting the historical plaques in her city with a very small chisel for fifteen years.",
+    "tags": [
+      "whimsical",
+      "mischievous",
+      "activist",
+      "truth",
+      "defiance"
+    ]
+  },
+  {
+    "text": "A small girl who has been rearranging the letters on the town notice board into more interesting messages since she could reach.",
+    "tags": [
+      "whimsical",
+      "childlike",
+      "mischievous",
+      "activist",
+      "defiance"
+    ]
+  },
+  {
+    "text": "A rabbit who moves property survey stakes to slightly more equitable positions in the night.",
+    "tags": [
+      "whimsical",
+      "folkloric",
+      "mischievous",
+      "activist",
+      "defiance"
+    ]
+  },
+  {
+    "text": "A woman who grows the most magnificent garden in a neighborhood that has been told it is scheduled for demolition.",
+    "tags": [
+      "whimsical",
+      "dreamlike",
+      "activist",
+      "defiance",
+      "ecological"
+    ]
+  },
+  {
+    "text": "A crow who has memorized every loophole in the city ordinances and shares them freely with whoever needs one.",
+    "tags": [
+      "whimsical",
+      "mischievous",
+      "activist",
+      "defiance",
+      "truth"
+    ]
+  },
+  {
+    "text": "A child who decorates every surveillance camera on her street with tiny hand-knitted hats.",
+    "tags": [
+      "whimsical",
+      "childlike",
+      "mischievous",
+      "activist",
+      "defiance"
+    ]
+  },
+  {
+    "text": "A fox who digs a tunnel under every new fence erected in her territory, as a matter of personal principle.",
+    "tags": [
+      "whimsical",
+      "folkloric",
+      "activist",
+      "defiance"
+    ]
+  },
+  {
+    "text": "A very old tortoise who has quietly outlasted four governments and is not remotely concerned about the fifth.",
+    "tags": [
+      "whimsical",
+      "folkloric",
+      "absurdist",
+      "activist",
+      "defiance"
+    ]
+  },
+  {
+    "text": "A woman who plants bulbs in every place she has been told she is not permitted to plant bulbs.",
+    "tags": [
+      "whimsical",
+      "mischievous",
+      "activist",
+      "defiance",
+      "ecological"
+    ]
+  },
+  {
+    "text": "A girl who has discovered that if she sings while doing something prohibited, nobody can quite bring themselves to stop her.",
+    "tags": [
+      "whimsical",
+      "childlike",
+      "mischievous",
+      "activist",
+      "defiance"
+    ]
+  },
+  {
+    "text": "A pigeon who roosts on every newly installed anti-pigeon spike and has quietly organized the others to do the same.",
+    "tags": [
+      "whimsical",
+      "mischievous",
+      "absurdist",
+      "activist",
+      "defiance"
+    ]
+  },
+  {
+    "text": "A bear who sits in the road whenever a logging truck passes through the forest, unhurried and enormous.",
+    "tags": [
+      "whimsical",
+      "folkloric",
+      "activist",
+      "defiance"
+    ]
+  },
+  {
+    "text": "A child who writes the word 'no' in chalk on every step of the town hall and returns to rewrite it every morning.",
+    "tags": [
+      "whimsical",
+      "childlike",
+      "activist",
+      "defiance"
+    ]
+  },
+  {
+    "text": "A woman who has grown a hedge so magnificent that the planning authority keeps postponing the demolition order just to look at it.",
+    "tags": [
+      "whimsical",
+      "absurdist",
+      "activist",
+      "defiance",
+      "ecological"
+    ]
+  },
+  {
+    "text": "A crow who has appointed herself guardian of every elderly person on her street, monitoring them through windows with sharp professional concern.",
+    "tags": [
+      "whimsical",
+      "folkloric",
+      "mischievous",
+      "activist",
+      "care"
+    ]
+  },
+  {
+    "text": "A girl who has organized the neighborhood animals into a lost-and-found network, returning things at her own careful pace.",
+    "tags": [
+      "whimsical",
+      "childlike",
+      "folkloric",
+      "activist",
+      "care"
+    ]
+  },
+  {
+    "text": "A fox who runs an informal counseling service for woodland creatures out of a hollow log, by appointment only.",
+    "tags": [
+      "whimsical",
+      "folkloric",
+      "absurdist",
+      "activist",
+      "care"
+    ]
+  },
+  {
+    "text": "A woman who leaves the light on in her front window every night so the street never feels dark to anyone walking home late.",
+    "tags": [
+      "whimsical",
+      "dreamlike",
+      "activist",
+      "care"
+    ]
+  },
+  {
+    "text": "A child who remembers the birthday of every person in her building and slides a hand-drawn card under each door.",
+    "tags": [
+      "whimsical",
+      "childlike",
+      "activist",
+      "care"
+    ]
+  },
+  {
+    "text": "A cat who sits with whoever in the household is most anxious, choosing by an instinct the household has come to trust completely.",
+    "tags": [
+      "whimsical",
+      "folkloric",
+      "activist",
+      "care"
+    ]
+  },
+  {
+    "text": "A snail who delivers tiny encouraging notes to other snails who appear to be struggling with the pace of things.",
+    "tags": [
+      "whimsical",
+      "absurdist",
+      "mischievous",
+      "activist",
+      "care"
+    ]
+  },
+  {
+    "text": "A grandmother who has never met a child who didn't need feeding and acts on this knowledge without exception.",
+    "tags": [
+      "whimsical",
+      "folkloric",
+      "activist",
+      "care",
+      "solidarity"
+    ]
+  },
+  {
+    "text": "A woman who has turned her front garden into a place where anyone can sit quietly for as long as they need.",
+    "tags": [
+      "whimsical",
+      "dreamlike",
+      "activist",
+      "care"
+    ]
+  },
+  {
+    "text": "A bear who runs a library of stories told aloud, for anyone who cannot read or is simply too tired to.",
+    "tags": [
+      "whimsical",
+      "folkloric",
+      "dreamlike",
+      "activist",
+      "care"
+    ]
+  },
+  {
+    "text": "A child who carries a spare umbrella at all times for the eventuality of an unprepared stranger, which occurs more than you'd think.",
+    "tags": [
+      "whimsical",
+      "childlike",
+      "mischievous",
+      "activist",
+      "care"
     ]
   }
 ]
