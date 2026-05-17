@@ -31,8 +31,8 @@
       document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
       document.getElementById(id).classList.add('active');
       document.getElementById('wallpaper-layer')
-        .classList.toggle('dimmed', id === 'screen-imagine-prompt' || id === 'screen-just-draw' || id === 'screen-strange-scenes');
-      if (id !== 'screen-just-draw' && id !== 'screen-imagine-prompt' && id !== 'screen-cauldron-config' && id !== 'screen-strange-scenes') {
+        .classList.toggle('dimmed', id === 'screen-prompt');
+      if (id !== 'screen-prompt' && id !== 'screen-cauldron-config') {
         currentPrompt = null;
         lockedSlots = {};
         clearHistory();
@@ -106,7 +106,7 @@
         });
 
         // Sync regen button disabled state with lock state
-        const regenBtn = document.getElementById('btn-regen-imagine');
+        const regenBtn = document.getElementById('prompt-regen-btn');
         if (regenBtn) {
           const allLocked = activeSlots.length > 0 &&
             activeSlots.every(s => lockedSlots[s.id]);
@@ -178,7 +178,7 @@
       if (!currentPrompt) return;
 
       // ── Cauldron mode ──
-      if (imagineMode === 'cauldron' && cauldronConfig) {
+      if (activeConfig && activeConfig.renderMode === 'cauldron' && cauldronConfig) {
         container.querySelectorAll('.prompt-slot:not(.locked)').forEach(span => {
           const slotId = span.dataset.slot;
           const slotDef = cauldronConfig.slots.find(s => s.id === slotId);
@@ -615,8 +615,7 @@ function renderCauldronConfig() {
     // ── Cauldron state ───────────────────────────────────────────
     let cauldronConfig = null;       // { preset, slots } — set by initCauldronConfig()
     let openTagPickerSlotId = null;  // id of the slot whose inline tag picker is open
-    let imagineMode = 'cauldron';
-    let promptBackTarget = null;
+    let activeConfig = null;
     let currentPrompt = null;  // { adjective, noun, verb, environment } | { noun1, noun1Pool, noun2, noun2Pool }
     let lockedSlots = {};      // e.g. { verb: true } — reset on back navigation
 
@@ -625,61 +624,42 @@ function renderCauldronConfig() {
     let historyIndex = -1;     // -1 = empty; 0 = oldest; length-1 = newest
     // ── Pool-mode configs ─────────────────────────────────────────
     const jdConfig = {
-      getPool:   () => store.justDraw,
-      getNames:  () => store.justDrawNames,
-      textField: 'name',
+      getPool:    () => store.justDraw,
+      getNames:   () => store.justDrawNames,
+      textField:  'name',
+      label:      'Everyday Life',
+      backTarget: 'screen-home',
       sheetTitle: 'Filter by subject',
+      hasFilter:  true,
+      renderMode: 'pool',
       deck:       [],
       activeTags: [],
       tagMode:    'any',
       sheetTags:  [],
       sheetMode:  'any',
-      ids: {
-        promptEl:       'just-draw-prompt',
-        tagIndicator:   'jd-tag-indicator',
-        filterBtn:      'jd-filter-btn',
-        filterBackdrop: 'jd-filter-backdrop',
-        filterSheet:    'jd-filter-sheet',
-        tagChips:       'jd-tag-chips',
-        anyAllRow:      'jd-any-all-row',
-        poolCount:      'jd-pool-count',
-        clearBtn:       'jd-clear-btn',
-        applyBtn:       'jd-apply-btn',
-        histNav:        'history-nav-just-draw',
-        histDots:       'hist-dots-just-draw',
-        histPrev:       'hist-prev-just-draw',
-        histNext:       'hist-next-just-draw',
-        copyBtn:        'copy-just-draw',
-      }
     };
 
     const ssConfig = {
-      getPool:   () => store.strangeScenes,
-      getNames:  () => store.strangeSceneTexts,
-      textField: 'text',
+      getPool:    () => store.strangeScenes,
+      getNames:   () => store.strangeSceneTexts,
+      textField:  'text',
+      label:      'Strange Scenes',
+      backTarget: 'screen-home',
       sheetTitle: 'Filter by theme',
+      hasFilter:  true,
+      renderMode: 'pool',
       deck:       [],
       activeTags: [],
       tagMode:    'any',
       sheetTags:  [],
       sheetMode:  'any',
-      ids: {
-        promptEl:       'ss-prompt',
-        tagIndicator:   'ss-tag-indicator',
-        filterBtn:      'ss-filter-btn',
-        filterBackdrop: 'ss-filter-backdrop',
-        filterSheet:    'ss-filter-sheet',
-        tagChips:       'ss-tag-chips',
-        anyAllRow:      'ss-any-all-row',
-        poolCount:      'ss-pool-count',
-        clearBtn:       'ss-clear-btn',
-        applyBtn:       'ss-apply-btn',
-        histNav:        'history-nav-strange-scenes',
-        histDots:       'hist-dots-strange-scenes',
-        histPrev:       'hist-prev-strange-scenes',
-        histNext:       'hist-next-strange-scenes',
-        copyBtn:        'copy-strange-scenes',
-      }
+    };
+
+    const cauldronModeConfig = {
+      label:      'Surreal Cauldron',
+      backTarget: 'screen-cauldron-config',
+      hasFilter:  false,
+      renderMode: 'cauldron',
     };
 
     let cauldronDecks = {};    // { [slotId]: string[] } — reset on every Generate tap
@@ -688,9 +668,24 @@ function renderCauldronConfig() {
     function clearHistory() {
       promptHistory = [];
       historyIndex = -1;
-      document.getElementById('history-nav-imagine').classList.remove('visible');
-      document.getElementById('history-nav-just-draw').classList.remove('visible');
-      document.getElementById('history-nav-strange-scenes').classList.remove('visible');
+      document.getElementById('prompt-history-nav').classList.remove('visible');
+    }
+
+    function enterMode(config) {
+      activeConfig = config;
+      document.getElementById('prompt-screen-label').textContent = config.label;
+      document.getElementById('prompt-back-btn').dataset.target = config.backTarget;
+
+      const hasFilter = config.hasFilter;
+      document.getElementById('prompt-filter-btn').classList.toggle('hidden', !hasFilter);
+      document.getElementById('prompt-tag-indicator').classList.toggle('hidden', !hasFilter);
+      document.getElementById('prompt-filter-sheet').classList.add('hidden');
+      document.getElementById('prompt-filter-backdrop').classList.remove('visible');
+
+      const hasLock = config.renderMode === 'cauldron';
+      document.getElementById('prompt-lock-hint').classList.toggle('hidden', !hasLock);
+
+      showScreen('screen-prompt');
     }
 
     function pushToHistory(prompt) {
@@ -701,11 +696,11 @@ function renderCauldronConfig() {
       historyIndex = promptHistory.length - 1;
     }
 
-    function renderHistoryWidget(navId, dotsId, prevId, nextId) {
-      const nav = document.getElementById(navId);
-      const dotsContainer = document.getElementById(dotsId);
-      const prevBtn = document.getElementById(prevId);
-      const nextBtn = document.getElementById(nextId);
+    function renderHistoryWidget() {
+      const nav = document.getElementById('prompt-history-nav');
+      const dotsContainer = document.getElementById('prompt-hist-dots');
+      const prevBtn = document.getElementById('prompt-hist-prev');
+      const nextBtn = document.getElementById('prompt-hist-next');
 
       if (promptHistory.length <= 1) {
         nav.classList.remove('visible');
@@ -714,7 +709,6 @@ function renderCauldronConfig() {
 
       nav.classList.add('visible');
 
-      // Sliding window of up to 7 dots centred on historyIndex
       const total = promptHistory.length;
       const maxDots = Math.min(total, 7);
       const windowStart = Math.max(0, Math.min(historyIndex - 3, total - 7));
@@ -732,44 +726,33 @@ function renderCauldronConfig() {
       nextBtn.disabled = historyIndex === promptHistory.length - 1;
     }
 
-    function navigateHistory(direction, promptContainerId, mode) {
+    function navigateHistory(direction) {
       const newIndex = historyIndex + direction;
+      const container = document.getElementById('prompt-content');
       if (newIndex < 0 || newIndex >= promptHistory.length) {
         if (promptHistory.length > 1) {
-          const el = document.getElementById(promptContainerId);
           const cls = direction === -1 ? 'bounce-right' : 'bounce-left';
-          el.classList.remove('bounce-left', 'bounce-right');
-          void el.offsetWidth;
-          el.classList.add(cls);
-          setTimeout(() => el.classList.remove(cls), 380);
+          container.classList.remove('bounce-left', 'bounce-right');
+          void container.offsetWidth;
+          container.classList.add(cls);
+          setTimeout(() => container.classList.remove(cls), 380);
         }
         return;
       }
       historyIndex = newIndex;
 
-      const container = document.getElementById(promptContainerId);
-
-      if (mode === 'sparks') {
+      if (activeConfig.renderMode === 'pool') {
         container.textContent = promptHistory[historyIndex];
       } else {
         currentPrompt = promptHistory[historyIndex];
-        renderPrompt(container, mode);
+        renderPrompt(container, activeConfig.renderMode);
       }
 
-      // Slide animation: going back (‹) = slide from left; going forward (›) = slide from right
       container.classList.remove('slide-from-left', 'slide-from-right');
-      void container.offsetWidth; // force reflow so animation re-triggers
+      void container.offsetWidth;
       container.classList.add(direction === -1 ? 'slide-from-left' : 'slide-from-right');
 
-      const suffix = promptContainerId === 'imagine-prompt' ? 'imagine'
-                   : promptContainerId === 'ss-prompt'      ? 'strange-scenes'
-                   : 'just-draw';
-      renderHistoryWidget(
-        `history-nav-${suffix}`,
-        `hist-dots-${suffix}`,
-        `hist-prev-${suffix}`,
-        `hist-next-${suffix}`
-      );
+      renderHistoryWidget();
     }
 
     // ── Shared pool-mode functions ────────────────────────────────
@@ -785,20 +768,21 @@ function renderCauldronConfig() {
 
     function regenPoolMode(cfg) {
       const finalValue = generateFromPool(cfg);
-      const el = document.getElementById(cfg.ids.promptEl);
+      const el = document.getElementById('prompt-content');
       el.textContent = finalValue;
       animateSlot(el, cfg.getNames(), finalValue, 1200);
       pushToHistory(finalValue);
-      renderHistoryWidget(cfg.ids.histNav, cfg.ids.histDots, cfg.ids.histPrev, cfg.ids.histNext);
+      renderHistoryWidget();
     }
 
     function renderFilterSheet(cfg) {
-      const ids = cfg.ids;
-      const chipsEl      = document.getElementById(ids.tagChips);
-      const anyAllRow    = document.getElementById(ids.anyAllRow);
-      const poolCountEl  = document.getElementById(ids.poolCount);
-      const applyBtn     = document.getElementById(ids.applyBtn);
-      const aaBtns       = anyAllRow.querySelectorAll('.pm-aa-btn');
+      const chipsEl     = document.getElementById('prompt-tag-chips');
+      const anyAllRow   = document.getElementById('prompt-any-all-row');
+      const poolCountEl = document.getElementById('prompt-pool-count');
+      const applyBtn    = document.getElementById('prompt-apply-btn');
+      const aaBtns      = anyAllRow.querySelectorAll('.pm-aa-btn');
+
+      document.getElementById('prompt-sheet-title').textContent = cfg.sheetTitle;
 
       const tags = [...new Set(cfg.getPool().flatMap(item => item.tags || []))].sort();
       chipsEl.innerHTML = '';
@@ -832,7 +816,7 @@ function renderCauldronConfig() {
           warning = document.createElement('p');
           warning.className = 'pm-empty-warning';
           warning.textContent = "no prompts match — try 'any' or fewer tags";
-          document.getElementById(ids.anyAllRow).after(warning);
+          document.getElementById('prompt-any-all-row').after(warning);
         }
       } else if (warning) {
         warning.remove();
@@ -844,15 +828,15 @@ function renderCauldronConfig() {
     function openFilterSheet(cfg) {
       cfg.sheetTags = [...cfg.activeTags];
       cfg.sheetMode = cfg.tagMode;
-      document.getElementById(cfg.ids.filterBackdrop).classList.add('visible');
-      document.getElementById(cfg.ids.filterSheet).classList.remove('hidden');
-      document.getElementById(cfg.ids.filterBtn).classList.add('active');
+      document.getElementById('prompt-filter-backdrop').classList.add('visible');
+      document.getElementById('prompt-filter-sheet').classList.remove('hidden');
+      document.getElementById('prompt-filter-btn').classList.add('active');
       renderFilterSheet(cfg);
     }
 
     function closeFilterSheet(cfg) {
-      document.getElementById(cfg.ids.filterBackdrop).classList.remove('visible');
-      document.getElementById(cfg.ids.filterSheet).classList.add('hidden');
+      document.getElementById('prompt-filter-backdrop').classList.remove('visible');
+      document.getElementById('prompt-filter-sheet').classList.add('hidden');
     }
 
     function applyFilter(cfg) {
@@ -865,12 +849,12 @@ function renderCauldronConfig() {
     }
 
     function updateFilterBtn(cfg) {
-      document.getElementById(cfg.ids.filterBtn)
+      document.getElementById('prompt-filter-btn')
         .classList.toggle('active', cfg.activeTags.length > 0);
     }
 
     function updateTagIndicator(cfg) {
-      const el = document.getElementById(cfg.ids.tagIndicator);
+      const el = document.getElementById('prompt-tag-indicator');
       if (cfg.activeTags.length === 0) {
         el.textContent = '';
       } else {
@@ -878,28 +862,6 @@ function renderCauldronConfig() {
         el.textContent = `${cfg.tagMode}: ${labels}`;
       }
     }
-
-    // ── Everyday Life filter event wiring ────────────────────────
-    document.getElementById('jd-filter-btn').addEventListener('click', () => openFilterSheet(jdConfig));
-    document.getElementById('jd-filter-backdrop').addEventListener('click', () => {
-      closeFilterSheet(jdConfig);
-      updateFilterBtn(jdConfig);
-    });
-    document.getElementById('jd-clear-btn').addEventListener('click', () => {
-      jdConfig.sheetTags = [];
-      jdConfig.sheetMode = 'any';
-      renderFilterSheet(jdConfig);
-    });
-    document.getElementById('jd-apply-btn').addEventListener('click', () => {
-      applyFilter(jdConfig);
-      regenPoolMode(jdConfig);
-    });
-    document.querySelectorAll('#jd-any-all-row .pm-aa-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        jdConfig.sheetMode = btn.dataset.mode;
-        renderFilterSheet(jdConfig);
-      });
-    });
 
     // ── Event wiring ─────────────────────────────────────────────
     document.getElementById('btn-just-draw').addEventListener('click', () => {
@@ -909,11 +871,7 @@ function renderCauldronConfig() {
       jdConfig.tagMode    = 'any';
       updateFilterBtn(jdConfig);
       updateTagIndicator(jdConfig);
-      showScreen('screen-just-draw');
-      regenPoolMode(jdConfig);
-    });
-
-    document.getElementById('btn-regen-just-draw').addEventListener('click', () => {
+      enterMode(jdConfig);
       regenPoolMode(jdConfig);
     });
 
@@ -924,34 +882,8 @@ function renderCauldronConfig() {
       ssConfig.tagMode    = 'any';
       updateFilterBtn(ssConfig);
       updateTagIndicator(ssConfig);
-      showScreen('screen-strange-scenes');
+      enterMode(ssConfig);
       regenPoolMode(ssConfig);
-    });
-
-    document.getElementById('btn-regen-strange-scenes').addEventListener('click', () => {
-      regenPoolMode(ssConfig);
-    });
-
-    // Strange Scenes filter sheet
-    document.getElementById('ss-filter-btn').addEventListener('click', () => openFilterSheet(ssConfig));
-    document.getElementById('ss-filter-backdrop').addEventListener('click', () => {
-      closeFilterSheet(ssConfig);
-      updateFilterBtn(ssConfig);
-    });
-    document.getElementById('ss-clear-btn').addEventListener('click', () => {
-      ssConfig.sheetTags = [];
-      ssConfig.sheetMode = 'any';
-      renderFilterSheet(ssConfig);
-    });
-    document.getElementById('ss-apply-btn').addEventListener('click', () => {
-      applyFilter(ssConfig);
-      regenPoolMode(ssConfig);
-    });
-    document.querySelectorAll('#ss-any-all-row .pm-aa-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        ssConfig.sheetMode = btn.dataset.mode;
-        renderFilterSheet(ssConfig);
-      });
     });
 
     document.getElementById('btn-cauldron').addEventListener('click', () => {
@@ -981,32 +913,18 @@ function renderCauldronConfig() {
     document.getElementById('cc-generate').addEventListener('click', () => {
       if (!cauldronConfig) return;
       cauldronDecks = {};
-      imagineMode = 'cauldron';
-      promptBackTarget = 'screen-cauldron-config';
-      currentPrompt = generateCauldron(cauldronConfig, currentPrompt, lockedSlots);
-      document.getElementById('imagine-screen-label').textContent = 'Surreal Cauldron';
-      showScreen('screen-imagine-prompt');
-      const container = document.getElementById('imagine-prompt');
+      clearHistory();
+      lockedSlots = {};
+      currentPrompt = generateCauldron(cauldronConfig, null, {});
+      enterMode(cauldronModeConfig);
+      const container = document.getElementById('prompt-content');
       renderPrompt(container, 'cauldron');
-      const hint = document.getElementById('lock-hint-imagine');
+      const hint = document.getElementById('prompt-lock-hint');
       hint.classList.add('animating');
       animateUnlockedSlots(container);
       setTimeout(() => hint.classList.remove('animating'), 1200);
       pushToHistory(currentPrompt);
-      renderHistoryWidget('history-nav-imagine', 'hist-dots-imagine', 'hist-prev-imagine', 'hist-next-imagine');
-    });
-
-    document.getElementById('btn-regen-imagine').addEventListener('click', () => {
-      if (!imagineMode) return;
-      const container = document.getElementById('imagine-prompt');
-      currentPrompt = generateCauldron(cauldronConfig, currentPrompt, lockedSlots);
-      renderPrompt(container, imagineMode);
-      const hint = document.getElementById('lock-hint-imagine');
-      hint.classList.add('animating');
-      animateUnlockedSlots(container);
-      setTimeout(() => hint.classList.remove('animating'), 1200);
-      pushToHistory(currentPrompt);
-      renderHistoryWidget('history-nav-imagine', 'hist-dots-imagine', 'hist-prev-imagine', 'hist-next-imagine');
+      renderHistoryWidget();
     });
 
     document.querySelectorAll('.back-btn[data-target]').forEach(btn => {
@@ -1045,43 +963,59 @@ function renderCauldronConfig() {
       });
     }
 
-    setupCopyBtn('copy-just-draw', () =>
-      document.getElementById('just-draw-prompt').textContent.trim()
-    );
-    setupCopyBtn('copy-imagine', () =>
-      document.getElementById('imagine-prompt').textContent.trim()
-    );
-    setupCopyBtn('copy-strange-scenes', () =>
-      document.getElementById('ss-prompt').textContent.trim()
-    );
-
-    document.getElementById('btn-back-imagine').addEventListener('click', () => {
-      showScreen(promptBackTarget ?? 'screen-home');
+    // ── Shared prompt screen event wiring ────────────────────────
+    document.getElementById('prompt-filter-btn').addEventListener('click', () => openFilterSheet(activeConfig));
+    document.getElementById('prompt-filter-backdrop').addEventListener('click', () => {
+      closeFilterSheet(activeConfig);
+      updateFilterBtn(activeConfig);
+    });
+    document.getElementById('prompt-clear-btn').addEventListener('click', () => {
+      activeConfig.sheetTags = [];
+      activeConfig.sheetMode = 'any';
+      renderFilterSheet(activeConfig);
+    });
+    document.getElementById('prompt-apply-btn').addEventListener('click', () => {
+      applyFilter(activeConfig);
+      regenPoolMode(activeConfig);
+    });
+    document.querySelectorAll('#prompt-any-all-row .pm-aa-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeConfig.sheetMode = btn.dataset.mode;
+        renderFilterSheet(activeConfig);
+      });
     });
 
-    document.getElementById('hist-prev-imagine').addEventListener('click', () => {
-      navigateHistory(-1, 'imagine-prompt', imagineMode);
+    document.getElementById('prompt-regen-btn').addEventListener('click', () => {
+      if (activeConfig.renderMode === 'pool') {
+        regenPoolMode(activeConfig);
+      } else {
+        const container = document.getElementById('prompt-content');
+        currentPrompt = generateCauldron(cauldronConfig, currentPrompt, lockedSlots);
+        renderPrompt(container, 'cauldron');
+        const hint = document.getElementById('prompt-lock-hint');
+        hint.classList.add('animating');
+        animateUnlockedSlots(container);
+        setTimeout(() => hint.classList.remove('animating'), 1200);
+        pushToHistory(currentPrompt);
+        renderHistoryWidget();
+      }
     });
-    document.getElementById('hist-next-imagine').addEventListener('click', () => {
-      navigateHistory(1, 'imagine-prompt', imagineMode);
+
+    document.getElementById('prompt-back-btn').addEventListener('click', () => {
+      showScreen(activeConfig.backTarget);
     });
-    document.getElementById('hist-prev-just-draw').addEventListener('click', () => {
-      navigateHistory(-1, 'just-draw-prompt', 'sparks');
-    });
-    document.getElementById('hist-next-just-draw').addEventListener('click', () => {
-      navigateHistory(1, 'just-draw-prompt', 'sparks');
-    });
-    document.getElementById('hist-prev-strange-scenes').addEventListener('click', () => {
-      navigateHistory(-1, 'ss-prompt', 'sparks');
-    });
-    document.getElementById('hist-next-strange-scenes').addEventListener('click', () => {
-      navigateHistory(1, 'ss-prompt', 'sparks');
-    });
+
+    document.getElementById('prompt-hist-prev').addEventListener('click', () => navigateHistory(-1));
+    document.getElementById('prompt-hist-next').addEventListener('click', () => navigateHistory(1));
+
+    setupCopyBtn('prompt-copy-btn', () =>
+      document.getElementById('prompt-content').textContent.trim()
+    );
 
     // ── Swipe gestures for history ────────────────────────────────
     const SWIPE_THRESHOLD = 40;
 
-    function addSwipe(elementId, containerId, getMode) {
+    function addSwipe(elementId) {
       let startX = null;
       const el = document.getElementById(elementId);
       el.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
@@ -1090,12 +1024,11 @@ function renderCauldronConfig() {
         const delta = e.changedTouches[0].clientX - startX;
         startX = null;
         if (Math.abs(delta) < SWIPE_THRESHOLD) return;
-        navigateHistory(delta < 0 ? 1 : -1, containerId, getMode());
+        navigateHistory(delta < 0 ? 1 : -1);
       });
     }
 
-    addSwipe('imagine-prompt', 'imagine-prompt', () => imagineMode);
-    addSwipe('just-draw-prompt', 'just-draw-prompt', () => 'sparks');
+    addSwipe('prompt-content');
 
     // ── Data loading ─────────────────────────────────────────────
     async function init() {
