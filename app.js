@@ -696,11 +696,11 @@ function renderCauldronConfig() {
       historyIndex = promptHistory.length - 1;
     }
 
-    function renderHistoryWidget(navId, dotsId, prevId, nextId) {
-      const nav = document.getElementById(navId);
-      const dotsContainer = document.getElementById(dotsId);
-      const prevBtn = document.getElementById(prevId);
-      const nextBtn = document.getElementById(nextId);
+    function renderHistoryWidget() {
+      const nav = document.getElementById('prompt-history-nav');
+      const dotsContainer = document.getElementById('prompt-hist-dots');
+      const prevBtn = document.getElementById('prompt-hist-prev');
+      const nextBtn = document.getElementById('prompt-hist-next');
 
       if (promptHistory.length <= 1) {
         nav.classList.remove('visible');
@@ -709,7 +709,6 @@ function renderCauldronConfig() {
 
       nav.classList.add('visible');
 
-      // Sliding window of up to 7 dots centred on historyIndex
       const total = promptHistory.length;
       const maxDots = Math.min(total, 7);
       const windowStart = Math.max(0, Math.min(historyIndex - 3, total - 7));
@@ -727,44 +726,33 @@ function renderCauldronConfig() {
       nextBtn.disabled = historyIndex === promptHistory.length - 1;
     }
 
-    function navigateHistory(direction, promptContainerId, mode) {
+    function navigateHistory(direction) {
       const newIndex = historyIndex + direction;
+      const container = document.getElementById('prompt-content');
       if (newIndex < 0 || newIndex >= promptHistory.length) {
         if (promptHistory.length > 1) {
-          const el = document.getElementById(promptContainerId);
           const cls = direction === -1 ? 'bounce-right' : 'bounce-left';
-          el.classList.remove('bounce-left', 'bounce-right');
-          void el.offsetWidth;
-          el.classList.add(cls);
-          setTimeout(() => el.classList.remove(cls), 380);
+          container.classList.remove('bounce-left', 'bounce-right');
+          void container.offsetWidth;
+          container.classList.add(cls);
+          setTimeout(() => container.classList.remove(cls), 380);
         }
         return;
       }
       historyIndex = newIndex;
 
-      const container = document.getElementById(promptContainerId);
-
-      if (mode === 'sparks') {
+      if (activeConfig.renderMode === 'pool') {
         container.textContent = promptHistory[historyIndex];
       } else {
         currentPrompt = promptHistory[historyIndex];
-        renderPrompt(container, mode);
+        renderPrompt(container, activeConfig.renderMode);
       }
 
-      // Slide animation: going back (‹) = slide from left; going forward (›) = slide from right
       container.classList.remove('slide-from-left', 'slide-from-right');
-      void container.offsetWidth; // force reflow so animation re-triggers
+      void container.offsetWidth;
       container.classList.add(direction === -1 ? 'slide-from-left' : 'slide-from-right');
 
-      const suffix = promptContainerId === 'imagine-prompt' ? 'imagine'
-                   : promptContainerId === 'ss-prompt'      ? 'strange-scenes'
-                   : 'just-draw';
-      renderHistoryWidget(
-        `history-nav-${suffix}`,
-        `hist-dots-${suffix}`,
-        `hist-prev-${suffix}`,
-        `hist-next-${suffix}`
-      );
+      renderHistoryWidget();
     }
 
     // ── Shared pool-mode functions ────────────────────────────────
@@ -780,20 +768,21 @@ function renderCauldronConfig() {
 
     function regenPoolMode(cfg) {
       const finalValue = generateFromPool(cfg);
-      const el = document.getElementById(cfg.ids.promptEl);
+      const el = document.getElementById('prompt-content');
       el.textContent = finalValue;
       animateSlot(el, cfg.getNames(), finalValue, 1200);
       pushToHistory(finalValue);
-      renderHistoryWidget(cfg.ids.histNav, cfg.ids.histDots, cfg.ids.histPrev, cfg.ids.histNext);
+      renderHistoryWidget();
     }
 
     function renderFilterSheet(cfg) {
-      const ids = cfg.ids;
-      const chipsEl      = document.getElementById(ids.tagChips);
-      const anyAllRow    = document.getElementById(ids.anyAllRow);
-      const poolCountEl  = document.getElementById(ids.poolCount);
-      const applyBtn     = document.getElementById(ids.applyBtn);
-      const aaBtns       = anyAllRow.querySelectorAll('.pm-aa-btn');
+      const chipsEl     = document.getElementById('prompt-tag-chips');
+      const anyAllRow   = document.getElementById('prompt-any-all-row');
+      const poolCountEl = document.getElementById('prompt-pool-count');
+      const applyBtn    = document.getElementById('prompt-apply-btn');
+      const aaBtns      = anyAllRow.querySelectorAll('.pm-aa-btn');
+
+      document.getElementById('prompt-sheet-title').textContent = cfg.sheetTitle;
 
       const tags = [...new Set(cfg.getPool().flatMap(item => item.tags || []))].sort();
       chipsEl.innerHTML = '';
@@ -827,7 +816,7 @@ function renderCauldronConfig() {
           warning = document.createElement('p');
           warning.className = 'pm-empty-warning';
           warning.textContent = "no prompts match — try 'any' or fewer tags";
-          document.getElementById(ids.anyAllRow).after(warning);
+          document.getElementById('prompt-any-all-row').after(warning);
         }
       } else if (warning) {
         warning.remove();
@@ -839,15 +828,15 @@ function renderCauldronConfig() {
     function openFilterSheet(cfg) {
       cfg.sheetTags = [...cfg.activeTags];
       cfg.sheetMode = cfg.tagMode;
-      document.getElementById(cfg.ids.filterBackdrop).classList.add('visible');
-      document.getElementById(cfg.ids.filterSheet).classList.remove('hidden');
-      document.getElementById(cfg.ids.filterBtn).classList.add('active');
+      document.getElementById('prompt-filter-backdrop').classList.add('visible');
+      document.getElementById('prompt-filter-sheet').classList.remove('hidden');
+      document.getElementById('prompt-filter-btn').classList.add('active');
       renderFilterSheet(cfg);
     }
 
     function closeFilterSheet(cfg) {
-      document.getElementById(cfg.ids.filterBackdrop).classList.remove('visible');
-      document.getElementById(cfg.ids.filterSheet).classList.add('hidden');
+      document.getElementById('prompt-filter-backdrop').classList.remove('visible');
+      document.getElementById('prompt-filter-sheet').classList.add('hidden');
     }
 
     function applyFilter(cfg) {
@@ -860,12 +849,12 @@ function renderCauldronConfig() {
     }
 
     function updateFilterBtn(cfg) {
-      document.getElementById(cfg.ids.filterBtn)
+      document.getElementById('prompt-filter-btn')
         .classList.toggle('active', cfg.activeTags.length > 0);
     }
 
     function updateTagIndicator(cfg) {
-      const el = document.getElementById(cfg.ids.tagIndicator);
+      const el = document.getElementById('prompt-tag-indicator');
       if (cfg.activeTags.length === 0) {
         el.textContent = '';
       } else {
@@ -1054,29 +1043,17 @@ function renderCauldronConfig() {
       showScreen(promptBackTarget ?? 'screen-home');
     });
 
-    document.getElementById('hist-prev-imagine').addEventListener('click', () => {
-      navigateHistory(-1, 'imagine-prompt', imagineMode);
+    document.getElementById('prompt-hist-prev').addEventListener('click', () => {
+      navigateHistory(-1);
     });
-    document.getElementById('hist-next-imagine').addEventListener('click', () => {
-      navigateHistory(1, 'imagine-prompt', imagineMode);
-    });
-    document.getElementById('hist-prev-just-draw').addEventListener('click', () => {
-      navigateHistory(-1, 'just-draw-prompt', 'sparks');
-    });
-    document.getElementById('hist-next-just-draw').addEventListener('click', () => {
-      navigateHistory(1, 'just-draw-prompt', 'sparks');
-    });
-    document.getElementById('hist-prev-strange-scenes').addEventListener('click', () => {
-      navigateHistory(-1, 'ss-prompt', 'sparks');
-    });
-    document.getElementById('hist-next-strange-scenes').addEventListener('click', () => {
-      navigateHistory(1, 'ss-prompt', 'sparks');
+    document.getElementById('prompt-hist-next').addEventListener('click', () => {
+      navigateHistory(1);
     });
 
     // ── Swipe gestures for history ────────────────────────────────
     const SWIPE_THRESHOLD = 40;
 
-    function addSwipe(elementId, containerId, getMode) {
+    function addSwipe(elementId) {
       let startX = null;
       const el = document.getElementById(elementId);
       el.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
@@ -1085,12 +1062,11 @@ function renderCauldronConfig() {
         const delta = e.changedTouches[0].clientX - startX;
         startX = null;
         if (Math.abs(delta) < SWIPE_THRESHOLD) return;
-        navigateHistory(delta < 0 ? 1 : -1, containerId, getMode());
+        navigateHistory(delta < 0 ? 1 : -1);
       });
     }
 
-    addSwipe('imagine-prompt', 'imagine-prompt', () => imagineMode);
-    addSwipe('just-draw-prompt', 'just-draw-prompt', () => 'sparks');
+    addSwipe('prompt-content');
 
     // ── Data loading ─────────────────────────────────────────────
     async function init() {
