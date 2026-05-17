@@ -2059,14 +2059,13 @@ function renderCauldronConfig() {
     // ── Cauldron state ───────────────────────────────────────────
     let cauldronConfig = null;       // { preset, slots } — set by initCauldronConfig()
     let openTagPickerSlotId = null;  // id of the slot whose inline tag picker is open
-    let imagineMode = null;    // 'surreal' | 'mutations'
-    let mutationType = null;   // 'organic-organic' | 'organic-synthetic' | 'synthetic-synthetic' | 'random'
+    let imagineMode = 'cauldron';
     let promptBackTarget = null;
     let currentPrompt = null;  // { adjective, noun, verb, environment } | { noun1, noun1Pool, noun2, noun2Pool }
     let lockedSlots = {};      // e.g. { verb: true } — reset on back navigation
 
     const HISTORY_MAX = 20;
-    let promptHistory = [];    // string[] for Sparks; prompt object[] for Surreal/Mutations
+    let promptHistory = [];    // string[] for Sparks; prompt object[] for Cauldron
     let historyIndex = -1;     // -1 = empty; 0 = oldest; length-1 = newest
     // ── Pool-mode configs ─────────────────────────────────────────
     const jdConfig = {
@@ -2444,13 +2443,7 @@ function renderCauldronConfig() {
     document.getElementById('btn-regen-imagine').addEventListener('click', () => {
       if (!imagineMode) return;
       const container = document.getElementById('imagine-prompt');
-      if (imagineMode === 'surreal') {
-        currentPrompt = generateSurrealNarrative(currentPrompt, lockedSlots);
-      } else if (imagineMode === 'cauldron') {
-        currentPrompt = generateCauldron(cauldronConfig, currentPrompt, lockedSlots);
-      } else {
-        currentPrompt = generateMutation(mutationType, currentPrompt, lockedSlots);
-      }
+      currentPrompt = generateCauldron(cauldronConfig, currentPrompt, lockedSlots);
       renderPrompt(container, imagineMode);
       const hint = document.getElementById('lock-hint-imagine');
       hint.classList.add('animating');
