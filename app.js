@@ -615,8 +615,7 @@ function renderCauldronConfig() {
     // ── Cauldron state ───────────────────────────────────────────
     let cauldronConfig = null;       // { preset, slots } — set by initCauldronConfig()
     let openTagPickerSlotId = null;  // id of the slot whose inline tag picker is open
-    let imagineMode = 'cauldron';
-    let promptBackTarget = null;
+    let activeConfig = null;
     let currentPrompt = null;  // { adjective, noun, verb, environment } | { noun1, noun1Pool, noun2, noun2Pool }
     let lockedSlots = {};      // e.g. { verb: true } — reset on back navigation
 
@@ -625,61 +624,42 @@ function renderCauldronConfig() {
     let historyIndex = -1;     // -1 = empty; 0 = oldest; length-1 = newest
     // ── Pool-mode configs ─────────────────────────────────────────
     const jdConfig = {
-      getPool:   () => store.justDraw,
-      getNames:  () => store.justDrawNames,
-      textField: 'name',
+      getPool:    () => store.justDraw,
+      getNames:   () => store.justDrawNames,
+      textField:  'name',
+      label:      'Everyday Life',
+      backTarget: 'screen-home',
       sheetTitle: 'Filter by subject',
+      hasFilter:  true,
+      renderMode: 'pool',
       deck:       [],
       activeTags: [],
       tagMode:    'any',
       sheetTags:  [],
       sheetMode:  'any',
-      ids: {
-        promptEl:       'just-draw-prompt',
-        tagIndicator:   'jd-tag-indicator',
-        filterBtn:      'jd-filter-btn',
-        filterBackdrop: 'jd-filter-backdrop',
-        filterSheet:    'jd-filter-sheet',
-        tagChips:       'jd-tag-chips',
-        anyAllRow:      'jd-any-all-row',
-        poolCount:      'jd-pool-count',
-        clearBtn:       'jd-clear-btn',
-        applyBtn:       'jd-apply-btn',
-        histNav:        'history-nav-just-draw',
-        histDots:       'hist-dots-just-draw',
-        histPrev:       'hist-prev-just-draw',
-        histNext:       'hist-next-just-draw',
-        copyBtn:        'copy-just-draw',
-      }
     };
 
     const ssConfig = {
-      getPool:   () => store.strangeScenes,
-      getNames:  () => store.strangeSceneTexts,
-      textField: 'text',
+      getPool:    () => store.strangeScenes,
+      getNames:   () => store.strangeSceneTexts,
+      textField:  'text',
+      label:      'Strange Scenes',
+      backTarget: 'screen-home',
       sheetTitle: 'Filter by theme',
+      hasFilter:  true,
+      renderMode: 'pool',
       deck:       [],
       activeTags: [],
       tagMode:    'any',
       sheetTags:  [],
       sheetMode:  'any',
-      ids: {
-        promptEl:       'ss-prompt',
-        tagIndicator:   'ss-tag-indicator',
-        filterBtn:      'ss-filter-btn',
-        filterBackdrop: 'ss-filter-backdrop',
-        filterSheet:    'ss-filter-sheet',
-        tagChips:       'ss-tag-chips',
-        anyAllRow:      'ss-any-all-row',
-        poolCount:      'ss-pool-count',
-        clearBtn:       'ss-clear-btn',
-        applyBtn:       'ss-apply-btn',
-        histNav:        'history-nav-strange-scenes',
-        histDots:       'hist-dots-strange-scenes',
-        histPrev:       'hist-prev-strange-scenes',
-        histNext:       'hist-next-strange-scenes',
-        copyBtn:        'copy-strange-scenes',
-      }
+    };
+
+    const cauldronModeConfig = {
+      label:      'Surreal Cauldron',
+      backTarget: 'screen-cauldron-config',
+      hasFilter:  false,
+      renderMode: 'cauldron',
     };
 
     let cauldronDecks = {};    // { [slotId]: string[] } — reset on every Generate tap
@@ -688,9 +668,24 @@ function renderCauldronConfig() {
     function clearHistory() {
       promptHistory = [];
       historyIndex = -1;
-      document.getElementById('history-nav-imagine').classList.remove('visible');
-      document.getElementById('history-nav-just-draw').classList.remove('visible');
-      document.getElementById('history-nav-strange-scenes').classList.remove('visible');
+      document.getElementById('prompt-history-nav').classList.remove('visible');
+    }
+
+    function enterMode(config) {
+      activeConfig = config;
+      document.getElementById('prompt-screen-label').textContent = config.label;
+      document.getElementById('prompt-back-btn').dataset.target = config.backTarget;
+
+      const hasFilter = config.hasFilter;
+      document.getElementById('prompt-filter-btn').classList.toggle('hidden', !hasFilter);
+      document.getElementById('prompt-tag-indicator').classList.toggle('hidden', !hasFilter);
+      document.getElementById('prompt-filter-sheet').classList.add('hidden');
+      document.getElementById('prompt-filter-backdrop').classList.remove('visible');
+
+      const hasLock = config.renderMode === 'cauldron';
+      document.getElementById('prompt-lock-hint').classList.toggle('hidden', !hasLock);
+
+      showScreen('screen-prompt');
     }
 
     function pushToHistory(prompt) {
