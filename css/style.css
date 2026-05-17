@@ -266,6 +266,9 @@
       z-index: 0;
       opacity: 0.22;
       transition: opacity 0.3s ease;
+      background-image: url(../assets/wallpaper.svg);
+      background-size: cover;
+      background-position: center;
     }
 
     #wallpaper-layer.dimmed {
