@@ -31,8 +31,8 @@
       document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
       document.getElementById(id).classList.add('active');
       document.getElementById('wallpaper-layer')
-        .classList.toggle('dimmed', id === 'screen-imagine-prompt' || id === 'screen-just-draw' || id === 'screen-strange-scenes');
-      if (id !== 'screen-just-draw' && id !== 'screen-imagine-prompt' && id !== 'screen-cauldron-config' && id !== 'screen-strange-scenes') {
+        .classList.toggle('dimmed', id === 'screen-prompt');
+      if (id !== 'screen-prompt' && id !== 'screen-cauldron-config') {
         currentPrompt = null;
         lockedSlots = {};
         clearHistory();
