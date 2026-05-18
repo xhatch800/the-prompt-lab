@@ -12,6 +12,21 @@ function showScreen(id) {
 }
 
 // ── Prompt rendering ─────────────────────────────────────────
+function fitPromptText() {
+  const zone = document.getElementById('prompt-zone');
+  const content = document.getElementById('prompt-content');
+  if (!zone || !content) return;
+  const MAX = 3.5;
+  const MIN = 1.0;
+  const STEP = 0.2;
+  let size = MAX;
+  content.style.fontSize = size + 'rem';
+  while (content.scrollHeight > zone.clientHeight && size > MIN) {
+    size = Math.max(MIN, parseFloat((size - STEP).toFixed(1)));
+    content.style.fontSize = size + 'rem';
+  }
+}
+
 const LOCK_SVG = '<svg class="lock-icon" width="16" height="18" viewBox="0 0 16 18" fill="none"><rect x="1" y="8" width="14" height="10" rx="2" stroke="#b85c38" stroke-width="2"/><path d="M4 8V6a4 4 0 0 1 8 0v2" stroke="#b85c38" stroke-width="2" stroke-linecap="round"/></svg>';
 
 function renderPrompt(container, mode) {
@@ -237,6 +252,9 @@ function navigateHistory(direction) {
     currentPrompt = promptHistory[historyIndex];
     renderPrompt(container, activeConfig.renderMode);
   }
+
+  fitPromptText();
+  if (typeof updateStar === 'function') updateStar();
 
   container.classList.remove('slide-from-left', 'slide-from-right');
   void container.offsetWidth;

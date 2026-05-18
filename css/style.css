@@ -51,7 +51,7 @@
       font-size: 3.5rem;
       line-height: 1.5;
       max-width: 640px;
-      padding: 0 1rem;
+      width: 100%;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -151,19 +151,22 @@
     }
 
     .lock-hint {
-      font-family: sans-serif;
-      font-size: 0.72rem;
-      color: #bbb;
-      text-align: center;
-      margin-top: 12px;
-      pointer-events: none;
-      opacity: 1;
-      transition: opacity 0.3s;
-    }
+  position: absolute;
+  bottom: 154px;
+  left: 0;
+  right: 0;
+  font-family: sans-serif;
+  font-size: 0.72rem;
+  color: #bbb;
+  text-align: center;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
 
-    .lock-hint.animating {
-      opacity: 0;
-    }
+.lock-hint.animating {
+  opacity: 0;
+}
 
     /* History navigation widget */
     .history-nav {
@@ -172,7 +175,7 @@
       justify-content: center;
       gap: 8px;
       position: absolute;
-      bottom: 6rem;
+      bottom: 80px;
       left: 0;
       right: 0;
     }
@@ -224,7 +227,7 @@
       font-family: 'Caveat', cursive;
       font-size: 1.8rem;
       position: absolute;
-      bottom: 2rem;
+      bottom: 16px;
       color: #b85c38;
       background: #fdf8f0;
       border: 2px solid #b85c38;
@@ -377,7 +380,7 @@
 
     .pm-tag-indicator {
       position: absolute;
-      bottom: 9.5rem;
+      bottom: 154px;
       left: 0;
       right: 0;
       text-align: center;
@@ -906,4 +909,179 @@
   background: #c0392b;
   border-color: #c0392b;
   color: white;
+}
+
+/* ── Prompt zone (bounded, never bleeds into controls) ── */
+#prompt-zone {
+  position: absolute;
+  top: 34px;
+  bottom: 177px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  overflow: hidden;
+}
+
+/* ── Star button ── */
+.star-btn {
+  position: absolute;
+  bottom: 117px;
+  left: 0;
+  right: 0;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #aaa;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1;
+  padding: 0;
+  transition: color 0.15s ease;
+}
+
+.star-btn.starred {
+  color: #e8a030;
+}
+
+.star-btn:hover {
+  opacity: 0.75;
+}
+
+/* ── Favorites screen ── */
+.fav-screen {
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 0;
+  overflow: hidden;
+}
+
+.fav-body {
+  position: absolute;
+  top: 3.5rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.fav-warning {
+  flex-shrink: 0;
+  font-family: sans-serif;
+  font-size: 0.72rem;
+  color: #b85c38;
+  opacity: 0.7;
+  background: rgba(184, 92, 56, 0.07);
+  border-bottom: 1px solid rgba(184, 92, 56, 0.15);
+  padding: 6px 1.2rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.fav-search-row {
+  flex-shrink: 0;
+  padding: 10px 1.2rem 8px;
+  border-bottom: 1px solid #f0e8dc;
+}
+
+.fav-search {
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 1rem;
+  border: 1.5px solid #d4c8ba;
+  border-radius: 20px;
+  padding: 6px 14px;
+  background: #fff;
+  color: #2c2c2c;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.fav-search:focus {
+  border-color: #b85c38;
+}
+
+.fav-list {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.fav-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 1.2rem;
+  border-bottom: 1px solid #f5ede4;
+}
+
+.fav-item-text {
+  flex: 1;
+  font-family: 'Caveat', cursive;
+  font-size: 1.4rem;
+  color: #2c2c2c;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+.fav-delete-btn {
+  flex-shrink: 0;
+  font-family: sans-serif;
+  font-size: 1rem;
+  color: #ccc;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 4px;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.fav-delete-btn:hover {
+  color: #b85c38;
+}
+
+.fav-empty {
+  padding: 3rem 2rem;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.fav-footer {
+  flex-shrink: 0;
+  padding: 10px 1.2rem;
+  border-top: 1px solid #f0e8dc;
+}
+
+.fav-export-btn {
+  width: 100%;
+  font-family: 'Caveat', cursive;
+  font-size: 1.6rem;
+  color: #b85c38;
+  background: #fdf8f0;
+  border: 2px solid #b85c38;
+  border-radius: 10px;
+  padding: 0.4rem 0;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #b85c38;
+  transition: box-shadow 0.1s ease, transform 0.1s ease;
+}
+
+.fav-export-btn:hover {
+  box-shadow: 1px 1px 0 #b85c38;
+  transform: translate(1px, 1px);
+}
+
+.fav-export-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+  box-shadow: none;
+  transform: none;
 }

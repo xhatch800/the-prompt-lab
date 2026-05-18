@@ -47,6 +47,8 @@ function regenPoolMode(cfg) {
   const finalValue = generateFromPool(cfg);
   const el = document.getElementById('prompt-content');
   el.textContent = finalValue;
+  fitPromptText();
+  if (typeof updateStar === 'function') updateStar();
   animateSlot(el, cfg.getNames(), finalValue, 1200);
   pushToHistory(finalValue);
   renderHistoryWidget();

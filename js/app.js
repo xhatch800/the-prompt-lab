@@ -23,6 +23,26 @@ const cauldronModeConfig = {
   renderMode: 'cauldron',
 };
 
+function updateStar() {
+  const btn = document.getElementById('prompt-star-btn');
+  if (!btn) return;
+  const text = document.getElementById('prompt-content').textContent.trim();
+  const faved = text && Favorites.isFavorite(text);
+  btn.textContent = faved ? '★' : '☆';
+  btn.classList.toggle('starred', !!faved);
+}
+
+function buildFavoriteEntry(text) {
+  const entry = { text, mode: activeConfig.mode };
+  if (activeConfig.mode === 'cldr' && cauldronConfig) {
+    entry.preset = cauldronConfig.preset;
+    entry.slots = cauldronConfig.slots
+      .filter(s => s.enabled)
+      .map(s => ({ adjective: 'adj', noun: 'noun', verb: 'verb', environment: 'env' }[s.type] || s.type));
+  }
+  return entry;
+}
+
 // ── Event wiring ─────────────────────────────────────────────
 document.getElementById('btn-just-draw').addEventListener('click', () => {
   clearHistory();
@@ -77,6 +97,8 @@ document.getElementById('cc-generate').addEventListener('click', () => {
   enterMode(cauldronModeConfig);
   const container = document.getElementById('prompt-content');
   renderPrompt(container, 'cauldron');
+  fitPromptText();
+  updateStar();
   const hint = document.getElementById('prompt-lock-hint');
   hint.classList.add('animating');
   animateUnlockedSlots(container);
@@ -118,6 +140,8 @@ document.getElementById('prompt-regen-btn').addEventListener('click', () => {
     const container = document.getElementById('prompt-content');
     currentPrompt = generateCauldron(cauldronConfig, currentPrompt, lockedSlots);
     renderPrompt(container, 'cauldron');
+    fitPromptText();
+    updateStar();
     const hint = document.getElementById('prompt-lock-hint');
     hint.classList.add('animating');
     animateUnlockedSlots(container);
@@ -138,7 +162,36 @@ setupCopyBtn('prompt-copy-btn', () =>
   document.getElementById('prompt-content').textContent.trim()
 );
 
+document.getElementById('prompt-star-btn').addEventListener('click', () => {
+  const text = document.getElementById('prompt-content').textContent.trim();
+  if (!text) return;
+  if (Favorites.isFavorite(text)) {
+    Favorites.remove(text);
+  } else {
+    Favorites.add(buildFavoriteEntry(text));
+  }
+  updateStar();
+});
+
 addSwipe('prompt-content');
+
+// ── Favorites screen event wiring ───────────────────────────
+document.getElementById('btn-favorites').addEventListener('click', () => {
+  Favorites.renderScreen();
+  showScreen('screen-favorites');
+});
+
+document.getElementById('btn-favorites-back').addEventListener('click', () => {
+  showScreen('screen-home');
+});
+
+document.getElementById('fav-search').addEventListener('input', () => {
+  Favorites.renderScreen();
+});
+
+document.getElementById('fav-export-btn').addEventListener('click', () => {
+  Favorites.exportToFile();
+});
 
 // ── Data loading ─────────────────────────────────────────────
 async function init() {
@@ -179,6 +232,7 @@ async function init() {
     document.getElementById('btn-just-draw').disabled = false;
     document.getElementById('btn-cauldron').disabled = false;
     document.getElementById('btn-strange-scenes').disabled = false;
+    document.getElementById('btn-favorites').disabled = false;
   } catch {
     document.getElementById('error-banner').classList.remove('hidden');
     document.getElementById('btn-just-draw').disabled = true;
