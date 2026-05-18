@@ -3,7 +3,7 @@ function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   document.getElementById('wallpaper-layer')
-    .classList.toggle('dimmed', id === 'screen-prompt');
+    .classList.toggle('dimmed', id === 'screen-prompt' || id === 'screen-favorites');
   if (id !== 'screen-prompt' && id !== 'screen-cauldron-config') {
     currentPrompt = null;
     lockedSlots = {};
