@@ -1,5 +1,6 @@
 // ── Pool-mode configs ─────────────────────────────────────────
 const jdConfig = {
+  mode:       'edl',
   getPool:    () => store.justDraw,
   getNames:   () => store.justDrawNames,
   textField:  'name',
@@ -16,6 +17,7 @@ const jdConfig = {
 };
 
 const ssConfig = {
+  mode:       'ss',
   getPool:    () => store.strangeScenes,
   getNames:   () => store.strangeSceneTexts,
   textField:  'text',

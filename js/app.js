@@ -16,6 +16,7 @@ let cauldronDecks = {};
 
 // ── Cauldron prompt-screen mode config ───────────────────────
 const cauldronModeConfig = {
+  mode:       'cldr',
   label:      'Surreal Cauldron',
   backTarget: 'screen-cauldron-config',
   hasFilter:  false,
