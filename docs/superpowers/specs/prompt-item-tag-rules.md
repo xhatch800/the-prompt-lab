@@ -31,6 +31,8 @@ Every item in any data file must meet three conditions:
 2. **Picturable without looking it up.** An artist reading the prompt should be able to form a mental image immediately. Highly technical names, compound descriptors, or terms that require domain expertise to visualize should not be added.
 3. **No variants.** Each item must be the canonical base form of a thing — not a named variation of something already in the pool. The test is what an artist would draw: if "bullfrog" produces essentially the same drawing as "frog," it's a variant and should not be added. If the visual result is meaningfully different despite sharing a base type, it may qualify as its own entry.
 
+For **strange_scenes prompts** specifically, two additional failure modes apply — see the Strange Scenes section for the full picturable test.
+
 ---
 
 ## just_draw Tag Rules
@@ -232,6 +234,99 @@ Unlike nouns, environments use a single set of descriptive tags. Each entry must
 ### Combination rules
 
 Tags from this set may be combined freely when both genuinely apply — a frozen underground lake is both `frozen` and `underground`. Avoid tagging `tranquil` alongside environments that are inherently turbulent (storms, eruptions, battles).
+
+---
+
+## Strange Scenes — Tag Rules
+
+File: `data/strange_scenes.json`
+
+Strange scenes items use `text` and `tags[]` (not `name`). The file is organized in two halves by dominant mood. Tagging follows a two-tier structure: one primary mood tag, plus at least one flavor tag.
+
+---
+
+### Mood tiers
+
+Every item must carry **exactly one** primary mood tag.
+
+| Tag | When to apply |
+|-----|--------------|
+| `dark` | The prompt is unsettling, menacing, grotesque, or politically bleak. The viewer's first response should be unease. |
+| `whimsical` | The prompt is playful, warm, or delightfully strange. The viewer's first response should be delight or amusement. |
+
+**An item must not carry both `dark` and `whimsical`.** If a prompt produces both responses in roughly equal measure, ask which comes first — assign that mood and drop the other.
+
+---
+
+### Dark — flavor tags
+
+Applied in addition to `dark`. At least one is required.
+
+| Tag | Definition |
+|-----|-----------|
+| `grotesque` | Physical distortion of a body, organ, or creature in a disturbing way. Body horror, flesh merged with objects, unnatural anatomy. |
+| `dread` | Creeping wrongness or entropy — things that should work, don't; things that should be safe, aren't. The threat is ambient and unlocated. |
+| `paranoia` | The sense of being watched, followed, or targeted. Shadows, reflections, and ordinary objects appear to act with intent directed against the subject. |
+| `identity` | Self-dissolution, fractured selfhood, or the gap between inner and outer self. Mirrors, shadows, and reflections used as metaphors for selfhood. |
+| `domestic` | A household object is the **central subject** of the image. The strangeness attaches directly to something found inside a home. Clothing worn by a person is not domestic. |
+| `satire` | The image has a discernible social or political target — a recognizable institution, power structure, or behavior being critiqued. Apply only if you can complete the sentence "this image satirizes ___." If you cannot name a specific target, do not apply `satire`; use `grotesque` or `dread` instead. |
+
+### Dark — activist cluster
+
+`activist` may be added to dark-section items that explicitly engage with resistance to injustice. Always paired with at least one sub-tag:
+
+| Sub-tag | When to apply |
+|---------|--------------|
+| `defiance` | The image shows resistance or refusal directed at a power structure. |
+| `truth` | The image exposes something concealed, suppressed, or falsely presented. |
+| `solidarity` | The image shows collective action or people acting together against shared pressure. |
+| `ecological` | The image engages with environmental destruction or its consequences. |
+
+---
+
+### Whimsical — flavor tags
+
+Applied in addition to `whimsical`. At least one is required.
+
+| Tag | Definition |
+|-----|-----------|
+| `childlike` | Centers a child character, child's-eye perspective, or a sensibility of innocent wonder. |
+| `folkloric` | Folk-tale or fable register — animals with wisdom or purpose, traditional domestic magic, the world operating by older rules. |
+| `absurdist` | Logic that is internally consistent but defies convention, presented deadpan and without apology. |
+| `dreamlike` | Soft, poetic, and non-threatening. Imagery that belongs to the half-conscious border of sleep. |
+| `mischievous` | Playful subversion, gentle trickery, or a character quietly exploiting a situation for their own amusement. |
+
+### Whimsical — activist cluster
+
+`activist` may be added to whimsical-section items that engage with social or ecological themes in a hopeful or quietly resistant register. Whimsical activist content is warm rather than bleak. Always paired with at least one sub-tag:
+
+| Sub-tag | When to apply |
+|---------|--------------|
+| `defiance` | Gentle resistance or refusal, often playful rather than confrontational. |
+| `truth` | Exposing or naming what is hidden, often through quiet acts of witness. |
+| `solidarity` | Collective care, community connection, or acts done for others without expectation. |
+| `ecological` | Environmental restoration, protection, or witness. |
+| `care` | Tending, maintenance, or quiet acts of love directed at others — neighbors, strangers, the vulnerable. |
+
+### Picturable test
+
+Every strange_scenes prompt must pass two checks before being added or kept:
+
+**1. Visually resolvable.** An artist must be able to form a clear mental image from the prompt alone. If the strangeness is purely verbal or conceptual — a punchline that only works as language, an internal state with no external form, a quality that can't be rendered — the prompt fails.
+
+> ❌ *A philosopher who has forgotten the question but remains delighted by the answer.* — "forgotten the question" and "delighted by the answer" are internal states with no drawable form.
+> ✅ *A magician whose only trick is producing one perfect grape from any hat, but does so with enormous gravitas.* — clear scene: magician, hat, grape, serious expression.
+
+**2. Internally consistent.** The impossible premise must hold together. A surreal detail that contradicts or undermines the very premise it builds on fails — even if the premise itself is fine.
+
+> ❌ *A man who collects Tuesdays in labeled jars and stores them in alphabetical order.* — collecting Tuesdays as jars is a valid surreal premise; but all jars would be labeled "Tuesday," making alphabetical order meaningless.
+> ✅ *A child carrying a jar of moonlight as though it were perfectly ordinary.* — the premise (moonlight as a physical object) holds throughout; no detail contradicts it.
+
+**Quick test:** read the prompt and ask "what does the artist actually draw?" If the answer requires filling in something undefined, or if a detail makes the image logically impossible to picture, revise or remove.
+
+### Coverage
+
+No formal coverage threshold has been set for strange_scenes tags yet. Target ≥ 20 items per flavor tag before treating a tag as a reliable filter. Tags currently below or near this threshold: `care`, `ecological`. Grow these alongside new items before activating as UI filters.
 
 ---
 

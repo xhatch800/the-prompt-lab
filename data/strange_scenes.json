@@ -84,9 +84,6 @@
   {
     "text": "A suitcase that, when opened, contains a miniature, crowded theater.",
     "tags": [
-      "dark",
-      "domestic",
-      "satire",
       "whimsical",
       "absurdist"
     ]
@@ -231,8 +228,7 @@
     "text": "A man's brain being sliced like a block of cheese.",
     "tags": [
       "dark",
-      "grotesque",
-      "satire"
+      "grotesque"
     ]
   },
   {
@@ -263,7 +259,6 @@
     "text": "A woman's dress made entirely of living butterflies.",
     "tags": [
       "dark",
-      "domestic",
       "dread"
     ]
   },
@@ -294,9 +289,6 @@
   {
     "text": "A musical instrument that produces visible, solid shapes instead of sound.",
     "tags": [
-      "dark",
-      "domestic",
-      "satire",
       "whimsical",
       "absurdist"
     ]
@@ -320,10 +312,8 @@
   {
     "text": "A bed that is actually a giant, open book.",
     "tags": [
-      "dark",
-      "domestic",
-      "satire",
       "whimsical",
+      "domestic",
       "absurdist"
     ]
   },
@@ -469,10 +459,9 @@
   {
     "text": "A ceiling fan where the blades are flat, spinning neckties.",
     "tags": [
-      "dark",
+      "whimsical",
       "domestic",
       "satire",
-      "whimsical",
       "mischievous"
     ]
   },
@@ -626,7 +615,6 @@
     "text": "A desk drawer filled to the brim with loose, discarded human fingernails.",
     "tags": [
       "dark",
-      "satire",
       "grotesque"
     ]
   },
@@ -657,20 +645,17 @@
   {
     "text": "A wall mirror that acts like water, rippling when a finger touches its surface.",
     "tags": [
-      "dark",
-      "domestic",
-      "identity",
       "whimsical",
+      "domestic",
       "dreamlike"
     ]
   },
   {
     "text": "A bowl of cereal where the individual pieces are tiny, floating wedding rings.",
     "tags": [
-      "dark",
+      "whimsical",
       "domestic",
       "satire",
-      "whimsical",
       "absurdist"
     ]
   },
@@ -734,7 +719,6 @@
     "text": "A writing desk with legs that taper off into sharp, metallic spikes.",
     "tags": [
       "dark",
-      "satire",
       "dread"
     ]
   },
@@ -777,7 +761,7 @@
     "tags": [
       "dark",
       "domestic",
-      "satire"
+      "dread"
     ]
   },
   {
@@ -792,7 +776,6 @@
     "text": "A pencil that writes in a texture resembling raised, surgical scars.",
     "tags": [
       "dark",
-      "satire",
       "grotesque"
     ]
   },
@@ -896,10 +879,9 @@
   {
     "text": "A picture frame displaying nothing but a beautifully painted shadow.",
     "tags": [
-      "dark",
+      "whimsical",
       "domestic",
       "identity",
-      "whimsical",
       "dreamlike"
     ]
   },
@@ -932,7 +914,7 @@
     "tags": [
       "dark",
       "domestic",
-      "satire"
+      "grotesque"
     ]
   },
   {
@@ -1003,8 +985,7 @@
     "text": "A profile of a woman whose braid is made entirely of twisted copper wire.",
     "tags": [
       "dark",
-      "grotesque",
-      "satire"
+      "grotesque"
     ]
   },
   {
@@ -1119,7 +1100,6 @@
       "dark",
       "identity",
       "satire",
-      "whimsical",
       "mischievous"
     ]
   },
@@ -1368,8 +1348,6 @@
   {
     "text": "A figure whose ears are large, spiraled sea shells.",
     "tags": [
-      "dark",
-      "grotesque",
       "whimsical",
       "absurdist"
     ]
@@ -1560,10 +1538,9 @@
   {
     "text": "A man whose shadow is wearing a crown while he wears a bowler hat.",
     "tags": [
-      "dark",
+      "whimsical",
       "identity",
       "satire",
-      "whimsical",
       "mischievous"
     ]
   },
@@ -1586,10 +1563,9 @@
   {
     "text": "A man's shadow that has been neatly folded up and left on a chair.",
     "tags": [
-      "dark",
+      "whimsical",
       "identity",
       "domestic",
-      "whimsical",
       "absurdist"
     ]
   },
@@ -1638,9 +1614,7 @@
     "tags": [
       "dark",
       "paranoia",
-      "satire",
-      "whimsical",
-      "mischievous"
+      "satire"
     ]
   },
   {
@@ -1779,10 +1753,9 @@
   {
     "text": "A man trying to sweep his own shadow into a dustpan.",
     "tags": [
-      "dark",
+      "whimsical",
       "identity",
       "satire",
-      "whimsical",
       "mischievous"
     ]
   },
@@ -1911,9 +1884,7 @@
     "tags": [
       "dark",
       "identity",
-      "satire",
-      "whimsical",
-      "absurdist"
+      "satire"
     ]
   },
   {
@@ -1943,10 +1914,9 @@
   {
     "text": "A man looking at his reflection and realizing it is a photograph taped to the glass.",
     "tags": [
-      "dark",
+      "whimsical",
       "identity",
       "satire",
-      "whimsical",
       "mischievous"
     ]
   },
@@ -2053,9 +2023,7 @@
       "satire",
       "paranoia",
       "activist",
-      "solidarity",
-      "whimsical",
-      "absurdist"
+      "solidarity"
     ]
   },
   {
@@ -2237,9 +2205,6 @@
   {
     "text": "A line of people waiting for a bus that is a giant, hollow roller skate.",
     "tags": [
-      "dark",
-      "satire",
-      "dread",
       "whimsical",
       "absurdist"
     ]
@@ -2431,9 +2396,7 @@
     "tags": [
       "dark",
       "satire",
-      "paranoia",
-      "whimsical",
-      "mischievous"
+      "paranoia"
     ]
   },
   {
@@ -2640,14 +2603,6 @@
     "tags": [
       "whimsical",
       "childlike"
-    ]
-  },
-  {
-    "text": "A girl who keeps all of Tuesday in a hat box under her bed.",
-    "tags": [
-      "whimsical",
-      "childlike",
-      "absurdist"
     ]
   },
   {
@@ -2871,13 +2826,6 @@
     ]
   },
   {
-    "text": "A man who collects Tuesdays in labeled jars and stores them in alphabetical order.",
-    "tags": [
-      "whimsical",
-      "absurdist"
-    ]
-  },
-  {
     "text": "A city where every building is exactly the height of the person who lives inside it.",
     "tags": [
       "whimsical",
@@ -2909,13 +2857,6 @@
   },
   {
     "text": "A crowd of umbrellas waiting patiently at a bus stop while the humans stand in the rain.",
-    "tags": [
-      "whimsical",
-      "absurdist"
-    ]
-  },
-  {
-    "text": "A map of a city where all the streets are named after things that haven't been invented yet.",
     "tags": [
       "whimsical",
       "absurdist"
@@ -3078,14 +3019,6 @@
     ]
   },
   {
-    "text": "A dog who has memorized the exact legal definition of 'fetch' and exploits it systematically.",
-    "tags": [
-      "whimsical",
-      "mischievous",
-      "absurdist"
-    ]
-  },
-  {
     "text": "A sparrow who stole a single letter from every mailbox on the street and has assembled them into a poem.",
     "tags": [
       "whimsical",
@@ -3098,22 +3031,6 @@
     "tags": [
       "whimsical",
       "mischievous"
-    ]
-  },
-  {
-    "text": "A philosopher who has forgotten the question but remains delighted by the answer.",
-    "tags": [
-      "whimsical",
-      "mischievous",
-      "absurdist"
-    ]
-  },
-  {
-    "text": "A pigeon who attends the same philosophy lecture every Tuesday and always leaves just before the point.",
-    "tags": [
-      "whimsical",
-      "mischievous",
-      "absurdist"
     ]
   },
   {
