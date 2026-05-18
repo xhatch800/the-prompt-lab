@@ -21,7 +21,7 @@ const ssConfig = {
   getPool:    () => store.strangeScenes,
   getNames:   () => store.strangeSceneTexts,
   textField:  'text',
-  label:      'Strange Scenes',
+  label:      'Somnial Scenes',
   backTarget: 'screen-home',
   sheetTitle: 'Filter by theme',
   hasFilter:  true,
